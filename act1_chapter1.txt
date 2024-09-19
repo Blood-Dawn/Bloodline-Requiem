@@ -1,0 +1,278 @@
+*comment Act 1: Unveiling Shadows
+*comment Chapter 1
+
+*label introduction
+*set act 1
+*set chapter 1
+*image https://i.imgur.com/vHxUAEN.png
+
+Now, centuries later, you find yourself in the heart of Veilfall, a skilled assassin taking requests from the elusive Assassin Guild. Your reputation for getting the job done, no matter the complexity, precedes you. Today, a new assignment lands on your table, a choice that could unveil the deep-seated mysteries of Veilfall, or thrust you into the heart of the ancient conflict brewing afresh.
+
+
+The parchment reads:
+"Three tasks lay before you, choose wisely for each holds a key to the unfolding destiny of Veilfall.
+
+1. Investigate the enigmatic Forsaken, their motives unknown, their allegiance a mystery.
+
+2. Confront a pack of Lupines, their bitterness rooted in betrayal, their plans veiled in secrecy.
+
+3. Eliminate a rogue Varkyr, whose bloodlust threatens the uneasy truce with the humans of Veilfall."
+
+*choice
+    #Investigate the enigmatic Forsaken.
+        *set alignment "Forsaken"
+        *goto forsaken_route
+    #Confront a pack of Lupines.
+        *set alignment "Lupine"
+        *goto lupine_route
+    #Eliminate a rogue Varkyr.
+        *set alignment "Varkyr"
+        *goto varkyrs_route
+
+*label varkyrs_route
+As the night shrouds Veilfall in a veil of mystery, you embark on the trail of the elusive vampire who has been haunting the city. The streets, once bustling, now lay silent under the moon's pale gaze. Your senses heighten as you delve into the shadows, the realm of the Varkyrs.
+
+*choice
+    #Track the vampire using scent.
+        The night air carries tales from the unseen world. You follow the subtle, iron-rich scent of blood, which leads you through winding alleys and darkened pathways.
+        *set faction_stat  "Royal Vampire"
+        *set bloodline_or_rank "Bloodline"
+        *goto varkyrs_confrontation
+    #Seek eyewitnesses who have seen the vampire.
+        You delve into the whispers of the night, questioning the few souls that dare to tread in the darkness, gathering fragments of a face haunting in its beauty yet fearsome in its pale coldness.
+        *goto varkyrs_confrontation
+    #Investigate recent killings for clues.
+        The ominous silence of the city is broken only by the cries of sorrow. You follow the trail of death, each scene telling a story of fear and desperation, edging you closer to the vampire.
+        *goto varkyrs_confrontation
+    #Utilize a network of informants to gather information.
+        You delve into the underbelly of Veilfall, seeking those who dwell in shadows, their eyes and ears extending to the corners where light fears to tread. Piece by piece, a picture of the vampire's haunting presence forms.
+        *goto varkyrs_confrontation
+    #Set a trap using yourself as bait.
+        As night deepens, you venture into the heart of darkness, offering yourself as bait to the creature of the night, each heartbeat a call to the unseen.
+        *goto varkyrs_confrontation
+
+*label varkyrs_confrontation
+The trail culminates in a forgotten part of the city, where the veil between the seen and unseen seems thin. There, amidst the shadows, the vampire emerges, his eyes a void yet filled with the ages he's witnessed.
+
+*choice
+    #Warn the vampire about the traces left behind.
+        You speak words of warning, of the hunters that lurk in the shadows. The vampire studies you, his gaze piercing the veil of mortality as he whispers words of the ancient curse. The world around you shatters, reborn in the blood-red hue of the Varkyr's reality.
+        *set alignment "Varkyr"
+        *set varkyrs_relation +5
+        *goto varkyr_alliance
+    #Engage the vampire in combat.
+        With a swift motion, you unsheathe your weapon, the steel singing the song of confrontation. The vampire, with a grace born of ages, engages you in a dance of death and survival.
+        *goto vamp_battle
+    #Follow the vampire discreetly.
+        You meld with the shadows, your every step a whisper as you follow the vampire through the veiled pathways of Veilfall, each moment a step deeper into the world of the unknown.
+        *goto vamp_follow
+    #Offer the vampire assistance in covering his tracks.
+        You offer a hand in shadows, your words weaving the essence of stealth and caution. The vampire, intrigued, nods, the night bearing witness to an unexpected alliance.
+        *goto varkyr_alliance
+    #Attempt to gather more information discreetly before acting.
+        You bide your time, your eyes and ears attuned to the world of the unseen, gathering the threads of information that may unveil the true narrative of the vampire's tale.
+        *goto vamp_investigation
+
+*label varkyr_alliance
+*line_break
+
+(not done) *comment ... narrative for forming an alliance with the Varkyr ...
+*ending
+
+*label vamp_battle
+*line_break
+
+(not done) *comment ... narrative for engaging in combat with the vampire ...
+*ending
+
+*label vamp_follow
+*line_break
+
+(not done) *comment ... narrative for following the vampire discreetly ...
+*ending
+
+*label vamp_investigation
+*line_break
+
+(not done) *comment ... narrative for investigating further before making a decision ...
+*ending
+
+*label lupine_route
+Under the pale moonlight, you journey to the Lupine's territory, the ominous Whispering Pines. As you tread cautiously into the grand forest, you become acutely aware of eyes upon you. Wolves of varying fur colors and sizes encircle you, their presence like whispers among the trees. They move with a silent, coordinated grace, their eyes reflecting the moonlight as they study your every movement, their noses twitching as they take in your scent.
+*choice
+    #Growl at them.
+        With a subtle growl, you assert your presence, making a few of them back off while others seem intrigued by your audacity. The alpha, a majestic wolf with dark black fur symbolizing strength, steps forward, his eyes locking onto yours as if peering into your soul.
+        *goto lupine_encounter_growl
+    #Back off slowly and report back.
+        You decide that discretion is the better part of valor. Slowly backing away, you make a mental note of what you've witnessed, ready to report back to the Assassin Guild. However, the eyes of the Lupines follow you, their curiosity piqued.
+        *goto report_back
+    #Pull out a weapon to defend yourself.
+        With a swift motion, you unsheathe your weapon, the steel gleaming under the moonlight. The wolves grow tense, their growls resonating through the silent forest. Yet, amidst the tension, a white-furred wolf, a rare sight signifying a special status, steps forward with a calming aura, seemingly offering a chance for peaceful interaction.
+        *goto lupine_encounter_weapon
+    #Observe the wolves silently.
+        You stand still, observing the wolves. The variety in fur colors tells tales of their nature. Black for strength, brown for balance, gray for agility, and the rare white for a special status or unique ability. Your silent observation seems to earn you a nod of respect from the alpha.
+        *set lupine_relation +10
+        *goto assert_dominance
+
+*label lupine_encounter_growl
+The alpha wolf, with his black fur shimmering in the moonlight, approaches you. His eyes scrutinize you for a moment before he nudges his head, acknowledging your status as an Omega - the lowest rank within their hierarchy but a part of the pack nonetheless. The rest of the wolves, with their fur of brown, gray, and the occasional white, encircle you, their forms shifting into that of humans as they welcome you into their realm.
+*set rank "Omega"
+*set faction_stat rank
+*set bloodline_or_rank "Rank"
+*goto assert_dominance
+
+*label lupine_encounter_weapon
+*set lupine_relation %+5
+As you brandish your weapon, ready to defend yourself, the tension among the wolves rises. The alpha steps forward, his form shifting into a towering man with piercing eyes. 
+
+"You have the heart of a wolf, but do you fight with honor?" he challenges, his pack readying themselves for a confrontation.
+*choice
+    #Shoot first, ask questions later.
+        You decide to take the initiative, raising your weapon.
+        *choice
+            #Shoot a wolf.
+                *set lupine_relation %-70
+                The shot echoes through the Whispering Pines, the sudden violence momentarily stunning both packs. The lupines growl, their forms shifting as they prepare to retaliate. Your actions have surely strained the relations with the Lupines.
+                *goto lupine_battle
+            #Throw a flashbang to disorient them.
+                The flashbang bursts into a blinding light, disorienting the wolves momentarily.
+                *goto disorient_scene
+            #Lower your weapon and explain your mission.
+                You decide that violence won’t solve this situation. Lowering your weapon, you explain your mission from the Assassin Guild, hoping for a peaceful resolution.
+                *goto explain_mission
+
+    #Tell them why you are here.
+        (not done) *comment ... rest of the narrative for explaining mission ...
+
+    #Perform a claw attack to assert dominance.
+        You retract your weapon and reveal your claws, a characteristic you've acquired from your past encounters with the supernatural. With a swift motion, you swipe at the air, a demonstration of both control and power. The lupines' reactions are mixed; some show a spark of respect, while others growl, still on edge.
+        *set rank "Omega"
+        *set faction_stat rank
+        *set bloodline_or_rank "Rank"
+        *goto assert_dominance
+*label disorient_scene
+*line_break
+
+(not done)(Continue with the narrative of how the flashbang disorients the wolves, allowing you a momentary advantage, leading to further dialogue or action.)
+*ending
+
+*label lupine_battle
+*line_break
+
+(not done) (Continue with the narrative of the ensuing battle, the choices you make here could further affect your relationship with the Lupines and the outcome of your mission.)
+*ending
+
+*label explain_mission
+*line_break
+
+(not done)(Continue with the narrative of explaining your mission, the alpha’s response, and the unfolding dialogue. This could lead to further understanding, alliances, or more choices on how to proceed.)
+*ending
+
+*label assert_dominance
+The alpha, intrigued by your display, signals for the pack to stand down. They form a circle around you and the alpha, the tension in the air thick yet tinged with a hint of curiosity. 
+
+"Now, speak your purpose," the alpha demands, his gaze locked onto yours.
+
+*choice
+    #Explain your mission from the Assassin Guild.
+        *line_break
+        
+        (Not done)*comment ... narrative for explaining mission ...
+        *ending
+    #Challenge the alpha for a friendly spar to gain their respect.
+        *line_break
+        
+        (not done) *comment ... narrative for challenging the alpha ...
+        *ending
+    #Attempt to leave peacefully, without further confrontation.
+        *line_break
+        
+        (not done) *comment ... narrative for attempting to leave ...
+        *ending
+
+*label forsaken_route
+In the shadows of the city, you search for the mysterious Forsaken. In the distance, you see a poster with an encrypted message.
+
+*choice
+    #Decipher message
+        With your experience researching this faction, you decipher the message, and it reads, [i] come to the underground tunnel at 123 street to join.[/i]
+        *goto tunnel_entrance
+*label tunnel_entrance
+You navigate through the twisted alleys of Veilfall until you reach the underground tunnel at 123 street. The eerie silence as you descend into the darkness sends a chill down your spine. The Forsaken's world is one veiled in shadows and mystery, an underground society that thrives in the hidden corners of Veilfall. You tread cautiously, aware that danger lurks with every step in this forsaken realm.
+
+As you delve deeper into the tunnel, the distant echo of a chant grows louder. The air thickens with the ancient aura of rites long forbidden. The tunnel opens up into a vast, dimly lit cavern, where a congregation of the Forsaken is in the midst of a ritual. At the heart of the ritual, an artifact radiates with an eerie glow, its power resonating with the very core of the veil separating the realms.
+
+*choice
+    #Approach the congregation cautiously.
+        *goto approach_congregation
+    #Observe from a distance to gather more information.
+        *goto observe_from_distance
+    #Retreat and report back to the Assassin Guild.
+        *goto report_back
+
+*label approach_congregation
+*line_break
+
+(not done) You approach the congregation, possibly leading to an interaction with the Forsaken, gathering more information or establishing alliances.
+*ending
+
+*label observe_from_distance
+*line_break
+
+(not done) you observe the ritual and the Forsaken from a distance, gathering information which could be useful later on.
+*ending
+
+*label report_back
+The journey back to the Assassin Guild's hidden lair is a mixture of anticipation and reflection, as the night's events play back in your mind. The city, despite its dark undertones, begins to stir with the early murmurs of dawn as you navigate through the labyrinthine alleys that lead to the guild's secret entrance.
+
+As you step into the clandestine halls of the guild, the familiar blend of shadows and silence welcomes you. But this serenity is short-lived, as you're soon ushered into the presence of the Guild Master, a figure shrouded in enigma and feared for the ruthless efficiency in maintaining the guild's feared reputation.
+
+*choice
+    #Report everything in detail.
+        You recount the night's events with precision, leaving no stone unturned. The Guild Master listens intently, the shadows dancing across his concealed features as you narrate your findings and encounters.
+        *set AssassinGuild_relation +10
+        *goto guild_master_response
+    #Withhold some information for personal reasons.
+        You provide a curated version of the night's events, keeping certain details close to your chest. The Guild Master seems to sense the omission but waits patiently for you to finish.
+        *set AssassinGuild_relation -10
+        *goto guild_master_response
+    #Exaggerate your achievements.
+        With a flourish, you embellish your tale, painting your actions in a heroic light. The Guild Master remains impassive, but you notice a twitch of amusement in the eyes of some guild members present.
+        *set AssassinGuild_relation -5
+        *goto guild_master_response
+
+*label guild_master_response
+The Guild Master remains silent for a long moment after you finish speaking, the room echoing with the remnants of your tale. Finally, he speaks, his voice a calm yet stern ripple through the silence.
+
+"You have done well," he states, his words measured. "But remember, the shadows are both our cloak and our blade. We thrive in the unseen, and our actions echo through the veins of Veilfall. The balance between the factions is a delicate one, and our allegiance to none is our strength."
+
+He dismisses you with a gesture, and as you step out of the room, the weight of his words sinks in. The game of shadows is a complex one, and the stakes are as high as ever.
+
+*choice
+    #Reflect on the Guild Master's words.
+        The cryptic wisdom of the Guild Master resonates within you as you ponder the delicate balance of power in Veilfall and the guild's role in it.
+        *goto reflection
+    #Discuss the mission with fellow assassins.
+        You join a small gathering of your fellow assassins, exchanging stories and insights from the night's endeavors.
+        *goto assassin_discussion
+    #Prepare for the next assignment.
+        With the night's events archived in the annals of your mind, you shift your focus to the looming horizon, preparing for the tasks that lie ahead.
+        *goto next_assignment
+
+*label reflection
+*line_break
+
+(not done) *comment ... narrative for reflecting on the mission and the guild's role ...
+*ending
+
+*label assassin_discussion
+*line_break
+
+(not done) *comment ... narrative for discussing the mission with fellow assassins ...
+*ending
+
+*label next_assignment
+*line_break
+
+(not done) *comment ... narrative for preparing for the next assignment ...
+*ending

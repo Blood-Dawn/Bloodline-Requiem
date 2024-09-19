@@ -1,0 +1,220 @@
+*title Bloodline Requiem
+*author Kheiven D'Haiti
+
+
+*scene_list
+    act1_chapter1
+*comment General Section
+*create Control 100
+*create Race ""
+*create alignment ""
+*create artifact false
+*create reputation 0
+*create has_killed_innocent false
+*create act 0
+*create chapter 0
+*create humans_turned 0
+*create wolfs_turned 0
+*create Turned false
+
+*comment factions
+*comment Variables for relationships
+*create varkyrs_relation 50
+*create lupine_relation 50
+*create forsaken_relation 50
+*create human_relation 50
+*create AssassinGuild_relation 50
+*create Night_Council_relation 0
+
+*comment Variables for tracking player’s bloodline/rank and age
+
+*create bloodline_or_rank "unknown"
+*create faction_stat "faction"
+*create rank "rank"
+*create bloodline "bloodline"
+*create age "unknown"
+
+
+*comment Varkyrs Section
+*create Bloodlust 0
+
+*comment Lupine Section
+*create rage 0
+*create venom_potency 0
+
+*comment Personal Relationships
+*create Isabella_relation 0
+*create Dante_relation 0
+*create Skylar_relation 0
+*create Lucan_relation 0
+*create Adrian_relation 0
+*create Nadia_relation 0
+*create Julian_relation 0
+*create Cassandra_relation 0
+*create Thane_relation 0
+*create Rhea_relation 0
+*create Vincent_relation 0
+*create Mira_relation 0
+*create Rurik_relation 0
+
+*comment Forsaken Section
+
+*comment Human Section
+
+
+*comment abilities for everyone
+*create unlocked_abilities ""
+
+*comment Varkyrs section
+
+*comment Commoner Abilities
+*create enhanced_strength false
+*create night_vision false
+*create rapid_healing false
+*create seduction false
+*create acute_senses false
+*create minor_hemokinesis false
+*create gloom_cloak false
+
+*comment Knight Abilities (Inherits Commoner abilities)
+*create combat_mastery false
+*create animal_command false
+*create blood_bond false
+*create shadow_step false
+
+*comment Baron/Baroness Abilities (Inherits Knight and Commoner abilities)
+*create shadow_veil false
+*create blood_alchemy false
+*create sanguine_shield false
+*create umbral_weapons false
+
+*comment Viscount/Viscountess Abilities (Inherits Baron/Baroness, Knight, and Commoner abilities)
+*create mesmerize false
+*create mist_form false
+*create vein_puppetry false
+*create nightfall_veil false
+
+*comment Count/Countess Abilities (Inherits Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities)
+*create psychic_shield false
+*create sanguine_resilience false
+*create life_leech false
+*create whisper_of_madness false
+
+*comment Marquis/Marchioness Abilities (Inherits Count/Countess, Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities)
+*create advanced_blood_bond false
+*create territorial_command false
+*create sanguine_phantasm false
+*create nether_chains false
+
+*comment Duke/Duchess Abilities (Inherits Marquis/Marchioness, Count/Countess, Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities)
+*create aura_of_majesty false
+*create eclipse false
+*create crimson_storm false
+*create shadow_dominion false
+
+*comment Archduke/Archduchess Abilities (Inherits Duke/Duchess, Marquis/Marchioness, Count/Countess, Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities)
+*create bloodstorm false
+*create veil_of_eternity false
+*create hemorrhagic_maelstrom false
+*create abyssal_gateway false
+
+*comment Imperial Abilities (Inherits Archduke/Archduchess, Duke/Duchess, Marquis/Marchioness, Count/Countess, Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities)
+*create imperial_decree false
+*create sovereign_sanctuary false
+*create bloodline_ascendancy false
+*create eclipse_descent false
+
+*comment Progenitor Abilities (Inherits all abilities from lower ranks)
+*create genesis_rebirth false
+*create celestial_dominion false
+*create primordial_sanguine_surge false
+*create cosmic_damnation false
+
+*comment Lupine section
+
+*comment Omega Variant (Both Forms) Abilities
+*create omega_lunar_infusion false
+*create omega_primal_resurgence false
+*create omega_natures_ally false
+*create omega_apex_shift false
+*create omega_moons_wrath false
+*create omega_eternal_guardian false
+
+*comment Werewolf-Only Lupine Abilities
+*create werewolf_ferocious_might false
+*create werewolf_impenetrable_fur false
+*create werewolf_battle_howl false
+*create werewolf_dominion_roar false
+*create werewolf_relentless_vigor false
+*create werewolf_warriors_command false
+
+*comment Wolf-Only Lupine Abilities
+*create wolf_agile_pursuer false
+*create wolf_stealth_prowler false
+*create wolf_packs_bond false
+*create wolf_alphas_presence false
+*create wolf_savage_bite false
+*create wolf_territorial_sense false
+
+*comment Common Lupine Skills (Applicable to all Lupines)
+*create lupine_lunar_connection false
+*create lupine_regenerative_healing false
+*create lupine_enhanced_senses false
+*create lupine_basic_shift false
+*create lupine_pack_dynamics false
+
+*comment Forsaken section
+
+
+*comment bloodline and ranks
+
+*comment Varkyrs section
+*create Noble false
+*create Commoner false
+
+*comment Lupine section
+*create Alpha false
+*create Beta false
+*create Omega false
+
+*comment Forsaken section
+*create Elite false
+*create Hybrid false
+
+
+*comment relationship menu
+*create Name ""
+*create Title ""
+*create Species ""
+*create Description ""
+
+
+
+*comment The game begins
+
+
+
+*comment Act 1 begins
+In the shadowed annals of history, where the line between myth and reality blurs, lies the tale of an ancient world, forever altered by the Millennium War. But to understand the present, one must journey back to the origins of the conflict, to a time when ancient pacts bound the fates of all.
+
+Era of the Pact (500 BW):
+The world was a place of hidden magic and untamed wilderness, where supernatural beings roamed under the gaze of the moon and the cover of night. Among them, the Varkyrs and Lupines stood paramount, their powers vast, their enmity legendary. It was the deaths of two titans—the Progenitor of the Varkyrs and the Origin Wolf of the Lupines—that quelled the storm of their conflict. In their final, earth-shattering duel, both leaders fell, their demise sending ripples through the realms of the night.
+
+In the aftermath, the surviving Varkyrs and Lupines, weary of endless strife, convened under the ancient oaks of Whisperwind Thicket. Amidst the blood-soaked leaves, they forged the Pact of the Midnight Sun, a solemn vow to uphold the balance and conceal their existence from the world of men. This uneasy peace was sealed at Mirror Lake, where the waters reflected the promise of a new dawn.
+
+Millennium War (1 BW - 0 AW):
+Yet, peace is a fragile thing. The threads of trust unraveled when a splinter faction of Varkyrs, hungering for dominion, desecrated the sacred site of Mirror Lake. Their betrayal ignited the flames of the Millennium War, a conflict so vast it consumed the known world in shadow and blood.
+
+The war raged across centuries, its battles echoing through the deepest forests and the oldest cities. The Varkyrs, with their aristocratic might and dark magic, sought to ensnare the world in their web of influence. The Lupines, bound by the moon's call and the fierceness of their packs, fought for freedom and the sanctity of their lands.
+
+Post-War Era (250 AW - 1000 AW):
+As the war waned, the world emerged scarred but reborn. The Forsaken, children of both Varkyr and Lupine, rose from the ashes of conflict. Under the banner of Caius the Unbound, they carved a path for themselves, a testament to the possibility of unity amidst diversity.
+
+Era of Shadows (1000 AW - 1300 AW):
+The world healed, and the supernatural factions, now veiled in secrecy, wove their influence into the tapestry of human society. Veilfall, a city born of ancient magic and modern ambition, became the epicenter of this hidden world. Here, the Varkyrs held court in shadowed halls, the Lupines roamed the wilds, and the Forsaken sought their place among the stars.
+
+Present Era (1500 AW):
+Now, in the year 1500 AW, the fragile peace holds, maintained by the silent guardians of the night. But whispers of unrest stir, and the echoes of the past beckon brave souls to forge their destiny. In the heart of Veilfall, where history and the present collide, your journey begins—a requiem for bloodlines and a quest for redemption in a world that walks the fine line between darkness and light.
+
+
+*finish Begin
