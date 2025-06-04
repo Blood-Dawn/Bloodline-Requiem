@@ -26,6 +26,6 @@ This project is licensed under the [MIT License](LICENSE.md) - see the LICENSE f
 For more information, please contact [ME](bloodawn666@gmail.com).
 
 ## Acknowledgments
-- Thanks to [DashingDon](https://dashingdon.com) for hosting interactive fiction games.
+- Thanks to [cogdemos](https://cogdemos.ink) for hosting interactive fiction games.
 - Shoutout to all players and testers who have provided valuable feedback.
 
