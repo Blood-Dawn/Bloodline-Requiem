@@ -116,8 +116,8 @@ Under the pale moonlight, you journey to the Lupine's territory, the ominous Whi
 
 *label lupine_encounter_growl
 The alpha wolf, with his black fur shimmering in the moonlight, approaches you. His eyes scrutinize you for a moment before he nudges his head, acknowledging your status as an Omega - the lowest rank within their hierarchy but a part of the pack nonetheless. The rest of the wolves, with their fur of brown, gray, and the occasional white, encircle you, their forms shifting into that of humans as they welcome you into their realm.
-*set rank "Omega"
-*set faction_stat rank
+*set lupine_rank "Omega"
+*set faction_stat lupine_rank
 *set bloodline_or_rank "Rank"
 *goto assert_dominance
 
@@ -146,8 +146,8 @@ As you brandish your weapon, ready to defend yourself, the tension among the wol
 
     #Perform a claw attack to assert dominance.
         You retract your weapon and reveal your claws, a characteristic you've acquired from your past encounters with the supernatural. With a swift motion, you swipe at the air, a demonstration of both control and power. The lupines' reactions are mixed; some show a spark of respect, while others growl, still on edge.
-        *set rank "Omega"
-        *set faction_stat rank
+        *set lupine_rank "Omega"
+        *set faction_stat lupine_rank
         *set bloodline_or_rank "Rank"
         *goto assert_dominance
 *label disorient_scene
