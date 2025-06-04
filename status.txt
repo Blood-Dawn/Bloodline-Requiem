@@ -1,34 +1,34 @@
 *label status
 *if (alignment = "varkyrs")
     *if (bloodline = "noble")
-        *set faction_stat  Royal vampire
+        *set faction_stat "Royal vampire"
         *return
     *elseif (bloodline = "commoner")
-        *set faction_stat  Common vampire
+        *set faction_stat "Common vampire"
         *return
     *else
-        *set faction_stat " Human"
+        *set faction_stat "Human"
         *return
     
 *if (alignment = "lupine")
-    *if (alpha)
+    *if (Alpha)
         *set faction_stat "Alpha"
         *return
-    *elseif (beta)
+    *elseif (Beta)
         *set faction_stat "Beta"
         *return
-    *elseif (omega)
+    *elseif (Omega)
         *set faction_stat "Omega"
         *return
     *else
         *set faction_stat "Human"
-    *return
+        *return
 
 *if (alignment = "forsaken")
-    *if (elite)
+    *if (Elite)
         *set faction_stat "Elite"
         *return
-    *elseif (hybrid)
+    *elseif (Hybrid)
         *set faction_stat "hybrid"
         *return
     *else
