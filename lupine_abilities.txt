@@ -1,6 +1,6 @@
 *label lupine_abilities
 *comment Check the player's Lupine rank and present corresponding abilities
-*if (lupine_rank = "Beta")
+*if (rank = "Beta")
     *choice
         #Moon's Fury
             *set moons_fury true
@@ -11,7 +11,7 @@
             *set unlocked_abilities &" Pack's Howl;"
             *return
 
-*elseif (lupine_rank = "Alpha")
+*elseif (rank = "Alpha")
     *choice
         #Alpha's Roar
             *set alphas_roar true
