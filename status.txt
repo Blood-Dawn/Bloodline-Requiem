@@ -11,25 +11,16 @@
         *return
     
 *if (alignment = "lupine")
-    *if (lupine_rank = "Alpha")
-        *set faction_stat "Alpha"
-        *return
-    *elseif (lupine_rank = "Beta")
-        *set faction_stat "Beta"
-        *return
-    *elseif (lupine_rank = "Omega")
-        *set faction_stat "Omega"
+    *if (rank != "rank")
+        *set faction_stat rank
         *return
     *else
         *set faction_stat "Human"
         *return
 
 *if (alignment = "forsaken")
-    *if (Elite)
-        *set faction_stat "Elite"
-        *return
-    *elseif (Hybrid)
-        *set faction_stat "hybrid"
+    *if (rank != "rank")
+        *set faction_stat rank
         *return
     *else
         *set faction_stat "Human"

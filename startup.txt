@@ -174,13 +174,9 @@
 *create Commoner false
 
 *comment Lupine section
-*create Alpha false
-*create Beta false
-*create Omega false
+*comment Lupine ranks handled via the `rank` string
 
-*comment Forsaken section
-*create Elite false
-*create Hybrid false
+*comment Forsaken ranks handled via the `rank` string
 
 
 *comment relationship menu
