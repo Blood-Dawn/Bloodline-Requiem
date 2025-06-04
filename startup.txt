@@ -36,6 +36,7 @@
 *create bloodline_or_rank "unknown"
 *create faction_stat "faction"
 *create rank "rank"
+*create lupine_rank "rank"
 *create bloodline "bloodline"
 *create age "unknown"
 
@@ -178,13 +179,9 @@
 *create Commoner false
 
 *comment Lupine section
-*create Alpha false
-*create Beta false
-*create Omega false
+*comment Lupine ranks handled via the `rank` string
 
-*comment Forsaken section
-*create Elite false
-*create Hybrid false
+*comment Forsaken ranks handled via the `rank` string
 
 
 *comment relationship menu
@@ -221,5 +218,4 @@ The world healed, and the supernatural factions, now veiled in secrecy, wove the
 Present Era (1500 AW):
 Now, in the year 1500 AW, the fragile peace holds, maintained by the silent guardians of the night. But whispers of unrest stir, and the echoes of the past beckon brave souls to forge their destiny. In the heart of Veilfall, where history and the present collide, your journey begins—a requiem for bloodlines and a quest for redemption in a world that walks the fine line between darkness and light.
 
-
-*finish Begin
+*finish
