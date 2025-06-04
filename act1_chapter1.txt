@@ -20,13 +20,13 @@ The parchment reads:
 
 *choice
     #Investigate the enigmatic Forsaken.
-        *set alignment "Forsaken"
+        *set alignment "forsaken"
         *goto forsaken_route
     #Confront a pack of Lupines.
-        *set alignment "Lupine"
+        *set alignment "lupine"
         *goto lupine_route
     #Eliminate a rogue Varkyr.
-        *set alignment "Varkyr"
+        *set alignment "varkyrs"
         *goto varkyrs_route
 
 *label varkyrs_route
@@ -57,7 +57,7 @@ The trail culminates in a forgotten part of the city, where the veil between the
 *choice
     #Warn the vampire about the traces left behind.
         You speak words of warning, of the hunters that lurk in the shadows. The vampire studies you, his gaze piercing the veil of mortality as he whispers words of the ancient curse. The world around you shatters, reborn in the blood-red hue of the Varkyr's reality.
-        *set alignment "Varkyr"
+        *set alignment "varkyrs"
         *set varkyrs_relation +5
         *goto varkyr_alliance
     #Engage the vampire in combat.
