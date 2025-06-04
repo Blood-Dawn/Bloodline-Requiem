@@ -11,13 +11,13 @@
         *return
     
 *if (alignment = "lupine")
-    *if (Alpha)
+    *if (lupine_rank = "Alpha")
         *set faction_stat "Alpha"
         *return
-    *elseif (Beta)
+    *elseif (lupine_rank = "Beta")
         *set faction_stat "Beta"
         *return
-    *elseif (Omega)
+    *elseif (lupine_rank = "Omega")
         *set faction_stat "Omega"
         *return
     *else

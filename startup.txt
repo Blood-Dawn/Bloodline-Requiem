@@ -31,6 +31,7 @@
 *create bloodline_or_rank "unknown"
 *create faction_stat "faction"
 *create rank "rank"
+*create lupine_rank "rank"
 *create bloodline "bloodline"
 *create age "unknown"
 
