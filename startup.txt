@@ -4,6 +4,11 @@
 
 *scene_list
     act1_chapter1
+    lupine_abilities
+    NewGame_plus
+    Ending_Scenarios
+    choicescript_stats
+    status
 *comment General Section
 *create Control 100
 *create Race ""
