@@ -31,11 +31,10 @@
 *create AssassinGuild_relation 50
 *create Night_Council_relation 0
 
-*comment Variables for tracking player’s bloodline/rank and age
+*comment Variables for tracking player’s bloodline, lupine rank, and age
 
 *create bloodline_or_rank "unknown"
 *create faction_stat "faction"
-*create rank "rank"
 *create lupine_rank "rank"
 *create bloodline "bloodline"
 *create age "unknown"
@@ -179,9 +178,9 @@
 *create Commoner false
 
 *comment Lupine section
-*comment Lupine ranks handled via the `rank` string
+*comment Lupine ranks handled via the `lupine_rank` string
 
-*comment Forsaken ranks handled via the `rank` string
+*comment Forsaken ranks handled via a separate rank string
 
 
 *comment relationship menu
