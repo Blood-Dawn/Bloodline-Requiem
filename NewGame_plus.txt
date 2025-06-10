@@ -1,0 +1,4 @@
+*comment Placeholder scene for New Game Plus mode
+*label newgame_plus
+This content is not yet implemented. More adventures await in a future update.
+*ending
