@@ -9,7 +9,7 @@ Bloodline Requiem is an interactive fiction game developed using ChoiceScript. I
 - Choices that significantly impact the story’s outcome.
 
 ## How to Play
-1. To play the online version, Visit the game's webpage [Bloodline Requiem Demo]([link-to-demo](https://dashingdon.com/go/14808)).
+1. To play the online version, Visit the game's webpage [Bloodline Requiem Demo](https://cogdemos.ink/games/bloodline-requiem).
 2. To play locally, clone this repository: `git clone https://github.com/yourusername/Bloodline-Requiem.git`
 3. Navigate into the project directory and open the `Bloodline Requiem.html` file in a browser to start the game.
 
