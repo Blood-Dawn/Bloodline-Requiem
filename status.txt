@@ -11,17 +11,13 @@
         *return
     
 *if (alignment = "lupine")
-    *if (rank != "rank")
-        *set faction_stat rank
+    *if (lupine_rank != "rank")
+        *set faction_stat lupine_rank
         *return
     *else
         *set faction_stat "Human"
         *return
 
 *if (alignment = "forsaken")
-    *if (rank != "rank")
-        *set faction_stat rank
-        *return
-    *else
-        *set faction_stat "Human"
-        *return
+    *set faction_stat "Human"
+    *return
