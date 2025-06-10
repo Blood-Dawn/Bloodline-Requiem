@@ -1,0 +1,4 @@
+*comment Placeholder for future ending scenarios
+*label endings
+The epic conclusion of your journey will be revealed in a later release.
+*ending
