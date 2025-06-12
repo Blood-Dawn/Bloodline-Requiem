@@ -8,6 +8,8 @@
     act1_varkyr
     act1_forsaken_ng+
     hub_city
+    act2_common_hub
+    mission_board
     lupine_abilities
     NewGame_plus
     Ending_Scenarios
@@ -36,6 +38,8 @@
 *create human_relation 50
 *create AssassinGuild_relation 50
 *create Night_Council_relation 0
+*create war_with_lupine false
+*create war_with_varkyrs false
 
 *comment Variables for tracking player’s bloodline, lupine rank, and age
 
