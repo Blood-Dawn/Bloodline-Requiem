@@ -143,6 +143,7 @@ As you brandish your weapon, ready to defend yourself, the tension among the wol
 
     #Tell them why you are here.
         (not done) *comment ... rest of the narrative for explaining mission ...
+        *goto explain_mission
 
     #Perform a claw attack to assert dominance.
         You retract your weapon and reveal your claws, a characteristic you've acquired from your past encounters with the supernatural. With a swift motion, you swipe at the air, a demonstration of both control and power. The lupines' reactions are mixed; some show a spark of respect, while others growl, still on edge.
