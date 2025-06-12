@@ -1,0 +1,138 @@
+Crimson Spire Initiation
+In the subterranean courts beneath Veilfall, the Crimson Spire stands as the beating heart of Varkyr tradition. Flickering torches cast long shadows across stone walls etched with centuries of blood rites. Tonight you are summoned here by the Matriarch herself, a regal figure whose presence silences even the most defiant fledgling. The assembled initiates kneel before her obsidian throne while the scent of fresh vitae saturates the air. Rumor whispers that those who fail these trials are never seen again, their essence feeding the Spire's crimson glow. Before you lies a choice that will define your standing among the undead aristocracy.
+*choice
+    #Submit to the Matriarch's decree, swearing absolute loyalty.
+        You lower your gaze and feel the chill kiss of the Matriarch's claws upon your brow. Her voice curls around you like mist, binding you to the ancient edicts of the Spire. In obedience you sense power awaiting, though at the cost of your free will.
+        *set alignment "varkyrs"
+        *goto varkyrs_route
+    #Challenge tradition and test the limits of this initiation.
+        Defiance flares in your veins as you meet the Matriarch's gaze. A murmur ripples through the court—few dare question her, yet fascination flickers in those predatory eyes. You vow to forge your own path, even if it means courting exile or worse.
+        *set alignment "varkyrs"
+        *goto varkyrs_route
+*label varkyrs_route
+*comment TODO: Varkyr extraction – T-20
+As the night shrouds Veilfall in a veil of mystery, you embark on the trail of the elusive vampire who has been haunting the city. The streets, once bustling, now lay silent under the moon's pale gaze. Your senses heighten as you delve into the shadows, the realm of the Varkyrs.
+
+*choice
+    #Track the vampire using scent.
+        The night air carries tales from the unseen world. You follow the subtle, iron-rich scent of blood, which leads you through winding alleys and darkened pathways.
+        *set faction_stat  "Royal Vampire"
+        *set bloodline_or_rank "Bloodline"
+        *goto varkyrs_confrontation
+    #Seek eyewitnesses who have seen the vampire.
+        You delve into the whispers of the night, questioning the few souls that dare to tread in the darkness, gathering fragments of a face haunting in its beauty yet fearsome in its pale coldness.
+        *goto varkyrs_confrontation
+    #Investigate recent killings for clues.
+        The ominous silence of the city is broken only by the cries of sorrow. You follow the trail of death, each scene telling a story of fear and desperation, edging you closer to the vampire.
+        *goto varkyrs_confrontation
+    #Utilize a network of informants to gather information.
+        You delve into the underbelly of Veilfall, seeking those who dwell in shadows, their eyes and ears extending to the corners where light fears to tread. Piece by piece, a picture of the vampire's haunting presence forms.
+        *goto varkyrs_confrontation
+    #Set a trap using yourself as bait.
+        As night deepens, you venture into the heart of darkness, offering yourself as bait to the creature of the night, each heartbeat a call to the unseen.
+        *goto varkyrs_confrontation
+
+*label varkyrs_confrontation
+The trail culminates in a forgotten part of the city, where the veil between the seen and unseen seems thin. There, amidst the shadows, the vampire emerges, his eyes a void yet filled with the ages he's witnessed.
+
+*choice
+    #Warn the vampire about the traces left behind.
+        You speak words of warning, of the hunters that lurk in the shadows. The vampire studies you, his gaze piercing the veil of mortality as he whispers words of the ancient curse. The world around you shatters, reborn in the blood-red hue of the Varkyr's reality.
+        *set alignment "varkyrs"
+        *set varkyrs_relation +5
+        *goto varkyr_alliance
+    #Engage the vampire in combat.
+        With a swift motion, you unsheathe your weapon, the steel singing the song of confrontation. The vampire, with a grace born of ages, engages you in a dance of death and survival.
+        *goto vamp_battle
+    #Follow the vampire discreetly.
+        You meld with the shadows, your every step a whisper as you follow the vampire through the veiled pathways of Veilfall, each moment a step deeper into the world of the unknown.
+        *goto vamp_follow
+    #Offer the vampire assistance in covering his tracks.
+        You offer a hand in shadows, your words weaving the essence of stealth and caution. The vampire, intrigued, nods, the night bearing witness to an unexpected alliance.
+        *goto varkyr_alliance
+    #Attempt to gather more information discreetly before acting.
+        You bide your time, your eyes and ears attuned to the world of the unseen, gathering the threads of information that may unveil the true narrative of the vampire's tale.
+        *goto vamp_investigation
+
+*label varkyr_alliance
+The vampire's lips curl into a wry smile as you speak of a common enemy. He
+introduces himself as Lord Vaelis, one of the Crimson Spire's wandering
+agents. His words drip with old-world charm as he proposes a pact: together you
+could unsettle those who hunt his kin while elevating your own reputation in
+Varkyr society. The alley seems to close in, muffling the distant sounds of
+Veilfall as he awaits your answer. A sense of dark opportunity hangs in the air
+along with the faint smell of iron and incense. Vaelis's eyes never leave you,
+measuring whether you are merely a pawn or a potential ally of worth.
+*choice
+    #Accept his offer and pledge cooperation.
+        The prospect of an influential patron is tempting. You clasp forearms
+        with Vaelis, sealing a tentative alliance that could unlock the inner
+        circles of the Crimson Spire.
+        *goto varkyr_end
+    #Refuse politely and maintain your independence.
+        Trust does not come easily. You decline, stating your intention to hunt
+        alone until his motives become clear.
+        *goto varkyr_end
+
+*label vamp_battle
+Steel flashes and fangs gleam as the clash erupts. Vaelis moves with
+unnerving grace, every strike meant to test your resolve rather than kill. The
+two of you trade blows through deserted streets until the echo of battle sets
+dogs barking in the distance. Sweat beads on your brow while the vampire shows
+little sign of fatigue, yet you sense he respects your ferocity. When the moment
+comes to end it, he withdraws slightly, leaving you with the choice to spill his
+ancient blood or stay your hand. The future of your relationship hangs on this
+decision.
+*choice
+    #Spare him and demand a parley.
+        You lower your weapon, signaling a willingness to talk. Vaelis nods in
+        appreciation and offers a grudging truce in return for information about
+        his enemies.
+        *goto varkyr_end
+    #Strike to finish him off.
+        With a decisive lunge you aim for his heart, refusing to be swayed by
+        charisma or history.
+        *goto varkyr_end
+
+*label vamp_follow
+You melt into the night, tailing Vaelis at a cautious distance. He weaves
+through narrow alleyways and over moonlit rooftops until the city opens upon a
+gothic courtyard hidden from mundane eyes. Statues of forgotten nobles watch as
+he exchanges coded words with cloaked figures. The glimpse you catch hints at a
+network far deeper than a lone predator. Before you can gather more, Vaelis
+senses your presence and turns, amusement flickering across his features. He
+appears less angry than intrigued that you managed to keep up with him.
+*choice
+    #Reveal yourself and request a formal audience.
+        Stepping from the shadows, you express your desire to learn more about
+        the Crimson Spire's reach. Vaelis considers for a moment before agreeing
+        to discuss matters further.
+        *goto varkyr_end
+    #Vanish before he can react, keeping your secrets safe.
+        Rather than risk confrontation, you fade back into the maze of streets,
+        content with the knowledge you've gleaned for now.
+        *goto varkyr_end
+
+*label vamp_investigation
+The clues you gather lead to hidden tombs beneath the oldest quarter of
+Veilfall. There you pore over faded murals depicting the Crimson Spire's rise
+and the pacts forged with mortals long ago. Cryptic inscriptions suggest the
+Matriarch now maneuvers to claim absolute dominion. As your torchlight flickers
+across stone coffins, you weigh how this knowledge might tilt the balance of
+power—should you aid her ascent or expose her schemes to rival factions?
+Even the dust seems to vibrate with the whisper of old oaths, and every
+inscription pulses with ancient magic, hinting at sacrifices yet to come.
+*choice
+    #Bring these revelations to the Assassin Guild.
+        Loyalty to the guild compels you. Armed with the Matriarch's secrets,
+        you head back to report, ready to trade information for future support.
+        *goto varkyr_end
+    #Confront Vaelis with what you've learned.
+        Determined to understand his role in this conspiracy, you seek him out
+        once more, holding the evidence close until he earns your trust.
+        *goto varkyr_end
+
+*label varkyr_end
+*set chapter 2
+*finish
+

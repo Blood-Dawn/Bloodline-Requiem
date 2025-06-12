@@ -1,0 +1,24 @@
+The city of Veilfall bustles around you, yet unseen tensions lurk beneath its cobbled streets. Merchants peddle wares by lamplight while whispers of supernatural intrigue echo through winding alleys. This crossroads between factions serves as the perfect hub for your next moves.
+
+*label entry
+*if (alignment = "lupine")
+    The pack has sent an envoy from Whispering Pines, their arrival heralded by distant howls. The emissary speaks of uneasy truces and offers you guidance through their territory should you choose to visit.
+    *choice
+        #Follow the envoy into the forest outskirts.
+            With the envoy leading, you head toward the moonlit woods.
+            *finish
+        #Decline for now and explore the city further.
+            The bustling streets still hold secrets worth uncovering.
+            *finish
+*elseif (alignment = "varkyrs")
+    From the towering Crimson Spire comes a pale messenger, bidding you audience with the Matriarch. Rumors hint that she seeks to test your loyalty in the nights ahead.
+    *choice
+        #Accept the invitation to the Spire.
+            You follow the envoy toward the shadowed citadel, eager to prove yourself.
+            *finish
+        #Politely refuse, keeping your options open.
+            You remain in the city to gather your thoughts—and allies.
+            *finish
+*else
+    You wander the streets uncertain of your allegiance, feeling the pull of warring powers yet committing to none.
+    *finish
