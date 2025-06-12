@@ -11,14 +11,18 @@ The Chancellor rises, voice echoing off the vaulted ceiling. "Veilfall stands at
     The Lupine envoys bow their heads in approval, acknowledging your loyalty to their cause.
     *set war_with_varkyrs true
     *set war_with_lupine false
+    *goto council_aftermath
 *elseif (varkyrs_relation > lupine_relation)
     The Varkyr nobles flash razor smiles, sensing your favor rests with them.
     *set war_with_lupine true
     *set war_with_varkyrs false
+    *goto council_aftermath
 *else
     The council notes your balanced stance, awaiting a decisive push from you before taking sides.
     *set war_with_lupine false
     *set war_with_varkyrs false
+    *goto council_aftermath
 
+*label council_aftermath
 With the council's decree ringing in your ears, you are dismissed to prepare for what lies ahead.
 *finish

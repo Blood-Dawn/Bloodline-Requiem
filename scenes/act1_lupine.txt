@@ -82,7 +82,6 @@ The clash is immediate. Claws flash and teeth snap as you and the surrounding wo
 
 *label explain_mission
 *line_break
-*label explain_mission
 Taking a steady breath, you recount your charge from the Assassin Guild to investigate growing unrest among supernatural factions. You emphasize that your motives are to maintain balance, not to undermine lupine sovereignty. The alpha's eyes narrow with suspicion while younger wolves exchange whispers. Your honesty seems to resonate with some, yet others bristle at the mention of outsiders meddling in their affairs. You offer them a choice: work with you to uncover the truth, or keep their distance and risk facing the unknown alone.
 *choice
     #Invite them to form a temporary alliance.
