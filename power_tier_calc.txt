@@ -1,0 +1,4 @@
+*label update_magic
+*if (latent_magic)
+    *set power_core (will / 15)
+*return

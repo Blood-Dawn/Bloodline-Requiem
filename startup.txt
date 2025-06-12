@@ -3,12 +3,13 @@
 
 
 *scene_list
-    act1_chapter1
+    prologue
+    act1_human
     act1_lupine
     act1_varkyr
     act1_forsaken_ng+
-    hub_city
     act2_common_hub
+    hub_city
     mission_board
     lupine_abilities
     NewGame_plus
@@ -19,8 +20,20 @@
 *create Control 100
 *create Race ""
 *create alignment ""
+*create legion_rank ""
 *create artifact false
 *create reputation 0
+*create strength 0
+*create agility 0
+*create cunning 0
+*create will 0
+*create power_core 0
+*create latent_magic false
+*create vale_relation 0
+*create human_rep 0
+*create varkyr_rep 0
+*create lupine_rep 0
+*gosub_scene power_tier_calc update_magic
 *create has_killed_innocent false
 *create act 0
 *create chapter 0

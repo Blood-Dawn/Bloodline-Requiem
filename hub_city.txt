@@ -19,6 +19,9 @@ The city of Veilfall bustles around you, yet unseen tensions lurk beneath its co
         #Politely refuse, keeping your options open.
             You remain in the city to gather your thoughts—and allies.
             *finish
+*elseif (alignment = "human")
+    High-Inquisitor’s aide greets you, offering access to the mission_board.
+    *goto_scene mission_board start
 *else
     You wander the streets uncertain of your allegiance, feeling the pull of warring powers yet committing to none.
     *finish
