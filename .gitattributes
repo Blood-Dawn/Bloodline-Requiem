@@ -1,23 +1,12 @@
-# Text files - always LF to avoid Windows CRLF fights
-*.txt          text eol=lf
-*.patch        text eol=lf
-*.md           text eol=lf
-*.json         text eol=lf
-*.js           text eol=lf
-*.css          text eol=lf
-*.html         text eol=lf
+# Text files – LF
+*.txt       text eol=lf
+*.md        text eol=lf
+*.patch     text eol=lf
+*.json      text eol=lf
+# Windows scripts
+*.bat       text eol=crlf
+# Binary assets
+*.{png,jpg,jpeg,ogg} binary -merge
+# GitHub linguist
+Assets/*    linguist-vendored
 
-# Windows-specific scripts that need CRLF
-*.bat          text eol=crlf
-
-# Images / binary assets - no merge, no diff
-*.png          binary -merge
-*.jpg          binary -merge
-*.jpeg         binary -merge
-*.ogg          binary -merge
-
-# Optional: treat .choice as plain text if we add custom files
-*.choice       text diff=default
-
-# GitHub linguist - ignore asset folder in language breakdown
-Assets/*       linguist-vendored

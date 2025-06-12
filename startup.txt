@@ -4,6 +4,7 @@
 
 *scene_list
     act1_chapter1
+    act1_lupine
     lupine_abilities
     NewGame_plus
     Ending_Scenarios
