@@ -1,4 +1,5 @@
 *comment Placeholder scene for New Game Plus mode
 *label newgame_plus
+*set hybrid_start true
 This content is not yet implemented. More adventures await in a future update.
 *ending
