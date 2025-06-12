@@ -5,6 +5,8 @@
 *scene_list
     act1_chapter1
     act1_lupine
+    act1_varkyr
+    hub_city
     lupine_abilities
     NewGame_plus
     Ending_Scenarios

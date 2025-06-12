@@ -27,78 +27,9 @@ The parchment reads:
         *goto_scene act1_lupine lupine_route
     #Eliminate a rogue Varkyr.
         *set alignment "varkyrs"
-        *goto varkyrs_route
+        *goto_scene act1_varkyr varkyrs_route
 
-*label varkyrs_route
-*comment TODO: Varkyr extraction – T-20
-As the night shrouds Veilfall in a veil of mystery, you embark on the trail of the elusive vampire who has been haunting the city. The streets, once bustling, now lay silent under the moon's pale gaze. Your senses heighten as you delve into the shadows, the realm of the Varkyrs.
-
-*choice
-    #Track the vampire using scent.
-        The night air carries tales from the unseen world. You follow the subtle, iron-rich scent of blood, which leads you through winding alleys and darkened pathways.
-        *set faction_stat  "Royal Vampire"
-        *set bloodline_or_rank "Bloodline"
-        *goto varkyrs_confrontation
-    #Seek eyewitnesses who have seen the vampire.
-        You delve into the whispers of the night, questioning the few souls that dare to tread in the darkness, gathering fragments of a face haunting in its beauty yet fearsome in its pale coldness.
-        *goto varkyrs_confrontation
-    #Investigate recent killings for clues.
-        The ominous silence of the city is broken only by the cries of sorrow. You follow the trail of death, each scene telling a story of fear and desperation, edging you closer to the vampire.
-        *goto varkyrs_confrontation
-    #Utilize a network of informants to gather information.
-        You delve into the underbelly of Veilfall, seeking those who dwell in shadows, their eyes and ears extending to the corners where light fears to tread. Piece by piece, a picture of the vampire's haunting presence forms.
-        *goto varkyrs_confrontation
-    #Set a trap using yourself as bait.
-        As night deepens, you venture into the heart of darkness, offering yourself as bait to the creature of the night, each heartbeat a call to the unseen.
-        *goto varkyrs_confrontation
-
-*label varkyrs_confrontation
-The trail culminates in a forgotten part of the city, where the veil between the seen and unseen seems thin. There, amidst the shadows, the vampire emerges, his eyes a void yet filled with the ages he's witnessed.
-
-*choice
-    #Warn the vampire about the traces left behind.
-        You speak words of warning, of the hunters that lurk in the shadows. The vampire studies you, his gaze piercing the veil of mortality as he whispers words of the ancient curse. The world around you shatters, reborn in the blood-red hue of the Varkyr's reality.
-        *set alignment "varkyrs"
-        *set varkyrs_relation +5
-        *goto varkyr_alliance
-    #Engage the vampire in combat.
-        With a swift motion, you unsheathe your weapon, the steel singing the song of confrontation. The vampire, with a grace born of ages, engages you in a dance of death and survival.
-        *goto vamp_battle
-    #Follow the vampire discreetly.
-        You meld with the shadows, your every step a whisper as you follow the vampire through the veiled pathways of Veilfall, each moment a step deeper into the world of the unknown.
-        *goto vamp_follow
-    #Offer the vampire assistance in covering his tracks.
-        You offer a hand in shadows, your words weaving the essence of stealth and caution. The vampire, intrigued, nods, the night bearing witness to an unexpected alliance.
-        *goto varkyr_alliance
-    #Attempt to gather more information discreetly before acting.
-        You bide your time, your eyes and ears attuned to the world of the unseen, gathering the threads of information that may unveil the true narrative of the vampire's tale.
-        *goto vamp_investigation
-
-*label varkyr_alliance
-*line_break
-
-(not done) *comment ... narrative for forming an alliance with the Varkyr ...
-*ending
-
-*label vamp_battle
-*line_break
-
-(not done) *comment ... narrative for engaging in combat with the vampire ...
-*ending
-
-*label vamp_follow
-*line_break
-
-(not done) *comment ... narrative for following the vampire discreetly ...
-*ending
-
-*label vamp_investigation
-*line_break
-
-(not done) *comment ... narrative for investigating further before making a decision ...
-*ending
-
-
+*comment TODO: Forsaken extraction
 *label forsaken_route
 In the shadows of the city, you search for the mysterious Forsaken. In the distance, you see a poster with an encrypted message.
 
