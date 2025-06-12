@@ -6,6 +6,7 @@
     act1_chapter1
     act1_lupine
     act1_varkyr
+    act1_forsaken_ng+
     hub_city
     lupine_abilities
     NewGame_plus
@@ -24,6 +25,8 @@
 *create humans_turned 0
 *create wolfs_turned 0
 *create Turned false
+*create form_mod 0
+*create hybrid_start false
 
 *comment factions
 *comment Variables for relationships

@@ -1,0 +1,22 @@
+The catacombs beneath Veilfall swallow all sound, their narrow passages thick with the scent of damp stone and lingering death. Flickering torchlight reveals ancient murals of forgotten rites, while loose bones crunch beneath your boots. Whispers seem to seep from every crevice, echoing the tragedies of those entombed here. This secret path is known only to the Forsaken, rumored to be the birthplace of powers that defy both vampiric and lupine lineage. As you descend, a chill settles in your bones, and the air grows heavier with every step.
+
+Long corridors twist and turn, leading you deeper into darkness. Shadows dance across broken sarcophagi, painting stories of betrayal upon cracked marble. You recall tales of warriors and mages who sought unholy pacts in these depths, their spirits now restless guardians of forbidden knowledge. Somewhere within these winding halls lies an altar said to unlock the dormant potential of any who dare approach it. Many have tried and never returned, their screams lost in the labyrinth of stone.
+
+A distant rumble hints at tunnels collapsing or perhaps ancient mechanisms stirring to life. The walls breathe with spectral energy, pulsing in time with your heartbeat. Every sense warns you to turn back, yet curiosity drives you onward. If the legends are true, the catacombs harbor secrets that could shift the balance of power within Veilfall. The path ahead forks into darkness, leaving you to choose how best to uncover what the Forsaken guard so closely.
+
+*choice
+    #Gather scattered bones into a ritual circle.
+        You arrange the remnants with care, feeling a surge of power rise from the ground.
+        *goto start_forsaken
+    #Search for hidden runes along the walls.
+        Fingers tracing dust-laden stone, you uncover glyphs that glow faintly at your touch.
+        *goto start_forsaken
+    #Leave the dead undisturbed and press deeper.
+        Respecting the silence of the tomb, you push forward with silent determination.
+        *goto start_forsaken
+
+*label start_forsaken
+*set alignment "forsaken"
+*set form_mod +4
+*set chapter 2
+*finish
