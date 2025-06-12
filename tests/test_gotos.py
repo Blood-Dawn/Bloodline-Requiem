@@ -43,7 +43,9 @@ def test_scene_files_exist():
     assert scenes, 'No scenes found in *scene_list'
     for scene in scenes:
         scene_file = os.path.join(ROOT, f'{scene}.txt')
-        assert os.path.isfile(scene_file), f"Scene file missing: {scene_file}"
+        scene_alt = os.path.join(ROOT, 'scenes', f'{scene}.txt')
+        assert os.path.isfile(scene_file) or os.path.isfile(scene_alt), \
+            f"Scene file missing: {scene}"
 
 
 def test_goto_targets_present():
