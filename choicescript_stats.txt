@@ -5,11 +5,14 @@
 	text act Act
 	text chapter Chapter
 	text alignment alignment 
-	text bloodline_or_rank ${faction_stat}
-	text age Age
-	percent varkyrs_relation Varkyrs Relation
-	percent lupine_relation Lupine Relation
-	percent forsaken_relation Forsaken Relation
+        text bloodline_or_rank ${faction_stat}
+        text age Age
+        percent varkyr_rep Varkyr Rep
+        percent lupine_rep Lupine Rep
+        percent human_rep Human Rep
+        percent varkyrs_relation Varkyrs Relation
+        percent lupine_relation Lupine Relation
+        percent forsaken_relation Forsaken Relation
 *line_break
 
 *comment Section for supernatural abilities and control (if applicable)

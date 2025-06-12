@@ -1,0 +1,118 @@
+*comment Act 1: Unveiling Shadows
+*comment Chapter 1
+
+*label introduction
+*set act 1
+*set chapter 1
+*image https://i.imgur.com/vHxUAEN.png
+
+Now, centuries later, you find yourself in the heart of Veilfall, a skilled assassin taking requests from the elusive Assassin Guild. Your reputation for getting the job done, no matter the complexity, precedes you. Today, a new assignment lands on your table, a choice that could unveil the deep-seated mysteries of Veilfall, or thrust you into the heart of the ancient conflict brewing afresh.
+
+
+The parchment reads:
+"Three tasks lay before you, choose wisely for each holds a key to the unfolding destiny of Veilfall.
+
+1. Investigate the enigmatic Forsaken, their motives unknown, their allegiance a mystery.
+
+2. Confront a pack of Lupines, their bitterness rooted in betrayal, their plans veiled in secrecy.
+
+3. Eliminate a rogue Varkyr, whose bloodlust threatens the uneasy truce with the humans of Veilfall."
+
+*choice
+    #Investigate the enigmatic Forsaken.
+        *set alignment "forsaken"
+        *goto forsaken_route
+    #Confront a pack of Lupines.
+        *set alignment "lupine"
+        *goto_scene act1_lupine lupine_route
+    #Eliminate a rogue Varkyr.
+        *set alignment "varkyrs"
+        *goto_scene act1_varkyr varkyrs_route
+
+*comment TODO: Forsaken extraction
+*label forsaken_route
+In the shadows of the city, you search for the mysterious Forsaken. In the distance, you see a poster with an encrypted message.
+
+*choice
+    #Decipher message
+        With your experience researching this faction, you decipher the message, and it reads, [i] come to the underground tunnel at 123 street to join.[/i]
+        *goto tunnel_entrance
+*label tunnel_entrance
+You navigate through the twisted alleys of Veilfall until you reach the underground tunnel at 123 street. The eerie silence as you descend into the darkness sends a chill down your spine. The Forsaken's world is one veiled in shadows and mystery, an underground society that thrives in the hidden corners of Veilfall. You tread cautiously, aware that danger lurks with every step in this forsaken realm.
+
+As you delve deeper into the tunnel, the distant echo of a chant grows louder. The air thickens with the ancient aura of rites long forbidden. The tunnel opens up into a vast, dimly lit cavern, where a congregation of the Forsaken is in the midst of a ritual. At the heart of the ritual, an artifact radiates with an eerie glow, its power resonating with the very core of the veil separating the realms.
+
+*choice
+    #Approach the congregation cautiously.
+        *goto approach_congregation
+    #Observe from a distance to gather more information.
+        *goto observe_from_distance
+    #Retreat and report back to the Assassin Guild.
+        *goto report_back
+
+*label approach_congregation
+*line_break
+
+(not done) You approach the congregation, possibly leading to an interaction with the Forsaken, gathering more information or establishing alliances.
+*ending
+
+*label observe_from_distance
+*line_break
+
+(not done) you observe the ritual and the Forsaken from a distance, gathering information which could be useful later on.
+*ending
+
+*label report_back
+The journey back to the Assassin Guild's hidden lair is a mixture of anticipation and reflection, as the night's events play back in your mind. The city, despite its dark undertones, begins to stir with the early murmurs of dawn as you navigate through the labyrinthine alleys that lead to the guild's secret entrance.
+
+As you step into the clandestine halls of the guild, the familiar blend of shadows and silence welcomes you. But this serenity is short-lived, as you're soon ushered into the presence of the Guild Master, a figure shrouded in enigma and feared for the ruthless efficiency in maintaining the guild's feared reputation.
+
+*choice
+    #Report everything in detail.
+        You recount the night's events with precision, leaving no stone unturned. The Guild Master listens intently, the shadows dancing across his concealed features as you narrate your findings and encounters.
+        *set AssassinGuild_relation +10
+        *goto guild_master_response
+    #Withhold some information for personal reasons.
+        You provide a curated version of the night's events, keeping certain details close to your chest. The Guild Master seems to sense the omission but waits patiently for you to finish.
+        *set AssassinGuild_relation -10
+        *goto guild_master_response
+    #Exaggerate your achievements.
+        With a flourish, you embellish your tale, painting your actions in a heroic light. The Guild Master remains impassive, but you notice a twitch of amusement in the eyes of some guild members present.
+        *set AssassinGuild_relation -5
+        *goto guild_master_response
+
+*label guild_master_response
+The Guild Master remains silent for a long moment after you finish speaking, the room echoing with the remnants of your tale. Finally, he speaks, his voice a calm yet stern ripple through the silence.
+
+"You have done well," he states, his words measured. "But remember, the shadows are both our cloak and our blade. We thrive in the unseen, and our actions echo through the veins of Veilfall. The balance between the factions is a delicate one, and our allegiance to none is our strength."
+
+He dismisses you with a gesture, and as you step out of the room, the weight of his words sinks in. The game of shadows is a complex one, and the stakes are as high as ever.
+
+*choice
+    #Reflect on the Guild Master's words.
+        The cryptic wisdom of the Guild Master resonates within you as you ponder the delicate balance of power in Veilfall and the guild's role in it.
+        *goto reflection
+    #Discuss the mission with fellow assassins.
+        You join a small gathering of your fellow assassins, exchanging stories and insights from the night's endeavors.
+        *goto assassin_discussion
+    #Prepare for the next assignment.
+        With the night's events archived in the annals of your mind, you shift your focus to the looming horizon, preparing for the tasks that lie ahead.
+        *goto next_assignment
+
+*label reflection
+*line_break
+
+(not done) *comment ... narrative for reflecting on the mission and the guild's role ...
+*ending
+
+*label assassin_discussion
+*line_break
+
+(not done) *comment ... narrative for discussing the mission with fellow assassins ...
+*ending
+
+*label next_assignment
+*line_break
+
+(not done) *comment ... narrative for preparing for the next assignment ...
+*ending

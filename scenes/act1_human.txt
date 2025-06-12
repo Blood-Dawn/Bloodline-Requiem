@@ -1,0 +1,41 @@
+Silver Legion Briefing
+The vaulted hall of the Silver Legion buzzes with disciplined chatter as recruits file in. Sunlight streams through high windows, glinting off polished armor and banners emblazoned with the imperial crest. Commanders move with purpose among the rows, distributing orders and measuring each new face. You stand at attention beside hardened veterans, breathing the mix of oiled steel and anticipation. This is your first day within the empire's vanguard, and the weight of duty presses on your shoulders. Inquisitor Vale himself steps onto the dais, gaze stern, promising glory to those who serve—and swift judgment for those who falter.
+
+*set legion_rank "Recruit"
+*set alignment "human"
+
+*choice
+    #Train at the arms depot.
+        The quartermaster nods approvingly as you test new blades and weights.
+        *set strength +3
+        *set agility +3
+        *set cunning +3
+        *goto choices_end
+    #Patrol the fortress walls.
+        Hours spent marching sharpens your awareness of the Legion's routine.
+        *goto choices_end
+    #Join a border village skirmish.
+        Bandits strike without warning. You rush to defend the farmers.
+        *choice
+            #Drive them off.
+                *set human_rep +5
+                *goto defend_end
+            #Leave the villagers to their fate.
+                *goto defend_end
+        *label defend_end
+        *goto choices_end
+    #Obey Vale's direct order.
+        You salute and carry out his command without question.
+        *set vale_relation +10
+        *goto choices_end
+    #Defy Vale and follow your own instincts.
+        His gaze hardens at your disobedience.
+        *set vale_relation -10
+        *goto choices_end
+
+*label choices_end
+*if (will >= 15)
+    *set latent_magic true
+
+*set chapter 2
+*goto_scene hub_city entry
