@@ -32,8 +32,8 @@
   opposed_pair forsaken_relation Forsaken
 
 *comment ---------- SPECIAL RESOURCES ----------
-*if (artifact != "")
-  Artifact Acquired: ${artifact}
+*if (artifact)
+  Artifact Acquired
 *if (blood_slots > 0)
   You carry ${blood_slots} unique blood essences.
 
