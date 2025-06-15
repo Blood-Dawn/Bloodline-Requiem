@@ -1,80 +1,86 @@
 *label main
-*comment ---------- MAIN STATS ----------
+*comment ---------- CORE ----------
 *stat_chart
   percent strength
   percent agility
   percent will
   percent cunning
 
-*comment ---------- Faction ----------
+*comment ---------- STORY ----------
+*stat_chart
+  text act Act
+  text chapter Chapter
+  *if (age != 0)
+    text age Age
+
+*comment ---------- FACTION ----------
 *if (alignment != "")
   *stat_chart
     text alignment Faction
     *if (rank != "")
       text rank Rank
+    *if (faction_stat != "")
+      text faction_stat Bloodline / Rank
 
-*comment ---------- Relationships ----------
+*comment ---------- REPUTATION ----------
 *stat_chart
+  percent human_rep Human Rep
+  percent varkyr_rep Varkyr Rep
+  percent lupine_rep Lupine Rep
   opposed_pair varkyrs_relation Varkyrs
   opposed_pair lupine_relation Lupines
   opposed_pair forsaken_relation Forsaken
 
-*comment ---------- Special Flags ----------
-*if (latent_magic)
-  You feel arcane energy coursing through you.
+*comment ---------- SPECIAL RESOURCES ----------
+*if (artifact != "")
+  Artifact Acquired: ${artifact}
 *if (blood_slots > 0)
-  You have absorbed *blood_slots* unique blood essences.
+  You carry ${blood_slots} unique blood essences.
 
+*comment ---------- CONDITION-SPECIFIC ----------
+*if (alignment = "lupine")
+  *stat_chart
+    opposed_pair control Control
+      Control
+      Rage
+    percent venom_potency Venom Potency
+    text wolfs_turned Wolves Turned
+*elseif (alignment = "varkyrs")
+  *stat_chart
+    opposed_pair control Control
+      Control
+      Bloodlust
+    percent venom_potency Venom Potency
+    text humans_turned Humans Turned
+
+*comment ---------- FLAGS ----------
+*if (latent_magic)
+  An arcane aura pulses beneath your skin.
+
+*comment ---------- MENU ----------
 *choice
   #View character relationships
     *goto npc_relationships
+  #Codex / Lore
+    *link_to_scene codex_lore
   #Return
     *finish
 
 *label npc_relationships
 *comment NPC relationships appear once met
-*if (met_Isabella)
-  *stat_chart
-    percent Isabella_relation Isabella
-*if (met_Dante)
-  *stat_chart
-    percent Dante_relation Dante
-*if (met_Skylar)
-  *stat_chart
-    percent Skylar_relation Skylar
-*if (met_Lucan)
-  *stat_chart
-    percent Lucan_relation Lucan
-*if (met_Adrian)
-  *stat_chart
-    percent Adrian_relation Adrian
-*if (met_Nadia)
-  *stat_chart
-    percent Nadia_relation Nadia
-*if (met_Julian)
-  *stat_chart
-    percent Julian_relation Julian
-*if (met_Cassandra)
-  *stat_chart
-    percent Cassandra_relation Cassandra
-*if (met_Thane)
-  *stat_chart
-    percent Thane_relation Thane
-*if (met_Rhea)
-  *stat_chart
-    percent Rhea_relation Rhea
-*if (met_Vincent)
-  *stat_chart
-    percent Vincent_relation Vincent
-*if (met_Mira)
-  *stat_chart
-    percent Mira_relation Mira
-*if (met_Rurik)
-  *stat_chart
-    percent Rurik_relation Rurik
+*if (met_Isabella)  *stat_chart percent Isabella_relation Isabella
+*if (met_Dante)     *stat_chart percent Dante_relation Dante
+*if (met_Skylar)    *stat_chart percent Skylar_relation Skylar
+*if (met_Lucan)     *stat_chart percent Lucan_relation Lucan
+*if (met_Adrian)    *stat_chart percent Adrian_relation Adrian
+*if (met_Nadia)     *stat_chart percent Nadia_relation Nadia
+*if (met_Julian)    *stat_chart percent Julian_relation Julian
+*if (met_Cassandra) *stat_chart percent Cassandra_relation Cassandra
+*if (met_Thane)     *stat_chart percent Thane_relation Thane
+*if (met_Rhea)      *stat_chart percent Rhea_relation Rhea
+*if (met_Vincent)   *stat_chart percent Vincent_relation Vincent
+*if (met_Mira)      *stat_chart percent Mira_relation Mira
+*if (met_Rurik)     *stat_chart percent Rurik_relation Rurik
 *choice
   #Back
     *goto main
-
-*link_to_scene codex_lore Codex / Lore
-
