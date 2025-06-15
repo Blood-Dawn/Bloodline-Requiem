@@ -45,6 +45,10 @@
 *create Turned false
 *create form_mod 0
 *create hybrid_start false
+*create mission_board_requests false 
+*create mission_board false
+*create mission_board_request false
+*create mission_board_request_text ""
 
 *comment factions
 *comment Variables for relationships
@@ -208,6 +212,10 @@
 *create lupine_enhanced_senses false
 *create lupine_basic_shift false
 *create lupine_pack_dynamics false
+*create lunar_shield false
+*create alphas_roar false
+*create packs_howl false
+*create moons_fury false
 
 *comment Forsaken section
 

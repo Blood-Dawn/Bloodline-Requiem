@@ -80,6 +80,22 @@ The clash is immediate. Claws flash and teeth snap as you and the surrounding wo
         You lower your weapon, signaling that cooperation benefits you all more than senseless bloodshed.
         *goto explain_mission
 
+*label assert_dominance
+The pack watches you closely, waiting to see how you will prove yourself. The alpha's gaze is unwavering, testing your resolve and strength.
+*choice
+    #Challenge the alpha directly for respect.
+        You step forward, meeting the alpha's eyes with unwavering confidence, signaling your readiness to prove your worth.
+        *set lupine_relation +5
+        *goto explain_mission
+    #Show humility and request to join the pack.
+        You bow your head slightly, acknowledging the pack's authority and asking for a chance to earn your place among them.
+        *set lupine_relation +2
+        *goto explain_mission
+    #Offer to help the pack with their current troubles.
+        You propose your skills and knowledge as a way to aid the pack, hoping to earn their trust through cooperation.
+        *set lupine_relation +3
+        *goto explain_mission
+
 *label explain_mission
 *line_break
 Taking a steady breath, you recount your charge from the Assassin Guild to investigate growing unrest among supernatural factions. You emphasize that your motives are to maintain balance, not to undermine lupine sovereignty. The alpha's eyes narrow with suspicion while younger wolves exchange whispers. Your honesty seems to resonate with some, yet others bristle at the mention of outsiders meddling in their affairs. You offer them a choice: work with you to uncover the truth, or keep their distance and risk facing the unknown alone.
