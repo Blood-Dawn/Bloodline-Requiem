@@ -15,9 +15,9 @@
 
 *comment ---------- Relationships ----------
 *stat_chart
-  opposed_pair varkyrs_relation Varkyrs
-  opposed_pair lupine_relation Lupines
-  opposed_pair forsaken_relation Forsaken
+  opposed_pair varkyrs_relation varkyrs
+  opposed_pair lupine_relation lupine
+  opposed_pair forsaken_relation forsaken
 
 *comment ---------- Special Flags ----------
 *if (latent_magic)
