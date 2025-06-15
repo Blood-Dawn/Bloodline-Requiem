@@ -16,10 +16,12 @@
     Ending_Scenarios
     choicescript_stats
     status
+*comment CoGDemos automatically saves your progress; smPlugin is not supported.
 *comment General Section
 *create Control 100
 *create Race ""
 *create alignment ""
+*create rank ""
 *create legion_rank ""
 *create artifact false
 *create reputation 0
@@ -56,11 +58,11 @@
 
 *comment Variables for tracking player’s bloodline, lupine rank, and age
 
-*create bloodline_or_rank "unknown"
-*create faction_stat "faction"
-*create lupine_rank "rank"
+*create bloodline_or_rank ""
+*create faction_stat ""
+*create lupine_rank ""
 *create bloodline "bloodline"
-*create age "unknown"
+*create age ""
 
 
 *comment Varkyrs Section
@@ -84,6 +86,21 @@
 *create Vincent_relation 0
 *create Mira_relation 0
 *create Rurik_relation 0
+
+*comment Track if the player has met each NPC
+*create met_Isabella false
+*create met_Dante false
+*create met_Skylar false
+*create met_Lucan false
+*create met_Adrian false
+*create met_Nadia false
+*create met_Julian false
+*create met_Cassandra false
+*create met_Thane false
+*create met_Rhea false
+*create met_Vincent false
+*create met_Mira false
+*create met_Rurik false
 
 *comment Forsaken Section
 
