@@ -11,6 +11,8 @@
     act2_common_hub
     hub_city
     mission_board
+    mission_list
+    post_mission_request
     lupine_abilities
     NewGame_plus
     Ending_Scenarios
