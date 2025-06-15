@@ -31,6 +31,7 @@
 *create will 0
 *create power_core 0
 *create latent_magic false
+*create blood_slots 0
 *create vale_relation 0
 *create human_rep 0
 *create varkyr_rep 0

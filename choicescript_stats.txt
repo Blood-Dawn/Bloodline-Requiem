@@ -15,9 +15,9 @@
 
 *comment ---------- Relationships ----------
 *stat_chart
-  opposed_pair Varkyrs_relation Varkyrs
-  opposed_pair Lupine_relation Lupines
-  opposed_pair Forsaken_relation Forsaken
+  opposed_pair varkyrs_relation Varkyrs
+  opposed_pair lupine_relation Lupines
+  opposed_pair forsaken_relation Forsaken
 
 *comment ---------- Special Flags ----------
 *if (latent_magic)
@@ -28,8 +28,6 @@
 *choice
   #View character relationships
     *goto npc_relationships
-  #History glossary
-    *goto history
   #Return
     *finish
 
@@ -78,10 +76,5 @@
   #Back
     *goto main
 
-*label history
-The Millennium War reshaped Veilfall as factions clashed for dominance and survival. The Lupines fought to keep balance with nature, the Varkyrs schemed from the shadows, and the Forsaken sought forbidden power.
+*link_to_scene codex_lore Codex / Lore
 
-Key figures emerged from each faction, such as Aeliana who united the packs and Valerius who founded the Night Council. Their legacies still influence the uneasy peace today.
-*choice
-  #Back
-    *goto main
