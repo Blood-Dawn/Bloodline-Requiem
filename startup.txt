@@ -18,7 +18,7 @@
     status
 *comment CoGDemos automatically saves your progress; smPlugin is not supported.
 *comment General Section
-*create Control 100
+*create control 100
 *create Race ""
 *create alignment ""
 *create rank ""
