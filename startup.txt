@@ -50,7 +50,17 @@
 *create mission_board_requests false 
 *create mission_board false
 *create mission_board_request false
-*create mission_board_request_text ""
+*comment ── Commoner-rank ability flags
+*create blood_sense false
+*create fledgling_charm false
+*create veil_of_shadows false
+
+*comment ── Core stats these abilities affect
+*create perception 0
+*create awareness 0
+*create charm 0
+*create stealth 0
+
 
 *comment factions
 *comment Variables for relationships

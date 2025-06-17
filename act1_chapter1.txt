@@ -24,10 +24,10 @@ The parchment reads:
         *goto forsaken_route
     #Confront a pack of Lupines.
         *set alignment "lupine"
-        *goto_scene act1_lupine lupine_route
+        *goto_scene act1_lupine 
     #Eliminate a rogue Varkyr.
         *set alignment "varkyrs"
-        *goto_scene act1_varkyr varkyrs_route
+        *goto_scene act1_varkyr 
 
 *comment TODO: Forsaken extraction
 *label forsaken_route
@@ -53,8 +53,56 @@ As you delve deeper into the tunnel, the distant echo of a chant grows louder. T
 *label approach_congregation
 *line_break
 
-(not done) You approach the congregation, possibly leading to an interaction with the Forsaken, gathering more information or establishing alliances.
-*ending
+You approach the congregation, possibly leading to an interaction with the Forsaken, gathering more information or establishing alliances.
+*choice
+    #Attempt to communicate with the Forsaken.
+        You step forward, your presence drawing the attention of the Forsaken. Their leader, a figure cloaked in shadows, regards you with a mixture of curiosity and suspicion.
+        *set AssassinGuild_relation +5
+        *goto forsaken_leader_response
+    #Observe the ritual without interference.
+        You remain silent, watching as the Forsaken perform their ritual, the artifact's glow intensifying with each chant. The air hums with power, and you sense that this moment is pivotal for them.
+        *set AssassinGuild_relation +2
+        *goto forsaken_ritual_observation
+    #Disrupt the ritual to assert dominance.
+        With a swift motion, you disrupt the ritual, causing chaos among the Forsaken. They react with hostility, and a confrontation ensues.
+        *set AssassinGuild_relation -10
+        *goto forsaken_confrontation
+*label forsaken_leader_response
+The leader of the Forsaken steps forward, their eyes glinting with a mix of intrigue and wariness. "You tread dangerous ground, assassin," they say, their voice low and resonant. "But perhaps you seek knowledge, or an alliance? The veil between our worlds is thin, and the power we wield can either be a curse or a blessing."
+*choice
+    #Offer your services in exchange for information.
+        You propose a deal, offering your skills in exchange for insights into the Forsaken's plans and the artifact's significance.
+        *set AssassinGuild_relation +10
+        *goto forsaken_information_exchange
+    #Refuse to engage and prepare to leave.
+        You decline their offer, choosing to leave the cavern without further interaction. The leader nods, understanding your decision but warning you of the consequences of crossing paths with the Forsaken again.
+        *set AssassinGuild_relation -5
+        *goto forsaken_exit
+    #Challenge the leader to a duel.
+        You draw your weapon, challenging the leader to a duel. The Forsaken react with hostility, and a fierce battle ensues.
+        *set AssassinGuild_relation -15
+        *goto forsaken_duel
+*label forsaken_information_exchange
+*line_break
+The Forsaken leader nods, intrigued by your proposal. "Very well, assassin. We seek to reclaim what was lost in the Millennium War, to restore balance to Veilfall. The artifact you see before you is a key to that power, but it is also a burden. If you assist us, we can share its secrets with you."
+*choice
+    #Agree to assist the Forsaken.
+        You nod, accepting their terms. The leader gestures for you to join the ritual, and as you do, the artifact's glow intensifies, revealing glimpses of ancient knowledge and power.
+        *set AssassinGuild_relation +15
+        *goto forsaken_rise
+    #Decline and leave the cavern.
+        You shake your head, choosing to leave the cavern without further involvement. The leader watches you go, a hint of disappointment in their eyes.
+        *set AssassinGuild_relation -5
+        *goto forsaken_exit
+    #Attempt to steal the artifact.
+        With a swift motion, you reach for the artifact, but the Forsaken react quickly, surrounding you in a defensive stance.
+        *set AssassinGuild_relation -20
+        *goto forsaken_theft_attempt
+*label forsaken_rise
+*line_break
+The ritual concludes with a surge of energy, and the artifact's power resonates through you. The Forsaken leader nods approvingly. "You have chosen wisely, assassin. Together, we will reclaim Veilfall from the shadows of its past."
+*finish
+*label forsaken_ritual_observation
 
 *label observe_from_distance
 *line_break
