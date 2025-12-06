@@ -1,0 +1,235 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment CODEX WORLD - Timeline & History
+*comment ═══════════════════════════════════════════════════════
+
+*label timeline
+
+[b]THE GREAT TIMELINE OF VEILFALL[/b]
+
+Eras are measured in two systems:
+• BW (Before War) - counting back from the Millennium War
+• AW (After War) - counting forward from the war's conclusion
+
+*choice
+    #Era of the Pact (500 BW - 1 BW)
+        *goto era_pact
+    #The Millennium War (1 BW - 0 AW)
+        *goto millennium_war
+    #Post-War Era (1 AW - 250 AW)
+        *goto post_war
+    #Era of Shadows (250 AW - 1000 AW)
+        *goto era_shadows
+    #Present Era (1500 AW)
+        *goto present_era
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label era_pact
+[b]Era of the Pact (500 BW - 1 BW)[/b]
+
+In the age before the great conflict, the supernatural world operated under a different order. Two apex beings—the Progenitor of the Varkyrs and the Origin Wolf of the Lupines—embodied the ultimate expressions of their respective bloodlines.
+
+[b]The Mirror Lake Pact:[/b]
+Recognizing that their eternal conflict would lead only to mutual destruction, the Progenitor and Origin Wolf forged an ancient covenant. Each year, beneath the full moon at Mirror Lake, they would conduct a sacred ritual using the Veilstone—a crystalline artifact of immense power.
+
+This ritual served three purposes:
+1. Regulate blood magic to prevent Varkyr excess
+2. Channel lunar power to prevent Lupine wild rampage
+3. Maintain the "Veil" separating supernatural and mortal realms
+
+The pact held for nearly five centuries, creating an uneasy but functional balance. Humans thrived in ignorance of the shadow world, while Varkyrs and Lupines coexisted through strict territorial boundaries and mutual deterrence.
+
+[b]Signs of Fracture:[/b]
+As generations passed, younger Varkyrs grew resentful of the restrictions. Radical factions whispered of ways to corrupt the ritual, to steal lunar essence and merge it with blood magic, creating an unstoppable hybrid power.
+
+The Lupines, sensing these whispers on the wind, grew wary. Trust eroded. The final ritual, mere months before the war, nearly ended in violence.
+
+*choice
+    #Learn about the Progenitor
+        The Progenitor was not merely the first Varkyr—he was the template from which all vampiric existence flowed. His powers transcended mortal comprehension: [i]Genesis Rebirth[/i] allowed him to resurrect from a single drop of blood; [i]Celestial Dominion[/i] let him command the very stars to dim at his whim.
+
+        He stood as both tyrant and protector of his kind, maintaining order through absolute authority. His fall during the Millennium War left a void no single Varkyr could fill—hence the fractured courts and noble houses that persist today.
+        *goto era_pact
+    #Learn about the Origin Wolf
+        The Origin Wolf, also called the Lunar Progenitor, embodied the raw essence of the hunt, the pack, and the moon's eternal pull. Unlike the Progenitor's calculated dominion, the Origin Wolf represented primal unity—every Lupine felt the resonance of his heartbeat in their blood.
+
+        His omega form could level entire forests. His howl could summon storms. Yet he chose restraint, teaching his children that true strength lay in balance with nature, not dominion over it.
+
+        When he died alongside the Progenitor, the Lupines lost their singular voice. The packs fractured into independent territories, each alpha seeking to prove themselves worthy inheritors of his legacy.
+        *goto era_pact
+    #Return to timeline
+        *goto timeline
+
+*label millennium_war
+[b]The Millennium War (1 BW - 0 AW)[/b]
+
+What began as betrayal at Mirror Lake erupted into a conflict that consumed the known world for over a thousand years.
+
+[b]The Catalyst:[/b]
+A splinter faction of Varkyrs, calling themselves the Crimson Eclipse, infiltrated the final Mirror Lake ritual. They sought to corrupt the Veilstone's energies, siphoning lunar power to create the ultimate hybrid magic—blood-fueled yet moon-empowered.
+
+The ritual exploded. The Veilstone cracked, releasing a magical shockwave that killed dozens of Lupines and Varkyrs instantly. The Origin Wolf, enraged beyond reason, declared immediate war. The Progenitor, unable to rein in his rogue children, met the challenge.
+
+[b]The War's Progression:[/b]
+
+[i]Years 1-200:[/i] Territorial battles. Varkyrs fortified cities and underground labyrinths. Lupines claimed forests and mountain ranges. Humans, initially bystanders, began developing countermeasures—silver weapons, blessed wards, arcane artillery.
+
+[i]Years 201-500:[/i] The Forsaken emerged. At first accidents—forbidden unions between captive Varkyrs and Lupines—the hybrids proved terrifyingly effective. Both sides began deliberate experimentation, creating warrior-hybrids for the front lines. Most died in agony; the survivors became the ancestors of today's Forsaken.
+
+[i]Years 501-900:[/i] Total war. Cities burned. Entire Lupine packs were exterminated. Varkyr bloodlines went extinct. Humans formed organized hunter legions and even allied with one side or another depending on regional politics.
+
+[i]Years 901-999:[/i] Stalemate and exhaustion. All sides bled resources. The land itself became corrupted by centuries of blood magic and wild lunar surges.
+
+[b]The Final Duel (Year 1000 BW):[/b]
+Realizing the war would never end through proxy battles, the Progenitor and Origin Wolf agreed to single combat at the ruins of Mirror Lake. Witnesses from all factions watched as the two apex beings clashed for three days and nights.
+
+On the dawn of the fourth day, both fell. The Progenitor's heart was torn from his chest. The Origin Wolf's throat was ripped out. Their mutual death sent a magical pulse across Veilfall, and the shattered Veilstone transformed into the Ecliptic Amulet—splitting into four fragments that scattered to the winds.
+
+[b]Aftermath:[/b]
+With both leaders dead, no faction had the will to continue. The war simply... stopped. Survivors staggered back to their territories. The Veilfall Accord was signed within a year, establishing the fragile peace that holds today.
+
+*choice
+    #The Crimson Eclipse - what happened to them?
+        The Crimson Eclipse, the radical Varkyr faction that ignited the war, was systematically hunted by both Varkyrs and Lupines in the immediate aftermath. Seen as traitors and war criminals, most were executed publicly to appease the peace negotiations.
+
+        However, rumors persist that a remnant faction survived, going deep underground. Some scholars believe they morphed into what is now called the Night Council—a shadowy cabal still pursuing the original goal of hybrid blood-lunar magic.
+
+        Whether this is true or paranoid speculation remains unknown.
+        *goto millennium_war
+    #The rise of the Forsaken
+        The Forsaken began as victims—hybrids created through violent experimentation or forbidden love during wartime. Most died within weeks, their bodies unable to stabilize the conflicting magics of blood and moon.
+
+        But a small percentage survived. These survivors found each other in the war's final decades, forming underground enclaves. They were hunted by all sides: Varkyrs saw them as abominations, Lupines as corrupted kin, humans as double-threats.
+
+        Caius the Unbound emerged as their savior. A hybrid of exceptional power and intelligence, he discovered methods to stabilize the transformation, even to turn willing humans into Forsaken. Under his leadership, the Forsaken transitioned from refugees to a legitimate faction, claiming one shard of the Ecliptic Amulet and demanding recognition in the Veilfall Accord.
+        *goto millennium_war
+    #Return to timeline
+        *goto timeline
+
+*label post_war
+[b]Post-War Era (1 AW - 250 AW)[/b]
+
+The immediate aftermath of the Millennium War was chaos tempered by exhaustion. The Veilfall Accord established basic rules:
+
+1. [b]Territorial Boundaries:[/b] Humans controlled cities; Lupines claimed forests; Varkyrs secured underground courts and select urban districts; Forsaken were granted limited enclaves.
+
+2. [b]The Veil Protocol:[/b] All factions agreed to maintain secrecy from the broader human population. Supernatural conflicts would be settled in shadow, not open warfare.
+
+3. [b]The Shard Compact:[/b] Each faction held one fragment of the Ecliptic Amulet. Reunification required unanimous consent—or total conquest.
+
+[b]Reconstruction:[/b]
+The first century focused on rebuilding. Varkyr noble houses consolidated power, establishing the hierarchy that persists today (Commoner through Progenitor ranks, though no new Progenitor has arisen).
+
+Lupine packs reorganized under regional alphas. The concept of the Alpha Sovereign emerged—a supreme leader elected from among Alpha Primes during times of crisis.
+
+Humans fortified cities and founded institutions like the Assassin Guild to manage supernatural threats discreetly.
+
+The Forsaken, led by Caius, carved out territories in places neither Varkyr nor Lupine wanted: abandoned catacombs, border wilderness, the deep tunnels beneath Veilfall.
+
+[b]Lingering Tensions:[/b]
+Peace did not mean friendship. Skirmishes occurred. Assassinations happened. But open war remained taboo—no faction wanted to risk another millennium of destruction.
+
+*choice
+    #The founding of the Assassin Guild
+        Established around 50 AW, the Assassin Guild arose from human necessity. With supernatural factions operating in the shadows, conventional military and law enforcement were inadequate.
+
+        The Guild's charter was simple: maintain balance through targeted action. If a rogue Varkyr broke the Veil, eliminate them. If a Lupine pack encroached on human territory, neutralize the threat. If Forsaken experiments threatened exposure, shut them down.
+
+        Crucially, the Guild claimed [i]neutrality[/i]. They served no single faction, taking contracts from anyone—even supernaturals seeking to police their own. This neutrality made them both trusted and feared by all sides.
+
+        Over the centuries, the Guild evolved into a shadow government of sorts, often knowing more about faction politics than the factions themselves.
+        *goto post_war
+    #Caius the Unbound's rise
+        Caius's origins remain mysterious—some say he was the first successful hybrid, others claim he's far older, perhaps even a survivor from before the Pact era.
+
+        What's certain: by 10 AW, he had united the scattered Forsaken under a singular vision. Rather than hide in shame, they would build a new civilization. Rather than beg for scraps, they would [i]demand[/i] recognition.
+
+        Caius's mastery of both blood and lunar magic is unparalleled among hybrids. He personally claimed the Forsaken Shard of the Ecliptic Amulet, using its power to perfect the Forsaken transformation ritual. Under his guidance, the Forsaken grew from a few hundred survivors to a population of thousands.
+
+        He remains their uncontested leader to this day, a figure of both inspiration and terror.
+        *goto post_war
+    #Return to timeline
+        *goto timeline
+
+*label era_shadows
+[b]Era of Shadows (250 AW - 1000 AW)[/b]
+
+As the scars of war faded from living memory, the factions turned inward, refining their power structures and pursuing hidden agendas.
+
+[b]Varkyr Intrigues:[/b]
+The noble courts became labyrinths of political scheming. Bloodlines rose and fell based on cunning rather than raw power. The Night Council—rumored successors to the Crimson Eclipse—supposedly manipulated events from behind obsidian masks, though their existence was never confirmed.
+
+The Crimson Spire solidified as the premier Varkyr institution, training fledglings in blood magic, etiquette, and assassination.
+
+[b]Lupine Territories:[/b]
+Packs established clear domains. The Whispering Pines became legendary as the largest and most disciplined pack, led by a succession of powerful alphas. Lupine culture emphasized oral tradition, passing down the tales of the Origin Wolf and the ethics of the hunt.
+
+Some packs experimented with closer human integration, leading to the rise of "urban wolves"—Lupines who lived double lives in human cities.
+
+[b]Forsaken Expansion:[/b]
+Caius pushed for legitimacy. Forsaken enclaves became centers of learning, combining Varkyr arcane knowledge with Lupine naturalism. The Forsaken Underground beneath Veilfall grew into a shadow city rivaling the surface.
+
+Yet prejudice remained. Forsaken were barred from most noble Varkyr courts and unwelcome in traditional Lupine sacred sites.
+
+[b]Human Adaptation:[/b]
+Humanity thrived, unaware that their rulers often negotiated with vampires and werewolves behind closed doors. The Church rose as a power bloc, wielding blessed weapons and faith-based wards. The military developed silver munitions and anti-magic artillery.
+
+The Assassin Guild became an indispensable institution, with branches across every major city.
+
+[b]The Uneasy Balance:[/b]
+This era saw the most stable—if tense—peace. Factions understood that war benefited no one. Instead, they competed through proxies, espionage, economic control, and carefully orchestrated "incidents" that never quite escalated.
+
+The Ecliptic Shards remained separated, each faction guarding theirs jealously.
+
+*choice
+    #The Whispering Pines Pack legacy
+        Founded shortly after the war by survivors of the Origin Wolf's personal guard, the Whispering Pines Pack became the gold standard for Lupine culture.
+
+        Their territory—a vast forest northeast of Veilfall—remained untouched by human development through a combination of supernatural deterrence and legal maneuvering (the Guild helped broker treaties).
+
+        The pack's alphas were always chosen through trials of strength, wisdom, and honor. The current alpha, Rurik, is considered one of the strongest in generations—a black-furred alpha whose presence alone can silence a room.
+
+        Whispering Pines serves as neutral ground for inter-pack councils and maintains the Lupine Shard in a sacred grove deep within their forest.
+        *goto era_shadows
+    #The Crimson Spire's influence
+        More than a mere training ground, the Crimson Spire is the closest thing Varkyrs have to a unified government. Its Matriarch—currently Lady Seraphine—wields influence over most noble houses through a mix of ancient authority and ruthless pragmatism.
+
+        Initiates who graduate from the Spire's trials are marked as elite, often rising quickly through the ranks. Conversely, those who fail are rumored to become sustenance for the Spire's blood rites.
+
+        The Spire also houses the Varkyr Shard, kept in the Obsidian Vault—a chamber protected by blood wards so powerful that only those of Duke rank or higher can approach without disintegrating.
+        *goto era_shadows
+    #Return to timeline
+        *goto timeline
+
+*label present_era
+[b]Present Era (1500 AW)[/b]
+
+You stand at a crossroads in history. The long peace has grown stale, and cracks are showing.
+
+[b]Current State of Factions:[/b]
+
+[i]Varkyrs:[/i] Divided between traditionalists who uphold the Accord and radicals who whisper of reclaiming their full dominion. Rumors of the Night Council's resurgence circulate in noble courts.
+
+[i]Lupines:[/i] Mostly unified under strong alphas like Rurik, but younger wolves grow restless. Some push for reclaiming human-occupied territories; others advocate for deeper integration with mortal society.
+
+[i]Forsaken:[/i] Caius's vision of a hybrid nation gains traction, but at what cost? The transformation rituals become more ambitious, and whispers suggest he seeks to reunify the Ecliptic Amulet under Forsaken control.
+
+[i]Humans:[/i] The Crown of Veilfall grows paranoid as supernatural incidents increase. The military lobby for open war. The Church demands purges. The Assassin Guild struggles to maintain balance while fielding requests from all sides.
+
+[b]The Ecliptic Question:[/b]
+All four shards remain separated, but interest in them has surged. Scholars debate whether reunification would restore the ancient Pact's balance or trigger a second apocalypse.
+
+Extremists from each faction seek the shards for conquest. Moderates fear what unleashing such power might do.
+
+[b]Your Role:[/b]
+Into this powder keg, you emerge. Whether as an Assassin Guild operative, a noble scion, a pack wolf, a Forsaken initiate, or something else, your choices will ripple across Veilfall.
+
+Will you reinforce the fragile Accord? Ignite the flames of a new war? Forge an unprecedented alliance? Or claim power for yourself, ascending to heights not seen since the Progenitor and Origin Wolf?
+
+The requiem has begun. Whose blood will write the final verse?
+
+*choice
+    #Return to timeline
+        *goto timeline
+    #Return to codex
+        *goto_scene codex_main codex_main

@@ -3,7 +3,16 @@
 
 
 *scene_list
+    startup
     prologue
+    codex_main
+    codex_world
+    codex_races
+    varkyr_abilities
+    lupine_abilities_complete
+    forsaken_abilities
+    rank_progression
+    power_tier_calc
     act1_human
     act1_lupine
     act1_varkyr
@@ -84,10 +93,41 @@
 
 *comment Varkyrs Section
 *create Bloodlust 0
+*create varkyr_xp 0
+*create blood_satiation 100
+*comment Blood satiation: 100 = recently fed, 0 = starving
 
 *comment Lupine Section
 *create rage 0
 *create venom_potency 0
+*create lupine_xp 0
+*create moon_phase "Full"
+*comment Moon phases: New, Waxing Crescent, First Quarter, Waxing Gibbous, Full, Waning Gibbous, Last Quarter, Waning Crescent
+*create packs_united 0
+
+*comment Lupine type tracking
+*create omega_variant false
+*create werewolf_only false
+*create wolf_only false
+*comment If all three are false, defaults to wolf-only
+
+*comment Additional Lupine abilities from expanded system
+*create scent_mastery false
+*create moonlit_dash false
+*create pack_mending false
+*create warding_howl false
+*create moons_guidance false
+*create savage_fury false
+*create unity_of_packs false
+*create sovereigns_call false
+*create origins_echo false
+*create lunar_eclipse false
+
+*comment Lunar Progenitor abilities
+*create progenitor_size_shift false
+*create progenitor_lunar_avatar false
+*create progenitor_pack_genesis false
+*create progenitor_moons_judgment false
 
 *comment Personal Relationships
 *create Isabella_relation 0
@@ -120,6 +160,26 @@
 *create met_Rurik false
 
 *comment Forsaken Section
+*comment Unique Forsaken Abilities
+*create twilight_veil false
+*create hybrid_regeneration false
+*create sanguine_howl false
+*create ecliptic_surge false
+*create apex_senses false
+*create war_form false
+*create eclipse_ascendant false
+
+*comment Forsaken type tracking
+*create forsaken_type ""
+*comment Options: "Vamp-Wolf" or "Wolf-Vamp"
+*create forsaken_rank ""
+*comment Ranks: Initiate, Adept, Sentinel, Warden, Eclipse Lord/Lady
+*create forsaken_xp 0
+*create hybrid_stability 50
+*comment Hybrid stability: 0 = unstable, 100 = perfect balance
+*create met_Caius false
+*create ecliptic_shards_controlled 0
+*comment Tracks how many Ecliptic Amulet shards player controls
 
 *comment Human Section
 
@@ -278,4 +338,4 @@ The world healed, and the supernatural factions, now veiled in secrecy, wove the
 Present Era (1500 AW):
 Now, in the year 1500 AW, the fragile peace holds, maintained by the silent guardians of the night. But whispers of unrest stir, and the echoes of the past beckon brave souls to forge their destiny. In the heart of Veilfall, where history and the present collide, your journey begins—a requiem for bloodlines and a quest for redemption in a world that walks the fine line between darkness and light.
 
-*finish
+*goto prologue

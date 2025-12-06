@@ -1,0 +1,49 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment CODEX MAIN - Central Lore Navigation
+*comment ═══════════════════════════════════════════════════════
+
+*label codex_main
+
+The knowledge of ages past lies before you, compiled from fragments of history, whispered legends, and blood-soaked truths. What secrets do you seek?
+
+*choice
+    #World History
+        *goto_scene codex_world timeline
+    #Races of the Night
+        *goto_scene codex_races race_overview
+    #Factions & Powers
+        *goto_scene codex_factions faction_overview
+    #Locations of Veilfall
+        *goto_scene codex_locations location_overview
+    #Notable Individuals
+        *goto_scene codex_characters character_overview
+    #The Ecliptic Amulet
+        *goto artifact_entry
+    #Return to stats
+        *goto_scene choicescript_stats main
+
+*label artifact_entry
+*line_break
+
+[b]The Ecliptic Amulet[/b]
+
+Born from the catastrophic overload of the ancient Veilstone during the Millennium War, the Ecliptic Amulet became a vessel of unimaginable power—and unimaginable instability.
+
+When the Progenitor and the Origin Wolf fell in their final duel, the backlash shattered the Veilstone into four fragments, each attuned to one of the major powers:
+
+• [b]Human Shard[/b] – Held by the Crown of Veilfall. Enhances mortal resilience and nullifies certain supernatural influence.
+
+• [b]Varkyr Shard[/b] – Kept within the Crimson Spire. Amplifies blood magic and extends dominion over shadows.
+
+• [b]Lupine Shard[/b] – Guarded by the Whispering Pines Pack. Strengthens lunar connection and pack unity.
+
+• [b]Forsaken Shard[/b] – Claimed by Caius the Unbound. Grants hybrid transformation stability and the ability to turn others into Forsaken.
+
+Legends say that reuniting all four shards could either restore the ancient balance... or unleash a second cataclysm that would make the Millennium War seem a mere prelude.
+
+*choice
+    #Learn more about the Veilstone's original purpose
+        The Veilstone was crafted in the Era of the Pact as a conduit for the Mirror Lake ritual—an annual ceremony where Varkyrs and Lupines would channel their essences to stabilize the magical boundaries between the mortal realm and the supernatural underworld. It regulated the flow of blood magic and lunar power, preventing either from overwhelming reality.
+        *goto artifact_entry
+    #Return to main codex
+        *goto codex_main

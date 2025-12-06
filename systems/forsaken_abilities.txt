@@ -1,0 +1,311 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment FORSAKEN ABILITIES - Hybrid Power Selection System
+*comment ═══════════════════════════════════════════════════════
+*comment Forsaken can choose from both Varkyr AND Lupine ability trees
+*comment but learn them slower. They also have unique hybrid abilities.
+*comment ═══════════════════════════════════════════════════════
+
+*label forsaken_ability_select
+*comment Called when Forsaken reaches a new rank or level milestone
+
+You feel the conflicting magics within you stabilize and grow stronger. The blood sings in your veins while moonlight pulses through your bones. Choose [b]two abilities[/b] to unlock from the paths available to you.
+
+*comment Determine which abilities are available based on power level
+*temp power_level 0
+*if (rank = "Initiate")
+    *set power_level 1
+*elseif (rank = "Adept")
+    *set power_level 2
+*elseif (rank = "Sentinel")
+    *set power_level 3
+*elseif (rank = "Warden")
+    *set power_level 4
+*elseif (rank = "Eclipse Lord/Lady")
+    *set power_level 5
+
+*comment Track selections
+*temp abilities_selected 0
+*temp ability_choice_1 ""
+*temp ability_choice_2 ""
+
+*label select_first_ability
+*if (abilities_selected = 0)
+    [b]Select your first ability:[/b]
+*else
+    [b]Select your second ability:[/b]
+
+*choice
+    #Unique Forsaken Abilities
+        *goto forsaken_unique_tree
+    #Varkyr Blood Magic
+        *goto forsaken_varkyr_tree
+    #Lupine Lunar Magic
+        *goto forsaken_lupine_tree
+    *if (abilities_selected > 0)
+        #Confirm selections
+            *goto apply_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment UNIQUE FORSAKEN ABILITIES
+*comment ═══════════════════════════════════════════════════════════
+
+*label forsaken_unique_tree
+
+[b]Hybrid Abilities - The Eclipse Path[/b]
+
+These powers exist only in those who bridge blood and moon.
+
+*choice
+    *if (power_level >= 1) and (not twilight_veil)
+        #Twilight Veil
+            [i]Merge shadow and moonlight for perfect concealment.[/i]
+
+            By channeling both vampiric darkness and lunar radiance, you become nearly invisible—supernatural senses detect only a shimmer, like heat haze under moonlight.
+            *gosub record_ability "Twilight Veil"
+            *goto selection_complete
+
+    *if (power_level >= 1) and (not hybrid_regeneration)
+        #Hybrid Regeneration
+            [i]Heal using blood OR moonlight—whichever is available.[/i]
+
+            Your dual nature grants flexibility: consume blood like a Varkyr or bask in moonlight like a Lupine to accelerate healing. Both methods work, giving you options pure-bloods lack.
+            *gosub record_ability "Hybrid Regeneration"
+            *goto selection_complete
+
+    *if (power_level >= 2) and (not sanguine_howl)
+        #Sanguine Howl
+            [i]A battle cry fusing vampiric dread and lupine dominance.[/i]
+
+            Your howl carries the weight of ancient predators. Enemies feel both the Varkyr's paralyzing fear and the Lupine's primal challenge, often fleeing or freezing in terror.
+            *gosub record_ability "Sanguine Howl"
+            *goto selection_complete
+
+    *if (power_level >= 2) and (not ecliptic_surge)
+        #Ecliptic Surge
+            [i]Channel blood and lunar power simultaneously for devastating combos.[/i]
+
+            For a brief window, you wield both magics at once—blood constructs wreathed in moonfire, shadow tendrils empowered by lunar strength. The strain is immense but the results overwhelming.
+            *gosub record_ability "Ecliptic Surge"
+            *goto selection_complete
+
+    *if (power_level >= 3) and (not apex_senses)
+        #Apex Senses
+            [i]Combine vampiric precision and lupine tracking.[/i]
+
+            Your senses transcend either parent race. You detect heartbeats through walls like a Varkyr while tracking scents across miles like a Lupine. No prey escapes; no ambush surprises.
+            *gosub record_ability "Apex Senses"
+            *goto selection_complete
+
+    *if (power_level >= 4) and (not war_form)
+        #War Form Transformation
+            [i]Unlock your ultimate hybrid avatar.[/i]
+
+            You can now assume War Form—an 8-foot fusion of vampiric and lupine terror. Glowing eyes, shadow wisps, elongated fangs, partial fur, and devastating claws. In this state, your power doubles.
+            *gosub record_ability "War Form"
+            *goto selection_complete
+
+    *if (power_level >= 5) and (not eclipse_ascendant)
+        #Eclipse Ascendant
+            [i]Temporary apotheosis—become the living eclipse.[/i]
+
+            Once per lunar cycle, you can channel the full might of both bloodlines for 10 minutes. During this time, you rival Archduke Varkyrs and Alpha Prime Lupines in raw power. The exhaustion afterward is catastrophic.
+            *gosub record_ability "Eclipse Ascendant"
+            *goto selection_complete
+
+    #Return to ability categories
+        *goto select_first_ability
+
+*comment ═══════════════════════════════════════════════════════════
+*comment VARKYR TREE (Forsaken learn these slower)
+*comment ═══════════════════════════════════════════════════════════
+
+*label forsaken_varkyr_tree
+
+[b]Blood Magic - Vampiric Heritage[/b]
+
+You can learn Varkyr abilities, though not as efficiently as pure-bloods.
+
+*choice
+    *if (power_level >= 1) and (not enhanced_strength)
+        #Enhanced Strength (Varkyr)
+            *gosub record_ability "Enhanced Strength"
+            *goto selection_complete
+
+    *if (power_level >= 1) and (not night_vision)
+        #Night Vision (Varkyr)
+            *gosub record_ability "Night Vision"
+            *goto selection_complete
+
+    *if (power_level >= 2) and (not shadow_step)
+        #Shadow Step (Varkyr)
+            *gosub record_ability "Shadow Step"
+            *goto selection_complete
+
+    *if (power_level >= 2) and (not blood_alchemy)
+        #Blood Alchemy (Varkyr)
+            *gosub record_ability "Blood Alchemy"
+            *goto selection_complete
+
+    *if (power_level >= 3) and (not mesmerize)
+        #Mesmerize (Varkyr)
+            *gosub record_ability "Mesmerize"
+            *goto selection_complete
+
+    *if (power_level >= 3) and (not mist_form)
+        #Mist Form (Varkyr)
+            *gosub record_ability "Mist Form"
+            *goto selection_complete
+
+    *if (power_level >= 4) and (not crimson_storm)
+        #Crimson Storm (Varkyr)
+            *gosub record_ability "Crimson Storm"
+            *goto selection_complete
+
+    #Return to ability categories
+        *goto select_first_ability
+
+*comment ═══════════════════════════════════════════════════════════
+*comment LUPINE TREE (Forsaken learn these slower)
+*comment ═══════════════════════════════════════════════════════════
+
+*label forsaken_lupine_tree
+
+[b]Lunar Magic - Werewolf Heritage[/b]
+
+You can learn Lupine abilities, though not as efficiently as pure-bloods.
+
+*choice
+    *if (power_level >= 1) and (not lupine_enhanced_senses)
+        #Enhanced Senses (Lupine)
+            *gosub record_ability "Enhanced Senses (Lupine)"
+            *goto selection_complete
+
+    *if (power_level >= 1) and (not lupine_regenerative_healing)
+        #Regenerative Healing (Lupine)
+            *gosub record_ability "Regenerative Healing"
+            *goto selection_complete
+
+    *if (power_level >= 2) and (not lunar_infusion)
+        #Lunar Infusion (Lupine)
+            *gosub record_ability "Lunar Infusion"
+            *goto selection_complete
+
+    *if (power_level >= 2) and (not natures_ally)
+        #Nature's Ally (Lupine)
+            *gosub record_ability "Nature's Ally"
+            *goto selection_complete
+
+    *if (power_level >= 3) and (not battle_howl)
+        #Battle Howl (Lupine)
+            *gosub record_ability "Battle Howl"
+            *goto selection_complete
+
+    *if (power_level >= 4) and (not moons_fury)
+        #Moon's Fury (Lupine)
+            *gosub record_ability "Moon's Fury"
+            *goto selection_complete
+
+    #Return to ability categories
+        *goto select_first_ability
+
+*comment ═══════════════════════════════════════════════════════════
+*comment SUBROUTINES
+*comment ═══════════════════════════════════════════════════════════
+
+*label record_ability
+*comment Records the chosen ability
+*params ability_name
+
+*if (abilities_selected = 0)
+    *set ability_choice_1 ability_name
+    *set abilities_selected +1
+
+    [i]${ability_name} learned.[/i]
+    *return
+*else
+    *set ability_choice_2 ability_name
+    *set abilities_selected +1
+
+    [i]${ability_name} learned.[/i]
+    *return
+
+*label selection_complete
+*if (abilities_selected < 2)
+    *goto select_first_ability
+*else
+    *goto apply_abilities
+
+*label apply_abilities
+*line_break
+
+You have chosen: [b]${ability_choice_1}[/b] and [b]${ability_choice_2}[/b]
+
+The hybrid energies settle within you, both blood and moon acknowledging your growth. You are Forsaken—neither wholly Varkyr nor Lupine, but something greater.
+
+*comment Apply the actual boolean flags based on choices
+*if (ability_choice_1 = "Twilight Veil") or (ability_choice_2 = "Twilight Veil")
+    *set twilight_veil true
+
+*if (ability_choice_1 = "Hybrid Regeneration") or (ability_choice_2 = "Hybrid Regeneration")
+    *set hybrid_regeneration true
+
+*if (ability_choice_1 = "Sanguine Howl") or (ability_choice_2 = "Sanguine Howl")
+    *set sanguine_howl true
+
+*if (ability_choice_1 = "Ecliptic Surge") or (ability_choice_2 = "Ecliptic Surge")
+    *set ecliptic_surge true
+
+*if (ability_choice_1 = "Apex Senses") or (ability_choice_2 = "Apex Senses")
+    *set apex_senses true
+
+*if (ability_choice_1 = "War Form") or (ability_choice_2 = "War Form")
+    *set war_form true
+
+*if (ability_choice_1 = "Eclipse Ascendant") or (ability_choice_2 = "Eclipse Ascendant")
+    *set eclipse_ascendant true
+
+*comment Varkyr abilities
+*if (ability_choice_1 = "Enhanced Strength") or (ability_choice_2 = "Enhanced Strength")
+    *set enhanced_strength true
+
+*if (ability_choice_1 = "Night Vision") or (ability_choice_2 = "Night Vision")
+    *set night_vision true
+
+*if (ability_choice_1 = "Shadow Step") or (ability_choice_2 = "Shadow Step")
+    *set shadow_step true
+
+*if (ability_choice_1 = "Blood Alchemy") or (ability_choice_2 = "Blood Alchemy")
+    *set blood_alchemy true
+
+*if (ability_choice_1 = "Mesmerize") or (ability_choice_2 = "Mesmerize")
+    *set mesmerize true
+
+*if (ability_choice_1 = "Mist Form") or (ability_choice_2 = "Mist Form")
+    *set mist_form true
+
+*if (ability_choice_1 = "Crimson Storm") or (ability_choice_2 = "Crimson Storm")
+    *set crimson_storm true
+
+*comment Lupine abilities
+*if (ability_choice_1 = "Enhanced Senses (Lupine)") or (ability_choice_2 = "Enhanced Senses (Lupine)")
+    *set lupine_enhanced_senses true
+
+*if (ability_choice_1 = "Regenerative Healing") or (ability_choice_2 = "Regenerative Healing")
+    *set lupine_regenerative_healing true
+
+*if (ability_choice_1 = "Lunar Infusion") or (ability_choice_2 = "Lunar Infusion")
+    *set lunar_infusion true
+
+*if (ability_choice_1 = "Nature's Ally") or (ability_choice_2 = "Nature's Ally")
+    *set natures_ally true
+
+*if (ability_choice_1 = "Battle Howl") or (ability_choice_2 = "Battle Howl")
+    *set battle_howl true
+
+*if (ability_choice_1 = "Moon's Fury") or (ability_choice_2 = "Moon's Fury")
+    *set moons_fury true
+
+*comment Update unlocked_abilities string for display
+*set unlocked_abilities &(" " & ability_choice_1 & ", " & ability_choice_2 & ";")
+
+*return

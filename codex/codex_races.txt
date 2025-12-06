@@ -1,0 +1,635 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment CODEX RACES - Detailed Faction Biology & Culture
+*comment ═══════════════════════════════════════════════════════════
+
+*label race_overview
+
+[b]THE RACES OF VEILFALL[/b]
+
+Four primary lineages walk the shadows of this world, each shaped by ancient magic and bitter history.
+
+*choice
+    #Varkyrs (Vampires)
+        *goto varkyrs_entry
+    #Lupines (Werewolves)
+        *goto lupines_entry
+    #Forsaken (Hybrids)
+        *goto forsaken_entry
+    #Humans
+        *goto humans_entry
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label varkyrs_entry
+[b]VARKYRS - The Blood Aristocracy[/b]
+
+Immortal predators who trade mortality for eternal existence sustained by blood. Varkyrs are born from humans through the Embrace—a ritual transformation where a vampire drains and then feeds their essence to a chosen subject.
+
+[b]Biological Traits:[/b]
+• Superhuman strength, speed, and agility (scaling with rank)
+• Enhanced senses, especially night vision and scent tracking
+• Rapid regeneration fueled by consumed blood
+• Practical immortality—can survive centuries if well-fed
+• Vulnerability to sunlight (severe burns, death for lower ranks)
+• Vulnerability to fire, decapitation, heart destruction
+• Optional weakness to silver, blessed items (varies by bloodline)
+
+[b]Powers & Magic:[/b]
+
+[i]Blood Magic (Hemomancy):[/i]
+Manipulation of blood for offense, defense, and enhancement. Advanced practitioners can create weapons from solidified blood, heal catastrophic wounds, or puppeteer victims by controlling their circulatory systems.
+
+[i]Shadow Magic:[/i]
+Affinity for darkness. Varkyrs can meld with shadows for stealth, teleport short distances through shadow-gates, or summon waves of living darkness to terrify and disorient enemies.
+
+[i]Mental Influence:[/i]
+Hypnosis, mesmerization, and limited telepathy—especially effective on those they've fed from. High-rank Varkyrs can implant commands or erase memories.
+
+[i]Shapeshifting:[/i]
+• [b]Mist Form[/b] - Dissolve into fog for infiltration and escape
+• [b]Bat Form[/b] - Transform into a swarm of bats for mobility
+• [b]Wolf Form[/b] - Rare; only certain noble bloodlines retain this ancient ability
+
+[b]Rank Hierarchy (Lowest to Highest):[/b]
+1. [b]Commoner[/b] - Newly turned; basic vampiric abilities
+2. [b]Knight[/b] - Combat-trained; serve noble houses
+3. [b]Baron/Baroness[/b] - Minor nobility; own small territories
+4. [b]Viscount/Viscountess[/b] - Mid-tier nobles; political influence
+5. [b]Count/Countess[/b] - High nobles; command multiple domains
+6. [b]Marquis/Marchioness[/b] - Elite nobles; wield significant power
+7. [b]Duke/Duchess[/b] - Arch-nobles; rule vast territories
+8. [b]Archduke/Archduchess[/b] - Supreme nobles; near-royalty
+9. [b]Imperial[/b] - Sovereign rulers; command entire courts
+10. [b]Progenitor[/b] - Mythic apex; only one has ever existed (deceased)
+
+[i]Design Principle:[/i] Higher ranks inherit all abilities of lower ranks and unlock new powers. A Duke possesses everything a Commoner through Marquis can do, plus unique Ducal abilities.
+
+[b]Culture & Society:[/b]
+Varkyr society mirrors feudal aristocracy, obsessed with bloodline purity, political maneuvering, and eternal games of dominance. The Crimson Spire serves as their premier institution, training initiates and maintaining order (through fear as much as respect).
+
+Noble houses compete for influence through marriage alliances, assassinations, economic control, and arcane research. The loss of the Progenitor left a power vacuum no single Varkyr has filled, leading to fractured courts and constant intrigue.
+
+[b]Bloodlines:[/b]
+Different lineages exhibit unique traits:
+• [b]Royal Bloodlines[/b] - Enhanced magic, access to rare forms
+• [b]Shadow Bloodlines[/b] - Superior stealth and shadow magic
+• [b]War Bloodlines[/b] - Greater combat prowess and durability
+
+*choice
+    #Famous Varkyr abilities in detail
+        *goto varkyr_abilities_detail
+    #Varkyr creation: The Embrace
+        *goto varkyr_embrace
+    #Return to races
+        *goto race_overview
+
+*label varkyr_abilities_detail
+[b]Notable Varkyr Abilities by Rank:[/b]
+
+[b]Commoner Rank:[/b]
+• [i]Enhanced Strength[/i] - Lift and strike with superhuman force
+• [i]Night Vision[/i] - See perfectly in total darkness
+• [i]Rapid Healing[/i] - Regenerate wounds with blood
+• [i]Seduction[/i] - Supernatural charisma and attraction
+
+[b]Knight Rank:[/b]
+• [i]Combat Mastery[/i] - Centuries of skill compressed into instinct
+• [i]Blood Bond[/i] - Create mystical connection with a mortal or vampire
+• [i]Shadow Step[/i] - Short-range teleport through shadows
+
+[b]Baron/Baroness Rank:[/b]
+• [i]Shadow Veil[/i] - Become invisible in dim light
+• [i]Blood Alchemy[/i] - Transmute blood into poisons or elixirs
+• [i]Sanguine Shield[/i] - Barrier of hardened blood
+
+[b]Viscount/Viscountess Rank:[/b]
+• [i]Mesmerize[/i] - Hypnotic control over mortals
+• [i]Mist Form[/i] - Transform into intangible fog
+• [i]Vein Puppetry[/i] - Control victims by manipulating their blood
+
+[b]Count/Countess Rank:[/b]
+• [i]Psychic Shield[/i] - Immunity to mental attacks
+• [i]Life Leech[/i] - Drain vitality at range
+• [i]Whisper of Madness[/i] - Induce hallucinations and terror
+
+[b]Marquis/Marchioness Rank:[/b]
+• [i]Territorial Command[/i] - Sense all activity within claimed domain
+• [i]Sanguine Phantasm[/i] - Create blood-construct servants
+• [i]Nether Chains[/i] - Summon shadow bindings
+
+[b]Duke/Duchess Rank:[/b]
+• [i]Aura of Majesty[/i] - Radiate overwhelming presence; lesser beings kneel
+• [i]Eclipse[/i] - Blot out light in a wide area
+• [i]Crimson Storm[/i] - Unleash torrents of weaponized blood
+
+[b]Archduke/Archduchess Rank:[/b]
+• [i]Bloodstorm[/i] - City-scale blood magic devastation
+• [i]Veil of Eternity[/i] - Stop time for brief moments
+• [i]Abyssal Gateway[/i] - Open portals to the shadow realm
+
+[b]Imperial Rank:[/b]
+• [i]Imperial Decree[/i] - Command that cannot be disobeyed by lower ranks
+• [i]Bloodline Ascendancy[/i] - Elevate followers to higher ranks
+• [i]Eclipse Descent[/i] - Summon eternal night
+
+[b]Progenitor (Unique):[/b]
+• [i]Genesis Rebirth[/i] - Resurrect from a single drop of blood
+• [i]Celestial Dominion[/i] - Command cosmic forces
+• [i]Primordial Sanguine Surge[/i] - Blood magic beyond mortal comprehension
+• [i]Cosmic Damnation[/i] - Reality-warping curse
+
+*choice
+    #Return to Varkyr entry
+        *goto varkyrs_entry
+
+*label varkyr_embrace
+[b]The Embrace: Creating New Varkyrs[/b]
+
+The transformation from human to Varkyr is ritualized, intimate, and agonizing.
+
+[b]The Process:[/b]
+1. [b]Selection[/b] - The sire chooses a worthy subject (beauty, strength, intelligence, or political value)
+2. [b]The Draining[/b] - The sire feeds on the subject to the brink of death
+3. [b]The Gift[/b] - The sire feeds their own blood to the dying subject
+4. [b]The Death[/b] - The subject dies as their mortal heart stops
+5. [b]The Awakening[/b] - The subject rises as a fledgling Varkyr (Commoner rank)
+
+[b]The First Thirst:[/b]
+Newly turned Varkyrs experience overwhelming bloodlust. How they handle their first feeding often determines their future path:
+• [i]Control[/i] - Feed without killing; retain humanity
+• [i]Indulgence[/i] - Slaughter carelessly; embrace the monster
+
+[b]Rank Progression:[/b]
+Varkyrs advance through:
+• [i]Age and experience[/i] - Centuries of existence naturally strengthen them
+• [i]Political achievement[/i] - Granted titles by higher-ranking nobles
+• [i]Consuming powerful blood[/i] - Feeding on strong supernatural beings accelerates growth
+• [i]Mastery of abilities[/i] - Demonstrating control over vampiric powers
+
+Most Varkyrs never rise above Knight or Baron. Reaching Count or higher requires exceptional ability, cunning, or lineage.
+
+*choice
+    #Return to Varkyr entry
+        *goto varkyrs_entry
+
+*label lupines_entry
+[b]LUPINES - The Moon-Bound Packs[/b]
+
+Shapeshifters bound to the moon and the primal hunt. Lupines are born (natural werewolves) or turned through a bite from an alpha during the full moon.
+
+[b]Biological Traits:[/b]
+• Superhuman strength and durability (especially in hybrid form)
+• Enhanced senses in all forms (smell, hearing, night vision)
+• Accelerated healing (hindered by silver)
+• Lunar connection: power waxes with the moon, peaks at full moon
+• Resistance to most poisons and diseases
+• Vulnerability to silver (burns, prevents healing, can kill)
+• Wolfsbane causes severe sickness
+
+[b]Lupine Types:[/b]
+
+1. [b]Wolf-Only Lupines[/b]
+   • Human ↔ Full Wolf transformation
+   • Often scouts, trackers, infiltrators
+   • Alpha wolves can reach F-150 truck size
+   • Beta wolves average motorcycle size
+
+2. [b]Werewolf-Only Lupines[/b]
+   • Human ↔ Bipedal Werewolf (hybrid form)
+   • Frontline warriors and enforcers
+   • Stand 7-9 feet tall in hybrid form
+   • Massive strength and durability
+
+3. [b]Omega Variants (Dual-Form)[/b]
+   • Human ↔ Wolf ↔ Hybrid (access to both forms)
+   • Extremely rare; considered blessed by the moon
+   • Beta form as large as other alphas
+   • Omega alpha form ~ 8 feet tall, tree-trunk build
+   • Elite among Lupines; often become pack leaders
+
+[b]Rank Hierarchy:[/b]
+1. [b]Turned Omega[/b] - Newly turned; weakest rank
+2. [b]Omega[/b] - Base rank for born wolves
+3. [b]Zeta Scout[/b] - Reconnaissance and pathfinding
+4. [b]Epsilon Forager/Artisan[/b] - Providers and craftspeople
+5. [b]Gamma Healer/Warder[/b] - Medics and mystics
+6. [b]Delta Emissary/Sentinel[/b] - Diplomats and guards
+7. [b]Beta Guardian/Councilor[/b] - Elite warriors and advisors
+8. [b]Alpha Commandant[/b] - Pack leader
+9. [b]Alpha Prime[/b] - Leader of multiple packs
+10. [b]Alpha Sovereign[/b] - Supreme leader (elected during crisis)
+11. [b]Lunar Progenitor / Origin Wolf[/b] - Mythic apex (deceased)
+
+[b]Core Mechanics:[/b]
+
+[i]Lunar Connection:[/i]
+• [b]New Moon[/b] - Weakest; some struggle to transform
+• [b]Crescent Moons[/b] - Minor buff to senses and healing
+• [b]Half Moon[/b] - Balanced state
+• [b]Gibbous Moon[/b] - Significant power increase
+• [b]Full Moon[/b] - Peak power; mandatory transformation for young wolves
+
+[i]Rage vs Control:[/i]
+All Lupines walk a tightrope between primal rage and disciplined control:
+• [i]High Rage[/i] - Greater strength but risk of losing oneself to the beast
+• [i]High Control[/i] - Tactical precision but less raw power
+
+[i]The First Kill Doctrine:[/i]
+A Lupine's first kill as a wolf determines their path:
+• [i]Innocent First Kill[/i] - Unlocks more powerful but unstable forms; gains "Savage" trait
+• [i]Guilty First Kill[/i] - Retains better control; slower power growth; gains "Honorable" trait
+
+[b]Culture & Society:[/b]
+Lupines organize into packs—extended families bound by blood, loyalty, and the moon's call. Each pack claims territory and operates semi-autonomously, though they recognize higher alphas during times of need.
+
+Honor, strength, and balance with nature define Lupine values. They view themselves as guardians of the wild places, maintaining equilibrium that humans disrupt and Varkyrs exploit.
+
+Pack trials test strength, wisdom, and loyalty. Alphas lead not by birthright but by proving themselves worthy in combat, strategy, and care for their pack.
+
+[b]Sacred Sites:[/b]
+Lupines maintain holy grounds tied to lunar magic:
+• [b]Mirror Lake[/b] - Site of the ancient Pact (contested territory now)
+• [b]Moonstone Groves[/b] - Where pack trials occur
+• [b]The Howling Peaks[/b] - Mountain range where Alphas Sovereign are crowned
+
+*choice
+    #Famous Lupine abilities in detail
+        *goto lupine_abilities_detail
+    #Lupine creation: The Bite
+        *goto lupine_bite
+    #Return to races
+        *goto race_overview
+
+*label lupine_abilities_detail
+[b]Notable Lupine Abilities:[/b]
+
+[b]Common Abilities (All Lupines):[/b]
+• [i]Lunar Connection[/i] - Strength tied to moon phases
+• [i]Regenerative Healing[/i] - Rapid wound recovery (except silver)
+• [i]Enhanced Senses[/i] - Superior smell, hearing, night vision
+• [i]Basic Shift[/i] - Transform between forms
+• [i]Pack Dynamics[/i] - Telepathic bond with packmates
+
+[b]Omega Variant Abilities:[/b]
+• [i]Lunar Infusion[/i] - Channel moonlight for healing or power boost
+• [i]Primal Resurgence[/i] - Temporary boost to all stats when near death
+• [i]Nature's Ally[/i] - Communicate with animals; call them for aid
+• [i]Apex Shift[/i] - Access both wolf and hybrid forms
+• [i]Moon's Wrath[/i] - Devastating attack fueled by lunar energy
+• [i]Eternal Guardian[/i] - Enter berserker state to protect pack
+
+[b]Werewolf-Only Abilities:[/b]
+• [i]Ferocious Might[/i] - Overwhelming physical strength
+• [i]Impenetrable Fur[/i] - Natural armor in hybrid form
+• [i]Battle Howl[/i] - Rally allies and terrify enemies
+• [i]Dominion Roar[/i] - Alpha command that compels obedience
+• [i]Relentless Vigor[/i] - Fight through injuries that would drop others
+• [i]Warrior's Command[/i] - Tactical coordination with pack warriors
+
+[b]Wolf-Only Abilities:[/b]
+• [i]Agile Pursuer[/i] - Unmatched speed and maneuverability
+• [i]Stealth Prowler[/i] - Move silently; ambush tactics
+• [i]Pack's Bond[/i] - Enhanced telepathic coordination
+• [i]Alpha's Presence[/i] - Inspire and lead through charisma
+• [i]Savage Bite[/i] - Armor-piercing jaws
+• [i]Territorial Sense[/i] - Know everything happening in claimed territory
+
+[b]Alpha-Tier Abilities:[/b]
+• [i]Alpha's Roar[/i] - Commanding howl that compels pack obedience
+• [i]Pack's Howl[/i] - Summon entire pack to your location
+• [i]Moon's Fury[/i] - Channel full moon's power regardless of phase (limited use)
+• [i]Lunar Shield[/i] - Protective barrier of moonlight
+
+[b]Alpha Sovereign Abilities:[/b]
+• [i]Sovereign's Call[/i] - Summon all packs across the region
+• [i]Origin's Echo[/i] - Channel a fragment of the Origin Wolf's power
+• [i]Unity of the Hunt[/i] - Merge pack consciousness into perfect coordination
+
+*choice
+    #Return to Lupine entry
+        *goto lupines_entry
+
+*label lupine_bite
+[b]The Bite: Creating New Lupines[/b]
+
+Turning a human into a Lupine is both ritual and trial.
+
+[b]The Process:[/b]
+1. [b]The Selection[/b] - Only Alphas can turn humans; choice is deliberate
+2. [b]The Hunt[/b] - Candidate hunts alongside the pack during full moon
+3. [b]The Bite[/b] - Alpha bites the candidate, injecting lunar essence
+4. [b]The Fever[/b] - Candidate suffers agonizing transformation over 3 days
+5. [b]The First Shift[/b] - On the third night, they transform for the first time
+
+[b]Survival Rate:[/b]
+Not all survive the transformation. The body must be strong enough to handle the lunar magic. Roughly 60% survive; the rest die in agony as their bodies reject the change.
+
+[b]First Shift Challenges:[/b]
+New Lupines face the primal beast within:
+• [i]Control[/i] - Master the beast; earn pack's respect
+• [i]Rampage[/i] - Lose control; risk exile or execution if innocents die
+
+[b]Born vs Turned:[/b]
+• [b]Born Lupines[/b] - Natural werewolves from Lupine parents; stronger lunar connection; start at Omega rank
+• [b]Turned Lupines[/b] - Humans transformed by bite; start at Turned Omega; must prove themselves to rise
+
+[b]Integration:[/b]
+New pack members undergo trials:
+• [i]The Hunt[/i] - Prove hunting skill
+• [i]The Duel[/i] - Prove combat prowess
+• [i]The Vigil[/i] - Prove loyalty by guarding pack territory alone for a week
+
+Success earns them full pack membership and the possibility to rise through ranks.
+
+*choice
+    #Return to Lupine entry
+        *goto lupines_entry
+
+*label forsaken_entry
+[b]FORSAKEN - The Hybrid Nation[/b]
+
+Children of blood and moon, the Forsaken are hybrids combining Varkyr and Lupine traits. Reviled by both parent races as abominations, they forged their own identity under the leadership of Caius the Unbound.
+
+[b]Origin:[/b]
+The first Forsaken emerged during the Millennium War—some from forbidden love, most from deliberate experimentation. Both sides sought to weaponize hybrid vigor, creating super-soldiers. The attempts killed 95% of subjects. The 5% who survived became the Forsaken's ancestors.
+
+[b]Biological Traits:[/b]
+Forsaken combine and transcend their parent races:
+• [i]Strength[/i] - Greater than pure Varkyrs or Lupines
+• [i]Speed & Agility[/i] - Enhanced beyond both lineages
+• [i]Regeneration[/i] - Hybrid healing combining blood and lunar magic
+• [i]Senses[/i] - Supernatural awareness merging vampiric and lupine perception
+• [i]Dual Magic Access[/i] - Can wield both blood magic AND lunar abilities
+
+[b]Weaknesses:[/b]
+• [i]Mitigated Vulnerabilities[/i] - Partial sunlight tolerance (not immunity); more resistant to silver but not immune
+• [i]Instability[/i] - Without training, risk losing control to conflicting magics
+• [i]Social Isolation[/i] - Hated, feared, and hunted by all factions
+• [i]Rarity[/i] - Extremely low population; difficult to create new Forsaken
+
+[b]Forsaken Sub-Types:[/b]
+
+1. [b]Vamp-Wolf (Vampiric Core)[/b]
+   • Stronger in blood magic and shadow manipulation
+   • Closer to Varkyr appearance and weaknesses
+   • Sunlight more dangerous; lunar connection weaker
+   • Excel as assassins and blood mages
+
+2. [b]Wolf-Vamp (Lupine Core)[/b]
+   • Stronger physical attributes and lunar synergy
+   • Closer to Lupine appearance and culture
+   • Better sunlight tolerance; silver more dangerous
+   • Excel as warriors and pack leaders
+
+[b]Forms:[/b]
+Forsaken can shift between:
+• [b]Human[/b] - Blend into mortal society
+• [b]Wolf or Hybrid[/b] - Depending on sub-type orientation
+• [b]War Form (Advanced)[/b] - Ultimate hybrid form combining vampiric aura (glowing eyes, elongated fangs, shadow wisps) with lupine physicality (claws, partial fur, size increase). Unlocked through mastery and ritual.
+
+[b]Powers:[/b]
+Forsaken can learn abilities from both Varkyr and Lupine trees, though at a slower rate. Their unique advantage is [i]versatility[/i]—switching between blood magic and lunar powers mid-combat.
+
+Unique Forsaken abilities include:
+• [i]Twilight Veil[/i] - Merge shadow and moonlight for perfect concealment
+• [i]Sanguine Howl[/i] - Hybrid battle cry that terrifies and disorients
+• [i]Ecliptic Surge[/i] - Channel both blood and lunar power simultaneously
+• [i]Hybrid Regeneration[/i] - Heal using either blood consumption or moonlight
+• [i]Apex Transformation[/i] - War Form; towering hybrid avatar
+
+[b]Creation: Caius's Ritual:[/b]
+Caius the Unbound perfected a ritual to turn willing humans into stable Forsaken:
+1. Subject must consent (forced transformations fail)
+2. Subject drinks blood infused with lunar essence
+3. Caius performs the Rite of Convergence under the full moon
+4. Subject undergoes agonizing transformation over 7 days
+5. Survival rate: ~40% (far better than historical attempts)
+
+Turned Forsaken start weaker than born Forsaken but can grow to equal strength.
+
+[b]Society & Culture:[/b]
+Forsaken culture blends Varkyr sophistication with Lupine honor:
+• [i]Meritocracy[/i] - Rank earned through ability, not birth
+• [i]Unity[/i] - "We are neither blood nor moon alone; we are the eclipse"
+• [i]Secrecy[/i] - Operate in hidden enclaves and underground networks
+• [i]Ambition[/i] - Seek recognition as a legitimate faction, not abominations
+
+Caius rules as uncontested leader, though he encourages debate and innovation. The Forsaken see themselves as evolution incarnate—the future of supernatural existence.
+
+[b]Major Enclaves:[/b]
+• [b]Forsaken Underground[/b] - Tunnels beneath Veilfall; recruitment center
+• [b]Forsaken Refuge[/b] - Abandoned catacombs; safehouse network
+• [b]Forsaken Wilderness Enclave[/b] - Remote stronghold; training grounds
+
+*choice
+    #Caius the Unbound
+        *goto caius_detail
+    #Return to races
+        *goto race_overview
+
+*label caius_detail
+[b]Caius the Unbound - Lord of the Forsaken[/b]
+
+Age: Unknown (est. 1400+ years)
+Type: Forsaken (possibly first-generation or older)
+Status: Supreme Leader of the Forsaken
+
+[b]Appearance:[/b]
+Caius stands 6'7" in human form, with silver hair and heterochromatic eyes—one crimson (Varkyr), one amber (Lupine). His presence radiates controlled menace, a predator who has transcended the need to prove dominance.
+
+In War Form, he becomes an 8-foot avatar of shadow and moonlight, combining the most terrifying aspects of both lineages.
+
+[b]Abilities:[/b]
+Caius has mastered abilities from both Varkyr and Lupine trees to their apex levels. He wields:
+• Blood magic rivaling Archduke-tier Varkyrs
+• Lunar magic comparable to Alpha Prime Lupines
+• Unique hybrid abilities no other Forsaken possess
+• The Forsaken Shard of the Ecliptic Amulet, amplifying all powers
+
+[b]History:[/b]
+Caius's origins are shrouded in mystery. Some claim he was the first intentional hybrid, created before the Millennium War. Others whisper he's older—perhaps a survivor from an age before the Pact, when magic flowed unbound.
+
+What's certain: by 10 AW, he had united the scattered Forsaken survivors, transforming them from refugees into a nation. He personally perfected the transformation ritual, allowing controlled creation of new Forsaken.
+
+[b]Philosophy:[/b]
+Caius believes the Forsaken represent the future—neither blood nor moon, but the synthesis of both. He seeks:
+1. Recognition of Forsaken as equals in the Veilfall Accord
+2. Expansion of Forsaken population through willing transformation
+3. (Rumored) Reunification of the Ecliptic Amulet under Forsaken control
+
+Whether he is a visionary or a tyrant remains debated even among his own people.
+
+[b]Relationship to Player:[/b]
+Caius takes personal interest in promising Forsaken recruits or anyone who demonstrates hybrid potential. He is mentor, manipulator, and potential ally—or enemy—depending on your choices.
+
+*choice
+    #Return to Forsaken entry
+        *goto forsaken_entry
+
+*label humans_entry
+[b]HUMANS - The Mortal Majority[/b]
+
+Fragile, short-lived, yet endlessly adaptable. Humans lack supernatural powers but compensate through numbers, technology, faith, and sheer determination.
+
+[b]Strengths:[/b]
+• [i]Population[/i] - Outnumber all supernatural factions combined
+• [i]Technology[/i] - Firearms, explosives, arcane artillery
+• [i]Organization[/i] - Governments, militaries, guilds, churches
+• [i]Adaptability[/i] - Learn and counter supernatural threats rapidly
+• [i]Daylight[/i] - Operate freely when Varkyrs cannot
+• [i]Faith[/i] - Blessed weapons and wards harm supernaturals
+
+[b]Weaknesses:[/b]
+• [i]Mortality[/i] - Age, disease, and injury kill easily
+• [i]Vulnerability[/i] - No inherent resistance to magic or supernatural abilities
+• [i]Ignorance[/i] - Most humans unaware of the shadow world
+• [i]Division[/i] - Factional infighting weakens unified response
+
+[b]Human Factions:[/b]
+
+1. [b]The Crown of Veilfall[/b]
+   • Monarchy and noble houses
+   • Hold the Human Shard of the Ecliptic Amulet
+   • Balance supernatural influence through treaties and force
+
+2. [b]The Assassin Guild[/b]
+   • Shadow operatives maintaining balance
+   • Neutral mercenaries serving all factions
+   • Elite training and supernatural countermeasures
+
+3. [b]The Legion / Military[/b]
+   • Standing army with anti-supernatural divisions
+   • Silver weaponry and blessed munitions
+   • Arcane artillery and mage-killer squads
+
+4. [b]The Church[/b]
+   • Faith-based wards and blessed weapons
+   • Exorcists and holy warriors
+   • Push for purges and crusades
+
+5. [b]Hunter Orders (Rumored)[/b]
+   • Specialized monster slayers
+   • Operate outside official channels
+   • Extreme methods and obsessive dedication
+
+[b]Human Potential:[/b]
+Humans can become:
+• [b]Turned Varkyrs[/b] - Through the Embrace
+• [b]Turned Lupines[/b] - Through the Bite
+• [b]Forsaken[/b] - Through Caius's ritual
+• [b]Mages[/b] - Unlock latent arcane potential
+• [b]Hunters[/b] - Train to peak human capability
+
+Some humans possess [i]latent magic[/i]—untapped supernatural potential that can be awakened through training, trauma, or exposure to artifacts.
+
+[b]Role in Balance:[/b]
+Humans are the wild card. Too weak individually to threaten supernaturals, but collectively capable of overwhelming any faction. The Veilfall Accord depends on keeping humanity mostly ignorant—if the mortal masses learned the truth and mobilized, the resulting war could exterminate all supernatural races.
+
+Thus, all factions have vested interest in maintaining the Veil... while secretly courting human allies.
+
+*choice
+    #The Assassin Guild in detail
+        *goto guild_detail
+    #Becoming supernatural from human
+        *goto human_transformation
+    #Return to races
+        *goto race_overview
+
+*label guild_detail
+[b]The Assassin Guild - Shadows Within Shadows[/b]
+
+Founded ~50 AW, the Assassin Guild operates as neutral arbiter and covert enforcer of the Veilfall Accord.
+
+[b]Structure:[/b]
+• [b]Guild Master[/b] - Identity unknown; communicates through intermediaries
+• [b]Master Assassins[/b] - Elite operatives with decades of experience
+• [b]Journeymen[/b] - Proven agents handling complex contracts
+• [b]Initiates[/b] - New recruits undergoing training and trials
+
+[b]Code:[/b]
+1. Maintain balance; serve no single faction
+2. Contracts accepted from any source if payment is fair
+3. Secrecy above all; the Guild's existence is whispered rumor
+4. Failure means death or exile
+
+[b]Training:[/b]
+Initiates learn:
+• Combat (blades, firearms, hand-to-hand)
+• Stealth and infiltration
+• Poisons and alchemy
+• Supernatural lore (know your target)
+• Counter-magic basics
+
+Advanced agents may specialize:
+• [i]Varkyr Hunters[/i] - Silver-coated weapons, UV grenades, anti-charm training
+• [i]Lupine Trackers[/i] - Moon-phase tactics, wolfsbane expertise
+• [i]Mage Killers[/i] - Disruption runes, arcane countermeasures
+
+[b]Neutrality:[/b]
+The Guild's power stems from its neutrality. By serving all factions equally, it becomes indispensable. A Varkyr noble might hire the Guild to eliminate a rival. A Lupine alpha might contract them to scout Forsaken enclaves. The human Crown might deploy them against rogue supernaturals.
+
+This balance is precarious. If the Guild ever appears biased, it risks becoming a target for all factions.
+
+*choice
+    #Return to Human entry
+        *goto humans_entry
+
+*label human_transformation
+[b]From Human to Supernatural[/b]
+
+Mortals can transcend their humanity through transformation:
+
+[b]Becoming Varkyr:[/b]
+• Requires a Varkyr sire to perform the Embrace
+• Success rate: ~90% (Varkyrs rarely turn unsuitable candidates)
+• Immediate immortality and power
+• Loss of humanity; must feed on blood
+
+[b]Becoming Lupine:[/b]
+• Requires Alpha's bite during full moon
+• Success rate: ~60% (body must survive transformation)
+• Gain shapeshifting and pack connection
+• Bound to moon's cycle; risk of rage
+
+[b]Becoming Forsaken:[/b]
+• Requires Caius's ritual and consent
+• Success rate: ~40% (most unstable transformation)
+• Hybrid powers and versatility
+• Social pariah status; hunted by all
+
+[b]Awakening Latent Magic:[/b]
+• Rare humans possess dormant arcane potential
+• Awakened through:
+  - Intense trauma or near-death experience
+  - Exposure to powerful artifacts
+  - Ritual training by a mentor
+  - Bloodline inheritance (distant supernatural ancestry)
+• Allows use of spells and rituals
+• Remains mortal but gains supernatural edge
+
+[b]Hunter Training:[/b]
+• Peak human conditioning and skill
+• Specialized anti-supernatural tactics
+• Access to enchanted weapons and gear
+• Mortal lifespan but formidable effectiveness
+
+*choice
+    #Return to Human entry
+        *goto humans_entry
+
+*label race_comparison
+[b]Comparative Strengths:[/b]
+
+[i]Raw Power:[/i] Forsaken > High-Rank Varkyr ≥ Alpha Lupine > Mid-Rank Varkyr ≥ Beta Lupine > Human
+
+[i]Versatility:[/i] Forsaken > Varkyr > Human > Lupine
+
+[i]Durability:[/i] Werewolf Lupine > Forsaken > Varkyr > Wolf Lupine > Human
+
+[i]Numbers:[/i] Human >>> Lupine > Varkyr >>> Forsaken
+
+[i]Political Influence:[/i] Varkyr ≥ Human > Lupine > Forsaken
+
+*choice
+    #Return to races
+        *goto race_overview

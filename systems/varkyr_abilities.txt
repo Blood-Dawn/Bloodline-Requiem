@@ -1,0 +1,553 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment VARKYR ABILITIES - Blood Magic Selection System
+*comment ═══════════════════════════════════════════════════════════
+*comment Varkyrs automatically inherit all lower-rank abilities
+*comment and choose 2 new abilities when reaching each rank
+*comment ═══════════════════════════════════════════════════════════
+
+*label varkyr_ability_select
+*comment Called when Varkyr reaches a new rank
+
+The blood sings with newfound power. Your ascension to [b]${rank}[/b] unlocks deeper mysteries of the sanguine arts. Choose [b]two abilities[/b] to master from those befitting your station.
+
+*comment Track selections
+*temp abilities_selected 0
+*temp ability_choice_1 ""
+*temp ability_choice_2 ""
+
+*comment Route to appropriate rank tree
+*if (rank = "Commoner")
+    *goto commoner_abilities
+*elseif (rank = "Knight")
+    *goto knight_abilities
+*elseif (rank = "Baron") or (rank = "Baroness")
+    *goto baron_abilities
+*elseif (rank = "Viscount") or (rank = "Viscountess")
+    *goto viscount_abilities
+*elseif (rank = "Count") or (rank = "Countess")
+    *goto count_abilities
+*elseif (rank = "Marquis") or (rank = "Marchioness")
+    *goto marquis_abilities
+*elseif (rank = "Duke") or (rank = "Duchess")
+    *goto duke_abilities
+*elseif (rank = "Archduke") or (rank = "Archduchess")
+    *goto archduke_abilities
+*elseif (rank = "Imperial")
+    *goto imperial_abilities
+*elseif (rank = "Progenitor")
+    *goto progenitor_abilities
+*else
+    *comment Fallback for unrecognized rank
+    *bug Unrecognized Varkyr rank: ${rank}
+
+*comment ═══════════════════════════════════════════════════════════
+*comment COMMONER RANK
+*comment ═══════════════════════════════════════════════════════════
+
+*label commoner_abilities
+[b]Commoner Abilities[/b] - The foundation of vampiric power.
+
+Choose two:
+
+*choice
+    #Enhanced Strength
+        [i]Superhuman might flows through undead muscles.[/i]
+
+        Lift carriages, shatter stone, and overpower mortals with ease.
+        *set enhanced_strength true
+        *gosub record_selection "Enhanced Strength"
+        *goto check_commoner_complete
+
+    #Night Vision
+        [i]Darkness becomes as clear as day.[/i]
+
+        Perfect vision in absolute darkness; see heat signatures.
+        *set night_vision true
+        *gosub record_selection "Night Vision"
+        *goto check_commoner_complete
+
+    #Rapid Healing
+        [i]Blood-fueled regeneration mends wounds in moments.[/i]
+
+        Consume blood to accelerate healing; even grievous injuries close.
+        *set rapid_healing true
+        *gosub record_selection "Rapid Healing"
+        *goto check_commoner_complete
+
+    #Seduction
+        [i]Supernatural allure bends mortals to your will.[/i]
+
+        Enhanced charisma and pheromones make you irresistible.
+        *set seduction true
+        *gosub record_selection "Seduction"
+        *goto check_commoner_complete
+
+    #Acute Senses
+        [i]Hear heartbeats, smell fear, taste lies on the air.[/i]
+
+        All senses heightened to predatory levels.
+        *set acute_senses true
+        *gosub record_selection "Acute Senses"
+        *goto check_commoner_complete
+
+    #Minor Hemokinesis
+        [i]Basic blood manipulation—your first taste of true magic.[/i]
+
+        Shape small amounts of blood into simple weapons or seals.
+        *set minor_hemokinesis true
+        *gosub record_selection "Minor Hemokinesis"
+        *goto check_commoner_complete
+
+    #Gloom Cloak
+        [i]Wrap yourself in shadows for minor concealment.[/i]
+
+        Blend into darkness more easily; harder to track.
+        *set gloom_cloak true
+        *gosub record_selection "Gloom Cloak"
+        *goto check_commoner_complete
+
+*label check_commoner_complete
+*if (abilities_selected >= 2)
+    *goto apply_varkyr_abilities
+*else
+    *goto commoner_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment KNIGHT RANK
+*comment ═══════════════════════════════════════════════════════════
+
+*label knight_abilities
+[b]Knight Abilities[/b] - Warrior's discipline meets vampiric grace.
+
+Choose two:
+
+*choice
+    #Combat Mastery
+        [i]Centuries of martial knowledge compressed into instinct.[/i]
+
+        Master swordplay, hand-to-hand, and tactical awareness.
+        *set combat_mastery true
+        *gosub record_selection "Combat Mastery"
+        *goto check_knight_complete
+
+    #Animal Command
+        [i]Lesser beasts obey your will.[/i]
+
+        Wolves, bats, rats—command them telepathically.
+        *set animal_command true
+        *gosub record_selection "Animal Command"
+        *goto check_knight_complete
+
+    #Blood Bond
+        [i]Forge mystical connection with mortal or vampire.[/i]
+
+        Share sensations, emotions, and location across any distance.
+        *set blood_bond true
+        *gosub record_selection "Blood Bond"
+        *goto check_knight_complete
+
+    #Shadow Step
+        [i]Teleport short distances through connected shadows.[/i]
+
+        Vanish and reappear within sight range if shadows link the points.
+        *set shadow_step true
+        *gosub record_selection "Shadow Step"
+        *goto check_knight_complete
+
+*label check_knight_complete
+*if (abilities_selected >= 2)
+    *goto apply_varkyr_abilities
+*else
+    *goto knight_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment BARON/BARONESS RANK
+*comment ═══════════════════════════════════════════════════════════
+
+*label baron_abilities
+[b]Baron/Baroness Abilities[/b] - The true power of noble blood awakens.
+
+Choose two:
+
+*choice
+    #Shadow Veil
+        [i]Become invisible in anything less than bright light.[/i]
+
+        Perfect stealth in shadows; even supernatural senses struggle.
+        *set shadow_veil true
+        *gosub record_selection "Shadow Veil"
+        *goto check_baron_complete
+
+    #Blood Alchemy
+        [i]Transmute blood into poisons, elixirs, or explosives.[/i]
+
+        Craft alchemical wonders from the essence of life.
+        *set blood_alchemy true
+        *gosub record_selection "Blood Alchemy"
+        *goto check_baron_complete
+
+    #Sanguine Shield
+        [i]Manifest barrier of hardened blood.[/i]
+
+        Absorb attacks; stronger if recently fed.
+        *set sanguine_shield true
+        *gosub record_selection "Sanguine Shield"
+        *goto check_baron_complete
+
+    #Umbral Weapons
+        [i]Forge weapons from solidified shadow.[/i]
+
+        Swords, spears, arrows—all conjured from darkness itself.
+        *set umbral_weapons true
+        *gosub record_selection "Umbral Weapons"
+        *goto check_baron_complete
+
+*label check_baron_complete
+*if (abilities_selected >= 2)
+    *goto apply_varkyr_abilities
+*else
+    *goto baron_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment VISCOUNT/VISCOUNTESS RANK
+*comment ═══════════════════════════════════════════════════════════
+
+*label viscount_abilities
+[b]Viscount/Viscountess Abilities[/b] - Political cunning meets arcane might.
+
+Choose two:
+
+*choice
+    #Mesmerize
+        [i]Hypnotic gaze dominates mortal minds.[/i]
+
+        Implant commands, erase memories, extract secrets.
+        *set mesmerize true
+        *gosub record_selection "Mesmerize"
+        *goto check_viscount_complete
+
+    #Mist Form
+        [i]Dissolve into intangible fog.[/i]
+
+        Pass through cracks, avoid physical attacks, escape any cage.
+        *set mist_form true
+        *gosub record_selection "Mist Form"
+        *goto check_viscount_complete
+
+    #Vein Puppetry
+        [i]Control victims by manipulating blood within their bodies.[/i]
+
+        Force enemies to attack allies or freeze in place.
+        *set vein_puppetry true
+        *gosub record_selection "Vein Puppetry"
+        *goto check_viscount_complete
+
+    #Nightfall Veil
+        [i]Summon localized darkness to blind enemies.[/i]
+
+        Darken an area; only you see clearly within.
+        *set nightfall_veil true
+        *gosub record_selection "Nightfall Veil"
+        *goto check_viscount_complete
+
+*label check_viscount_complete
+*if (abilities_selected >= 2)
+    *goto apply_varkyr_abilities
+*else
+    *goto viscount_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment COUNT/COUNTESS RANK
+*comment ═══════════════════════════════════════════════════════════
+
+*label count_abilities
+[b]Count/Countess Abilities[/b] - High nobility commands terrible power.
+
+Choose two:
+
+*choice
+    #Psychic Shield
+        [i]Mind fortress; immunity to mental intrusion.[/i]
+
+        No mesmerization, telepathy, or mind-reading affects you.
+        *set psychic_shield true
+        *gosub record_selection "Psychic Shield"
+        *goto check_count_complete
+
+    #Sanguine Resilience
+        [i]Blood magic reinforces your undead flesh.[/i]
+
+        Damage resistance; wounds that would cripple merely inconvenience.
+        *set sanguine_resilience true
+        *gosub record_selection "Sanguine Resilience"
+        *goto check_count_complete
+
+    #Life Leech
+        [i]Drain vitality at range without physical contact.[/i]
+
+        Weaken enemies while empowering yourself from across the battlefield.
+        *set life_leech true
+        *gosub record_selection "Life Leech"
+        *goto check_count_complete
+
+    #Whisper of Madness
+        [i]Induce hallucinations and terror with a word.[/i]
+
+        Shatter sanity; victims see nightmare visions.
+        *set whisper_of_madness true
+        *gosub record_selection "Whisper of Madness"
+        *goto check_count_complete
+
+*label check_count_complete
+*if (abilities_selected >= 2)
+    *goto apply_varkyr_abilities
+*else
+    *goto count_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment MARQUIS/MARCHIONESS RANK
+*comment ═══════════════════════════════════════════════════════════
+
+*label marquis_abilities
+[b]Marquis/Marchioness Abilities[/b] - Elite among the undead aristocracy.
+
+Choose two:
+
+*choice
+    #Advanced Blood Bond
+        [i]Multi-target bonds; create entire networks of thralls.[/i]
+
+        Bond with dozens simultaneously; coordinate them perfectly.
+        *set advanced_blood_bond true
+        *gosub record_selection "Advanced Blood Bond"
+        *goto check_marquis_complete
+
+    #Territorial Command
+        [i]Sense all activity within your claimed domain.[/i]
+
+        Know every intruder, every conversation, every heartbeat in your territory.
+        *set territorial_command true
+        *gosub record_selection "Territorial Command"
+        *goto check_marquis_complete
+
+    #Sanguine Phantasm
+        [i]Create autonomous blood-construct servants.[/i]
+
+        Golems of living blood fight, spy, or guard as you command.
+        *set sanguine_phantasm true
+        *gosub record_selection "Sanguine Phantasm"
+        *goto check_marquis_complete
+
+    #Nether Chains
+        [i]Summon unbreakable shadow bindings.[/i]
+
+        Restrain even supernatural beings; drain their power while bound.
+        *set nether_chains true
+        *gosub record_selection "Nether Chains"
+        *goto check_marquis_complete
+
+*label check_marquis_complete
+*if (abilities_selected >= 2)
+    *goto apply_varkyr_abilities
+*else
+    *goto marquis_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment DUKE/DUCHESS RANK
+*comment ═══════════════════════════════════════════════════════════
+
+*label duke_abilities
+[b]Duke/Duchess Abilities[/b] - Near-divine supremacy over blood and shadow.
+
+Choose two:
+
+*choice
+    #Aura of Majesty
+        [i]Overwhelming presence forces lesser beings to kneel.[/i]
+
+        Radiate authority; mortals and low-rank supernaturals cannot disobey.
+        *set aura_of_majesty true
+        *gosub record_selection "Aura of Majesty"
+        *goto check_duke_complete
+
+    #Eclipse
+        [i]Blot out all light in a massive area.[/i]
+
+        Create artificial night; sunlight cannot penetrate your domain.
+        *set eclipse true
+        *gosub record_selection "Eclipse"
+        *goto check_duke_complete
+
+    #Crimson Storm
+        [i]Unleash torrents of weaponized blood.[/i]
+
+        Blood rain shreds enemies; area-of-effect devastation.
+        *set crimson_storm true
+        *gosub record_selection "Crimson Storm"
+        *goto check_duke_complete
+
+    #Shadow Dominion
+        [i]Command shadows as living extensions of your will.[/i]
+
+        Shadow tentacles crush, strangle, and consume foes.
+        *set shadow_dominion true
+        *gosub record_selection "Shadow Dominion"
+        *goto check_duke_complete
+
+*label check_duke_complete
+*if (abilities_selected >= 2)
+    *goto apply_varkyr_abilities
+*else
+    *goto duke_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ARCHDUKE/ARCHDUCHESS RANK
+*comment ═══════════════════════════════════════════════════════════
+
+*label archduke_abilities
+[b]Archduke/Archduchess Abilities[/b] - Power rivaling ancient legends.
+
+Choose two:
+
+*choice
+    #Bloodstorm
+        [i]City-scale blood magic apocalypse.[/i]
+
+        Summon crimson tempest covering square miles; drains all life within.
+        *set bloodstorm true
+        *gosub record_selection "Bloodstorm"
+        *goto check_archduke_complete
+
+    #Veil of Eternity
+        [i]Stop time for brief moments.[/i]
+
+        Freeze reality for seconds—strike undefended enemies or escape.
+        *set veil_of_eternity true
+        *gosub record_selection "Veil of Eternity"
+        *goto check_archduke_complete
+
+    #Hemorrhagic Maelstrom
+        [i]Cause spontaneous hemorrhaging in all nearby enemies.[/i]
+
+        Their own blood becomes their executioner.
+        *set hemorrhagic_maelstrom true
+        *gosub record_selection "Hemorrhagic Maelstrom"
+        *goto check_archduke_complete
+
+    #Abyssal Gateway
+        [i]Open portals to the shadow realm.[/i]
+
+        Travel anywhere shadows exist; summon nightmares from beyond.
+        *set abyssal_gateway true
+        *gosub record_selection "Abyssal Gateway"
+        *goto check_archduke_complete
+
+*label check_archduke_complete
+*if (abilities_selected >= 2)
+    *goto apply_varkyr_abilities
+*else
+    *goto archduke_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment IMPERIAL RANK
+*comment ═══════════════════════════════════════════════════════════
+
+*label imperial_abilities
+[b]Imperial Abilities[/b] - Sovereign of the night; few have reached this apex.
+
+Choose two:
+
+*choice
+    #Imperial Decree
+        [i]Absolute command over all lower-ranking Varkyrs.[/i]
+
+        Your word is law; no Varkyr below Imperial can refuse.
+        *set imperial_decree true
+        *gosub record_selection "Imperial Decree"
+        *goto check_imperial_complete
+
+    #Sovereign Sanctuary
+        [i]Create an inviolable domain where you are invincible.[/i]
+
+        Within your sanctum, you cannot be harmed or killed.
+        *set sovereign_sanctuary true
+        *gosub record_selection "Sovereign Sanctuary"
+        *goto check_imperial_complete
+
+    #Bloodline Ascendancy
+        [i]Elevate your followers to higher ranks instantly.[/i]
+
+        Grant rank promotions through blood ritual; create your own court.
+        *set bloodline_ascendancy true
+        *gosub record_selection "Bloodline Ascendancy"
+        *goto check_imperial_complete
+
+    #Eclipse Descent
+        [i]Summon eternal night over an entire region.[/i]
+
+        The sun will not rise until you permit it; Varkyrs rule openly.
+        *set eclipse_descent true
+        *gosub record_selection "Eclipse Descent"
+        *goto check_imperial_complete
+
+*label check_imperial_complete
+*if (abilities_selected >= 2)
+    *goto apply_varkyr_abilities
+*else
+    *goto imperial_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment PROGENITOR RANK (All abilities unlocked automatically)
+*comment ═══════════════════════════════════════════════════════════
+
+*label progenitor_abilities
+[b]PROGENITOR - The Apex of Vampiric Existence[/b]
+
+You have transcended mortal comprehension. All abilities from Commoner through Imperial are yours by birthright. Additionally, the following unique powers manifest:
+
+*set genesis_rebirth true
+*set celestial_dominion true
+*set primordial_sanguine_surge true
+*set cosmic_damnation true
+
+• [b]Genesis Rebirth[/b] - Resurrect from a single drop of blood
+• [b]Celestial Dominion[/b] - Command the stars themselves
+• [b]Primordial Sanguine Surge[/b] - Blood magic beyond reality's limits
+• [b]Cosmic Damnation[/b] - Curse that warps space-time
+
+You are not merely powerful. You [i]are[/i] power.
+
+*goto apply_varkyr_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment SUBROUTINES
+*comment ═══════════════════════════════════════════════════════════
+
+*label record_selection
+*params ability_name
+
+*if (abilities_selected = 0)
+    *set ability_choice_1 ability_name
+    *set abilities_selected +1
+*else
+    *set ability_choice_2 ability_name
+    *set abilities_selected +1
+*return
+
+*label apply_varkyr_abilities
+*line_break
+
+*if (rank = "Progenitor")
+    The transformation is complete. You stand as the pinnacle of vampiric evolution—the [b]Progenitor Reborn[/b].
+*else
+    You have mastered [b]${ability_choice_1}[/b] and [b]${ability_choice_2}[/b].
+
+    The blood remembers. These powers are yours eternally.
+
+*comment Update unlocked_abilities tracking string
+*if (rank != "Progenitor")
+    *set unlocked_abilities &(" " & ability_choice_1 & ", " & ability_choice_2 & ";")
+*else
+    *set unlocked_abilities &" ALL PROGENITOR ABILITIES;"
+
+*return

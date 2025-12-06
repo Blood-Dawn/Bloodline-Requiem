@@ -1,0 +1,493 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment LUPINE ABILITIES - Lunar Power Selection System
+*comment ═══════════════════════════════════════════════════════════
+*comment Lupines choose abilities based on TYPE (Wolf/Werewolf/Omega)
+*comment and RANK. All Lupines get common abilities automatically.
+*comment ═══════════════════════════════════════════════════════════
+
+*label lupine_ability_select
+*comment Called when Lupine reaches a new rank
+
+The moon calls to you with renewed strength. Your ascension to [b]${lupine_rank}[/b] deepens your connection to the primal hunt. Choose [b]two abilities[/b] befitting your nature.
+
+*comment Track selections
+*temp abilities_selected 0
+*temp ability_choice_1 ""
+*temp ability_choice_2 ""
+
+*comment Determine lupine type from game state
+*temp lupine_type ""
+*if (omega_variant = true)
+    *set lupine_type "Omega"
+*elseif (werewolf_only = true)
+    *set lupine_type "Werewolf"
+*else
+    *set lupine_type "Wolf"
+
+*comment Route to appropriate rank tree
+*if (lupine_rank = "Turned Omega") or (lupine_rank = "Omega")
+    *goto omega_base_abilities
+*elseif (lupine_rank = "Zeta Scout")
+    *goto zeta_abilities
+*elseif (lupine_rank = "Epsilon Forager") or (lupine_rank = "Epsilon Artisan")
+    *goto epsilon_abilities
+*elseif (lupine_rank = "Gamma Healer") or (lupine_rank = "Gamma Warder")
+    *goto gamma_abilities
+*elseif (lupine_rank = "Delta Emissary") or (lupine_rank = "Delta Sentinel")
+    *goto delta_abilities
+*elseif (lupine_rank = "Beta Guardian") or (lupine_rank = "Beta Councilor")
+    *goto beta_abilities
+*elseif (lupine_rank = "Alpha Commandant")
+    *goto alpha_abilities
+*elseif (lupine_rank = "Alpha Prime")
+    *goto alpha_prime_abilities
+*elseif (lupine_rank = "Alpha Sovereign")
+    *goto alpha_sovereign_abilities
+*elseif (lupine_rank = "Lunar Progenitor")
+    *goto lunar_progenitor_abilities
+*else
+    *bug Unrecognized Lupine rank: ${lupine_rank}
+
+*comment ═══════════════════════════════════════════════════════════
+*comment COMMON ABILITIES (Auto-granted to ALL Lupines)
+*comment ═══════════════════════════════════════════════════════════
+*comment These are set automatically, no choice needed:
+*comment - lupine_lunar_connection
+*comment - lupine_regenerative_healing
+*comment - lupine_enhanced_senses
+*comment - lupine_basic_shift
+*comment - lupine_pack_dynamics
+
+*comment ═══════════════════════════════════════════════════════════
+*comment OMEGA BASE ABILITIES
+*comment ═══════════════════════════════════════════════════════════
+
+*label omega_base_abilities
+[b]Omega Abilities[/b] - The foundation of lupine power.
+
+Your type: [b]${lupine_type}[/b]
+
+Choose two:
+
+*choice
+    *if (lupine_type = "Omega")
+        #Lunar Infusion (Omega Variant)
+            [i]Channel moonlight to heal or empower yourself.[/i]
+
+            Bask in moonlight to accelerate healing or temporarily boost strength.
+            *set omega_lunar_infusion true
+            *gosub record_lupine_selection "Lunar Infusion"
+            *goto check_omega_complete
+
+    *if (lupine_type = "Omega")
+        #Primal Resurgence (Omega Variant)
+            [i]Temporary power surge when near death.[/i]
+
+            The closer to death, the stronger you become—last-stand ferocity.
+            *set omega_primal_resurgence true
+            *gosub record_lupine_selection "Primal Resurgence"
+            *goto check_omega_complete
+
+    *if (lupine_type = "Omega")
+        #Nature's Ally (Omega Variant)
+            [i]Communicate with animals; summon them for aid.[/i]
+
+            Birds scout, wolves join hunts, bears defend—nature answers your call.
+            *set omega_natures_ally true
+            *gosub record_lupine_selection "Nature's Ally"
+            *goto check_omega_complete
+
+    *if (lupine_type = "Werewolf")
+        #Ferocious Might (Werewolf)
+            [i]Overwhelming physical strength in hybrid form.[/i]
+
+            Crush steel, tear through armor, throw enemies like dolls.
+            *set werewolf_ferocious_might true
+            *gosub record_lupine_selection "Ferocious Might"
+            *goto check_omega_complete
+
+    *if (lupine_type = "Werewolf")
+        #Impenetrable Fur (Werewolf)
+            [i]Natural armor in hybrid form.[/i]
+
+            Your fur hardens like steel; blades and bullets struggle to pierce.
+            *set werewolf_impenetrable_fur true
+            *gosub record_lupine_selection "Impenetrable Fur"
+            *goto check_omega_complete
+
+    *if (lupine_type = "Wolf")
+        #Agile Pursuer (Wolf)
+            [i]Unmatched speed and maneuverability.[/i]
+
+            Outrun horses, dodge arrows, weave through forests at blinding speed.
+            *set wolf_agile_pursuer true
+            *gosub record_lupine_selection "Agile Pursuer"
+            *goto check_omega_complete
+
+    *if (lupine_type = "Wolf")
+        #Stealth Prowler (Wolf)
+            [i]Move silently; master of ambush.[/i]
+
+            Pad across leaves without sound; strike before prey knows you're there.
+            *set wolf_stealth_prowler true
+            *gosub record_lupine_selection "Stealth Prowler"
+            *goto check_omega_complete
+
+*label check_omega_complete
+*if (abilities_selected >= 2)
+    *goto apply_lupine_abilities
+*else
+    *goto omega_base_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ZETA SCOUT ABILITIES
+*comment ═══════════════════════════════════════════════════════════
+
+*label zeta_abilities
+[b]Zeta Scout Abilities[/b] - Eyes and ears of the pack.
+
+Choose two:
+
+*choice
+    *if (lupine_type = "Wolf")
+        #Territorial Sense (Wolf)
+            [i]Know everything happening in claimed territory.[/i]
+
+            Detect intruders, track movements, sense disturbances instantly.
+            *set wolf_territorial_sense true
+            *gosub record_lupine_selection "Territorial Sense"
+            *goto check_zeta_complete
+
+    #Pack's Bond
+        [i]Enhanced telepathic coordination with packmates.[/i]
+
+        Share senses, communicate silently, coordinate hunts perfectly.
+        *set wolf_packs_bond true
+        *gosub record_lupine_selection "Pack's Bond"
+        *goto check_zeta_complete
+
+    #Scent Mastery
+        [i]Track prey across days and miles.[/i]
+
+        No scent fades from your memory; follow targets relentlessly.
+        *set scent_mastery true
+        *gosub record_lupine_selection "Scent Mastery"
+        *goto check_zeta_complete
+
+    #Moonlit Dash
+        [i]Temporary burst of incredible speed.[/i]
+
+        Short sprints at supernatural velocity; catch anything.
+        *set moonlit_dash true
+        *gosub record_lupine_selection "Moonlit Dash"
+        *goto check_zeta_complete
+
+*label check_zeta_complete
+*if (abilities_selected >= 2)
+    *goto apply_lupine_abilities
+*else
+    *goto zeta_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment GAMMA HEALER/WARDER ABILITIES
+*comment ═══════════════════════════════════════════════════════════
+
+*label gamma_abilities
+[b]Gamma Healer/Warder Abilities[/b] - Mystic protectors of the pack.
+
+Choose two:
+
+*choice
+    #Lunar Shield
+        [i]Protective barrier of moonlight.[/i]
+
+        Shield yourself or allies from harm; absorbs magic and physical damage.
+        *set lunar_shield true
+        *gosub record_lupine_selection "Lunar Shield"
+        *goto check_gamma_complete
+
+    #Pack Mending
+        [i]Accelerate healing in packmates through touch.[/i]
+
+        Channel lunar energy to close wounds on allies.
+        *set pack_mending true
+        *gosub record_lupine_selection "Pack Mending"
+        *goto check_gamma_complete
+
+    #Warding Howl
+        [i]Howl that repels hostile magic.[/i]
+
+        Dispel curses, break enchantments, shield pack from spells.
+        *set warding_howl true
+        *gosub record_lupine_selection "Warding Howl"
+        *goto check_gamma_complete
+
+    #Moon's Guidance
+        [i]Prophetic visions granted by the moon.[/i]
+
+        See glimpses of near-future threats or opportunities.
+        *set moons_guidance true
+        *gosub record_lupine_selection "Moon's Guidance"
+        *goto check_gamma_complete
+
+*label check_gamma_complete
+*if (abilities_selected >= 2)
+    *goto apply_lupine_abilities
+*else
+    *goto gamma_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment BETA GUARDIAN/COUNCILOR ABILITIES
+*comment ═══════════════════════════════════════════════════════════
+
+*label beta_abilities
+[b]Beta Guardian/Councilor Abilities[/b] - Elite warriors and advisors.
+
+Choose two:
+
+*choice
+    *if (lupine_type = "Werewolf")
+        #Battle Howl (Werewolf)
+            [i]Rally allies and terrify enemies.[/i]
+
+            Your battle cry inspires packmates while breaking enemy morale.
+            *set werewolf_battle_howl true
+            *gosub record_lupine_selection "Battle Howl"
+            *goto check_beta_complete
+
+    *if (lupine_type = "Werewolf")
+        #Relentless Vigor (Werewolf)
+            [i]Fight through injuries that would drop others.[/i]
+
+            Ignore pain and wounds; keep fighting until the enemy falls.
+            *set werewolf_relentless_vigor true
+            *gosub record_lupine_selection "Relentless Vigor"
+            *goto check_beta_complete
+
+    #Pack's Howl
+        [i]Summon entire pack to your location.[/i]
+
+        One howl and your packmates converge, no matter the distance.
+        *set packs_howl true
+        *gosub record_lupine_selection "Pack's Howl"
+        *goto check_beta_complete
+
+    #Savage Fury
+        [i]Controlled rage that enhances combat prowess.[/i]
+
+        Channel anger without losing yourself; become a perfect predator.
+        *set savage_fury true
+        *gosub record_lupine_selection "Savage Fury"
+        *goto check_beta_complete
+
+*label check_beta_complete
+*if (abilities_selected >= 2)
+    *goto apply_lupine_abilities
+*else
+    *goto beta_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ALPHA COMMANDANT ABILITIES
+*comment ═══════════════════════════════════════════════════════════
+
+*label alpha_abilities
+[b]Alpha Commandant Abilities[/b] - Pack leader's authority.
+
+Choose two:
+
+*choice
+    #Alpha's Roar
+        [i]Commanding howl that compels pack obedience.[/i]
+
+        Your pack cannot disobey direct orders delivered through this roar.
+        *set alphas_roar true
+        *gosub record_lupine_selection "Alpha's Roar"
+        *goto check_alpha_complete
+
+    *if (lupine_type = "Wolf")
+        #Alpha's Presence (Wolf)
+            [i]Inspire and lead through sheer charisma.[/i]
+
+            Packmates fight harder, morale never breaks in your presence.
+            *set wolf_alphas_presence true
+            *gosub record_lupine_selection "Alpha's Presence"
+            *goto check_alpha_complete
+
+    #Moon's Fury
+        [i]Channel full moon's power regardless of phase (limited uses).[/i]
+
+        Temporarily access full-moon strength even during new moon.
+        *set moons_fury true
+        *gosub record_lupine_selection "Moon's Fury"
+        *goto check_alpha_complete
+
+    *if (lupine_type = "Omega")
+        #Apex Shift (Omega Variant)
+            [i]Perfect mastery of all forms.[/i]
+
+            Shift instantly between human, wolf, and hybrid; no delay or strain.
+            *set omega_apex_shift true
+            *gosub record_lupine_selection "Apex Shift"
+            *goto check_alpha_complete
+
+*label check_alpha_complete
+*if (abilities_selected >= 2)
+    *goto apply_lupine_abilities
+*else
+    *goto alpha_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ALPHA PRIME ABILITIES
+*comment ═══════════════════════════════════════════════════════════
+
+*label alpha_prime_abilities
+[b]Alpha Prime Abilities[/b] - Leader of multiple packs.
+
+Choose two:
+
+*choice
+    *if (lupine_type = "Werewolf")
+        #Dominion Roar (Werewolf)
+            [i]Alpha command that compels ALL nearby Lupines.[/i]
+
+            Even wolves from other packs feel the weight of your authority.
+            *set werewolf_dominion_roar true
+            *gosub record_lupine_selection "Dominion Roar"
+            *goto check_alpha_prime_complete
+
+    *if (lupine_type = "Werewolf")
+        #Warrior's Command (Werewolf)
+            [i]Tactical coordination with all warriors under your banner.[/i]
+
+            Direct multiple packs in battle with perfect synchronization.
+            *set werewolf_warriors_command true
+            *gosub record_lupine_selection "Warrior's Command"
+            *goto check_alpha_prime_complete
+
+    *if (lupine_type = "Omega")
+        #Moon's Wrath (Omega Variant)
+            [i]Devastating lunar-empowered strike.[/i]
+
+            Unleash concentrated moonlight as a weapon; obliterate enemies.
+            *set omega_moons_wrath true
+            *gosub record_lupine_selection "Moon's Wrath"
+            *goto check_alpha_prime_complete
+
+    #Unity of Packs
+        [i]Merge consciousness of all packs under your command.[/i]
+
+        Shared senses, perfect coordination across hundreds of wolves.
+        *set unity_of_packs true
+        *gosub record_lupine_selection "Unity of Packs"
+        *goto check_alpha_prime_complete
+
+*label check_alpha_prime_complete
+*if (abilities_selected >= 2)
+    *goto apply_lupine_abilities
+*else
+    *goto alpha_prime_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ALPHA SOVEREIGN ABILITIES
+*comment ═══════════════════════════════════════════════════════════
+
+*label alpha_sovereign_abilities
+[b]Alpha Sovereign Abilities[/b] - Supreme leader of all Lupines.
+
+Choose two:
+
+*choice
+    #Sovereign's Call
+        [i]Summon ALL packs across the entire region.[/i]
+
+        One howl and every Lupine answers—armies converge at your word.
+        *set sovereigns_call true
+        *gosub record_lupine_selection "Sovereign's Call"
+        *goto check_sovereign_complete
+
+    #Origin's Echo
+        [i]Channel a fragment of the Origin Wolf's power.[/i]
+
+        Temporarily manifest abilities the Lunar Progenitor once wielded.
+        *set origins_echo true
+        *gosub record_lupine_selection "Origin's Echo"
+        *goto check_sovereign_complete
+
+    *if (lupine_type = "Omega")
+        #Eternal Guardian (Omega Variant)
+            [i]Enter berserker state to protect pack at any cost.[/i]
+
+            Become an unstoppable avatar of lunar wrath; cannot die while pack needs you.
+            *set omega_eternal_guardian true
+            *gosub record_lupine_selection "Eternal Guardian"
+            *goto check_sovereign_complete
+
+    #Lunar Eclipse
+        [i]Invoke a temporary eclipse to empower all Lupines.[/i]
+
+        Moon turns blood-red; every wolf under your banner gains full-moon strength.
+        *set lunar_eclipse true
+        *gosub record_lupine_selection "Lunar Eclipse"
+        *goto check_sovereign_complete
+
+*label check_sovereign_complete
+*if (abilities_selected >= 2)
+    *goto apply_lupine_abilities
+*else
+    *goto alpha_sovereign_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment LUNAR PROGENITOR (All abilities unlocked)
+*comment ═══════════════════════════════════════════════════════════
+
+*label lunar_progenitor_abilities
+[b]LUNAR PROGENITOR - The Origin Wolf Reborn[/b]
+
+You are the moon made flesh, the first howl that shattered silence. All abilities from Omega through Alpha Sovereign are yours instinctively. Additionally, the primal powers manifest:
+
+*set progenitor_size_shift true
+*set progenitor_lunar_avatar true
+*set progenitor_pack_genesis true
+*set progenitor_moons_judgment true
+
+• [b]Progenitor Size Shift[/b] - Omega form dwarfs mountains
+• [b]Lunar Avatar[/b] - Become living moonlight; invulnerable
+• [b]Pack Genesis[/b] - Turn mortals into Lupines at will
+• [b]Moon's Judgment[/b] - Summon lunar fire that purges all evil
+
+You are not merely a wolf. You [i]are[/i] the moon's will incarnate.
+
+*goto apply_lupine_abilities
+
+*comment ═══════════════════════════════════════════════════════════
+*comment SUBROUTINES
+*comment ═══════════════════════════════════════════════════════════
+
+*label record_lupine_selection
+*params ability_name
+
+*if (abilities_selected = 0)
+    *set ability_choice_1 ability_name
+    *set abilities_selected +1
+*else
+    *set ability_choice_2 ability_name
+    *set abilities_selected +1
+*return
+
+*label apply_lupine_abilities
+*line_break
+
+*if (lupine_rank = "Lunar Progenitor")
+    The transformation is absolute. You are the [b]Origin Wolf Reborn[/b]—legend made real.
+*else
+    You have mastered [b]${ability_choice_1}[/b] and [b]${ability_choice_2}[/b].
+
+    The moon witnesses your growth. These powers are yours under her gaze.
+
+*comment Update unlocked_abilities tracking string
+*if (lupine_rank != "Lunar Progenitor")
+    *set unlocked_abilities &(" " & ability_choice_1 & ", " & ability_choice_2 & ";")
+*else
+    *set unlocked_abilities &" ALL LUNAR PROGENITOR ABILITIES;"
+
+*return
