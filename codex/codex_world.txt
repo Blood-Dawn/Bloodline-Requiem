@@ -232,4 +232,4 @@ The requiem has begun. Whose blood will write the final verse?
     #Return to timeline
         *goto timeline
     #Return to codex
-        *goto_scene codex_main codex_main
+        *goto_scene codex_main

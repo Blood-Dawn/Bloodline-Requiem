@@ -26,7 +26,7 @@
   *stat_chart
     text alignment Faction
     *if (rank != "")
-      text rank Rank
+        text rank Rank
     *if (bloodline != "")
       text bloodline Bloodline
     *if (lupine_rank != "")
@@ -113,6 +113,8 @@
 *choice
   #View Character Relationships
     *goto character_relationships
+  #Millennium War History & Legendary Leaders
+    *goto millennium_war_history
   #Codex / Lore
     *goto_scene codex_main codex_main
   #Return to Game
@@ -599,5 +601,347 @@ Choose a faction to view:
 *choice
   #View Detailed Profiles
     *goto character_relationships
+  #Back to Stats
+    *goto main
+
+*comment ═══════════════════════════════════════════════════════════
+*comment MILLENNIUM WAR HISTORY & LEGENDARY LEADERS
+*comment ═══════════════════════════════════════════════════════════
+
+*label millennium_war_history
+
+[b][i]History of the Millennium War[/i][/b]
+
+The Millennium War was a cataclysmic conflict that shaped the world of Veilfall. It spanned ages, with supernatural factions clashing over control, power, and survival.
+
+*choice
+  #Faction Leaders During the War
+    *goto faction_leaders_menu
+  #Back to Stats
+    *goto main
+
+*label faction_leaders_menu
+
+[b]Legendary Leaders of the Millennium War[/b]
+
+Choose a faction to learn about their legendary leaders:
+
+*choice
+  #The Lupine Leaders
+    *goto lupine_leaders_intro
+  #The Varkyr Leaders
+    *goto varkyr_leaders_intro
+  #Back
+    *goto millennium_war_history
+
+*comment ═══════════════════════════════════════════════════════════
+*comment LUPINE LEGENDARY LEADERS
+*comment ═══════════════════════════════════════════════════════════
+
+*label lupine_leaders_intro
+
+[b]═══ THE LUPINE LEADERS ═══[/b]
+
+The Millennium War was a cataclysmic event that shaped the world of Veilfall. It was a conflict that spanned ages, with the supernatural factions clashing over control, power, and survival. The Lupines, with their deep connection to nature and the moon, found themselves often as the peacekeepers, trying to maintain balance against the encroaching darkness that threatened to consume the world.
+
+These five Lupine leaders became the pillars of their society, embodying the qualities that would lead their faction through the war and into the annals of history. Each of them has a district within the Lupine territories named in their honor, and their stories are taught to every new generation as a reminder of the strength and perseverance of the Lupine spirit.
+
+*choice
+  #Aeliana, She-Wolf of the Northern Gale
+    *goto lupine_aeliana
+  #Theron, Guardian of the Crescent Moon
+    *goto lupine_theron
+  #Calista, The Silent Huntress
+    *goto lupine_calista
+  #Elara, The Moonlit Seer
+    *goto lupine_elara
+  #Orion, The Howling Tempest
+    *goto lupine_orion
+  #Back to Faction Leaders
+    *goto faction_leaders_menu
+
+*label lupine_aeliana
+*image https://i.imgur.com/24IYmW6.png center
+
+*set Name "Aeliana"
+*set Title "She-Wolf of the Northern Gale"
+*set Species "Werewolf (Evolved)"
+*set Description "A fierce warrior known for her white fur, which symbolized purity and strength among the Lupines. She led her pack with a wise and even hand, and her name became synonymous with peace during the turbulent times. Aeliana was known for her incredible speed and agility, and she was the one who initiated the pacts between the Lupines and other factions to form a united front in the Millennium War."
+
+[b]Name:[/b] ${Name}
+
+[b]Title:[/b] ${Title}
+
+[b]Species:[/b] ${Species}
+
+*stat_chart
+  percent lupine_relation Lupine Faction Standing
+
+*line_break
+[b]Legacy:[/b] ${Description}
+
+*choice
+  #View Another Lupine Leader
+    *goto lupine_leaders_intro
+  #Back to Stats
+    *goto main
+
+*label lupine_theron
+*image https://i.imgur.com/placeholder_theron.png center
+
+*set Name "Theron"
+*set Title "Guardian of the Crescent Moon"
+*set Species "Werewolf (Evolved)"
+*set Description "Theron was a black-furred Lupine whose strength was unrivaled. His fur signified the power that he wielded, and his roar alone could intimidate the opposing vampire clans. He was a tactical genius who crafted the strategies that would lead the Lupines to many victories. His legacy is remembered in the songs and tales that are still told by the Lupine cubs."
+
+[b]Name:[/b] ${Name}
+
+[b]Title:[/b] ${Title}
+
+[b]Species:[/b] ${Species}
+
+*stat_chart
+  percent lupine_relation Lupine Faction Standing
+
+*line_break
+[b]Legacy:[/b] ${Description}
+
+*choice
+  #View Another Lupine Leader
+    *goto lupine_leaders_intro
+  #Back to Stats
+    *goto main
+
+*label lupine_calista
+*image https://i.imgur.com/placeholder_calista.png center
+
+*set Name "Calista"
+*set Title "The Silent Huntress"
+*set Species "Werewolf (Evolved)"
+*set Description "With fur as dark as the night sky, Calista was a master of stealth and tracking. Her name was often whispered in fear among their enemies. She was instrumental in leading covert operations that weakened enemy supply lines, making her a legend among the assassin circles. Calista's ability to move unseen and unheard earned her a mythical status."
+
+[b]Name:[/b] ${Name}
+
+[b]Title:[/b] ${Title}
+
+[b]Species:[/b] ${Species}
+
+*stat_chart
+  percent lupine_relation Lupine Faction Standing
+
+*line_break
+[b]Legacy:[/b] ${Description}
+
+*choice
+  #View Another Lupine Leader
+    *goto lupine_leaders_intro
+  #Back to Stats
+    *goto main
+
+*label lupine_elara
+*image https://i.imgur.com/placeholder_elara.png center
+
+*set Name "Elara"
+*set Title "The Moonlit Seer"
+*set Species "Werewolf (Evolved)"
+*set Description "Elara's fur was a rare shade of silver, reflecting her connection to the moon and her prophetic abilities. Her visions were said to guide the Lupines through the darkest hours of the Millennium War. Elara's role was not only as a leader but as a spiritual guide, fostering unity and hope among her people."
+
+[b]Name:[/b] ${Name}
+
+[b]Title:[/b] ${Title}
+
+[b]Species:[/b] ${Species}
+
+*stat_chart
+  percent lupine_relation Lupine Faction Standing
+
+*line_break
+[b]Legacy:[/b] ${Description}
+
+*choice
+  #View Another Lupine Leader
+    *goto lupine_leaders_intro
+  #Back to Stats
+    *goto main
+
+*label lupine_orion
+*image https://i.imgur.com/placeholder_orion.png center
+
+*set Name "Orion"
+*set Title "The Howling Tempest"
+*set Species "Werewolf (Evolved)"
+*set Description "With fur of a rich, deep brown, Orion embodied the balance of strength and wisdom. His leadership was marked by a series of daring raids that broke enemy sieges and turned the tides at critical junctures in the war. His howl was said to call forth the winds themselves, and his pack followed him with a fervor that bordered on the religious."
+
+[b]Name:[/b] ${Name}
+
+[b]Title:[/b] ${Title}
+
+[b]Species:[/b] ${Species}
+
+*stat_chart
+  percent lupine_relation Lupine Faction Standing
+
+*line_break
+[b]Legacy:[/b] ${Description}
+
+*choice
+  #View Another Lupine Leader
+    *goto lupine_leaders_intro
+  #Back to Stats
+    *goto main
+
+*comment ═══════════════════════════════════════════════════════════
+*comment VARKYR LEGENDARY LEADERS
+*comment ═══════════════════════════════════════════════════════════
+
+*label varkyr_leaders_intro
+
+[b]═══ THE VARKYR LEADERS ═══[/b]
+
+The Millennium War saw the Varkyrs using both their natural abilities and political savvy to navigate the conflict. As immortals, their perspective on the war was different—each battle was a move in a much larger game of chess that spanned centuries. The Varkyrs' affinity for the night and their natural predatory skills made them formidable opponents, and their leaders were as varied as they were terrifying.
+
+These Varkyr leaders etched their names into history with blood, strategy, and an unquenchable thirst for survival and power. Their legacies are preserved in the dark annals of the Varkyrs' libraries, whispered about in hushed tones in the halls of the Night Council, and are a testament to the enduring legacy of the vampire race in the world of Veilfall.
+
+*choice
+  #Valerius, The Eternal Strategist
+    *goto varkyr_valerius
+  #Seraphina, The Crimson Diplomat
+    *goto varkyr_seraphina
+  #Cassius, The Shadowblade
+    *goto varkyr_cassius
+  #Lysandra, The Sanguine Sorceress
+    *goto varkyr_lysandra
+  #Draven, The Iron Will
+    *goto varkyr_draven
+  #Back to Faction Leaders
+    *goto faction_leaders_menu
+
+*label varkyr_valerius
+*image https://i.imgur.com/placeholder_valerius.png center
+
+*set Name "Valerius"
+*set Title "The Eternal Strategist"
+*set Species "Pure Blood Varkyr"
+*set Description "Valerius was known as the mind behind the Varkyrs' most cunning war tactics. His pale, almost translucent skin belied a ruthless nature that could turn the tide of any battle. He was responsible for the Varkyrs' mastery of psychological warfare, using fear as a weapon as sharp as any fang. He founded the 'Night Council', which still governs the faction to this day."
+
+[b]Name:[/b] ${Name}
+
+[b]Title:[/b] ${Title}
+
+[b]Species:[/b] ${Species}
+
+*stat_chart
+  percent varkyrs_relation Varkyr Faction Standing
+
+*line_break
+[b]Legacy:[/b] ${Description}
+
+*choice
+  #View Another Varkyr Leader
+    *goto varkyr_leaders_intro
+  #Back to Stats
+    *goto main
+
+*label varkyr_seraphina
+*image https://i.imgur.com/placeholder_seraphina.png center
+
+*set Name "Seraphina"
+*set Title "The Crimson Diplomat"
+*set Species "Pure Blood Varkyr"
+*set Description "With hair as red as the blood that gives Varkyrs their strength, Seraphina was both feared and respected. She was a master negotiator whose influence extended beyond the Varkyrs to create alliances with other factions, often saving her people from the brink of destruction. Her diplomatic efforts were key in securing temporary truces that allowed the Varkyrs to regroup and strengthen."
+
+[b]Name:[/b] ${Name}
+
+[b]Title:[/b] ${Title}
+
+[b]Species:[/b] ${Species}
+
+*stat_chart
+  percent varkyrs_relation Varkyr Faction Standing
+
+*line_break
+[b]Legacy:[/b] ${Description}
+
+*choice
+  #View Another Varkyr Leader
+    *goto varkyr_leaders_intro
+  #Back to Stats
+    *goto main
+
+*label varkyr_cassius
+*image https://i.imgur.com/placeholder_cassius.png center
+
+*set Name "Cassius"
+*set Title "The Shadowblade"
+*set Species "Pure Blood Varkyr"
+*set Description "Cassius' reputation was one of a silent and deadly assassin who could strike from the shadows with precision. His legacy includes the establishment of the 'Veil of Shadows', a network of spies and assassins that operated under his command, gathering intelligence and executing covert missions that were crucial for Varkyr victories."
+
+[b]Name:[/b] ${Name}
+
+[b]Title:[/b] ${Title}
+
+[b]Species:[/b] ${Species}
+
+*stat_chart
+  percent varkyrs_relation Varkyr Faction Standing
+
+*line_break
+[b]Legacy:[/b] ${Description}
+
+*choice
+  #View Another Varkyr Leader
+    *goto varkyr_leaders_intro
+  #Back to Stats
+    *goto main
+
+*label varkyr_lysandra
+*image https://i.imgur.com/placeholder_lysandra.png center
+
+*set Name "Lysandra"
+*set Title "The Sanguine Sorceress"
+*set Species "Pure Blood Varkyr"
+*set Description "Lysandra's power was rooted in her mastery of blood magic, a dark and potent force that she wielded with expert control. Her silver hair and piercing blue eyes became icons of the mystical prowess that the Varkyrs could bring to bear. It was Lysandra who enchanted the bloodstones, artifacts that played a significant role in the war's outcome."
+
+[b]Name:[/b] ${Name}
+
+[b]Title:[/b] ${Title}
+
+[b]Species:[/b] ${Species}
+
+*stat_chart
+  percent varkyrs_relation Varkyr Faction Standing
+
+*line_break
+[b]Legacy:[/b] ${Description}
+
+*choice
+  #View Another Varkyr Leader
+    *goto varkyr_leaders_intro
+  #Back to Stats
+    *goto main
+
+*label varkyr_draven
+*image https://i.imgur.com/placeholder_draven.png center
+
+*set Name "Draven"
+*set Title "The Iron Will"
+*set Species "Pure Blood Varkyr"
+*set Description "Draven was a figure of awe, with jet-black hair and a presence that could quell any dissent within the ranks. His unyielding will and strategic fortitude allowed the Varkyrs to withstand sieges that would have broken any other faction. He was the architect behind the 'Fortress of Dusk', a stronghold that never fell during the war."
+
+[b]Name:[/b] ${Name}
+
+[b]Title:[/b] ${Title}
+
+[b]Species:[/b] ${Species}
+
+*stat_chart
+  percent varkyrs_relation Varkyr Faction Standing
+
+*line_break
+[b]Legacy:[/b] ${Description}
+
+*choice
+  #View Another Varkyr Leader
+    *goto varkyr_leaders_intro
   #Back to Stats
     *goto main
