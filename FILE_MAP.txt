@@ -75,7 +75,7 @@ bloodline-requiem/
 🎯 QUICK NAVIGATION
 ═══════════════════════════════════════════════════════════════
 
-Want to...                          → Go to file...
+Want to…                            → Go to file…
 
 Add a Varkyr ability               → systems/varkyr_abilities.txt
 Add a Lupine ability               → systems/lupine_abilities_complete.txt
@@ -193,7 +193,7 @@ DOCUMENTATION (1000+ lines):
     → Returns to calling scene
 
 8. Act scenes check ability flags
-    → *if (shadow_step)
+    → Example: *if (shadow_step)
     → Offer special choices
     → Enhanced gameplay
 
@@ -305,33 +305,35 @@ Phase 3 (Content):
 ├─────────────────────────────────────────────────────────────┤
 │ 1. Edit systems/[faction]_abilities.txt                     │
 │ 2. Find appropriate rank section                            │
-│ 3. Add *choice with description                             │
-│ 4. Set boolean flag in *label apply_abilities               │
-│ 5. Add flag to startup.txt (*create ability_name false)     │
+│ 3. Add choice with description                               │
+│ 4. Set boolean flag in apply_abilities label                │
+│ 5. Add flag to startup.txt (create ability_name false)      │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ WANT TO: Grant XP in a scene                                │
 ├─────────────────────────────────────────────────────────────┤
-│ *gosub_scene rank_progression gain_xp 100 "Mission Done"    │
-│ *gosub_scene rank_progression check_progression             │
+│ Example code:                                                │
+│   gosub_scene rank_progression gain_xp 100 "Mission Done"   │
+│   gosub_scene rank_progression check_progression            │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ WANT TO: Use ability in combat                              │
 ├─────────────────────────────────────────────────────────────┤
-│ *if (shadow_step)                                            │
+│ Example code:                                                │
+│   if (shadow_step)                                           │
 │     #Use Shadow Step                                         │
-│         You vanish into shadows!                             │
-│         *goto stealth_victory                                │
+│       You vanish into shadows!                               │
+│       goto stealth_victory                                   │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ WANT TO: Add codex entry                                    │
 ├─────────────────────────────────────────────────────────────┤
 │ 1. Edit codex/codex_[category].txt                          │
-│ 2. Add *choice in overview section                          │
-│ 3. Create *label for entry                                  │
+│ 2. Add choice in overview section                           │
+│ 3. Create label for entry                                   │
 │ 4. Write lore (300-800 words)                               │
 │ 5. Add navigation back to overview                          │
 └─────────────────────────────────────────────────────────────┘
