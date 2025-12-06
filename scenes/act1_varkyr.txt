@@ -254,9 +254,296 @@ inscription pulses with ancient magic, hinting at sacrifices yet to come.
 *if (alignment = "varkyrs")
     The investigation complete, you feel the weight of new knowledge—and new power. Your actions tonight have shaped your standing among the Varkyrs.
 
-*set chapter 2
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment CRIMSON SPIRE SUMMONS
+*comment ═══════════════════════════════════════════════════════════
+
+*label spire_summons
+
+The night air shifts as a figure materializes from shadow—a courier bearing the Crimson Spire's seal. A blood-red envelope, warm to the touch, as if recently pressed against living skin.
+
+"The Matriarch requests your presence," the courier intones. "Immediately."
+
+It's not a request. It's a command.
+
+You make your way through Veilfall's winding streets toward the ancient structure that serves as the heart of Varkyr power. The Crimson Spire rises from the noble quarter like a spike of frozen blood, its gothic architecture defying mortal engineering.
+
+Gargoyles watch your approach with eyes that seem too aware. The great obsidian doors open without touch, revealing a spiraling descent into the earth.
 
 *page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE COURT OF CRIMSON
+*comment ═══════════════════════════════════════════════════════════
+
+*label crimson_court
+
+The Court of Crimson sprawls beneath the city—a cathedral carved from living stone, its vaulted ceiling lost in shadow. Hundreds of Varkyrs fill the chamber, organized by bloodline and rank. Royal vampires in their finery occupy the upper tiers. Shadow bloodline assassins lurk in the periphery. War bloodline champions stand like sentinels.
+
+All eyes turn to you as you enter.
+
+The Matriarch sits upon a throne of blackened bone, her presence so overwhelming that reality itself seems to bend around her. She is ancient beyond measure—some whisper she walked the earth before the Millennium War, before even the oldest records began.
+
+"Approach," her voice resonates, not spoken but felt.
+
+You step forward, acutely aware of the weight of centuries of tradition pressing down upon you.
+
+*choice
+    #Kneel before the Matriarch in respect
+        You drop to one knee, head bowed. The traditional show of deference.
+
+        Murmurs of approval ripple through the court. The Matriarch's lips curve slightly.
+
+        *set varkyrs_relation +10
+        *set control +5
+        *goto matriarch_speech
+
+    #Stand tall but bow your head slightly
+        You remain standing but incline your head in acknowledgment. Respect without submission.
+
+        Several nobles exchange glances. The Matriarch's expression remains unreadable.
+
+        *set will +10
+        *goto matriarch_speech
+
+    #Meet her gaze directly with confidence
+        You meet the Matriarch's ancient eyes without flinching. A bold move.
+
+        The court falls silent. Even the shadows seem to hold their breath. Then—the Matriarch laughs, a sound like ice cracking.
+
+        "Bold," she observes. "We shall see if you survive that boldness."
+
+        *set will +15
+        *set varkyrs_relation -5
+        *goto matriarch_speech
+
+*label matriarch_speech
+
+"You have completed the investigation we set before you," the Matriarch begins. "Lord Vaelis's... situation has been handled. Your performance has been noted."
+
+She gestures, and a figure steps from the shadows—Lord Vaelis himself, very much alive (or undead, as it were). His eyes meet yours with amused recognition.
+
+"The rogue vampire assignment was a test," the Matriarch continues. "We wished to measure your capability, your judgment, your potential allegiance. Vaelis is no rogue. He is one of our most trusted agents."
+
+*if (varkyrs_relation >= 20)
+    "And you," she says, "have proven yourself worthy of our attention."
+*else
+    "You have shown... competence," she allows. "Enough to warrant further consideration."
+
+*choice
+    #"I'm honored by your trust, Matriarch"
+        Diplomacy. The safest path through vampire politics.
+
+        *set cunning +5
+        *set varkyrs_relation +10
+        *goto rank_ceremony
+
+    #"I don't appreciate being tested without my knowledge"
+        Resentment colors your words. You were manipulated.
+
+        The Matriarch's smile widens. "All of existence is a test, fledgling. Those who resent tests rarely survive them."
+
+        *set will +10
+        *set varkyrs_relation -5
+        *goto rank_ceremony
+
+    #Say nothing, simply observe
+        You remain silent, studying the power dynamics at play.
+
+        The Matriarch nods approvingly. "Wise. Those who speak least often learn most."
+
+        *set cunning +10
+        *goto rank_ceremony
+
+*label rank_ceremony
+
+*if (rank = "Commoner") or (rank = "Knight")
+    The Matriarch rises from her throne—a movement that sends waves of power through the chamber.
+
+    "You entered this court as a Commoner, the lowest of our ranks. But you have shown promise."
+
+    She descends the steps, each footfall echoing like a heartbeat. When she reaches you, she extends one pale hand, a single nail sharpened to a point.
+
+    "Kneel."
+
+    *page_break
+
+    You kneel. The Matriarch's nail opens her own palm—blood wells, impossibly red, impossibly potent. Ancient vitae. Progenitor blood.
+
+    "Drink, and rise as a Knight of the Crimson Spire."
+
+    *if (rank = "Commoner")
+        The blood touches your lips and liquid fire floods your veins. Power. Raw, terrible power. Your body convulses as the essence rewrites you at a fundamental level.
+
+        When the transformation completes, you rise—stronger, faster, sharper.
+
+        *set rank "Knight"
+        *set strength +15
+        *set agility +10
+        *set cunning +10
+        *set will +10
+        *set Bloodlust +20
+        *gosub_scene rank_progression gain_xp 200 "Elevated to Knight by the Matriarch"
+    *else
+        The ancient blood reinforces what you've already become. The power settles into your bones like familiar weight.
+
+        *set strength +5
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 100 "Reaffirmed as Knight of the Spire"
+
+    The court erupts in measured applause—a sound like rain on stone.
+
+    *goto political_landscape
+
+*else
+    "Your rank is already established," the Matriarch notes. "But all Knights of the Spire must understand the political landscape they navigate."
+
+    *goto political_landscape
+
+*label political_landscape
+
+The Matriarch returns to her throne, her expression grave.
+
+"Veilfall teeters on the edge of chaos. The Lupines grow bold, encroaching on territories they once feared to enter. The Forsaken multiply in the shadows, Caius the Unbound gathering an army of hybrids. And whispers speak of the Ecliptic Amulet—an artifact of immense power, said to control the very Veil that separates our world from mortal awareness."
+
+She pauses, letting the weight of her words settle.
+
+"Three factions seek this amulet. The Lupines believe it can end the curse of the moon, granting them control over their transformations. The Forsaken think it will stabilize their hybrid forms, ending their suffering. And we..."
+
+Her smile is cold and terrible.
+
+"We know its true purpose. The Ecliptic Amulet doesn't just manipulate the Veil—it can [i]shatter[/i] it. Or reinforce it eternally. Whoever controls the amulet controls the fate of all supernatural beings."
+
+*set ecliptic_amulet_known true
+
+*choice
+    #"Where is this amulet now?"
+        A practical question. If it's so important, you need to know its location.
+
+        The Matriarch shakes her head. "Unknown. Lost during the Millennium War. But our seers sense stirrings—someone is searching for it. Someone powerful."
+
+        *set cunning +5
+        *goto spire_allegiance
+
+    #"Why tell me this?"
+        You're still relatively new. Why share such critical intelligence?
+
+        "Because," the Matriarch says, "you will be one of those searching for it. Your investigation begins now."
+
+        *set awareness +5
+        *goto spire_allegiance
+
+    #"This sounds like a problem for the Council, not a single vampire"
+        The scope is too large. This requires coordination.
+
+        "The Night Council is compromised," Lord Vaelis interjects. "We suspect infiltration. Trust no one beyond this chamber."
+
+        *set cunning +10
+        *goto spire_allegiance
+
+*label spire_allegiance
+
+The Matriarch leans forward, her gaze piercing.
+
+"I offer you a choice, Knight. A choice that will define your path forward."
+
+"You may serve the Crimson Spire as a loyal agent—following our directives, hunting the amulet for Varkyr interests, ensuring our faction emerges dominant. In return, you will have our full resources, our protection, our favor."
+
+"Or," she continues, "you may operate independently—pursuing the amulet for your own reasons, making your own alliances, forging your own path. You will still be acknowledged as Varkyr, but you will not have our backing when politics turn dangerous."
+
+"Or finally," her smile turns dangerous, "you may [i]oppose[/i] us. Seek to claim the amulet for another faction, or destroy it entirely. This path leads to exile—or execution—but some believe freedom is worth any price."
+
+The court is utterly silent. Even the torches seem to still their flickering.
+
+This is the moment that will define everything.
+
+*page_break
+
+*choice
+    #Pledge loyalty to the Crimson Spire
+        "I am yours, Matriarch," you say clearly. "The Spire's interests are my interests."
+
+        Satisfaction flashes across her ancient features. "Then you are bound to us, and we to you. Rise, Agent of the Crimson Spire."
+
+        A blood-red signet ring appears in her palm—enchanted, ancient, a symbol of authority.
+
+        "This marks you as ours. Wear it with honor."
+
+        *set spire_agent true
+        *set spire_independent false
+        *set spire_rebel false
+        *set varkyrs_relation +30
+        *set Night_Council_relation +15
+        *gosub_scene rank_progression gain_xp 150 "Became Agent of the Crimson Spire"
+        *goto act1_conclusion
+
+    #Maintain independence
+        "I will hunt the amulet," you say carefully, "but I answer to no one. My loyalty is to myself first."
+
+        The Matriarch's expression doesn't change, but something dangerous flickers in her eyes.
+
+        "Independence is a luxury few can afford. But you have earned the right to try. Remember—when you fall, the Spire will not catch you."
+
+        *set spire_independent true
+        *set spire_agent false
+        *set spire_rebel false
+        *set will +20
+        *gosub_scene rank_progression gain_xp 125 "Chose the path of independence"
+        *goto act1_conclusion
+
+    #Refuse—you cannot serve the Spire's ambitions
+        "No," you say quietly. "I've seen enough of vampire politics. I won't be your weapon."
+
+        The court erupts in shocked whispers. Lord Vaelis's hand moves to his blade.
+
+        But the Matriarch merely nods, as if she expected this.
+
+        "Then you are no longer welcome here. Leave Veilfall, or face the consequences of your defiance. The Crimson Spire has a long memory, fledgling."
+
+        *set spire_rebel true
+        *set spire_agent false
+        *set spire_independent false
+        *set varkyrs_relation -40
+        *set will +25
+        *gosub_scene rank_progression gain_xp 100 "Defied the Crimson Spire"
+        *goto act1_conclusion
+
+*label act1_conclusion
+
+*if (spire_agent)
+    As you leave the Court of Crimson, the weight of the blood-red ring on your finger feels like both power and chain. You are an agent of the Spire now—with all the resources and burdens that entails.
+
+    The hunt for the Ecliptic Amulet begins.
+
+*if (spire_independent)
+    You ascend from the Court of Crimson alone, beholden to no one. The path ahead is uncertain, but it's yours.
+
+    The hunt for the Ecliptic Amulet begins.
+
+*if (spire_rebel)
+    You flee the Crimson Spire as threats echo behind you. You've made powerful enemies—but you've kept your soul.
+
+    Now the question is: can you survive what comes next?
+
+*set chapter 2
+*set act 2
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ACT 1 COMPLETE - VARKYR ROUTE
+*comment Player has:
+*comment - Completed investigation of Lord Vaelis
+*comment - Been tested by the Matriarch
+*comment - Potentially ranked up to Knight
+*comment - Learned of the Ecliptic Amulet
+*comment - Chosen their relationship with the Crimson Spire
+*comment
+*comment Next: Route to Act 2 hub when implemented
+*comment ═══════════════════════════════════════════════════════════
+
 *comment TODO: Route to Act 2 hub when implemented
 *finish
 

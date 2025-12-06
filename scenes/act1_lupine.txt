@@ -302,8 +302,292 @@ Taking a steady breath, you recount your charge from the Assassin Guild to inves
 *if (alignment = "lupine")
     The pack has judged you. Whether through strength, cunning, or honor, you've made your mark on the Whispering Pines. The moon watches, and your path forward is clearer.
 
-*set chapter 2
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE ALPHA'S JUDGMENT
+*comment ═══════════════════════════════════════════════════════════
+
+*label alpha_judgment
+
+Alpha Rurik, the massive black-furred leader of the Whispering Pines Pack, shifts to his hybrid form—towering, powerful, radiating primal authority. His amber eyes study you with an intensity that makes your instincts scream both submission and challenge.
+
+"You have proven yourself worthy of acknowledgment," he rumbles, voice like distant thunder. "Few outsiders earn the pack's respect. Fewer still survive to claim it."
+
+The other wolves gather in a circle around you both—brown, gray, and the rare white-furred among them. This is a ceremony, you realize. A judgment.
+
+"The Whispering Pines does not accept weaklings," Rurik continues. "We do not tolerate cowards. But strength alone is not enough. Honor. Loyalty to pack. These matter more than fangs or claws."
+
+He steps closer, close enough that you can feel the heat radiating from his massive frame.
+
+"I offer you a place among us. Not as Omega—the lowest rank—but as Hunter, one who has proven their worth in blood and trial."
+
+*choice
+    #Accept the offer and join the pack fully
+        "I accept," you say, meeting his gaze. "I will run with the Whispering Pines."
+
+        Rurik's muzzle splits in a fierce grin. "Then let the moon bear witness!"
+
+        He throws his head back and howls—a sound that shakes the very trees. The pack joins him, a chorus of primal power that resonates in your bones.
+
+        When the howl fades, Rurik places a massive paw on your shoulder.
+
+        "You are pack now. Your strength is ours. Our strength is yours."
+
+        *set pack_member true
+        *set pack_outsider false
+        *set pack_exile false
+        *set lupine_relation +40
+        *if (lupine_rank = "Omega")
+            *set lupine_rank "Hunter"
+            *set strength +10
+            *set agility +10
+            *set will +15
+        *gosub_scene rank_progression gain_xp 200 "Accepted into the Whispering Pines Pack as Hunter"
+        *goto pack_briefing
+
+    #Respectfully decline—maintain your independence
+        "I am honored," you say carefully, "but I cannot fully join the pack. My path leads elsewhere."
+
+        Disappointment flickers in Rurik's eyes, but he nods.
+
+        "Independence is respected among wolves, even if it is lonely. You are not pack, but you are not enemy. We will remember you as ally."
+
+        *set pack_outsider true
+        *set pack_member false
+        *set pack_exile false
+        *set lupine_relation +20
+        *set will +20
+        *gosub_scene rank_progression gain_xp 150 "Earned status as ally of the Whispering Pines"
+        *goto pack_briefing
+
+    #Refuse outright—you don't trust werewolf politics
+        "No," you say bluntly. "I've seen what pack politics do. I won't be bound by your rules."
+
+        The temperature in the clearing drops. Growls rumble from multiple throats.
+
+        Rurik's expression hardens. "Then you are neither pack nor ally. Leave these woods and do not return. If we see you again, it will not be as friends."
+
+        *set pack_exile true
+        *set pack_member false
+        *set pack_outsider false
+        *set lupine_relation -30
+        *set will +25
+        *gosub_scene rank_progression gain_xp 100 "Rejected the pack and earned exile"
+        *goto exile_path
+
+*label pack_briefing
+
+*if not (pack_exile)
+    The alpha gestures for you to walk with him, away from the main pack gathering. You follow him deeper into the Whispering Pines, to a clearing where moonlight pools like liquid silver.
+
+    "There are things you must know," Rurik begins, his tone grave. "Things that concern all supernatural beings, not just Lupines."
+
+    He sits, a massive presence even at rest.
+
+    "The Millennium War ended a thousand years ago, but the wounds remain. Varkyrs and Lupines fought to near-extinction. The Forsaken were created from our bloodlines, twisted together in agony. Humans cowered behind the Veil, pretending monsters didn't exist."
+
+    *page_break
+
+    "Now, the balance fractures again. Someone hunts for the Ecliptic Amulet—an artifact of immense power lost during the war. Whoever finds it controls the Veil itself."
+
+    Your ears perk up. This is the same artifact the Matriarch mentioned (if you've been through Varkyr content).
+
+    "The Lupines seek this amulet for one purpose: to break the curse of the moon. Imagine—transformation at will, not forced by lunar cycles. Freedom from the rage that consumes us. Control."
+
+    *set ecliptic_amulet_known true
+
+    *choice
+        #"What's stopping you from finding it?"
+            Rurik's expression darkens. "It's hidden. Guarded by ancient magic. And we are not the only ones searching. The Varkyrs want it. The Forsaken want it. Even humans have begun to stir, their hunters seeking weapons against us."
+
+            *set cunning +5
+            *goto amulet_discussion
+
+        #"Why do you think it can break the curse?"
+            "Legend," Rurik admits. "Ancient texts recovered from Millennium War ruins. They speak of the amulet's power over supernatural nature itself—including our moon-bond."
+
+            *set awareness +5
+            *goto amulet_discussion
+
+        #"What if breaking the curse has consequences?"
+            Rurik meets your gaze with respect. "You think like an elder. Yes—there are risks. The moon-bond is curse and blessing both. Some believe removing it would diminish us, make us less than what we are."
+
+            *set cunning +10
+            *goto amulet_discussion
+
+*label amulet_discussion
+
+"I am telling you this," Rurik continues, "because I sense you have a role to play in what comes. Whether with the pack or apart from it, you will be involved."
+
+He stands, shaking out his fur.
+
+"The hunt for the Ecliptic Amulet has already begun in secret. Agents move through Veilfall, searching for clues. The Crimson Spire sends its Knights. Caius the Unbound rallies his Forsaken. And we..."
+
+His grin turns feral.
+
+"We hunt as we always have—with tooth and claw and packmates at our flanks."
 
 *page_break
+
+*if (pack_member)
+    "You are pack now," Rurik says firmly. "That means the pack's mission is your mission. You will hunt the amulet for Lupine interests. You will ensure our people gain freedom from the moon's tyranny."
+
+    He pauses, studying you.
+
+    "But I am not the Matriarch. I do not demand blind obedience. If you believe another path is right, speak. We decide as pack."
+
+*if (pack_outsider)
+    "You are not pack," Rurik acknowledges, "but you are ally. We would ask—though not demand—that you consider our interests when you pursue the amulet. We seek only freedom, not domination."
+
+    He tilts his head.
+
+    "What you do with that request is your choice."
+
+*choice
+    #Pledge to help the Lupines find the amulet
+        *if (pack_member)
+            "The pack's mission is my mission," you affirm. "I will hunt the amulet for our freedom."
+
+            Rurik's tail wags once—a surprisingly dog-like gesture from the fearsome alpha.
+
+            "Good. We hunt together."
+
+            *set lupine_agent true
+            *set lupine_independent false
+            *set lupine_opposed false
+            *set lupine_relation +30
+            *gosub_scene rank_progression gain_xp 150 "Became agent of the Whispering Pines Pack"
+            *goto lupine_conclusion
+
+        *if (pack_outsider)
+            "I'll help," you say. "The Lupines deserve freedom as much as anyone."
+
+            Rurik nods, respect clear in his eyes.
+
+            "Then you are friend to the pack. We will not forget."
+
+            *set lupine_agent true
+            *set lupine_independent false
+            *set lupine_opposed false
+            *set lupine_relation +25
+            *gosub_scene rank_progression gain_xp 125 "Agreed to aid the Lupine faction"
+            *goto lupine_conclusion
+
+    #Maintain neutrality—you'll pursue the amulet for yourself
+        "I won't make promises I might not keep," you say honestly. "I'll search for the amulet, but I can't guarantee I'll give it to the pack."
+
+        *if (pack_member)
+            Rurik's expression shows disappointment, but not anger.
+
+            "Honesty is valued. I disagree with your choice, but I respect it. Hunt as you will—but remember, you are still pack. That bond cannot be easily broken."
+
+            *set lupine_independent true
+            *set lupine_agent false
+            *set lupine_opposed false
+            *set will +15
+            *gosub_scene rank_progression gain_xp 100 "Chose independent path despite pack membership"
+            *goto lupine_conclusion
+
+        *if (pack_outsider)
+            Rurik shrugs, the gesture almost human.
+
+            "Fair enough. We are allies, not masters and servants. Do what you think is right."
+
+            *set lupine_independent true
+            *set lupine_agent false
+            *set lupine_opposed false
+            *set will +20
+            *gosub_scene rank_progression gain_xp 125 "Maintained independence from all factions"
+            *goto lupine_conclusion
+
+    #Oppose the Lupines—you don't think they should have the amulet
+        "I can't help you," you say carefully. "I don't believe the Lupines should control the amulet. The power is too great."
+
+        *if (pack_member)
+            The clearing goes deathly silent. Pack bonds are sacred—and you've just admitted you'll work against pack interests.
+
+            Rurik's voice is cold. "Then you are no longer pack. Leave."
+
+            *set pack_exile true
+            *set pack_member false
+            *set lupine_opposed true
+            *set lupine_agent false
+            *set lupine_independent false
+            *set lupine_relation -40
+            *set will +20
+            *gosub_scene rank_progression gain_xp 75 "Betrayed pack trust and earned exile"
+            *goto exile_path
+
+        *if (pack_outsider)
+            Rurik's expression hardens.
+
+            "Then we are no longer allies. If we meet on the hunt for the amulet, it will be as rivals."
+
+            *set lupine_opposed true
+            *set lupine_agent false
+            *set lupine_independent false
+            *set pack_outsider false
+            *set lupine_relation -25
+            *set will +25
+            *gosub_scene rank_progression gain_xp 100 "Chose to oppose Lupine interests"
+            *goto exile_path
+
+*label lupine_conclusion
+
+*if (lupine_agent)
+    You leave the Whispering Pines with the pack's trust—a rare gift. The hunt for the Ecliptic Amulet begins, and you hunt alongside wolves who will die for you as you would die for them.
+
+    The moon watches. The pack runs.
+
+*if (lupine_independent)
+    You leave the Whispering Pines with respect earned but no allegiance given. The hunt for the Ecliptic Amulet begins on your terms, beholden to no faction.
+
+    The moon watches. You run alone.
+
+*set chapter 2
+*set act 2
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ACT 1 COMPLETE - LUPINE ROUTE
+*comment Player has:
+*comment - Encountered the Whispering Pines Pack
+*comment - Earned judgment from Alpha Rurik
+*comment - Potentially joined as Hunter rank
+*comment - Learned of the Ecliptic Amulet
+*comment - Chosen relationship with the pack
+*comment
+*comment Next: Route to Act 2 hub when implemented
+*comment ═══════════════════════════════════════════════════════════
+
+*comment TODO: Route to Act 2 hub when implemented
+*finish
+
+*label exile_path
+
+You leave the Whispering Pines under hostile eyes. Growls follow you to the forest's edge—a warning that you are no longer welcome.
+
+You've made powerful enemies. But perhaps that was always inevitable.
+
+The hunt for the Ecliptic Amulet continues—but now you must watch your back for wolves in the darkness.
+
+*set chapter 2
+*set act 2
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ACT 1 COMPLETE - LUPINE ROUTE (EXILE ENDING)
+*comment Player has:
+*comment - Been exiled from the Whispering Pines Pack
+*comment - Made enemies of the Lupine faction
+*comment - Learned of the Ecliptic Amulet
+*comment - Chosen a difficult independent path
+*comment
+*comment Next: Route to Act 2 hub when implemented
+*comment ═══════════════════════════════════════════════════════════
+
 *comment TODO: Route to Act 2 hub when implemented
 *finish

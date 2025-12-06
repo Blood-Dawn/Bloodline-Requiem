@@ -1,41 +1,414 @@
-Silver Legion Briefing
-The vaulted hall of the Silver Legion buzzes with disciplined chatter as recruits file in. Sunlight streams through high windows, glinting off polished armor and banners emblazoned with the imperial crest. Commanders move with purpose among the rows, distributing orders and measuring each new face. You stand at attention beside hardened veterans, breathing the mix of oiled steel and anticipation. This is your first day within the empire's vanguard, and the weight of duty presses on your shoulders. Inquisitor Vale himself steps onto the dais, gaze stern, promising glory to those who serve—and swift judgment for those who falter.
+*comment ═══════════════════════════════════════════════════════════
+*comment ACT 1 - HUMAN / SILVER LEGION ROUTE
+*comment Player arrives here as human assassin or from future human origins
+*comment ═══════════════════════════════════════════════════════════
+
+*label legion_briefing
+
+The vaulted hall of the Silver Legion buzzes with disciplined chatter as recruits file in. Sunlight streams through high windows, glinting off polished armor and banners emblazoned with the imperial crest. You stand among dozens of new inductees—humans who have chosen to fight the supernatural threat.
+
+At the front, Inquisitor Vale commands the room with his mere presence. Scarred, gray-haired, eyes like chips of ice. He has hunted vampires and werewolves for thirty years. He has [i]survived[/i] for thirty years—a miracle in itself.
+
+"You are here," he begins without preamble, "because the monsters are winning."
+
+Shocked murmurs ripple through the crowd.
+
+"The Veil Protocol keeps most humans ignorant of the supernatural world. But we—the Silver Legion—know the truth. Vampires feed in our streets. Werewolves prowl our forests. And now, hybrids—Forsaken—multiply in the shadows."
 
 *set legion_rank "Recruit"
 *set alignment "human"
 
-*choice
-    #Train at the arms depot.
-        The quartermaster nods approvingly as you test new blades and weights.
-        *set strength +3
-        *set agility +3
-        *set cunning +3
-        *goto choices_end
-    #Patrol the fortress walls.
-        Hours spent marching sharpens your awareness of the Legion's routine.
-        *goto choices_end
-    #Join a border village skirmish.
-        Bandits strike without warning. You rush to defend the farmers.
-        *choice
-            #Drive them off.
-                *set human_rep +5
-                *goto defend_end
-            #Leave the villagers to their fate.
-                *goto defend_end
-        *label defend_end
-        *goto choices_end
-    #Obey Vale's direct order.
-        You salute and carry out his command without question.
-        *set vale_relation +10
-        *goto choices_end
-    #Defy Vale and follow your own instincts.
-        His gaze hardens at your disobedience.
-        *set vale_relation -10
-        *goto choices_end
+*comment Grant XP for joining the Legion
+*gosub_scene rank_progression gain_xp 50 "Joined the Silver Legion"
 
-*label choices_end
-*if (will >= 15)
-    *set latent_magic true
+*choice
+    #"How do we fight them?"
+        A practical question. You're outnumbered and outmatched physically.
+
+        Vale's smile is cold. "Silver. Blessed wood. Fire. Holy water. And most importantly—knowledge. We know their weaknesses. They underestimate humans."
+
+        *set cunning +10
+        *goto vale_speech
+
+    #"Why keep the Veil? Why not expose them?"
+        If the public knew about vampires and werewolves, humanity could mobilize.
+
+        "Panic," Vale says flatly. "Chaos. Witch hunts that kill innocent humans along with guilty monsters. The Veil is a cage—but it protects [i]us[/i] as much as it hides [i]them[/i]."
+
+        *set awareness +10
+        *goto vale_speech
+
+    #Say nothing, listen and learn
+        You observe. Vale appreciates discipline.
+
+        *set will +5
+        *goto vale_speech
+
+*label vale_speech
+
+"Your first assignment," Vale continues, "is an investigation. Three incidents in the past week—all connected."
+
+He produces a map of Veilfall, marking three locations with red ink.
+
+"First: A merchant found drained of blood in an alley. Varkyr feeding ground."
+
+"Second: A farmer's livestock slaughtered, torn apart by claws. Lupine hunting party."
+
+"Third: Witnesses report a creature with both fangs and fur attacking near the docks. Forsaken."
+
+"Three factions. Three incidents. But I suspect [i]one[/i] orchestrator. Someone is stirring up supernatural activity—perhaps to find something. Or hide something."
+
+*set ecliptic_amulet_known true
+
+Vale's gaze sweeps the room.
+
+"I need my best recruits on this. Who volunteers?"
+
+*page_break
+
+*choice
+    #Volunteer immediately
+        "I'll do it," you say, stepping forward.
+
+        Vale nods approvingly. "Good. You'll have support—a partner and silver weapons."
+
+        *set vale_relation +15
+        *set will +10
+        *gosub_scene rank_progression gain_xp 60 "Volunteered for dangerous mission"
+        *goto partner_assignment
+
+    #Ask what resources you'll have
+        "What equipment and backup will we get?" you ask.
+
+        "Smart," Vale says. "Silver blades, blessed ammunition, and emergency extraction if things go wrong. We don't send humans to die pointlessly."
+
+        *set cunning +10
+        *gosub_scene rank_progression gain_xp 50 "Asked tactical questions"
+        *goto partner_assignment
+
+*label partner_assignment
+
+Vale gestures, and a figure steps forward from the veterans' section.
+
+Elena Cross. Mid-twenties, lean and scarred, with eyes that have seen too much. She's a Veteran of the Legion—survived a dozen hunts.
+
+"Elena will be your partner," Vale says. "She'll keep you alive. Probably."
+
+Elena studies you critically. "Try not to die on me, Recruit."
+
+*set partner_elena true
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE INVESTIGATION
+*comment ═══════════════════════════════════════════════════════════
+
+*label human_investigation
+
+You and Elena begin at the blood-drained merchant's death site. The alley still reeks of iron and fear.
+
+"Varkyr feeding," Elena confirms, examining the puncture wounds. "But sloppy. Varkyrs usually hide their kills. This was meant to be [i]found[/i]."
+
+*choice
+    #Examine the body more closely
+        You study the corpse. Two punctures, but also scratches—claw marks. Hybrid? Forsaken?
+
+        "Good eye," Elena murmurs. "This wasn't a pure Varkyr. Someone's trying to frame them."
+
+        *set cunning +15
+        *set awareness +10
+        *gosub_scene rank_progression gain_xp 70 "Discovered evidence of frame-up"
+        *goto second_site
+
+    #Search for witnesses
+        You canvas nearby buildings. An old woman admits she saw something—a figure with glowing eyes [i]and[/i] fur. Definitely hybrid.
+
+        *set cunning +10
+        *gosub_scene rank_progression gain_xp 50 "Gathered witness testimony"
+        *goto second_site
+
+*label second_site
+
+The livestock slaughter site tells a similar story. Lupine claw marks—but also bite patterns that don't match pure werewolf physiology.
+
+"Someone's staging these attacks," you realize. "Making it look like different factions to start a war."
+
+"But why?" Elena asks.
+
+*choice
+    #"Distraction. They're hiding something."
+        If all three factions are fighting each other, no one notices the real threat.
+
+        Elena nods. "We need to find out what they're hiding."
+
+        *set cunning +15
+        *gosub_scene rank_progression gain_xp 75 "Deduced distraction strategy"
+        *goto third_site
+
+    #"Chaos. Someone wants Veilfall to burn."
+        Some people just want to watch the world tear itself apart.
+
+        "Possible," Elena allows. "Or they benefit from the chaos."
+
+        *set awareness +10
+        *gosub_scene rank_progression gain_xp 60 "Considered chaos motive"
+        *goto third_site
+
+*label third_site
+
+The docks. The Forsaken sighting. This is where the truth should reveal itself.
+
+You find the creature—or what's left of it. A Forsaken hybrid, dead, with a silver knife in its back.
+
+"Killed by a human," Elena says grimly. "One of ours."
+
+Before you can react, figures emerge from the shadows. Silver Legion veterans—but their eyes are wrong. Fanatical.
+
+The leader speaks: "You shouldn't have come here, Recruits."
+
+"Captain Thorne?" Elena's voice is shocked. "You're supposed to be dead."
+
+Thorne smiles coldly. "I faked my death six months ago. While Vale plays politics with monsters, I've been building something [i]real[/i]. A purge. I've been staging these attacks to provoke war between the factions. When they slaughter each other, humanity will be free."
+
+*page_break
+
+*choice
+    #"You're killing innocents to start a war!"
+        Thorne shrugs. "Acceptable losses. The merchants, the farmers—they died so thousands could live free of monster tyranny."
+
+        Your hand moves to your weapon.
+
+        *set will +15
+        *gosub_scene rank_progression gain_xp 80 "Confronted Thorne's madness"
+        *goto thorne_confrontation
+
+    #"Vale will stop you."
+        "Vale is weak," Thorne spits. "He negotiates with vampires. Makes [i]truces[/i] with werewolves. He's forgotten that they're the enemy."
+
+        *set cunning +10
+        *gosub_scene rank_progression gain_xp 70 "Understood Thorne's ideology"
+        *goto thorne_confrontation
+
+*label thorne_confrontation
+
+"I can't let you report back," Thorne says, drawing his blade. "Nothing personal."
+
+Elena moves to your side. "Two of us. Four of them. I like those odds."
+
+*choice
+    #Fight Thorne's fanatics
+        Combat erupts. You're outnumbered but you have Elena—and you're fighting for truth, not madness.
+
+        Silver clashes against silver. You take a cut to the shoulder, but you [i]endure[/i].
+
+        Elena drops two of them. You disable a third. Thorne himself retreats, wounded.
+
+        "This isn't over!" he shouts, vanishing into the night.
+
+        *set strength +15
+        *set agility +10
+        *set will +20
+        *set vale_relation +20
+        *gosub_scene rank_progression gain_xp 100 "Defeated Thorne's fanatics"
+        *goto return_to_vale
+
+    #Try to talk Thorne down
+        "There's another way," you plead. "We can protect humans without genocide."
+
+        For a moment, Thorne hesitates. Then his expression hardens.
+
+        "No. There isn't."
+
+        He attacks anyway. The fight is inevitable.
+
+        *set cunning +10
+        *set will +25
+        *gosub_scene rank_progression gain_xp 90 "Attempted diplomacy before violence"
+        *goto return_to_vale
+
+*comment ═══════════════════════════════════════════════════════════
+*comment RETURN TO VALE
+*comment ═══════════════════════════════════════════════════════════
+
+*label return_to_vale
+
+You limp back to Legion headquarters, wounded but victorious. Elena supports you.
+
+"You did good, Recruit," she says. "Better than most veterans."
+
+Vale listens to your report with a grave expression.
+
+"Captain Thorne," he mutters. "I should have seen it. His hatred was always... intense."
+
+*page_break
+
+*comment Check for rank progression
+*gosub_scene rank_progression check_progression
+
+*page_break
+
+"You've exposed a conspiracy within our own ranks," Vale says. "That took courage. And skill."
+
+He produces a silver badge—the mark of a Sentinel, a full member of the Legion.
+
+*if (legion_rank = "Recruit")
+    "You are no longer a Recruit. Rise, Sentinel of the Silver Legion."
+
+    *set legion_rank "Sentinel"
+    *set strength +10
+    *set agility +10
+    *set cunning +10
+    *set will +15
+    *gosub_scene rank_progression gain_xp 200 "Promoted to Sentinel"
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE ECLIPTIC AMULET
+*comment ═══════════════════════════════════════════════════════════
+
+*label amulet_revelation
+
+"There's more," Vale says quietly. "Thorne's interrogation revealed something. He wasn't just trying to start a faction war. He was trying to [i]find[/i] something."
+
+He produces an ancient text—recovered from Thorne's hideout.
+
+"The Ecliptic Amulet. An artifact of immense power, said to control the Veil itself. Thorne believed that if he found it, he could use it to expose all supernatural beings to humanity—shattering the Veil permanently."
+
+Your blood runs cold. "That would mean war. Total war."
+
+"Yes," Vale says. "Millions would die. Human and supernatural alike."
+
+He looks at you intently.
+
+"The Varkyrs seek the amulet to reinforce the Veil—keep themselves hidden. The Lupines want it to break their moon-curse. The Forsaken hope it will stabilize their hybrid forms. And extremists like Thorne want to weaponize it."
+
+*choice
+    #"What does the Legion want?"
+        Vale sighs. "Balance. The Veil keeps peace—fragile as it is. We want the amulet secured, not used. Locked away where no faction can claim it."
+
+        *set cunning +10
+        *goto vale_offer
+
+    #"Can it really shatter the Veil?"
+        "According to the texts," Vale says, "yes. It has three functions: reinforce the Veil, manipulate it, or [i]destroy[/i] it entirely."
+
+        *set awareness +10
+        *goto vale_offer
+
+*label vale_offer
+
+"I'm creating a special task force," Vale announces. "Sentinels dedicated to finding the Ecliptic Amulet before any faction—or any madman—can claim it."
+
+He extends his hand.
+
+"Will you join this task force? Hunt the most dangerous artifact in existence? Risk your life to preserve the balance?"
+
+*page_break
+
+*choice
+    #Pledge loyalty to the Silver Legion's mission
+        "I'm in," you say firmly, clasping his hand. "For balance. For humanity."
+
+        Vale's rare smile appears. "Then you are my agent. We hunt the amulet—together."
+
+        *set legion_agent true
+        *set legion_independent false
+        *set legion_opposed false
+        *set vale_relation +30
+        *set legion_relation +40
+        *gosub_scene rank_progression gain_xp 150 "Became agent of the Silver Legion"
+        *goto human_conclusion
+
+    #Maintain independence—help but don't pledge allegiance
+        "I'll help hunt the amulet," you say carefully, "but I can't promise I'll give it to the Legion. I need to decide for myself what's right."
+
+        Vale's expression shows disappointment. "I understand. But know this—when you hold that amulet, the fate of millions rests in your hands. Choose wisely."
+
+        *set legion_independent true
+        *set legion_agent false
+        *set legion_opposed false
+        *set will +20
+        *gosub_scene rank_progression gain_xp 125 "Chose independent path"
+        *goto human_conclusion
+
+    #Refuse—you don't trust Vale's vision of "balance"
+        "No," you say. "I've seen what happens when institutions decide what's best for everyone. I'll find the amulet myself and decide its fate."
+
+        Vale's face hardens. "Then you are no longer welcome in the Silver Legion. Leave. If we meet on the hunt, we will be enemies."
+
+        *set legion_opposed true
+        *set legion_agent false
+        *set legion_independent false
+        *set vale_relation -40
+        *set legion_relation -40
+        *set will +25
+        *gosub_scene rank_progression gain_xp 100 "Broke from the Silver Legion"
+        *goto exile_human
+
+*label human_conclusion
+
+*if (legion_agent)
+    You leave Vale's office as an agent of the Silver Legion. Elena waits outside, grinning.
+
+    "Looks like we're partners for real now," she says. "Let's go hunt an amulet."
+
+    The hunt begins.
+
+*if (legion_independent)
+    You leave the Legion headquarters, still allied but not bound. Elena nods to you as you pass.
+
+    "Stay alive out there, Sentinel. It's going to get worse before it gets better."
+
+    The hunt begins—on your terms.
 
 *set chapter 2
-*goto_scene hub_city entry
+*set act 2
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ACT 1 COMPLETE - HUMAN ROUTE
+*comment Player has:
+*comment - Joined the Silver Legion
+*comment - Investigated staged supernatural attacks
+*comment - Exposed Captain Thorne's conspiracy
+*comment - Promoted to Sentinel
+*comment - Learned of Ecliptic Amulet
+*comment - Chosen relationship with the Legion
+*comment
+*comment Next: Route to Act 2 hub when implemented
+*comment ═══════════════════════════════════════════════════════════
+
+*comment TODO: Route to Act 2 hub when implemented
+*finish
+
+*label exile_human
+
+You leave the Silver Legion behind, hunted by the organization you once served.
+
+But you have a mission now. Find the Ecliptic Amulet. Decide its fate yourself.
+
+Trust no one. Rely only on your own judgment.
+
+The hunt begins—alone.
+
+*set chapter 2
+*set act 2
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ACT 1 COMPLETE - HUMAN ROUTE (EXILE ENDING)
+*comment Player has:
+*comment - Broken from the Silver Legion
+*comment - Made enemies of human faction
+*comment - Learned of Ecliptic Amulet
+*comment - Chosen dangerous solo path
+*comment
+*comment Next: Route to Act 2 hub when implemented
+*comment ═══════════════════════════════════════════════════════════
+
+*comment TODO: Route to Act 2 hub when implemented
+*finish
