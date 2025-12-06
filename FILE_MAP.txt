@@ -26,19 +26,19 @@ bloodline-requiem/
 │   ├── 📄 codex_main.txt                 ✅ Complete (navigation)
 │   ├── 📄 codex_world.txt                ✅ Complete (1500+ lines)
 │   ├── 📄 codex_races.txt                ✅ Complete (2000+ lines)
-│   ├── 📄 codex_factions.txt             🔴 TODO
-│   ├── 📄 codex_locations.txt            🔴 TODO
-│   └── 📄 codex_characters.txt           🔴 TODO
+│   ├── 📄 codex_factions.txt             ✅ Complete
+│   ├── 📄 codex_locations.txt            ✅ Complete
+│   └── 📄 codex_characters.txt           ✅ Complete
 │
 ├── 📂 origins/                       🔴 NEW DIRECTORY - Origin starts
-│   ├── 📄 origin_select.txt              🔴 TODO (critical)
-│   ├── 📄 origin_assassin.txt            🔴 TODO (refactor prologue)
-│   ├── 📄 origin_noble.txt               🔴 TODO
-│   ├── 📄 origin_commoner.txt            🔴 TODO
-│   ├── 📄 origin_varkyr.txt              🔴 TODO
-│   ├── 📄 origin_lupine.txt              🔴 TODO
-│   ├── 📄 origin_forsaken.txt            🔴 TODO
-│   └── 📄 origin_hunter.txt              🔴 TODO
+│   ├── 📄 origin_select.txt              ✅ Implemented (entry hub)
+│   ├── 📄 origin_assassin.txt            🟡 Draft (refactor legacy prologue)
+│   ├── 📄 origin_noble.txt               🟡 Draft
+│   ├── 📄 origin_commoner.txt            🟡 Draft
+│   ├── 📄 origin_hunter.txt              🟡 Draft
+│   ├── 📄 origin_varkyr.txt              🟡 Draft
+│   ├── 📄 origin_lupine.txt              🟡 Draft
+│   └── 📄 origin_forsaken.txt            🟡 Draft
 │
 ├── 📂 scenes/                        📁 Existing - Act content
 │   ├── 📄 act1_varkyr.txt                🟡 Needs integration
@@ -119,9 +119,9 @@ choicescript_stats.txt
 codex_main.txt
     ├─ Links to codex_world.txt
     ├─ Links to codex_races.txt
-    ├─ Links to codex_factions.txt (TODO)
-    ├─ Links to codex_locations.txt (TODO)
-    └─ Links to codex_characters.txt (TODO)
+    ├─ Links to codex_factions.txt
+    ├─ Links to codex_locations.txt
+    └─ Links to codex_characters.txt
 
 rank_progression.txt
     ├─ Calls varkyr_abilities.txt (when Varkyr ranks up)
@@ -163,19 +163,16 @@ DOCUMENTATION (1000+ lines):
 
 1. startup.txt
     → Initializes game
-    → Currently routes to prologue.txt
+    → Routes to origin_select.txt
 
-2. prologue.txt (CURRENT)
-    → Assassin intro
-    → Routes to act1_*.txt based on choice
-
-3. origins/origin_select.txt (FUTURE - TODO)
+2. origins/origin_select.txt
     → Player chooses origin
     → Routes to origin_*.txt
 
-4. origins/origin_*.txt (FUTURE - TODO)
+3. origins/origin_*.txt
     → Sets initial stats
     → Routes to appropriate act1_*.txt
+    → (Legacy prologue.txt still exists; refactor into origin_assassin.txt)
 
 5. act1_*.txt
     → Main Act 1 content
@@ -207,10 +204,9 @@ DEPRECATED FILES (consider removing):
 
 MIGRATION NEEDED:
 - prologue.txt → origins/origin_assassin.txt
-- Update scene_list after migration
+- Keep scene_list aligned with refactor work
 
 CLEANUP TODO:
-- Remove old lupine_abilities.txt from scene_list
 - Archive scenes/codex_lore.txt
 - Organize remaining root scenes into directories
 
@@ -221,35 +217,40 @@ CLEANUP TODO:
 Current order in startup.txt:
 
 1.  startup                         (self-reference)
-2.  prologue                        (current start)
-3.  codex_main                      ⭐ NEW
-4.  codex_world                     ⭐ NEW
-5.  codex_races                     ⭐ NEW
-6.  varkyr_abilities                ⭐ NEW
-7.  lupine_abilities_complete       ⭐ NEW
-8.  forsaken_abilities              ⭐ NEW
-9.  rank_progression                ⭐ NEW
-10. power_tier_calc                 (existing)
-11. act1_human
-12. act1_lupine
-13. act1_varkyr
-14. act1_forsaken_ng+
-15. act2_common_hub
-16. hub_city
-17. mission_board
-18. mission_list
-19. post_mission_request
-20. lupine_abilities                ⚠️ OLD VERSION
-21. NewGame_plus
-22. Ending_Scenarios
-23. choicescript_stats
-24. status
+2.  origin_select
+3.  origin_assassin
+4.  origin_noble
+5.  origin_commoner
+6.  origin_hunter
+7.  origin_varkyr
+8.  origin_lupine
+9.  origin_forsaken
+10. codex_main
+11. codex_world
+12. codex_races
+13. codex_factions
+14. codex_locations
+15. codex_characters
+16. varkyr_abilities
+17. lupine_abilities_complete
+18. forsaken_abilities
+19. rank_progression
+20. power_tier_calc                 (existing)
+21. act1_human
+22. act1_lupine
+23. act1_varkyr
+24. act1_forsaken_ng+
+25. act2_common_hub
+26. hub_city
+27. mission_board
+28. mission_list
+29. post_mission_request
+30. NewGame_plus
+31. Ending_Scenarios
+32. choicescript_stats
+33. status
 
 TODO for scene_list:
-- Add origin_select
-- Add origin_* files (7 total)
-- Add codex_factions, codex_locations, codex_characters
-- Remove old lupine_abilities
 - Add ability_equip (when created)
 
 ═══════════════════════════════════════════════════════════════
@@ -257,20 +258,18 @@ TODO for scene_list:
 ═══════════════════════════════════════════════════════════════
 
 CRITICAL (needed for MVP):
-1. origins/origin_select.txt        - Entry point for multi-origin
-2. origins/origin_assassin.txt      - Refactor prologue
-3. codex/codex_factions.txt         - Complete codex
+1. systems/ability_equip.txt       - Active ability slots
+2. Refactor prologue content into origin_assassin.txt
+3. Integrate rank_progression calls into Act 1 scenes
 
 HIGH:
-4. origins/origin_varkyr.txt        - Vampire start
-5. origins/origin_lupine.txt        - Werewolf start
-6. origins/origin_forsaken.txt      - Hybrid start
-7. codex/codex_locations.txt        - Veilfall, Mirror Lake, etc.
+4. Expand act1_human.txt (core human route)
+5. Flesh out act1_forsaken_ng+.txt or act1_forsaken.txt
+6. Act 1 endgame polish for all routes
 
 MEDIUM:
-8. origins/origin_noble.txt         - Human noble start
-9. codex/codex_characters.txt       - NPC entries
-10. systems/ability_equip.txt       - Active ability slots
+7. Hub/mission_board expansion (shops, repeatables)
+8. Romance foundations (first meetings)
 
 ═══════════════════════════════════════════════════════════════
 ✅ COMPLETION CHECKLIST
@@ -285,10 +284,10 @@ Phase 1 (Core Systems):
 [✅] Documentation suite
 
 Phase 2 (Integration):
-[🔴] Origin selection menu
-[🔴] Integrate rank-ups into Act 1
-[🔴] Complete codex (3 more files)
-[🔴] Test full gameplay loop
+[✅] Origin selection menu
+[🟡] Integrate rank-ups into Act 1
+[✅] Complete codex (3 more files)
+[🟡] Test full gameplay loop
 
 Phase 3 (Content):
 [🔴] All 7 origins
@@ -359,6 +358,6 @@ Then you'll be ready to:
 - Use abilities in scenes
 
 ═══════════════════════════════════════════════════════════════
-Last Updated: December 5, 2025
-File Map Version: 1.0
+Last Updated: December 6, 2025
+File Map Version: 1.1
 ═══════════════════════════════════════════════════════════════

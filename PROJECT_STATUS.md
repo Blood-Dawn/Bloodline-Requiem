@@ -1,6 +1,6 @@
 # BLOODLINE REQUIEM - PROJECT STATUS
 
-**Date:** December 5, 2025
+**Date:** December 6, 2025
 **Version:** 0.5.0 (Phase 1 Complete)
 **Status:** 🟢 Systems Operational - Content Ready for Development
 
@@ -20,7 +20,7 @@ Bloodline Requiem has completed its **Phase 1 Refactoring**, establishing a robu
 
 ## COMPLETION METRICS
 
-### Systems Implemented: **8/10** (80%)
+### Systems Implemented: **9/10** (90%)
 
 | System | Status | Completeness |
 |--------|--------|--------------|
@@ -29,23 +29,23 @@ Bloodline Requiem has completed its **Phase 1 Refactoring**, establishing a robu
 | Forsaken Ability Selection | ✅ Complete | 100% |
 | Rank Progression Framework | ✅ Complete | 100% |
 | Codex (World & Races) | ✅ Complete | 100% |
-| Codex (Factions/Locations) | 🟡 Partial | 40% |
-| Origin Selection | 🔴 Not Started | 0% |
+| Codex (Factions/Locations/Characters) | ✅ Complete | 100% |
+| Origin Selection | ✅ Complete | 100% |
 | Active Ability Equip | 🔴 Not Started | 0% |
-| Multi-Origin Routes | 🟡 Partial | 20% |
+| Multi-Origin Routes | 🟡 Partial | 30% |
 | Act 2-3 Content | 🔴 Not Started | 0% |
 
-### Content Implemented: **4/12** (33%)
+### Content Implemented: **7/12** (58%)
 
 | Content Area | Status | Notes |
 |--------------|--------|-------|
-| Assassin Origin | ✅ Exists | Needs refactoring |
-| Varkyr Origin | 🟡 Partial | act1_varkyr.txt has good intro |
-| Lupine Origin | 🟡 Partial | act1_lupine.txt has good intro |
-| Forsaken Origin | 🔴 Needs Creation | Framework ready |
-| Noble Origin | 🔴 Needs Creation | - |
-| Commoner Origin | 🔴 Needs Creation | - |
-| Hunter Origin | 🔴 Needs Creation | - |
+| Assassin Origin | 🟡 Draft | Needs refactor of legacy prologue content |
+| Varkyr Origin | 🟡 Draft | origin_varkyr.txt implemented; polish/endgame pending |
+| Lupine Origin | 🟡 Draft | origin_lupine.txt implemented; polish/endgame pending |
+| Forsaken Origin | 🟡 Draft | origin_forsaken.txt implemented; needs endgame |
+| Noble Origin | 🟡 Draft | origin_noble.txt implemented |
+| Commoner Origin | 🟡 Draft | origin_commoner.txt implemented |
+| Hunter Origin | 🟡 Draft | origin_hunter.txt implemented |
 | Act 1 Core Scenes | 🟡 Partial | 40% complete |
 | Act 2 Content | 🔴 Minimal | Placeholder hub exists |
 | Act 3 Content | 🔴 Not Started | - |
@@ -87,10 +87,6 @@ Bloodline Requiem has completed its **Phase 1 Refactoring**, establishing a robu
 
 ### 🟡 Needs Completion
 
-- `codex/codex_factions.txt` - Not created yet
-- `codex/codex_locations.txt` - Not created yet
-- `codex/codex_characters.txt` - Not created yet
-- `origins/origin_*.txt` - None created yet (7 needed)
 - `systems/ability_equip.txt` - Not created yet
 
 ### 📁 Directory Structure
@@ -107,10 +103,20 @@ bloodline-requiem/
 ├── codex/             ✅ Created
 │   ├── codex_main.txt
 │   ├── codex_world.txt
-│   └── codex_races.txt
+│   ├── codex_races.txt
+│   ├── codex_factions.txt
+│   ├── codex_locations.txt
+│   └── codex_characters.txt
 │
-├── origins/           ✅ Created (empty)
-│   └── (7 origin files needed)
+├── origins/           ✅ Created
+│   ├── origin_select.txt
+│   ├── origin_assassin.txt
+│   ├── origin_noble.txt
+│   ├── origin_commoner.txt
+│   ├── origin_hunter.txt
+│   ├── origin_varkyr.txt
+│   ├── origin_lupine.txt
+│   └── origin_forsaken.txt
 │
 ├── legacy/            ✅ Created (empty)
 │   └── (for NG+ content)
@@ -425,9 +431,9 @@ bloodline-requiem/
 - Updated scene_list (added 9 new scenes)
 
 **Known Issues:**
-- Origin selection not implemented
+- Assassin origin still needs prologue refactor
 - Act 1 scenes don't call rank progression
-- Codex incomplete (factions, locations, characters)
+- Active ability equip not implemented
 - No romance content
 
 ### v0.1.0 (Earlier) - Initial Implementation
@@ -512,5 +518,5 @@ The path forward is clear. The systems are ready. Now the story must unfold.
 
 ---
 
-*Last Updated: December 5, 2025*
+*Last Updated: December 6, 2025*
 *Document Version: 1.0*

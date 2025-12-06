@@ -12,7 +12,6 @@
     origin_varkyr
     origin_lupine
     origin_forsaken
-    prologue
     codex_main
     codex_world
     codex_races
@@ -33,7 +32,6 @@
     mission_board
     mission_list
     post_mission_request
-    lupine_abilities
     NewGame_plus
     Ending_Scenarios
     choicescript_stats
@@ -170,7 +168,7 @@
 *create met_Mira false
 *create met_Rurik false
 
-*comment Forsaken Section
+*comment Forsaken section
 *comment Unique Forsaken Abilities
 *create twilight_veil false
 *create hybrid_regeneration false
@@ -193,6 +191,24 @@
 *comment Tracks how many Ecliptic Amulet shards player controls
 *create ecliptic_amulet_known false
 *comment Tracks if player knows about the Ecliptic Amulet
+
+*comment Forsaken dual nature and faction stance variables
+*create forsaken_dual_nature false
+*create blood_frenzy false
+*create mental_fortress false
+
+*comment Ecliptic Amulet fragment tracking
+*create fragment_physical false
+*create fragment_mental false
+*create fragment_mastery false
+
+*comment Caius relationship tracking
+*create caius_suspicious false
+
+*comment Forsaken faction stance toward Caius (mutually exclusive)
+*create forsaken_agent false
+*create forsaken_independent false
+*create forsaken_opposed false
 
 *comment Human Section
 

@@ -18,15 +18,15 @@ This document outlines **everything needed** to complete Bloodline Requiem from 
 
 - ✅ Core systems complete (abilities, progression, codex hub)
 
-- ✅ 7 playable origins (Assassin, Varkyr, Lupine, Forsaken, Noble, Commoner, Hunter)
+- 🟡 7 origin routes drafted (Assassin, Varkyr, Lupine, Forsaken, Noble, Commoner, Hunter)
 
-- ✅ Act 1 endgames implemented for all four faction routes
+- 🟡 Act 1 routes drafted; endgame polish/XP integration pending
 
-- ⚠️ Act 2-3 not started (only placeholder hub)
+- 🔴 Act 2-3 not started (only placeholder hub)
 
-- ❌ Romance content not started (NPCs defined, no scenes)
+- 🔴 Romance content not started (NPCs defined, no scenes)
 
-- ❌ Endgame/epilogues not started
+- 🔴 Endgame/epilogues not started
 
 ### What's Needed:
 
