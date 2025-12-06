@@ -11,15 +11,13 @@
   percent cunning Cunning
 
 *comment ---------- STORY PROGRESSION ----------
+*stat_chart
+  text act Act
+  text chapter Chapter
+
 *if (age != 0)
   *stat_chart
-    text act Act
-    text chapter Chapter
     text age Age
-*else
-  *stat_chart
-    text act Act
-    text chapter Chapter
 
 *comment ---------- FACTION & RANK ----------
 *if (alignment != "")
