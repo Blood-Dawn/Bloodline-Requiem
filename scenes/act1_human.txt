@@ -3,6 +3,9 @@
 *comment Player arrives here as human assassin or from future human origins
 *comment ═══════════════════════════════════════════════════════════
 
+*label human_route
+*goto legion_briefing
+
 *label legion_briefing
 
 The vaulted hall of the Silver Legion buzzes with disciplined chatter as recruits file in. Sunlight streams through high windows, glinting off polished armor and banners emblazoned with the imperial crest. You stand among dozens of new inductees—humans who have chosen to fight the supernatural threat.

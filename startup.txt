@@ -6,6 +6,9 @@
     startup
     origin_select
     origin_assassin
+    origin_noble
+    origin_commoner
+    origin_hunter
     origin_varkyr
     origin_lupine
     origin_forsaken
@@ -13,6 +16,9 @@
     codex_main
     codex_world
     codex_races
+    codex_factions
+    codex_locations
+    codex_characters
     varkyr_abilities
     lupine_abilities_complete
     forsaken_abilities

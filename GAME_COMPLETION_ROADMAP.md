@@ -12,25 +12,22 @@
 This document outlines **everything needed** to complete Bloodline Requiem from its current state (Phase 1 - Systems Operational) to a fully playable, polished interactive fiction game with 20-30 hours of content across multiple origins and endings.
 
 **Current State:**
-- ✅ Core systems complete (abilities, progression, codex)
-- ✅ 4 partial origins (Assassin, Varkyr, Lupine, Forsaken)
-- ⚠️ Act 1 incomplete (all routes end abruptly)
-- ❌ Act 2-3 not started (only placeholder hub)
-- ❌ 3 origins missing (Noble, Commoner, Hunter)
-- ❌ No romance content (NPCs defined, no scenes)
-- ❌ No endgame/epilogues
+- ✅ Core systems complete (abilities, progression, codex hub)
+- ✅ 7 playable origins (Assassin, Varkyr, Lupine, Forsaken, Noble, Commoner, Hunter)
+- ✅ Act 1 endgames implemented for all four faction routes
+- ⚠️ Act 2-3 not started (only placeholder hub)
+- ❌ Romance content not started (NPCs defined, no scenes)
+- ❌ Endgame/epilogues not started
 
 **What's Needed:**
-- 🔴 3 new origin files (~300 lines each)
-- 🔴 Act 1 completion (~2,000 lines)
+- 🔴 Act 1 completion polish/XP sync (~500 lines)
 - 🔴 Act 2 creation (~5,000 lines)
 - 🔴 Act 3 creation (~3,000 lines)
 - 🔴 Romance system (~2,000 lines)
 - 🔴 Endgame scenarios (~1,500 lines)
-- 🔴 3 codex files (~1,500 lines total)
 - 🔴 Polish, testing, balancing
 
-**Total New Content Required:** ~15,000+ lines of ChoiceScript
+**Total New Content Required:** ~12,000+ lines of ChoiceScript
 
 ---
 
@@ -55,151 +52,24 @@ This document outlines **everything needed** to complete Bloodline Requiem from 
 
 **Duration:** 3-4 weeks  
 **Priority:** CRITICAL  
-**Status:** 🔴 Not Started
+**Status:** ✅ Origins created; Act 1 integration polish pending
 
 ### 2.1 Complete Missing Origins
 
-#### 🔴 **origin_noble.txt** (NOT CREATED)
-**Estimated Lines:** 350+  
-**Entry Label:** `*label noble_start`
+#### ✅ **origin_noble.txt** (CREATED)
+- Status: Implemented in `origins/origin_noble.txt` with branches for study investigation, official inquiry, or exile through the Warren.
+- Routes: Human (`act1_human`), Varkyr (`act1_varkyr`), or Lupine (`act1_lupine`) via Embrace/oath choices.
+- Hooks: Isabella, Adrian, Lucan, and Rurik introductions; 100-125 XP awarded based on allegiance decisions.
 
-**Required Content:**
-```choicescript
-*label noble_start
-*comment Set stats for noble
-*set alignment "human"
-*set rank "Minor Noble"
-*set age 24
-*set strength 50
-*set agility 50
-*set cunning 75
-*set will 70
+#### ✅ **origin_commoner.txt** (CREATED)
+- Status: Implemented in `origins/origin_commoner.txt` starting with the Warren ritual chase (run/hide/fight branches).
+- Routes: Human, Varkyr, Lupine, or Forsaken entry points; survival-driven transformations.
+- Hooks: Caius, Lucan, Elena rescue, Guild pressure; 50-125 XP depending on escape path.
 
-*comment INTRO: Father murdered, Varkyr assassination
-*comment CHOICE 1: Investigate personally vs Call authorities vs Flee
-*comment BRANCH A: Personal investigation
-  *comment Discover Varkyr conspiracy in noble houses
-  *comment Choice: Join conspiracy vs Expose vs Use for power
-*comment BRANCH B: Authorities route
-  *comment Political intrigue, rival houses
-  *comment Choice: Seek revenge vs Seek alliance vs Claim inheritance
-*comment BRANCH C: Exile route
-  *comment Become fugitive noble
-  *comment Choice: Hide in Warren vs Join Guild vs Seek Forsaken
-
-*comment TRANSFORMATION OPPORTUNITY:
-  *comment Player can choose to remain human OR accept Embrace/Bite
-  *comment Routes to act1_human, act1_varkyr, or act1_lupine
-```
-
-**Key NPCs to Introduce:**
-- Adrian Blackwell (merchant lord) - `*set met_Adrian true`
-- Isabella Crimson (Varkyr noble) - `*set met_Isabella true`
-- Court rival (new NPC to define)
-
-**Integration Points:**
-- Grant 100-150 XP during origin
-- Set `human_rep +20` or `varkyrs_relation +15` based on choices
-- Route to appropriate Act 1 scene at end
-
----
-
-#### 🔴 **origin_commoner.txt** (NOT CREATED)
-**Estimated Lines:** 300+  
-**Entry Label:** `*label commoner_start`
-
-**Required Content:**
-```choicescript
-*label commoner_start
-*comment Set stats for commoner
-*set alignment "human"
-*set rank ""
-*set age 22
-*set strength 60
-*set agility 70
-*set cunning 65
-*set will 55
-
-*comment INTRO: The Warren (slums), witness supernatural ritual/murder
-*comment CHOICE 1: Run vs Hide vs Confront
-*comment BRANCH A: Pursued by Forsaken
-  *comment Caius offers recruitment
-  *comment Choice: Accept hybrid path vs Refuse
-*comment BRANCH B: Captured by Guild
-  *comment Offered assassin training
-  *comment Choice: Accept vs Escape vs Negotiate
-*comment BRANCH C: Seek help from faction
-  *comment Approach Lupines/Varkyrs/Church
-  *comment Different faction alliances
-
-*comment TRANSFORMATION OPPORTUNITY:
-  *comment High chance of forced transformation (survival)
-  *comment Routes to act1_forsaken_ng+, act1_human, or guild
-```
-
-**Key NPCs to Introduce:**
-- Caius the Unbound - `*set met_Caius true`
-- Lucan Graves (Guild recruiter) - `*set met_Lucan true`
-- Warren survivor NPC (new character)
-
-**Integration Points:**
-- Grant 75-125 XP during origin
-- Set `forsaken_relation +25` or `AssassinGuild_relation +20`
-- High stakes survival narrative
-
----
-
-#### 🔴 **origin_hunter.txt** (NOT CREATED)
-**Estimated Lines:** 400+  
-**Entry Label:** `*label hunter_start`
-
-**Required Content:**
-```choicescript
-*label hunter_start
-*comment Set stats for hunter (ADVANCED origin)
-*set alignment "human"
-*set rank "Hunter Initiate"
-*set age 32
-*set strength 75
-*set agility 70
-*set cunning 70
-*set will 80
-
-*comment INTRO: Order of the Silver Dawn briefing
-*comment Mission: Track rogue supernatural (player choice which)
-*comment CHOICE 1: Hunt Varkyr vs Hunt Lupine vs Hunt Forsaken
-
-*comment BRANCH A: Varkyr hunt
-  *comment Infiltrate Crimson Spire
-  *comment Discover Varkyr aren't the real enemy
-  *comment Choice: Complete contract vs Defect vs Expose conspiracy
-  
-*comment BRANCH B: Lupine hunt
-  *comment Track Whispering Pines pack
-  *comment Learn about Lupine honor code
-  *comment Choice: Kill alpha vs Negotiate vs Join pack
-
-*comment BRANCH C: Forsaken hunt
-  *comment Infiltrate Underground
-  *comment Meet Caius, learn hybrid truth
-  *comment Choice: Destroy vs Ally vs Transform
-
-*comment TRANSFORMATION OPPORTUNITY:
-  *comment Can be turned against will OR choose transformation
-  *comment Ironic twist: hunter becomes hunted
-```
-
-**Key NPCs to Introduce:**
-- Nadia Winters (fellow hunter) - `*set met_Nadia true`
-- Rurik Blackfang (hunt target) - `*set met_Rurik true`
-- Vincent Ashenheart (hunt target) - `*set met_Vincent true`
-
-**Integration Points:**
-- Grant 150-200 XP (advanced origin, harder content)
-- Complex moral choices
-- Multiple faction relation shifts
-
----
+#### ✅ **origin_hunter.txt** (CREATED)
+- Status: Implemented in `origins/origin_hunter.txt` as advanced Order of the Silver Dawn start with selectable hunts (Varkyr/Lupine/Forsaken).
+- Routes: Human, Varkyr, Lupine, or Forsaken depending on how the contract resolves.
+- Hooks: Nadia briefing, Isabella/Rurik/Caius encounters; 150-200 XP with faction relation shifts.
 
 ### 2.2 Refactor Existing Origins
 
@@ -1353,25 +1223,25 @@ def test_ability_flags():
 ### By Category
 
 #### Origins
-- ❌ origin_noble.txt (350 lines)
-- ❌ origin_commoner.txt (300 lines)
-- ❌ origin_hunter.txt (400 lines)
+- ✅ origin_noble.txt (created, multi-route to human/varkyr/lupine)
+- ✅ origin_commoner.txt (created, survival start with all faction routes)
+- ✅ origin_hunter.txt (created, advanced hunt origin with faction pivots)
 - 🟡 origin_assassin.txt (refactor prologue, +100 lines)
-- 🟡 origin_varkyr.txt (+150 lines endgame)
-- 🟡 origin_lupine.txt (+100 lines endgame)
-- 🟡 origin_forsaken.txt (+150 lines endgame)
+- 🟡 origin_varkyr.txt (+150 lines endgame polish)
+- 🟡 origin_lupine.txt (+100 lines endgame polish)
+- 🟡 origin_forsaken.txt (+150 lines endgame polish)
 
-**Total New Origin Content:** ~1,550 lines
+**Total New Origin Content:** ~500 lines
 
 ---
 
 #### Act 1
-- 🟡 act1_varkyr.txt (+200 lines endgame, +XP integration)
-- 🟡 act1_lupine.txt (+200 lines endgame, +XP integration)
-- ❌ act1_human.txt (+300 lines, nearly complete rewrite)
-- ❌ act1_forsaken.txt (+500 lines, brand new)
+- ✅ act1_varkyr.txt (endgame complete, XP integrated)
+- ✅ act1_lupine.txt (endgame complete, XP integrated)
+- ✅ act1_human.txt (complete rebuild with Legion conspiracy)
+- ✅ act1_forsaken_ng+.txt (complete rebuild with Forsaken trials)
 
-**Total Act 1 Content:** ~1,200 lines
+**Total Act 1 Content:** Complete; minor polish/XP sync remaining (~500 lines)
 
 ---
 
@@ -1416,11 +1286,11 @@ def test_ability_flags():
 ---
 
 #### Codex
-- ❌ codex_factions.txt (600 lines)
-- ❌ codex_locations.txt (500 lines)
-- ❌ codex_characters.txt (800 lines)
+- ✅ codex_factions.txt (created)
+- ✅ codex_locations.txt (created)
+- ✅ codex_characters.txt (created)
 
-**Total Codex Content:** ~1,900 lines
+**Total Codex Content:** Completed
 
 ---
 
@@ -1442,9 +1312,9 @@ def test_ability_flags():
 
 ### 📋 Origins (7 files)
 
-- [ ] origins/origin_noble.txt
-- [ ] origins/origin_commoner.txt
-- [ ] origins/origin_hunter.txt
+- [x] origins/origin_noble.txt
+- [x] origins/origin_commoner.txt
+- [x] origins/origin_hunter.txt
 - [ ] origins/origin_assassin.txt (refactor from prologue)
 - [ ] Complete origins/origin_varkyr.txt
 - [ ] Complete origins/origin_lupine.txt
@@ -1499,9 +1369,9 @@ def test_ability_flags():
 
 ### 📋 Codex (3 files)
 
-- [ ] Create codex/codex_factions.txt
-- [ ] Create codex/codex_locations.txt
-- [ ] Create codex/codex_characters.txt
+- [x] Create codex/codex_factions.txt
+- [x] Create codex/codex_locations.txt
+- [x] Create codex/codex_characters.txt
 
 ### 📋 Documentation (2 files)
 

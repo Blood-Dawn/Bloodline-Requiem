@@ -1,0 +1,166 @@
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment CODEX CHARACTERS - Key Players
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label character_overview
+
+[b]NOTABLE INDIVIDUALS[/b]
+
+Twelve lives can shift the fate of Veilfall. These figures anchor each faction-and often hold secrets about the Ecliptic Amulet.
+
+*choice
+    #Caius the Unbound
+        *goto caius_entry
+    #Rurik Blackfang
+        *goto rurik_entry
+    #Viscountess Isabella Crimson
+        *goto isabella_entry
+    #Inquisitor Vale
+        *goto vale_entry
+    #Elena Cross
+        *goto elena_entry
+    #Guild Master (Assassin Guild)
+        *goto guildmaster_entry
+    #Captain Thorne
+        *goto thorne_entry
+    #Adrian Blackwell
+        *goto adrian_entry
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label caius_entry
+[b]CAIUS THE UNBOUND[/b]  
+Role: Founder of the Forsaken Enclave  
+Age: Unknown (over a millennium)  
+
+- First successful hybrid, created when Varkyr and Lupine essences were forcibly merged during the Millennium War.  
+- Seeks to stabilize hybrid transformations and prove the Forsaken deserve a place in the world.  
+- Pragmatic and patient; values those who choose their path rather than stumble into it.  
+- Covets the Forsaken shard of the Ecliptic Amulet to end the dependence on either parent bloodline.  
+- Considers the player a potential heir-or rival-if they embrace hybridity.
+
+*choice
+    #Return to character list
+        *goto character_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label rurik_entry
+[b]RURIK BLACKFANG[/b]  
+Role: Alpha of the Whispering Pines Pack  
+Age: 38 (turned at 25)  
+
+- Leads with a blend of ferocity and honor; despises senseless cruelty.  
+- Believes controlling the Amulet's lunar aspect will free his pack from forced transformations.  
+- Respects strength and candor; distrusts those who hide behind titles.  
+- Open to alliances with humans who prove courage-or with hybrids who respect pack law.  
+- His bite can grant Lupine status; his trust is harder to earn.
+
+*choice
+    #Return to character list
+        *goto character_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label isabella_entry
+[b]VISCOUNTESS ISABELLA CRIMSON[/b]  
+Role: Varkyr diplomat and Matriarch's envoy  
+Age: 247  
+
+- Master negotiator who prefers bargains to open war, yet has ordered countless discreet assassinations.  
+- Uses charm and menace interchangeably; maintains the Spire's ties to wealthy humans like Adrian Blackwell.  
+- Views the player as a potential asset to the Crimson Spire, especially if they demonstrate political acumen.  
+- Interested in using the Amulet to solidify Varkyr dominance while preventing a second Millennium War.
+
+*choice
+    #Return to character list
+        *goto character_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label vale_entry
+[b]INQUISITOR VALE[/b]  
+Role: Commander within the Silver Legion  
+Age: 52  
+
+- Veteran monster hunter; carries scars from battles with Varkyrs, Lupines, and Forsaken.  
+- Ruthless pragmatist who believes secrecy saves more lives than open war.  
+- Formed a special task force to chase rumors of the Ecliptic Amulet and rogue elements like Captain Thorne.  
+- Sees noble-born recruits as leverage in court, and commoners as proof that anyone can fight back.
+
+*choice
+    #Return to character list
+        *goto character_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label elena_entry
+[b]ELENA CROSS[/b]  
+Role: Veteran Sentinel of the Silver Legion  
+Age: 31  
+
+- Partnered with the player in the Human Act 1 route; tactical, dry-humored, dependable under fire.  
+- Survived an ambush by rogue Varkyrs, making her wary of diplomacy without leverage.  
+- Advocates for using the Amulet defensively rather than destroying it outright.  
+- Values loyalty and preparation; distrusts reckless heroics.
+
+*choice
+    #Return to character list
+        *goto character_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label guildmaster_entry
+[b]THE GUILD MASTER[/b]  
+Role: Leader of the Assassin Guild  
+Age: Unknown (rumored ex-Legion)  
+
+- Runs the Guild as a neutral marketplace of death; enforces strict contract honor.  
+- Trades in secrets as much as blood; knows more about faction movements than most spies.  
+- Curious about the Amulet primarily as leverage to keep the Guild independent.  
+- Trains the player Assassin origin and sets contracts that lead into Act 1 faction investigations.
+
+*choice
+    #Return to character list
+        *goto character_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label thorne_entry
+[b]CAPTAIN THORNE[/b]  
+Role: Former Silver Legion officer, now rogue zealot  
+Age: 45  
+
+- Believes the Amulet should be used to annihilate all supernaturals-even if it risks collateral damage.  
+- Commands fanatics willing to stage attacks to provoke war between factions.  
+- Acts as primary antagonist in the Human Act 1 route; tests whether the player chooses duty, mercy, or independence.  
+- Obsessed with erasing his past failures through extreme action.
+
+*choice
+    #Return to character list
+        *goto character_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label adrian_entry
+[b]ADRIAN BLACKWELL[/b]  
+Role: Merchant lord and human liaison to the supernatural  
+Age: 36  
+
+- Facilitates discreet blood trade with the Spire; funds Legion expeditions; profits from both sides.  
+- Values deals over dogma; will back whoever secures his family's safety and fortune.  
+- Holds ledgers with evidence of Night Council manipulation and Amulet shard movements.  
+- Potential ally or threat depending on how the player handles noble politics.
+
+*choice
+    #Return to character list
+        *goto character_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment NOTES:
+*comment - Provides *label character_overview for codex_main navigation
+*comment - Focuses on Act 1 anchors and Amulet motivations
+*comment - Returns consistently to list or main codex
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
