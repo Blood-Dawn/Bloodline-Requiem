@@ -5,30 +5,30 @@
 *scene_list
     startup
     origin_select
-    origin_assassin
-    origin_noble
-    origin_commoner
-    origin_hunter
-    origin_varkyr
-    origin_lupine
-    origin_forsaken
+    origins/origin_assassin
+    origins/origin_noble
+    origins/origin_commoner
+    origins/origin_hunter
+    origins/origin_varkyr
+    origins/origin_lupine
+    origins/origin_forsaken
     prologue
-    codex_main
-    codex_world
-    codex_races
-    codex_factions
-    codex_locations
-    codex_characters
-    varkyr_abilities
-    lupine_abilities_complete
-    forsaken_abilities
-    rank_progression
+    codex/codex_main
+    codex/codex_world
+    codex/codex_races
+    codex/codex_factions
+    codex/codex_locations
+    codex/codex_characters
+    systems/varkyr_abilities
+    systems/lupine_abilities_complete
+    systems/forsaken_abilities
+    systems/rank_progression
     power_tier_calc
-    act1_human
-    act1_lupine
-    act1_varkyr
-    act1_forsaken_ng+
-    act2_common_hub
+    scenes/act1_human
+    scenes/act1_lupine
+    scenes/act1_varkyr
+    scenes/act1_forsaken_ng+
+    scenes/act2_common_hub
     hub_city
     mission_board
     mission_list
