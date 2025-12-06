@@ -191,6 +191,8 @@
 *create met_Caius false
 *create ecliptic_shards_controlled 0
 *comment Tracks how many Ecliptic Amulet shards player controls
+*create ecliptic_amulet_known false
+*comment Tracks if player knows about the Ecliptic Amulet
 
 *comment Human Section
 
@@ -309,8 +311,23 @@
 *create Noble false
 *create Commoner false
 
+*comment Varkyr faction stance toward Crimson Spire (mutually exclusive)
+*create spire_agent false
+*create spire_independent false
+*create spire_rebel false
+
 *comment Lupine section
 *comment Lupine ranks handled via the `lupine_rank` string
+
+*comment Pack status (mutually exclusive)
+*create pack_member false
+*create pack_outsider false
+*create pack_exile false
+
+*comment Lupine faction stance toward Night Council (mutually exclusive)
+*create lupine_agent false
+*create lupine_independent false
+*create lupine_opposed false
 
 *comment Forsaken ranks handled via a separate rank string
 
