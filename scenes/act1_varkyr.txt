@@ -10,10 +10,22 @@ In the subterranean courts beneath Veilfall, the Crimson Spire stands as the bea
         *set alignment "varkyrs"
         *goto varkyrs_route
 *label varkyrs_route
-*comment TODO: Varkyr extraction – T-20
+*comment Act 1 - Varkyr Investigation
+*comment Player arrives here from origin_varkyr.txt or origin_assassin.txt (Varkyr contract)
+
 As the night shrouds Veilfall in a veil of mystery, you embark on the trail of the elusive vampire who has been haunting the city. The streets, once bustling, now lay silent under the moon's pale gaze. Your senses heighten as you delve into the shadows, the realm of the Varkyrs.
 
+*comment Grant XP for starting investigation
+*gosub_scene rank_progression gain_xp 50 "Began Varkyr Investigation"
+
 *choice
+    *if (acute_senses) #Use Acute Senses to track the vampire's trail
+        Your Varkyr senses flare to life—every heartbeat within blocks registers like a drum, every scent telling a story. You isolate the signature of old blood and follow it unerringly through winding alleys and darkened pathways.
+
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 25 "Used Acute Senses successfully"
+        *goto varkyrs_confrontation
+
     #Track the vampire using scent.
         The night air carries tales from the unseen world. You follow the subtle, iron-rich scent of blood, which leads you through winding alleys and darkened pathways.
         *set faction_stat  "Royal Vampire"
@@ -21,15 +33,27 @@ As the night shrouds Veilfall in a veil of mystery, you embark on the trail of t
         *goto varkyrs_confrontation
     #Seek eyewitnesses who have seen the vampire.
         You delve into the whispers of the night, questioning the few souls that dare to tread in the darkness, gathering fragments of a face haunting in its beauty yet fearsome in its pale coldness.
+
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 15 "Gathered intelligence from witnesses"
         *goto varkyrs_confrontation
     #Investigate recent killings for clues.
         The ominous silence of the city is broken only by the cries of sorrow. You follow the trail of death, each scene telling a story of fear and desperation, edging you closer to the vampire.
+
+        *set awareness +5
+        *gosub_scene rank_progression gain_xp 20 "Analyzed crime scenes"
         *goto varkyrs_confrontation
     #Utilize a network of informants to gather information.
         You delve into the underbelly of Veilfall, seeking those who dwell in shadows, their eyes and ears extending to the corners where light fears to tread. Piece by piece, a picture of the vampire's haunting presence forms.
+
+        *set cunning +10
+        *gosub_scene rank_progression gain_xp 30 "Built informant network"
         *goto varkyrs_confrontation
     #Set a trap using yourself as bait.
         As night deepens, you venture into the heart of darkness, offering yourself as bait to the creature of the night, each heartbeat a call to the unseen.
+
+        *set will +5
+        *gosub_scene rank_progression gain_xp 20 "Set daring trap"
         *goto varkyrs_confrontation
 
 *label varkyrs_confrontation
@@ -63,15 +87,26 @@ Varkyr society. The alley seems to close in, muffling the distant sounds of
 Veilfall as he awaits your answer. A sense of dark opportunity hangs in the air
 along with the faint smell of iron and incense. Vaelis's eyes never leave you,
 measuring whether you are merely a pawn or a potential ally of worth.
+
+*gosub_scene rank_progression gain_xp 40 "Negotiated with Lord Vaelis"
+
 *choice
     #Accept his offer and pledge cooperation.
         The prospect of an influential patron is tempting. You clasp forearms
         with Vaelis, sealing a tentative alliance that could unlock the inner
         circles of the Crimson Spire.
+
+        *set varkyrs_relation +20
+        *set Night_Council_relation +10
+        *gosub_scene rank_progression gain_xp 100 "Forged alliance with Crimson Spire agent"
         *goto varkyr_end
     #Refuse politely and maintain your independence.
         Trust does not come easily. You decline, stating your intention to hunt
         alone until his motives become clear.
+
+        *set will +10
+        *set varkyrs_relation +5
+        *gosub_scene rank_progression gain_xp 60 "Maintained independence from Varkyr politics"
         *goto varkyr_end
 
 *label vamp_battle
@@ -79,22 +114,76 @@ Steel flashes and fangs gleam as the clash erupts. Vaelis moves with
 unnerving grace, every strike meant to test your resolve rather than kill. The
 two of you trade blows through deserted streets until the echo of battle sets
 dogs barking in the distance. Sweat beads on your brow while the vampire shows
-little sign of fatigue, yet you sense he respects your ferocity. When the moment
-comes to end it, he withdraws slightly, leaving you with the choice to spill his
-ancient blood or stay your hand. The future of your relationship hangs on this
-decision.
+little sign of fatigue, yet you sense he respects your ferocity.
+
+*comment Combat ability options
+*choice
+    *if (shadow_step) #Use Shadow Step to gain advantage
+        You dissolve into shadow, reappearing behind Vaelis. His eyes widen—impressed—as your blade finds his shoulder. Not a killing blow, but proof of skill.
+
+        "You know the Shadow Arts," he murmurs. "Interesting."
+
+        *set agility +10
+        *set varkyrs_relation +5
+        *gosub_scene rank_progression gain_xp 50 "Demonstrated Shadow Step in combat"
+        *goto vamp_battle_resolution
+
+    *if (enhanced_strength) #Use Enhanced Strength to overpower
+        Vampiric power floods your limbs. Your next strike carries the force of centuries—Vaelis barely parries, driven back three steps.
+
+        "Impressive," he admits. "You've awakened your true nature."
+
+        *set strength +10
+        *set varkyrs_relation +5
+        *gosub_scene rank_progression gain_xp 50 "Used Enhanced Strength effectively"
+        *goto vamp_battle_resolution
+
+    *if (night_vision) #Use Night Vision to anticipate his movements
+        In the darkness, you see everything. Every flicker of muscle, every tell before he strikes. You counter effortlessly, a dance you control.
+
+        Vaelis laughs. "You see in the dark as I do. Good."
+
+        *set cunning +5
+        *set varkyrs_relation +5
+        *gosub_scene rank_progression gain_xp 40 "Exploited Night Vision advantage"
+        *goto vamp_battle_resolution
+
+    #Fight with skill and determination
+        You trade blows with pure technique, no special abilities—just steel and will. Vaelis respects the honesty of it.
+
+        *set will +10
+        *gosub_scene rank_progression gain_xp 30 "Held your own against Vaelis"
+        *goto vamp_battle_resolution
+
+*label vamp_battle_resolution
+When the moment comes to end it, he withdraws slightly, leaving you with the choice to spill his ancient blood or stay your hand. The future of your relationship hangs on this decision.
+
 *choice
     #Spare him and demand a parley.
         You lower your weapon, signaling a willingness to talk. Vaelis nods in
         appreciation and offers a grudging truce in return for information about
         his enemies.
+
+        *set control +10
+        *set varkyrs_relation +10
+        *gosub_scene rank_progression gain_xp 75 "Showed mercy and diplomacy"
         *goto varkyr_end
     #Strike to finish him off.
         With a decisive lunge you aim for his heart, refusing to be swayed by
         charisma or history.
+
+        *set Bloodlust +15
+        *set varkyrs_relation -20
+        *gosub_scene rank_progression gain_xp 50 "Attempted to eliminate Vaelis"
         *goto varkyr_end
 
 *label vamp_follow
+*if (veil_of_shadows)
+    Your Veil of Shadows ability cloaks you perfectly. Vaelis has no idea you're there.
+
+    *set stealth +10
+    *gosub_scene rank_progression gain_xp 30 "Used Veil of Shadows for stealth"
+
 You melt into the night, tailing Vaelis at a cautious distance. He weaves
 through narrow alleyways and over moonlit rooftops until the city opens upon a
 gothic courtyard hidden from mundane eyes. Statues of forgotten nobles watch as
@@ -102,15 +191,26 @@ he exchanges coded words with cloaked figures. The glimpse you catch hints at a
 network far deeper than a lone predator. Before you can gather more, Vaelis
 senses your presence and turns, amusement flickering across his features. He
 appears less angry than intrigued that you managed to keep up with him.
+
+*gosub_scene rank_progression gain_xp 60 "Successfully tailed Lord Vaelis"
+
 *choice
     #Reveal yourself and request a formal audience.
         Stepping from the shadows, you express your desire to learn more about
         the Crimson Spire's reach. Vaelis considers for a moment before agreeing
         to discuss matters further.
+
+        *set cunning +5
+        *set varkyrs_relation +15
+        *gosub_scene rank_progression gain_xp 80 "Gained audience with Varkyr network"
         *goto varkyr_end
     #Vanish before he can react, keeping your secrets safe.
         Rather than risk confrontation, you fade back into the maze of streets,
         content with the knowledge you've gleaned for now.
+
+        *set stealth +10
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 50 "Escaped detection successfully"
         *goto varkyr_end
 
 *label vamp_investigation
@@ -122,17 +222,41 @@ across stone coffins, you weigh how this knowledge might tilt the balance of
 power—should you aid her ascent or expose her schemes to rival factions?
 Even the dust seems to vibrate with the whisper of old oaths, and every
 inscription pulses with ancient magic, hinting at sacrifices yet to come.
+
+*set cunning +15
+*gosub_scene rank_progression gain_xp 100 "Uncovered ancient Varkyr secrets"
+
 *choice
     #Bring these revelations to the Assassin Guild.
         Loyalty to the guild compels you. Armed with the Matriarch's secrets,
         you head back to report, ready to trade information for future support.
+
+        *set AssassinGuild_relation +20
+        *set varkyrs_relation -10
+        *gosub_scene rank_progression gain_xp 75 "Reported intelligence to the Guild"
         *goto varkyr_end
     #Confront Vaelis with what you've learned.
         Determined to understand his role in this conspiracy, you seek him out
         once more, holding the evidence close until he earns your trust.
+
+        *set cunning +10
+        *set varkyrs_relation +10
+        *gosub_scene rank_progression gain_xp 90 "Confronted Vaelis with evidence"
         *goto varkyr_end
 
 *label varkyr_end
+
+*comment Check for rank progression at end of investigation
+*gosub_scene rank_progression check_progression
+
+*line_break
+
+*if (alignment = "varkyrs")
+    The investigation complete, you feel the weight of new knowledge—and new power. Your actions tonight have shaped your standing among the Varkyrs.
+
 *set chapter 2
+
+*page_break
+*comment TODO: Route to Act 2 hub when implemented
 *finish
 

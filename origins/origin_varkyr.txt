@@ -1,0 +1,353 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment VARKYR ORIGIN - Fledgling of the Crimson Spire
+*comment ═══════════════════════════════════════════════════════════
+
+*label crimson_spire_initiation
+
+*comment Set initial Varkyr stats
+*set act 1
+*set chapter 1
+*set alignment "varkyrs"
+*set rank "Commoner"
+*set age 0
+*set Turned true
+*set Bloodlust 50
+*set control 50
+*set blood_satiation 100
+*set strength 70
+*set agility 70
+*set cunning 60
+*set will 50
+
+*comment Set starting abilities (Commoner-tier auto-granted)
+*comment Player will choose 2 from Commoner pool shortly
+
+Three nights ago, you were human.
+
+Three nights ago, you had a heartbeat.
+
+Three nights ago, [i]you died[/i].
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE EMBRACE - Flashback
+*comment ═══════════════════════════════════════════════════════════
+
+*label the_embrace_memory
+
+The memory crashes over you like a wave of blood:
+
+[i]The alley. The figure stepping from shadows. Eyes like garnets catching lamplight. A voice like silk over steel: "You are wasted on mortality."[/i]
+
+[i]Then—pain. Exquisite, terrible pain as fangs pierced your throat. The world dimming. Your life draining into an endless crimson void.[/i]
+
+[i]But before the final darkness—a wrist pressed to your lips. Blood, impossibly sweet, flooding your dying mouth. Fire racing through your veins, rewriting you cell by cell.[/i]
+
+[i]Death. Then rebirth.[/i]
+
+You are Varkyr now. Fledgling. Commoner. The lowest rank of an immortal aristocracy that has ruled the night since before human civilization built its first walls.
+
+*choice
+    #I embrace this power willingly
+        The transformation was agony, but what came after—the strength, the senses, the freedom from mortal limitations—is [i]magnificent[/i].
+
+        You are apex predator now. Humanity was a chrysalis you've shed.
+
+        *set Bloodlust +20
+        *set control -10
+        *set will +10
+        *goto awakening
+
+    #I mourn what I've lost
+        Your mortal life wasn't perfect, but it was [i]yours[/i]. The sunlight. The beating heart. The simple warmth of being alive.
+
+        Now you are cold. Empty. A monster wearing your face.
+
+        *set control +20
+        *set Bloodlust -10
+        *set will +10
+        *goto awakening
+
+    #I accept this as survival
+        You didn't choose this. But you're pragmatic. Dead is dead. Undead is... an opportunity.
+
+        You'll learn the rules. Play the game. Survive and perhaps thrive in this new existence.
+
+        *set cunning +10
+        *set control +10
+        *goto awakening
+
+*comment ═══════════════════════════════════════════════════════════
+*comment AWAKENING IN THE CRIMSON SPIRE
+*comment ═══════════════════════════════════════════════════════════
+
+*label awakening
+
+You wake on cold stone, in a chamber lit by flickering torches that cast more shadow than light. The Crimson Spire—the Varkyr's fortress-temple in the depths of Veilfall.
+
+Around you, other fledglings stir. Twelve of you, all newly Embraced, all disoriented by the overwhelming sensations of vampiric senses suddenly unleashed.
+
+You can hear thirteen heartbeats—the guard standing at the chamber's entrance, watching with predatory amusement. You can smell the copper tang of blood from somewhere distant. You can see in perfect clarity despite the gloom.
+
+And the [i]hunger[/i]. Gods, the hunger.
+
+*set blood_satiation -30
+
+A figure descends the chamber steps. Tall, regal, ancient. Her presence silences even the fledglings' whispered confusion.
+
+The Matriarch. Lady Seraphine. One of the oldest Varkyrs in Veilfall—Archduchess rank, they say. Perhaps older.
+
+Her voice carries effortlessly: "Welcome, fledglings, to your initiation. You are Commoner rank—the foundation of our hierarchy. Prove yourselves worthy, and you may ascend. Fail, and..." She gestures to shadows in the corners.
+
+You glimpse movement. Eyes. Hunger that makes your own seem tame.
+
+"The Crimson Spire does not suffer weakness."
+
+*line_break
+
+*choice
+    #Listen in respectful silence
+        You lower your gaze, showing deference. In this world, hierarchy is everything.
+
+        The Matriarch notes your submission with approving silence.
+
+        *set varkyrs_relation +10
+        *set control +5
+        *goto first_trial
+
+    #Meet her gaze directly
+        You are Varkyr now. A predator. You will not cower, even before an Archduchess.
+
+        Her eyes narrow slightly—but there's a glimmer of respect there. Boldness has its place.
+
+        *set will +10
+        *set Bloodlust +5
+        *goto first_trial
+
+    #Study the other fledglings
+        While she speaks, you assess your competition. Twelve faces, twelve potential allies or enemies.
+
+        One catches your eye—a young woman whose eyes glow with barely contained Bloodlust. Another, a man trembling with either fear or excitement.
+
+        *set cunning +10
+        *set awareness +5
+        *goto first_trial
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE FIRST TRIAL - Choose Your Bloodline
+*comment ═══════════════════════════════════════════════════════════
+
+*label first_trial
+
+"Your first trial," the Matriarch continues, "is simple. Each of you will declare your bloodline affinity. Will you follow the path of [b]Royalty[/b]—the old noble houses with their refined blood magic? The path of [b]Shadow[/b]—assassins and spies who walk darkness itself? Or the path of [b]War[/b]—warriors who have crushed armies?"
+
+She gestures, and three goblets materialize on pedestals before you, each filled with blood.
+
+"Choose. Drink. Your bloodline will shape your destiny."
+
+*choice
+    #Royal Bloodline - The path of aristocratic power
+        You approach the golden goblet. The blood within shimmers with an otherworldly luminescence.
+
+        *set bloodline "Royal"
+        *set faction_stat "Royal Vampire"
+        *set bloodline_or_rank "Bloodline"
+
+        As you drink, visions flood your mind: glittering courts, political machinations, blood magic woven with surgical precision. You will be scholar and sorcerer both.
+
+        *set cunning +15
+        *set will +10
+        *goto bloodline_chosen
+
+    #Shadow Bloodline - The path of stealth and assassination
+        You choose the obsidian goblet. The blood is cold, almost translucent—like liquid darkness.
+
+        *set bloodline "Shadow"
+        *set faction_stat "Shadow Vampire"
+        *set bloodline_or_rank "Bloodline"
+
+        The taste brings clarity: you are the knife in the dark, the whisper before death. Shadows will bend to your will.
+
+        *set agility +15
+        *set stealth +15
+        *goto bloodline_chosen
+
+    #War Bloodline - The path of battle and conquest
+        You claim the iron goblet. The blood within tastes of battlefields and ancient glory.
+
+        *set bloodline "War"
+        *set faction_stat "War Vampire"
+        *set bloodline_or_rank "Bloodline"
+
+        Power floods your limbs. You are weapon and wielder both. Armies will break before you.
+
+        *set strength +20
+        *set will +5
+        *goto bloodline_chosen
+
+*label bloodline_chosen
+
+The blood settles into your core, reshaping you. Your ${bloodline} nature is now fundamental to your being.
+
+The Matriarch nods. "Good. You have chosen. Now, claim your power."
+
+She raises her hand, and suddenly you feel it—the awakening of vampiric abilities dormant in your blood.
+
+"As Commoners, you may select [b]two abilities[/b] from those befitting your rank. Choose wisely. These powers will define how you hunt, how you fight, how you [i]survive[/i]."
+
+*comment Call ability selection
+*gosub_scene varkyr_abilities varkyr_ability_select
+
+*comment Player returns here after selecting 2 Commoner abilities
+
+*line_break
+
+The power surges through you. The abilities are yours now, etched into your undead essence.
+
+*comment Grant XP for completing initiation
+*gosub_scene rank_progression gain_xp 50 "Completed Crimson Spire Initiation"
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE FIRST HUNT - Blood Satiation Tutorial
+*comment ═══════════════════════════════════════════════════════════
+
+*label first_hunt
+
+"Now," the Matriarch's voice cuts through the chamber, "you will feed."
+
+Doors open. A figure is dragged in—a criminal from Veilfall's dungeons, judging by the shackles. Conscious. Terrified.
+
+"This is your first lesson: we are predators, but we are not [i]beasts[/i]. Control distinguishes us from rabid dogs. Feed, but do not kill. Drain enough to sate the hunger, but leave the vessel alive."
+
+She gestures to the twelve fledglings. "Begin."
+
+The hunger roars in your veins.
+
+*if (control >= 60)
+    Your discipline holds. You approach with measured steps.
+
+    *choice
+        #Feed with clinical precision
+            You strike quickly, finding the jugular with instinctive accuracy. The blood flows, and the hunger recedes. You stop the moment you feel satiation, sealing the wound with a touch of blood magic.
+
+            The victim slumps, alive but weakened.
+
+            *set blood_satiation 100
+            *set control +15
+            *set varkyrs_relation +10
+            *goto feeding_complete
+
+        #Savor the experience but maintain control
+            You drink slowly, letting the crimson warmth fill you. It's ecstasy—but you remain master of yourself.
+
+            When the hunger quiets, you pull away. The victim lives.
+
+            *set blood_satiation 100
+            *set control +10
+            *set Bloodlust +5
+            *goto feeding_complete
+
+*elseif (Bloodlust >= 60)
+    The beast within [i]screams[/i]. Control is a distant concept.
+
+    *choice
+        #Fight for control
+            Every fiber of your being wants to drain the victim dry. But you grit your teeth, force yourself to stop—
+
+            It's agony. But you manage. Barely.
+
+            *set blood_satiation 100
+            *set control +20
+            *set will +10
+            *goto feeding_complete
+
+        #Give in to the hunger
+            You lunge, fangs tearing into flesh. Blood explodes across your tongue and the world becomes crimson bliss—
+
+            Someone pulls you off. The Matriarch. You snarl at her, but her grip is iron.
+
+            The victim is dead. You failed.
+
+            *set blood_satiation 100
+            *set control -20
+            *set Bloodlust +20
+            *set varkyrs_relation -15
+            *goto feeding_failed
+
+*else
+    The hunger is strong, but you are neither beast nor saint.
+
+    *choice
+        #Feed efficiently
+            You drink what you need. No more, no less. Practical.
+
+            *set blood_satiation 100
+            *set control +5
+            *goto feeding_complete
+
+        #Drink deeply, testing your limits
+            You push the boundaries—how much can you take before losing control?
+
+            The answer: quite a lot. But you pull back just in time.
+
+            *set blood_satiation 100
+            *set Bloodlust +10
+            *set cunning +5
+            *goto feeding_complete
+
+*label feeding_complete
+
+The Matriarch examines the still-living victim. "Adequate. You have proven the minimum: you are not a mindless beast. The Crimson Spire acknowledges you as Commoner."
+
+She turns to address all fledglings. "Your initiation is complete. You are now free to leave the Spire and exist in Veilfall's shadows. Hunt. Learn. Grow stronger. When you are ready to ascend to Knight rank, return here for the next trial."
+
+*set varkyrs_relation +20
+
+Your journey as Varkyr begins.
+
+*goto spire_departure
+
+*label feeding_failed
+
+The Matriarch's expression is ice. "You killed. On the first trial. This is failure."
+
+She gestures. Shadows surge from the corners—older vampires, their hunger far more terrible than yours.
+
+"You will be given one chance to redeem yourself. Survive the punishment. Prove you can learn. Or..."
+
+She doesn't finish. She doesn't need to.
+
+*set varkyrs_relation -10
+
+The shadows descend.
+
+*comment Player faces consequences but survives (tutorial death would be bad)
+*comment They emerge battered but alive, having learned a harsh lesson
+
+*goto spire_departure
+
+*label spire_departure
+
+*comment At this point, player has:
+*comment - Chosen bloodline
+*comment - Selected 2 Commoner abilities
+*comment - Completed first feeding
+*comment - Earned 50 XP
+*comment
+*comment They now enter Act 1 Varkyr content
+
+*page_break
+*goto_scene act1_varkyr varkyrs_route
+
+*comment ═══════════════════════════════════════════════════════════
+*comment NOTES FOR INTEGRATION:
+*comment - Sets alignment = "varkyrs"
+*comment - Sets rank = "Commoner"
+*comment - Calls varkyr_abilities.txt for ability selection
+*comment - Grants 50 XP for initiation
+*comment - Blood satiation mechanics demonstrated
+*comment - Routes to act1_varkyr.txt at end
+*comment ═══════════════════════════════════════════════════════════

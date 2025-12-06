@@ -1,0 +1,266 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment LUPINE ORIGIN - Newest Member of the Pack
+*comment ═══════════════════════════════════════════════════════════
+
+*label pack_trial_start
+
+*comment Set initial Lupine stats
+*set act 1
+*set chapter 1
+*set alignment "lupine"
+*set lupine_rank "Omega"
+*set age 25
+*set Turned true
+*set rage 40
+*set control 60
+*set moon_phase "Full"
+*set strength 70
+*set agility 75
+*set will 65
+*set cunning 50
+
+Three nights ago, the alpha's jaws closed around your throat.
+
+Three nights ago, the fever claimed you—burning from within as lupine essence rewrote your DNA, shattering bones and reforming them, awakening instincts older than civilization.
+
+Three nights ago, you [i]changed[/i].
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE BITE - Flashback
+*comment ═══════════════════════════════════════════════════════════
+
+*label the_bite_memory
+
+The memory is fever-dream and nightmare:
+
+[i]The forest. The hunt. You were prey—running from something, you can't remember what. Then the massive black wolf, stepping from moonlight. Eyes like amber fire.[/i]
+
+[i]The alpha. Rurik. Judging you with a gaze that saw into your soul.[/i]
+
+[i]His voice, resonating in your mind: "You have the heart of a wolf. Prove it."[/i]
+
+[i]Then—the bite. Not to kill, but to transform. Venom flooding your veins. Three days and nights of agony as your body fought and finally succumbed to the lunar curse.[/i]
+
+[i]On the third night, under the full moon, you shifted for the first time.[/i]
+
+*choice
+    #I embraced the beast within
+        The wolf felt [i]right[/i]. Natural. Like you'd been wearing a human mask your whole life and finally tore it off.
+
+        *set rage +20
+        *set control -10
+        *set strength +15
+        *goto type_selection
+
+    #I fought to keep my humanity
+        The wolf is power, yes—but you are still [i]you[/i]. Human mind, lupine body. You will master this, not be mastered by it.
+
+        *set control +20
+        *set rage -10
+        *set will +15
+        *goto type_selection
+
+    #I accepted it as part of me now
+        Neither beast nor man, but something between. The wolf is you, you are the wolf. Two souls, one being.
+
+        *set control +10
+        *set rage +5
+        *set cunning +10
+        *goto type_selection
+
+*comment ═══════════════════════════════════════════════════════════
+*comment TYPE SELECTION - Wolf/Werewolf/Omega
+*comment ═══════════════════════════════════════════════════════════
+
+*label type_selection
+
+The pack's eldest, a grey-furred Beta named Thane, approaches you now in the sacred clearing.
+
+"The moon has blessed you with transformation. But [i]how[/i] you shift—that is yours to discover. Some of us are wolf-only, running on four legs with the pack. Some are werewolves, walking upright as warriors. And a rare few..." He pauses. "...are Omega Variants. Dual-form. Both wolf and hybrid at will."
+
+He studies you. "Tonight, in your trial, you will discover your true nature."
+
+*choice
+    #I feel the call of the four-legged hunt
+        The wolf form calls to you—speed, agility, the pure joy of running with the pack.
+
+        *set wolf_only true
+        *set werewolf_only false
+        *set omega_variant false
+
+        "A wolf," Thane nods. "Swift. Cunning. The scouts and trackers of our kind."
+
+        *set agility +20
+        *set stealth +10
+        *goto trial_begins
+
+    #I feel power in the hybrid war-form
+        The bipedal werewolf—massive, powerful, unstoppable. A living weapon.
+
+        *set werewolf_only true
+        *set wolf_only false
+        *set omega_variant false
+
+        "A werewolf," Thane says approvingly. "Our warriors. Our defenders."
+
+        *set strength +20
+        *set will +10
+        *goto trial_begins
+
+    #I feel both forms calling equally
+        You sense it—the potential for [i]both[/i]. Wolf for speed, hybrid for strength. The rarest gift.
+
+        *set omega_variant true
+        *set wolf_only false
+        *set werewolf_only false
+
+        Thane's eyes widen. "Omega Variant. The moon has favored you greatly. With great power comes great trials."
+
+        *set strength +10
+        *set agility +10
+        *set will +10
+        *goto trial_begins
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE MOON-BORN TRIAL
+*comment ═══════════════════════════════════════════════════════════
+
+*label trial_begins
+
+The full moon blazes overhead. The Whispering Pines Pack encircles you—dozens of wolves and werewolves, their eyes reflecting lunar fire.
+
+Alpha Rurik, in his massive black wolf form, steps forward. His mental voice resonates in your skull:
+
+[i]"The trial is simple: prove yourself. Hunt. Fight. Survive. Those who succeed join the pack. Those who fail... do not leave this forest."[/i]
+
+He gestures with his muzzle toward the deep woods.
+
+[i]"Your prey awaits. A corrupted beast—neither natural wolf nor lupine, but something twisted by dark magic. Kill it. Bring proof. Return before dawn."[/i]
+
+*set lupine_relation +10
+
+You shift—muscles rippling, bones crackling—into your lupine form. The world explodes into scent and sound.
+
+*choice
+    #Track the corrupted beast by scent
+        Your lupine nose catches it immediately—wrongness on the wind. Decay and dark magic.
+
+        *set cunning +10
+        *goto hunt_sequence
+
+    #Howl for guidance from the moon
+        You tilt your head back and howl. The moon seems to answer—knowledge flooding your mind. The prey is northeast.
+
+        *set will +10
+        *goto hunt_sequence
+
+    #Rush headlong into the hunt
+        No time for subtlety. You charge into the darkness, trusting instinct.
+
+        *set strength +10
+        *set rage +5
+        *goto hunt_sequence
+
+*label hunt_sequence
+
+*comment Condensed hunt for space - player tracks and finds the corrupted beast
+
+You find it in a clearing—a massive, twisted thing. Once a wolf, now corrupted by Varkyr blood magic. An abomination.
+
+It turns, snarling. The fight begins.
+
+*choice
+    *if (wolf_only)
+        #Use wolf speed and agility
+            You dart around it, slashing with claws, using superior speed. It's slower, stronger—but you're smarter.
+
+            After a brutal fight, you tear out its throat.
+
+            *set agility +10
+            *goto kill_complete
+
+    *if (werewolf_only)
+        #Use werewolf strength
+            You meet it head-on in hybrid form. Claws against claws, strength against strength.
+
+            You are the stronger. Your jaws crush its spine.
+
+            *set strength +10
+            *goto kill_complete
+
+    *if (omega_variant)
+        #Switch between forms mid-combat
+            Wolf form for speed, hybrid for killing blows. You flow between shapes like water.
+
+            The beast never adapts. You destroy it utterly.
+
+            *set agility +5
+            *set strength +5
+            *set will +5
+            *goto kill_complete
+
+*label kill_complete
+
+The corrupted beast lies dead. You take its head as proof.
+
+*comment Grant XP for trial
+*gosub_scene rank_progression gain_xp 50 "Completed Moon-Born Trial"
+
+As you stand over the corpse, bloodied and victorious, you realize: this is your first kill as a lupine.
+
+Was it guilty? Corrupted, yes—but was it responsible for its corruption? Or was it a victim?
+
+*choice
+    #It was corrupted—not innocent
+        This thing was a threat. Killing it was justice, not murder.
+
+        Your first kill is [i]clean[/i]. Your control remains strong.
+
+        *set control +20
+        *set lupine_relation +15
+        *set has_killed_innocent false
+        *goto trial_complete
+
+    #It might have been saved
+        Doubt gnaws at you. Could it have been cured? You'll never know.
+
+        But the kill is done. You carry that weight now.
+
+        *set control +10
+        *set will +10
+        *goto trial_complete
+
+*label trial_complete
+
+You return to the pack as dawn approaches, the beast's head carried in your jaws.
+
+Rurik shifts to human form—a massive man with scars and black hair. "You succeeded. The Whispering Pines acknowledges you as Omega."
+
+Thane steps forward. "And now, the moon grants you power. Choose [b]two abilities[/b] from those befitting your nature."
+
+*comment Call ability selection
+*gosub_scene lupine_abilities_complete lupine_ability_select
+
+*line_break
+
+The abilities settle into your core. You are pack now.
+
+*set lupine_relation +20
+
+Rurik nods once. "Welcome to Whispering Pines. Run with us."
+
+*page_break
+
+*comment Route to Act 1 Lupine content
+*goto_scene act1_lupine lupine_route
+
+*comment ═══════════════════════════════════════════════════════════
+*comment NOTES:
+*comment - Type selection (wolf/werewolf/omega) implemented
+*comment - First kill doctrine integrated
+*comment - Calls lupine_abilities_complete.txt
+*comment - Grants 50 XP for trial
+*comment - Routes to act1_lupine.txt
+*comment ═══════════════════════════════════════════════════════════

@@ -4,6 +4,11 @@
 
 *scene_list
     startup
+    origin_select
+    origin_assassin
+    origin_varkyr
+    origin_lupine
+    origin_forsaken
     prologue
     codex_main
     codex_world
@@ -338,4 +343,5 @@ The world healed, and the supernatural factions, now veiled in secrecy, wove the
 Present Era (1500 AW):
 Now, in the year 1500 AW, the fragile peace holds, maintained by the silent guardians of the night. But whispers of unrest stir, and the echoes of the past beckon brave souls to forge their destiny. In the heart of Veilfall, where history and the present collide, your journey begins—a requiem for bloodlines and a quest for redemption in a world that walks the fine line between darkness and light.
 
-*goto prologue
+*page_break
+*goto_scene origin_select origin_select

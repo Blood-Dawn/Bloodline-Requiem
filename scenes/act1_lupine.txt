@@ -2,20 +2,49 @@ The Moon-Born Trial marks the beginning of every lupine's journey, a sacred rite
 
 Tonight the air is thick with the scent of pine and anticipation. The rustle of leaves is punctuated by distant howls, guiding you deeper into the forest. Each step is a test of resolve; each shadow seems to pulse with the energy of ages-old rites. Before long, the path opens into a clearing where a great bonfire roars, its flames licking toward the heavens. The pack gathers there, silent silhouettes under the moonlight. It is here that you must prove yourself, for success means acceptance—and failure, exile or worse.
 *label lupine_route
+*comment Act 1 - Lupine Investigation
+*comment Player arrives here from origin_lupine.txt or origin_assassin.txt (Lupine contract)
+
 Under the pale moonlight, you journey to the Lupine's territory, the ominous Whispering Pines. As you tread cautiously into the grand forest, you become acutely aware of eyes upon you. Wolves of varying fur colors and sizes encircle you, their presence like whispers among the trees. They move with a silent, coordinated grace, their eyes reflecting the moonlight as they study your every movement, their noses twitching as they take in your scent.
+
+*comment Grant XP for entering Lupine territory
+*gosub_scene rank_progression gain_xp 50 "Entered Whispering Pines Pack territory"
 *choice
+    *if (lupine_enhanced_senses) #Use Enhanced Senses to read their intentions
+        Your lupine senses flare—you smell fear, curiosity, respect in their scents. You hear the subtle shift of muscle, the quickening heartbeats. They're testing you, not hunting you.
+
+        You growl softly, acknowledging their presence without challenging. Several wolves lower their heads in return.
+
+        *set will +10
+        *set lupine_relation +15
+        *gosub_scene rank_progression gain_xp 40 "Read pack dynamics with Enhanced Senses"
+        *goto lupine_encounter_growl
+
     #Growl at them.
         With a subtle growl, you assert your presence, making a few of them back off while others seem intrigued by your audacity. The alpha, a majestic wolf with dark black fur symbolizing strength, steps forward, his eyes locking onto yours as if peering into your soul.
+
+        *set will +5
+        *gosub_scene rank_progression gain_xp 20 "Asserted presence before the pack"
         *goto lupine_encounter_growl
     #Back off slowly and report back.
         You decide that discretion is the better part of valor. Slowly backing away, you make a mental note of what you've witnessed, ready to report back to the Assassin Guild. However, the eyes of the Lupines follow you, their curiosity piqued.
+
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 10 "Retreated strategically"
         *goto_scene act1_chapter1 report_back
     #Pull out a weapon to defend yourself.
         With a swift motion, you unsheathe your weapon, the steel gleaming under the moonlight. The wolves grow tense, their growls resonating through the silent forest. Yet, amidst the tension, a white-furred wolf, a rare sight signifying a special status, steps forward with a calming aura, seemingly offering a chance for peaceful interaction.
+
+        *set strength +5
+        *set lupine_relation -10
+        *gosub_scene rank_progression gain_xp 15 "Showed readiness to fight"
         *goto lupine_encounter_weapon
     #Observe the wolves silently.
         You stand still, observing the wolves. The variety in fur colors tells tales of their nature. Black for strength, brown for balance, gray for agility, and the rare white for a special status or unique ability. Your silent observation seems to earn you a nod of respect from the alpha.
+
+        *set awareness +10
         *set lupine_relation +10
+        *gosub_scene rank_progression gain_xp 30 "Observed pack hierarchy respectfully"
         *goto assert_dominance
 
 *label lupine_encounter_growl
@@ -71,73 +100,210 @@ As the grenade erupts, blinding light scatters across the clearing. The wolves y
         *goto explain_mission
 
 *label lupine_battle
-The clash is immediate. Claws flash and teeth snap as you and the surrounding wolves tumble through brush and dirt. Your weapon sings through the night, parrying furious strikes while you search for an opening. Every breath tastes of iron and earth. Amid the chaotic melee, the alpha circles, gauging your prowess. Though outnumbered, you hold your ground, drawing on sheer will and the instincts honed by countless missions. When the pack finally hesitates, you have a choice: continue to press your advantage or yield in a show of humility.
+The clash is immediate. Claws flash and teeth snap as you and the surrounding wolves tumble through brush and dirt. Your weapon sings through the night, parrying furious strikes while you search for an opening. Every breath tastes of iron and earth. Amid the chaotic melee, the alpha circles, gauging your prowess.
+
+*comment Combat ability options
+*choice
+    *if (werewolf_ferocious_might) #Unleash Ferocious Might
+        Your hybrid form explodes with raw power. Muscles bulge, claws extend, and you become a whirlwind of fury. Three wolves go down before your onslaught.
+
+        The alpha's eyes gleam with respect. "You fight like pack."
+
+        *set strength +15
+        *set rage +10
+        *set lupine_relation +20
+        *gosub_scene rank_progression gain_xp 60 "Demonstrated Ferocious Might"
+        *goto lupine_battle_resolution
+
+    *if (wolf_agile_pursuer) #Use Agile Pursuer tactics
+        In wolf form, you're faster than any of them. You dart between legs, snap at heels, never where they expect. They can't land a blow.
+
+        The alpha shifts to wolf form to chase you—this is a test of skill, not bloodlust.
+
+        *set agility +15
+        *set lupine_relation +15
+        *gosub_scene rank_progression gain_xp 50 "Displayed wolf agility mastery"
+        *goto lupine_battle_resolution
+
+    *if (lupine_regenerative_healing) #Trust in Regenerative Healing
+        You take hits deliberately, showing them you heal. Claw wounds close before their eyes. It's a statement: you cannot be broken.
+
+        Murmurs ripple through the pack. "Moon-blessed," one whispers.
+
+        *set will +10
+        *set lupine_relation +15
+        *gosub_scene rank_progression gain_xp 55 "Showcased lupine regeneration"
+        *goto lupine_battle_resolution
+
+    #Fight with honor and skill
+        Though outnumbered, you hold your ground with sheer will and combat instinct. No powers, just determination.
+
+        The alpha sees your resolve. That matters more than magic.
+
+        *set will +15
+        *set strength +5
+        *set lupine_relation +10
+        *gosub_scene rank_progression gain_xp 40 "Fought with honor"
+        *goto lupine_battle_resolution
+
+*label lupine_battle_resolution
+When the pack finally hesitates, you have a choice: continue to press your advantage or yield in a show of humility.
+
 *choice
     #Press the attack and force their submission.
         With a defiant roar, you lunge toward the alpha, aiming to establish dominance through strength alone.
+
+        *set rage +10
+        *set lupine_relation +5
+        *gosub_scene rank_progression gain_xp 30 "Asserted dominance through force"
         *goto assert_dominance
     #Cease fighting and offer a truce.
         You lower your weapon, signaling that cooperation benefits you all more than senseless bloodshed.
+
+        *set control +10
+        *set lupine_relation +15
+        *gosub_scene rank_progression gain_xp 60 "Offered honorable truce"
         *goto explain_mission
 
 *label assert_dominance
 The pack watches you closely, waiting to see how you will prove yourself. The alpha's gaze is unwavering, testing your resolve and strength.
+
+*gosub_scene rank_progression gain_xp 35 "Stood before the alpha"
+
 *choice
+    *if (alphas_roar) #Use Alpha's Roar to command respect
+        You throw back your head and unleash an Alpha's Roar—a sound that shakes the trees and silences every wolf. It's a declaration: you are worthy of leadership.
+
+        The alpha's ears flatten, then rise. He nods once. "You have the heart of an alpha."
+
+        *set will +15
+        *set lupine_relation +25
+        *gosub_scene rank_progression gain_xp 80 "Demonstrated Alpha's Roar"
+        *goto explain_mission
+
     #Challenge the alpha directly for respect.
         You step forward, meeting the alpha's eyes with unwavering confidence, signaling your readiness to prove your worth.
+
+        *set will +10
         *set lupine_relation +5
+        *gosub_scene rank_progression gain_xp 40 "Challenged alpha with confidence"
         *goto explain_mission
     #Show humility and request to join the pack.
         You bow your head slightly, acknowledging the pack's authority and asking for a chance to earn your place among them.
+
+        *set control +5
         *set lupine_relation +2
+        *gosub_scene rank_progression gain_xp 25 "Showed humility to the pack"
         *goto explain_mission
     #Offer to help the pack with their current troubles.
         You propose your skills and knowledge as a way to aid the pack, hoping to earn their trust through cooperation.
+
+        *set cunning +5
         *set lupine_relation +3
+        *gosub_scene rank_progression gain_xp 30 "Offered aid to the pack"
         *goto explain_mission
 
 *label explain_mission
 *line_break
 Taking a steady breath, you recount your charge from the Assassin Guild to investigate growing unrest among supernatural factions. You emphasize that your motives are to maintain balance, not to undermine lupine sovereignty. The alpha's eyes narrow with suspicion while younger wolves exchange whispers. Your honesty seems to resonate with some, yet others bristle at the mention of outsiders meddling in their affairs. You offer them a choice: work with you to uncover the truth, or keep their distance and risk facing the unknown alone.
+
+*gosub_scene rank_progression gain_xp 50 "Explained mission to the pack"
+
 *choice
     #Invite them to form a temporary alliance.
         You stress that cooperation could prevent unnecessary bloodshed and secure the pack's place in the coming conflict.
-        *goto assert_dominance
+
+        *set cunning +5
+        *set lupine_relation +10
+        *gosub_scene rank_progression gain_xp 40 "Proposed temporary alliance"
+        *goto pack_verdict
     #Promise to stay out of their territory if they share information.
         Perhaps diplomacy will win more hearts than force; you give your word to respect their lands should they choose to aid your cause.
-        *goto assert_dominance
+
+        *set lupine_relation +5
+        *gosub_scene rank_progression gain_xp 35 "Offered respectful compromise"
+        *goto pack_verdict
+
+*label pack_verdict
 "Now, speak your purpose," the alpha demands, his gaze locked onto yours.
 
 *choice
     #Explain your mission from the Assassin Guild.
         You speak candidly about the guild's concerns. The alpha listens with a guarded expression, weighing each word as though testing its truth. You stress that the guild seeks not to control the Lupines but to prevent chaos that could engulf all factions. Some of the pack nod in grudging understanding, while others bristle at the notion of outside oversight. When you finish, silence hangs between you and the alpha as he measures your sincerity.
+
+        *set cunning +10
+        *gosub_scene rank_progression gain_xp 60 "Spoke truthfully about the Guild's mission"
+
         *choice
             #Stand firm and await his decision.
                 You cross your arms, ready to accept whatever judgment he renders.
+
+                *set will +10
+                *set lupine_relation +5
+                *gosub_scene rank_progression gain_xp 40 "Stood with conviction"
                 *goto end_scene
             #Appeal to the pack for support.
                 Turning to the onlookers, you ask them to consider how cooperation may secure their future.
+
+                *set cunning +5
+                *set lupine_relation +10
+                *gosub_scene rank_progression gain_xp 50 "Won over pack members"
                 *goto end_scene
     #Challenge the alpha for a friendly spar to gain their respect.
         With a flourish you bare your claws, inviting the alpha to test your strength. A murmur ripples through the pack as he steps forward, eyes gleaming with primal excitement. The two of you circle, trading swift blows that blur between man and beast. Though the encounter is fierce, it lacks lethal intent; it is a dance to prove worth. When you finally lock arms, the alpha smiles—a gesture of grudging respect—and releases you.
+
+        *set strength +15
+        *set lupine_relation +20
+        *gosub_scene rank_progression gain_xp 80 "Earned respect through honorable combat"
+
         *choice
             #Bow in acknowledgment of his power.
                 You show deference, signaling that you seek cooperation, not conquest.
+
+                *set control +10
+                *set lupine_relation +10
+                *gosub_scene rank_progression gain_xp 50 "Showed respect to alpha"
                 *goto end_scene
             #Proclaim your desire to lead the hunt.
                 With confidence, you state that your skills could guide the pack against any threat.
+
+                *set will +10
+                *set lupine_relation +5
+                *gosub_scene rank_progression gain_xp 45 "Declared leadership intentions"
                 *goto end_scene
     #Attempt to leave peacefully, without further confrontation.
         You take a cautious step back, palms open in a gesture of calm. The alpha studies you closely, perhaps weighing whether to let you depart unscathed. You assure them you will not reveal the pack's secrets and merely wish to avoid unnecessary bloodshed. The tension slowly eases as some of the wolves soften their stances, though others remain wary. The forest seems to hold its breath, waiting for the alpha's command.
+
+        *set control +10
+        *gosub_scene rank_progression gain_xp 30 "Chose peaceful withdrawal"
+
         *choice
             #Promise to keep their territory undisturbed.
                 You swear not to return unless summoned, hoping this display of respect will spare you.
+
+                *set lupine_relation +10
+                *gosub_scene rank_progression gain_xp 40 "Vowed to respect pack territory"
                 *goto end_scene
             #Offer a token of goodwill before leaving.
                 You place a small charm at the alpha's feet, a sign of respect forged from your travels.
+
+                *set lupine_relation +15
+                *gosub_scene rank_progression gain_xp 50 "Offered token of goodwill"
                 *goto end_scene
 
 
 *label end_scene
+
+*comment Check for rank progression at end of encounter
+*gosub_scene rank_progression check_progression
+
+*line_break
+
+*if (alignment = "lupine")
+    The pack has judged you. Whether through strength, cunning, or honor, you've made your mark on the Whispering Pines. The moon watches, and your path forward is clearer.
+
 *set chapter 2
+
+*page_break
+*comment TODO: Route to Act 2 hub when implemented
 *finish

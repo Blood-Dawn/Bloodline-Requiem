@@ -1,0 +1,243 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment FORSAKEN ORIGIN - Child of Blood and Moon
+*comment ═══════════════════════════════════════════════════════════
+
+*label caius_ritual
+
+*comment Set initial Forsaken stats
+*set act 1
+*set chapter 1
+*set alignment "forsaken"
+*set forsaken_rank "Initiate"
+*set age 30
+*set hybrid_stability 50
+*set control 50
+*set rage 30
+*set Bloodlust 30
+*set strength 75
+*set agility 75
+*set will 70
+*set cunning 65
+
+Seven days ago, you were dying.
+
+A Varkyr attacked you in Veilfall's alleys—drained you nearly dry. As you lay broken, a Lupine pack passed through, and one—young, reckless—bit you, thinking to turn you.
+
+The two venoms should have killed each other. Should have killed [i]you[/i].
+
+Instead, they [i]merged[/i].
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment CAIUS THE UNBOUND - First Meeting
+*comment ═══════════════════════════════════════════════════════════
+
+*label caius_appears
+
+You wake in darkness. Not death—though you came close. The conflicting magics in your blood war for dominance, ripping you apart from the inside.
+
+Then—a voice. Deep, measured, carrying authority that makes even your warring essences pause:
+
+"Fascinating. You should be dead. Vampiric venom and lupine infection destroy each other on contact. Yet here you are. [i]Changing[/i]."
+
+A figure steps from shadow. Tall—6'7" easily. Silver hair despite an ageless face. And eyes... gods, those eyes. One crimson like a Varkyr's. One amber like a Lupine's.
+
+"I am Caius," he says. "Caius the Unbound. And you, dying hybrid, have a choice."
+
+*set met_Caius true
+
+He kneels beside you. "I can stabilize the transformation. Make you Forsaken—neither Varkyr nor Lupine, but [i]both[/i]. You will have powers neither bloodline alone can claim. You will also be hunted by both. Hated. Feared."
+
+He produces a vial of shimmering liquid—blood and moonlight somehow mixed.
+
+"Or I can let you die here. Painlessly. Your choice."
+
+*choice
+    #"Save me. I'll become Forsaken."
+        "Good," Caius says. "Survival is the first wisdom."
+
+        *set will +15
+        *set forsaken_relation +20
+        *goto ritual_begins
+
+    #"What's the cost? Nothing is free."
+        Caius smiles—a predator's expression. "Smart. The cost is loyalty. You will join my enclave. Serve until you prove yourself worthy of independence. Years, perhaps. But you'll be [i]alive[/i]."
+
+        *set cunning +15
+        *set forsaken_relation +10
+        *goto ritual_begins
+
+    #"I... I don't want to be a monster."
+        "Too late," Caius says, not unkindly. "You're already transforming. The only question is whether you do so with guidance... or as a mindless abomination I'll have to put down."
+
+        His heterochromatic gaze holds yours. "Choose quickly. You have minutes."
+
+        *set control +10
+        *goto forced_choice
+
+*label forced_choice
+Survival wins. "Do it," you gasp.
+
+*goto ritual_begins
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE RITE OF CONVERGENCE
+*comment ═══════════════════════════════════════════════════════════
+
+*label ritual_begins
+
+Caius lifts you effortlessly, carrying you deeper into what you now recognize as the Forsaken Underground—the tunnel network beneath Veilfall.
+
+A chamber opens before you, carved with symbols that hurt to look at. Other Forsaken watch from the shadows—dozens of them, all bearing the telltale signs of hybrid nature.
+
+Caius lays you on an altar beneath an opening to the sky. The full moon blazes overhead.
+
+"The Rite of Convergence," he announces, "will force blood and moon to [i]cooperate[/i] rather than war. It will hurt. Scream if you must. But if you surrender to the pain, you die."
+
+He pours the vial's contents into your mouth.
+
+Reality [i]explodes[/i].
+
+*page_break
+
+*comment Condensed ritual sequence for space
+
+The agony is beyond description. Your bones break and reform. Your blood boils and freezes simultaneously. You feel fangs extend and retract. Claws emerge from your fingertips.
+
+And through it all, Caius's voice, anchoring you: "You are neither. You are [i]both[/i]. Accept it. Master it."
+
+Seven hours later, as dawn approaches, the pain recedes.
+
+You stand—transformed. Hybrid. Forsaken.
+
+*set hybrid_stability +30
+*gosub_scene rank_progression gain_xp 75 "Survived the Rite of Convergence"
+
+*comment ═══════════════════════════════════════════════════════════
+*comment TYPE SELECTION - Vamp-Wolf or Wolf-Vamp
+*comment ═══════════════════════════════════════════════════════════
+
+*label hybrid_orientation
+
+Caius studies you. "The transformation stabilized. Now we determine your orientation. Are you Vamp-Wolf—vampiric core with lupine secondary? Or Wolf-Vamp—lupine core with vampiric secondary?"
+
+He gestures for you to focus inward.
+
+*choice
+    #I feel the vampire's cold hunger stronger
+        The bloodlust calls louder than the rage. You are predator first, beast second.
+
+        *set forsaken_type "Vamp-Wolf"
+        *set Bloodlust +20
+        *set rage -10
+        *set cunning +10
+
+        "Vamp-Wolf," Caius nods. "You'll excel at blood magic and shadow work. Sunlight will hurt more. Silver less."
+
+        *goto abilities_unlock
+
+    #I feel the wolf's primal fury stronger
+        The moon's call drowns out the blood-thirst. You are beast first, predator second.
+
+        *set forsaken_type "Wolf-Vamp"
+        *set rage +20
+        *set Bloodlust -10
+        *set strength +15
+
+        "Wolf-Vamp," Caius says. "Physical prowess will be your strength. Silver will hurt more. Sunlight less."
+
+        *goto abilities_unlock
+
+    #They feel balanced—neither dominates
+        You are the perfect hybrid. Blood and moon in equilibrium.
+
+        *set forsaken_type "Balanced"
+        *set hybrid_stability +20
+        *set will +15
+
+        "Balanced," Caius's eyes gleam. "Rare. Very rare. You may unlock War Form sooner than most."
+
+        *goto abilities_unlock
+
+*label abilities_unlock
+
+"As Initiate rank Forsaken, you may now choose [b]two abilities[/b]—from our unique hybrid powers, or from lesser versions of Varkyr and Lupine abilities. Choose."
+
+*comment Call Forsaken ability selection
+*gosub_scene forsaken_abilities forsaken_ability_select
+
+*line_break
+
+Power settles into you. The abilities are yours.
+
+Caius extends his hand. "Welcome to the Forsaken. You are hated by the world above. Down here, you are [i]kin[/i]."
+
+Other Forsaken approach—some offering nods, others wary but curious. You are one of them now.
+
+*set forsaken_relation +25
+*set met_Caius true
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment FIRST LESSON - Hybrid Nature
+*comment ═══════════════════════════════════════════════════════════
+
+*label first_lesson
+
+Over the next nights, Caius teaches you the basics:
+
+"Varkyrs will see you as corrupted. Lupines will see you as tainted. Humans will see you as double-threat. All will try to kill you."
+
+He shows you how to shift—not just between human and hybrid form, but how to suppress your Varkyr or Lupine traits to pass among each faction.
+
+"Subterfuge is survival. But never forget: you are not lesser than them. You are [i]more[/i]."
+
+He gestures to the tunnels. "The Forsaken Enclave is your sanctuary. But you cannot hide forever. Eventually, you must walk the surface. Face the factions. Prove we deserve to exist."
+
+*choice
+    #"I'll prove it through strength."
+        "Good," Caius says. "Strength they understand."
+
+        *set strength +10
+        *goto enclave_departure
+
+    #"I'll prove it through cunning."
+        "Even better," Caius says. "Cunning they [i]fear[/i]."
+
+        *set cunning +10
+        *goto enclave_departure
+
+    #"I'll prove we're better than them."
+        Caius smiles—rare and genuine. "Ambition. I like that."
+
+        *set will +10
+        *goto enclave_departure
+
+*label enclave_departure
+
+"Your first mission," Caius continues, "is reconnaissance. The Forsaken need intelligence on all three factions. You will infiltrate, observe, and report. Choose your target."
+
+*comment This routes to Act 1 content with Forsaken-specific perspective
+
+*choice
+    #Infiltrate the Varkyr courts
+        *goto_scene act1_varkyr varkyrs_route
+
+    #Observe the Lupine packs
+        *goto_scene act1_lupine lupine_route
+
+    #Investigate human activity
+        *goto_scene act1_human human_route
+
+*comment ═══════════════════════════════════════════════════════════
+*comment NOTES:
+*comment - Sets alignment = "forsaken"
+*comment - forsaken_rank = "Initiate"
+*comment - Type selection (Vamp-Wolf/Wolf-Vamp/Balanced)
+*comment - Calls forsaken_abilities.txt
+*comment - Grants 75 XP for surviving ritual
+*comment - Introduces Caius the Unbound
+*comment - Routes to Act 1 based on player choice
+*comment ═══════════════════════════════════════════════════════════
