@@ -25,16 +25,26 @@
 *if (alignment != "")
   *stat_chart
     text alignment Faction
-    *if (rank != "")
-        text rank Rank
-    *if (bloodline != "")
-      text bloodline Bloodline
-    *if (lupine_rank != "")
-      text lupine_rank Lupine Rank
-    *if (forsaken_rank != "")
-      text forsaken_rank Forsaken Rank
-    *if (faction_stat != "")
-      text faction_stat Status
+
+*if (rank != "")
+  *stat_chart
+    text rank Rank
+
+*if (bloodline != "")
+  *stat_chart
+    text bloodline Bloodline
+
+*if (lupine_rank != "")
+  *stat_chart
+    text lupine_rank Lupine Rank
+
+*if (forsaken_rank != "")
+  *stat_chart
+    text forsaken_rank Forsaken Rank
+
+*if (faction_stat != "")
+  *stat_chart
+    text faction_stat Status
 
 *comment ---------- FACTION RELATIONS ----------
 *stat_chart
@@ -116,7 +126,7 @@
   #Millennium War History & Legendary Leaders
     *goto millennium_war_history
   #Codex / Lore
-    *goto_scene codex_main codex_main
+    *goto_scene codex_main
   #Return to Game
     *finish
 
@@ -352,7 +362,7 @@ Choose a faction to view:
   Charismatic and visionary, Caius dreams of a world where Forsaken are not hunted but celebrated. He controls three of the four Ecliptic Amulet shards.
 
   *stat_chart
-    opposed_pair Caius_relation Caius's Opinion
+    opposed_pair caius_relation Caius's Opinion
       Rejected
       Right Hand
 

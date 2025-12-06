@@ -210,6 +210,9 @@
 *create forsaken_independent false
 *create forsaken_opposed false
 
+*comment Caius relationship tracking
+*create caius_relation 0
+
 *comment Human Section
 
 
