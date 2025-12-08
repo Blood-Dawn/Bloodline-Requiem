@@ -12,6 +12,44 @@ But every legend begins with a choice. Every bloodline has an origin. Every shad
 
 *line_break
 
+*goto choose_gender
+
+*label choose_gender
+
+*if (gender != "unspecified")
+    *goto origin_menu
+
+Before the shadows claim your path, choose how you identify. This will also set whether titles use masculine or feminine forms when they apply.
+
+*choice
+    #Male
+        *set gender "male"
+        *set gender_title_style "masculine"
+        *goto origin_menu
+    #Female
+        *set gender "female"
+        *set gender_title_style "feminine"
+        *goto origin_menu
+    #Other (enter your own)
+        *goto gender_other_input
+
+*label gender_other_input
+
+State your gender in your own words.
+*input_text gender_custom
+*set gender gender_custom
+
+Choose which set of titles you prefer when gendered ranks appear.
+*choice
+    #Use masculine titles (Baron, Duke)
+        *set gender_title_style "masculine"
+        *goto origin_menu
+    #Use feminine titles (Baroness, Duchess)
+        *set gender_title_style "feminine"
+        *goto origin_menu
+
+*label origin_menu
+
 *choice
     #Human Assassin - Agent of the Guild [b](Recommended for first playthrough)[/b]
         *set alignment "human"

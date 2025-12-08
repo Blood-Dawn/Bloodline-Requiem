@@ -1,0 +1,863 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment CODEX FACTIONS EXPANDED - Deep Organizational Lore
+*comment Internal politics, secrets, power structures, and agendas
+*comment ═══════════════════════════════════════════════════════════
+
+*label factions_expanded_overview
+
+[b]THE POWERS THAT SHAPE VEILFALL[/b]
+
+[i]"Factions are not families. They are not friends. They are structures built from ambition and fear, held together by mutual benefit and mutual threat. The moment the benefit fades or the threat weakens, everything changes."[/i]
+—Caius the Unbound
+
+*choice
+    *if (learned_varkyr_court_deep)
+        #The Varkyr Court — Blood Politics
+            *goto varkyr_court_deep
+    *if (learned_lupine_packs_deep)
+        #The Lupine Packs — The Pack System
+            *goto lupine_packs_deep
+    *if (learned_forsaken_enclave_deep)
+        #The Forsaken Enclave — Outcasts United
+            *goto forsaken_enclave_deep
+    *if (learned_silver_legion_deep)
+        #The Silver Legion — Humanity's Shield
+            *goto silver_legion_deep
+    *if (learned_assassin_guild_deep)
+        #The Assassin Guild — The Neutral Blade
+            *goto assassin_guild_deep
+    *if (learned_night_council_deep)
+        #The Night Council — Shadow Government
+            *goto night_council_deep
+    *if (learned_crown_deep)
+        #The Crown of Veilfall — Human Authority
+            *goto crown_deep
+    #Return to codex
+        *goto factions_return
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE VARKYR COURT - DETAILED
+*comment ═══════════════════════════════════════════════════════════
+
+*label varkyr_court_deep
+
+[b]THE VARKYR COURT[/b]
+[i]The Crimson Hierarchy, Blood and Politics, The Endless Game[/i]
+
+The Varkyr Court is not merely a government—it is a centuries-old game of influence, advancement, and survival. Understanding its rules is essential for anyone who deals with vampires.
+
+[b]Structure:[/b]
+
+[i]The Matriarch[/i]
+Supreme authority, holder of the Varkyr shard, final arbiter of all disputes. The Matriarch rules not by divine right but by demonstrated superiority—she holds her position because no one has successfully challenged her, and because the alternative (civil war among the houses) would destroy everyone.
+
+[i]The High Council[/i]
+Five Dukes and Duchesses who advise the Matriarch and manage major aspects of court business:
+- Duke Valdris — Master of Finance (controls blood trade, investments)
+- Duchess Cassandra Nightfall — Commander of Military (Blood Legions)
+- Duke Morrigan — Master of Secrets (intelligence, counterintelligence)
+- Duchess Seraphina — Master of Rituals (magical affairs)
+- Duke Corvin — Master of External Relations (human influence)
+
+[i]The Noble Houses[/i]
+Twelve noble houses, each controlling territory, resources, and blood-servants. Houses compete constantly for influence, forming and breaking alliances as circumstances demand.
+
+[i]The Ranks[/i]
+From lowest to highest:
+- Fledgling (newly turned, first decade)
+- Knight (proven loyal, first century)
+- Baron/Baroness (minor nobility)
+- Viscount/Viscountess (mid-nobility)
+- Count/Countess (major nobility)
+- Duke/Duchess (High Council level)
+- Matriarch (supreme)
+
+*if (learned_varkyr_politics)
+    [b]Political Factions:[/b]
+    
+    [i]The Traditionalists[/i]
+    Led informally by Duchess Seraphina. They advocate strict adherence to the Veil Protocol, limited human contact, and preservation of ancient customs. They view the Millennium War as a cautionary tale—deviation from tradition brought catastrophe.
+    
+    [i]The Expansionists[/i]
+    Led informally by Duke Corvin. They believe Varkyr influence should grow—more integration into human society, more economic power, more political control. They view the Veil Protocol as a cage that limits Varkyr potential.
+    
+    [i]The Purists[/i]
+    No formal leader; a loose coalition. They oppose any cooperation with Lupines or Forsaken, viewing other supernatural factions as threats to be contained or eliminated. They speak in private of "finishing what the war started."
+    
+    [i]The Pragmatists[/i]
+    Isabella Crimson's informal faction. They prioritize survival and stability over ideology, supporting whatever policies preserve Varkyr power without unnecessary risk. They are the swing votes in most council debates.
+
+*if (learned_varkyr_secrets)
+    [b]Court Secrets:[/b]
+    
+    [i]The Succession Question[/i]
+    The Matriarch has not designated an heir. Given her age and power, succession seems distant—but vampires think in centuries, and the lack of clear succession creates constant jockeying. Every Duke believes they could be chosen; every Duke fears another being chosen instead.
+    
+    [i]The Blood Shortage[/i]
+    Veilfall's human population cannot sustain unlimited vampire feeding. The court maintains strict quotas, but enforcement is imperfect. Some houses cheat; some import blood from elsewhere; some make arrangements with human collaborators. If the shortage worsens, conflicts will intensify.
+    
+    [i]The Eclipse Remnants[/i]
+    The Matriarch maintains a secret list of suspected Crimson Eclipse descendants or sympathizers. Names are added and removed without explanation. Those on the list find their careers stalling, their proposals rejected, their movements watched.
+    
+    [i]The Sealed Chamber[/i]
+    What the Matriarch keeps in the deepest level of the Spire. Every courtier has theories; none have confirmation. The most persistent rumor: the Progenitor's heart, still beating, slowly regenerating.
+
+*choice
+    *if (learned_varkyr_houses)
+        #The Twelve Noble Houses
+            *goto varkyr_houses
+    *if (learned_varkyr_rituals)
+        #Court rituals and ceremonies
+            *goto varkyr_rituals
+    #Return to factions
+        *goto factions_expanded_overview
+
+*label varkyr_houses
+
+[b]THE TWELVE NOBLE HOUSES[/b]
+
+Each house has territory, history, and character. Understanding them is essential for navigating court politics.
+
+[b]House Crimson[/b]
+The Matriarch's house—technically supreme, practically neutral. House Crimson provides the Matriarch but otherwise stays above factional squabbles. Their territory centers on the Crimson Spire itself.
+
+[b]House Nightfall[/b]
+Military house, led by Duchess Cassandra. They control the Blood Legions and significant territory in Veilfall's outskirts. Traditionalist-aligned, valuing strength and honor.
+
+[b]House Ashenheart[/b]
+Assassin house, led by Count Vincent. Small but feared—they specialize in eliminating problems quietly. Officially neutral; practically aligned with whoever pays.
+
+[b]House Valdris[/b]
+Financial house, led by Duke Valdris. They control the blood trade and significant human economic assets. Expansionist-aligned, always seeking new opportunities.
+
+[b]House Thornwood[/b]
+Ritualist house, led by Duchess Seraphina. They maintain magical traditions and train court sorcerers. Strongly traditionalist, suspicious of change.
+
+[b]House Ravencrest[/b]
+Diplomat house, historically providing liaisons to human nobility. Isabella Crimson was born to this house. Pragmatist-aligned, focused on survival.
+
+[b]House Blackwood[/b]
+Information house, led by Duke Morrigan. They run the court's spy network and maintain dossiers on everyone of importance. Officially neutral; their true loyalties are unknown.
+
+[b]House Vex[/b]
+The smallest major house, still recovering from Crimson Eclipse associations. They control minor territory and keep their heads down, waiting for old suspicions to fade. No clear alignment.
+
+[b]Houses Corvin, Mareth, Drakon, and Silvas[/b]
+The remaining four houses, each controlling territory and pursuing agendas. Minor players in most court politics, but their collective votes can swing contentious decisions.
+
+*choice
+    #Return to Varkyr Court entry
+        *goto varkyr_court_deep
+    #Return to factions
+        *goto factions_expanded_overview
+
+*label varkyr_rituals
+
+[b]COURT RITUALS AND CEREMONIES[/b]
+
+Varkyr society is bound together by ritual—formal occasions that reinforce hierarchy, resolve disputes, and maintain traditions.
+
+[b]The Blood Moon Gathering[/b]
+Annual assembly of all noble houses, held during the first blood moon of the year. Attendance is mandatory; disputes that cannot be resolved are brought before the Matriarch; alliances are announced and broken; the court's direction for the coming year is set.
+
+[b]The Embrace Ceremony[/b]
+Formal recognition of newly turned vampires. After their first decade, survivors are presented to the court, assigned to houses, and given their starting rank (Knight, in most cases). This is when a vampire's political existence officially begins.
+
+[b]The Advancement Ritual[/b]
+When a vampire rises in rank—from Knight to Baron, from Count to Duke—a formal ceremony acknowledges the change. The vampire demonstrates their worthiness (usually through recitation of accomplishments), and the Matriarch bestows the new title.
+
+[b]The Duel Protocol[/b]
+Formal combat between vampires to resolve disputes. Duels require witnesses, agreed-upon terms, and Matriarch approval for lethal conclusions. Most duels end at first blood; duels to the death are rare but legal.
+
+[b]The Exile Rite[/b]
+When a vampire is cast out of Varkyr society. Their name is struck from house records, their blood-connections are severed, and they become non-persons under court law. Exile is considered worse than death; at least the dead are remembered.
+
+[b]The Remembrance[/b]
+Annual ceremony honoring those lost in the Millennium War. The names of fallen houses are recited; the Progenitor's sacrifice is commemorated; the court renews its commitment to never repeat the war's mistakes.
+
+This ceremony is where the Matriarch's sealed chamber rumors intensify. She always retreats there before the Remembrance, and emerges looking... troubled.
+
+*choice
+    #Return to Varkyr Court entry
+        *goto varkyr_court_deep
+    #Return to factions
+        *goto factions_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE LUPINE PACKS - DETAILED
+*comment ═══════════════════════════════════════════════════════════
+
+*label lupine_packs_deep
+
+[b]THE LUPINE PACKS[/b]
+[i]The Pack System, Strength Through Unity, The Wild Hierarchy[/i]
+
+Lupine society is built on pack structure—a system that outsiders often mistake for simple hierarchy but is actually far more nuanced. Understanding pack dynamics is essential for dealing with werewolves.
+
+[b]The Pack Concept:[/b]
+
+A pack is not merely a group of werewolves living together. It is a family, a military unit, a spiritual community, and a survival mechanism all at once. Pack bonds are reinforced by:
+- Shared lunar magic (pack members can sense each other)
+- Collective hunts (success requires cooperation)
+- Ritual bonding ceremonies
+- Generations of shared history
+
+Leaving a pack is possible but traumatic—it means severing connections that have become part of one's identity.
+
+[b]Major Packs:[/b]
+
+[i]Whispering Pines[/i] — The dominant pack, led by Alpha Rurik Blackfang. Controls the forest territory and serves as the primary Lupine voice in Veilfall politics. Approximately 200 members.
+
+[i]Iron Mountain[/i] — A northern pack, more traditional and isolated. They rarely participate in Veilfall affairs, preferring independence. Approximately 150 members.
+
+[i]Coastal Runners[/i] — A pack that controls the territories along the coast west of Veilfall. They are known for trading, fishing, and relatively friendly relations with humans. Approximately 100 members.
+
+[i]Shadow Stalkers[/i] — An urban pack, unusual in that they live primarily within Veilfall rather than in wilderness. They maintain contacts throughout the city and serve as Lupine intelligence. Approximately 50 members.
+
+[i]The Scattered[/i] — Not a true pack but a category: lone wolves, pack-less individuals, those who have been exiled or chose to leave. They have no formal organization but sometimes cooperate out of necessity.
+
+*if (learned_lupine_politics)
+    [b]Inter-Pack Politics:[/b]
+    
+    [i]The Alpha Council[/i]
+    When matters affect all Lupines, the Alphas of major packs gather to discuss. Whispering Pines hosts these gatherings; Rurik chairs them by default. Decisions require consensus—any Alpha can veto—which makes progress slow but prevents domination by any single pack.
+    
+    [i]The Territory Disputes[/i]
+    Pack territories are sacred; crossing without permission is grounds for violence. The boundaries were established after the war but require constant maintenance. Small border conflicts occur regularly; major conflicts are resolved through the Alpha Council or, in extreme cases, ritual combat between Alphas.
+    
+    [i]The Urban Question[/i]
+    Shadow Stalkers' existence is controversial. Traditionalists argue that Lupines belong in the wild, that urban life corrupts pack values. Modernists counter that ignoring cities means ignoring where the humans (and threats) actually are. The debate has no resolution in sight.
+
+*if (learned_lupine_secrets)
+    [b]Pack Secrets:[/b]
+    
+    [i]The First Pack[/i]
+    Legends speak of the Origin Wolf's original pack—werewolves who ran with him from the beginning. They were supposedly the most powerful Lupines ever to exist, with abilities that modern werewolves cannot replicate. What happened to them after the war is unclear; they may have scattered, died out, or gone into hiding.
+    
+    [i]The Silver Cache[/i]
+    Whispering Pines maintains a hidden stockpile of silver weapons—taken from hunters over centuries, stored against future need. The cache's location is known only to the Alpha. If human-Lupine relations ever break down completely, the pack will not be defenseless.
+    
+    [i]The Moon-Sick[/i]
+    Some Lupines cannot stabilize their transformations—they shift uncontrollably, lose their minds during change, become dangers to everyone around them. Officially, they are "released to the wild." Unofficially, they are put down by their own packmates. This mercy is never discussed openly.
+
+*choice
+    *if (learned_lupine_culture)
+        #Pack culture and traditions
+            *goto lupine_culture
+    *if (learned_lupine_ranks)
+        #Pack ranks and roles
+            *goto lupine_ranks
+    #Return to factions
+        *goto factions_expanded_overview
+
+*label lupine_culture
+
+[b]PACK CULTURE AND TRADITIONS[/b]
+
+Lupine culture emphasizes unity, strength, and connection to nature. These values manifest in daily practices and formal ceremonies.
+
+[b]Daily Life:[/b]
+
+[i]The Hunt[/i]
+Packs hunt together regularly—not from necessity (modern food sources exist) but from tradition. The hunt reinforces cooperation, maintains skills, and strengthens pack bonds. Hunting alone is permitted but unusual.
+
+[i]The Territory Walk[/i]
+Pack members patrol their territory in rotation, marking boundaries and watching for intrusions. This is both practical (security) and spiritual (maintaining connection to the land).
+
+[i]The Evening Howl[/i]
+As the moon rises, pack members who are present in the territory join in a communal howl. This serves as roll call, bonding ritual, and communication with other packs (howls can carry for miles).
+
+[b]Ceremonies:[/b]
+
+[i]The First Change[/i]
+When a newly-bitten Lupine transforms for the first time, the pack gathers to witness and contain. Surviving the first change is a test; those who pass become full pack members.
+
+[i]The Alpha Challenge[/i]
+Any pack member can challenge the Alpha for leadership. The challenge is a fight—usually to submission, rarely to death. If the challenger wins, they become Alpha immediately.
+
+[i]The Mating Bond[/i]
+Lupine romantic pairs often form "mating bonds"—permanent spiritual connections that link their life forces. Breaking a bond is possible but painful; death of a bonded mate often leads to the survivor's decline.
+
+[i]The Ancestor Communion[/i]
+During full moons, shamans lead rituals to communicate with deceased pack members. The dead are believed to run with the Origin Wolf in the spirit realm; they can sometimes be reached for guidance or farewell.
+
+*choice
+    #Return to Lupine Packs entry
+        *goto lupine_packs_deep
+    #Return to factions
+        *goto factions_expanded_overview
+
+*label lupine_ranks
+
+[b]PACK RANKS AND ROLES[/b]
+
+Pack hierarchy is based on demonstrated capability, not inheritance. Anyone can rise; anyone can fall.
+
+[b]Alpha[/b]
+The pack leader. Responsible for major decisions, external relations, and maintaining pack unity. The Alpha's word is law—but wise Alphas listen to their Betas and pack before deciding.
+
+[b]Beta[/b]
+Second-in-command. Most packs have one or two Betas who serve as advisors, enforcers, and leaders when the Alpha is absent. Betas are appointed by the Alpha, not chosen through challenge.
+
+[b]Hunter[/b]
+The pack's working core. Hunters patrol territory, participate in hunts, defend against threats, and form the majority of pack population. Within Hunters, informal rankings exist based on skill and experience.
+
+[b]Shaman[/b]
+Spiritual leaders who maintain connection to Luna and the ancestors. Shamans interpret omens, lead rituals, and advise on matters with supernatural implications. Not every pack has a shaman; those who do are privileged.
+
+[b]Omega[/b]
+Lowest rank—newly turned members, those who have failed challenges, or those who prefer subordination. Omega status is not permanent; anyone can rise through demonstrated worth.
+
+[b]Special Roles:[/b]
+
+[i]The Keeper[/i]
+One wolf designated to maintain pack history—memorizing lineages, stories, and traditions. The Keeper's word settles disputes about pack precedent.
+
+[i]The Warden[/i]
+One wolf designated to manage relations with humans who live near pack territory. The Warden ensures secrecy while preventing unnecessary conflicts.
+
+[i]The Scout[/i]
+Wolves who specialize in reconnaissance—tracking enemies, mapping territories, gathering intelligence. Scouts often operate alone, which requires unusual self-discipline.
+
+*choice
+    #Return to Lupine Packs entry
+        *goto lupine_packs_deep
+    #Return to factions
+        *goto factions_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE FORSAKEN ENCLAVE - DETAILED
+*comment ═══════════════════════════════════════════════════════════
+
+*label forsaken_enclave_deep
+
+[b]THE FORSAKEN ENCLAVE[/b]
+[i]Outcasts United, The Third Way, Children of Both Bloods[/i]
+
+The Forsaken are the smallest of the three supernatural factions—numbering perhaps 300 individuals in and around Veilfall. Yet they have survived for fifteen centuries, carving out a niche that neither Varkyrs nor Lupines can easily threaten.
+
+[b]Philosophy:[/b]
+
+The Forsaken reject the binary of Varkyr versus Lupine. They believe that species boundaries are less important than individual choice, that identity is something you build rather than something you're born into.
+
+This philosophy emerged from necessity—first-generation Forsaken had no choice about their transformation—but has evolved into genuine ideology. Modern Forsaken choose hybridization, embracing both natures as a path to something new.
+
+[b]Structure:[/b]
+
+The Enclave deliberately avoids the rigid hierarchies of Varkyr court or Lupine packs:
+
+[i]Caius the Unbound[/i]
+Founder and guide. Not a ruler in the traditional sense—he doesn't command obedience—but the Enclave's clear center. His word carries weight because of demonstrated wisdom, not formal authority.
+
+[i]The Council[/i]
+Senior Forsaken who advise on major decisions. Membership is informal; those who contribute useful perspectives are included. Council recommendations are usually followed but not binding.
+
+[i]The Sentinels[/i]
+Security and external relations. Sentinels protect the Undercroft, represent the Enclave to other factions, and handle threats. This is the closest thing to a formal organization the Forsaken maintain.
+
+[i]The Scholars[/i]
+Researchers who study hybrid biology, develop stabilization techniques, and maintain records. Their work is essential to Forsaken survival.
+
+[i]Everyone Else[/i]
+No formal ranks below this point. Individual standing is determined by contribution and respect, not title.
+
+*if (learned_forsaken_politics)
+    [b]Internal Tensions:[/b]
+    
+    [i]The Identity Question[/i]
+    What are the Forsaken? A faction, a species, a philosophy? Some want more formal organization—permanent ranks, clear hierarchy, defined membership. Others argue that formalization would betray Forsaken values, making them just another version of what they rejected.
+    
+    [i]The Expansion Debate[/i]
+    Should the Forsaken actively recruit, offering transformation to suitable candidates? Or should they remain small, accepting only those who seek them out? Expansion risks attention; remaining small risks irrelevance.
+    
+    [i]The Succession Problem[/i]
+    Caius has led for fifteen centuries. What happens when he's gone? Some want him to name a successor; others believe this would create a dynasty that contradicts Forsaken meritocracy. The question remains unresolved.
+
+*if (learned_forsaken_secrets)
+    [b]Enclave Secrets:[/b]
+    
+    [i]The Failure Rate[/i]
+    Not everyone can become Forsaken. Approximately 30% of candidates cannot stabilize, no matter what techniques are used. These individuals are told they "aren't suited" and redirected elsewhere. The full truth—that attempting transformation would kill them—is rarely explained.
+    
+    [i]The Gate[/i]
+    Something ancient lies beneath the Undercroft, sealed by Caius himself. He has never explained what it is or why it must remain closed. Scholars who have asked too many questions have been firmly discouraged.
+    
+    [i]The War Archives[/i]
+    The Forsaken maintain records of both Varkyr and Lupine war crimes—atrocities committed during the hybrid experiments that created the first generation. This information is leverage, kept in reserve against the day it might be needed.
+
+*choice
+    *if (learned_forsaken_creation)
+        #The transformation process
+            *goto forsaken_creation
+    *if (learned_forsaken_society)
+        #Daily life in the Enclave
+            *goto forsaken_society
+    #Return to factions
+        *goto factions_expanded_overview
+
+*label forsaken_creation
+
+[b]BECOMING FORSAKEN[/b]
+
+Hybrid transformation is not undertaken lightly. The process is dangerous, irreversible, and life-changing in ways that candidates often don't fully understand until they've experienced it.
+
+[b]Candidacy:[/b]
+Those who want to become Forsaken must first be evaluated:
+- Physical health (the transformation is physically taxing)
+- Mental stability (holding two predatory instincts requires discipline)
+- Genuine understanding (candidates must know what they're choosing)
+- No coercion (consent must be freely given)
+
+The evaluation takes months. Many candidates are rejected—not from cruelty but from honest assessment that they wouldn't survive.
+
+[b]The Transformation:[/b]
+Candidates who pass evaluation proceed to transformation under Caius's direct supervision:
+
+1. The candidate is drained by a Varkyr volunteer (not to death, but close)
+2. Simultaneously, a Lupine volunteer administers the Bite
+3. Both blood magic and lunar magic are channeled through the candidate
+4. Caius monitors the process, intervening if the competing essences begin tearing the candidate apart
+5. If successful, the candidate enters a stabilization coma lasting one to three days
+6. Upon waking, the new Forsaken begins training in controlling their dual nature
+
+[b]The Aftermath:[/b]
+New Forsaken spend their first year in intensive training:
+- Learning to manage competing instincts
+- Understanding their capabilities and limitations
+- Finding their balance between Varkyr and Lupine aspects
+- Integrating into Enclave society
+
+This year is called "the Settling." Those who make it through are considered full members. Those who can't stabilize... the Enclave handles quietly.
+
+*choice
+    #Return to Forsaken Enclave entry
+        *goto forsaken_enclave_deep
+    #Return to factions
+        *goto factions_expanded_overview
+
+*label forsaken_society
+
+[b]LIFE IN THE UNDERCROFT[/b]
+
+The Forsaken Enclave is more than a hiding place—it's a community with its own rhythms and customs.
+
+[b]Daily Rhythm:[/b]
+
+The Undercroft operates on neither vampire nor werewolf schedule. Most Forsaken are active in the early morning and late evening, with midday and midnight as rest periods. This compromise acknowledges both nocturnal (Varkyr) and crepuscular (Lupine) tendencies.
+
+Communal meals happen twice daily—not from necessity (Forsaken can subsist on blood, meat, or both) but from tradition. Eating together reinforces community bonds.
+
+[b]Communal Spaces:[/b]
+
+[i]The Great Hall[/i]
+The original cathedral chamber, now the Enclave's heart. Meals, meetings, and ceremonies happen here.
+
+[i]The Crucible[/i]
+Training facilities where Forsaken practice controlling their abilities. Both combat training and transformation exercises occur here.
+
+[i]The Archives[/i]
+Library and research space. Scholars work here; anyone can request access for legitimate purposes.
+
+[i]The Infirmary[/i]
+Medical facilities specializing in hybrid biology. Forsaken physiology is unique; the Infirmary's knowledge cannot be found elsewhere.
+
+[b]Customs:[/b]
+
+[i]The Welcome[/i]
+When new Forsaken complete their Settling, the entire Enclave gathers to formally welcome them. The new member receives a gift from each existing member—usually small, often symbolic.
+
+[i]The Remembering[/i]
+Annual ceremony commemorating those lost—both modern Forsaken who have died and first-generation members who suffered in the war.
+
+[i]The Choosing[/i]
+When someone requests transformation, the Council gathers to evaluate. If approved, the community witnesses—not the transformation itself (which is private and dangerous) but the before and after, affirming support.
+
+*choice
+    #Return to Forsaken Enclave entry
+        *goto forsaken_enclave_deep
+    #Return to factions
+        *goto factions_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE SILVER LEGION - DETAILED
+*comment ═══════════════════════════════════════════════════════════
+
+*label silver_legion_deep
+
+[b]THE SILVER LEGION[/b]
+[i]Humanity's Shield, Monster Hunters, The Faithful Warriors[/i]
+
+The Silver Legion is humanity's organized response to supernatural threats—a military order that has protected humans from vampires, werewolves, and other creatures for over fifteen hundred years.
+
+[b]History:[/b]
+
+Founded by Helena the Pure during the Millennium War, the Legion began as desperate survivors banding together. Over centuries, they evolved from guerrilla resistance to professional military organization, supported by the Church and tolerated (grudgingly) by supernatural factions.
+
+The Veilfall Accord complicated the Legion's mission. They can no longer simply hunt all supernatural beings—they must distinguish between "acceptable" supernaturals (those who follow the Accord) and "rogues" (those who threaten human safety).
+
+This distinction troubles many Legionnaires who remember the founding principle: all monsters are threats.
+
+[b]Structure:[/b]
+
+[i]The High Commander[/i]
+Supreme leader of the Legion, appointed by Church hierarchy with Legionnaire input. Currently Commander Aldric Stone, a veteran of forty years' service.
+
+[i]The Inquisitors[/i]
+Elite hunters authorized to execute rogues without trial. Elena Voss is among the most successful. Perhaps fifty Inquisitors operate in and around Veilfall.
+
+[i]The Knights[/i]
+Standard combat Legionnaires—trained in supernatural combat, equipped with blessed weapons, organized into squads for patrol and response. Several hundred Knights serve in the Veilfall region.
+
+[i]The Scholars[/i]
+Researchers who study supernatural beings, maintain the Bone Archive, and develop new tools and techniques. They rarely see combat but are essential to Legion operations.
+
+[i]The Support Staff[/i]
+Armorers, healers, administrators, and others who keep the Legion functioning. Many are humans who lost family to supernatural violence and sought a way to contribute.
+
+*if (learned_legion_politics)
+    [b]Internal Tensions:[/b]
+    
+    [i]The Purist Faction[/i]
+    Some Legionnaires believe the Veilfall Accord was a mistake—that supernatural beings cannot be trusted, that accommodation leads to complacency. They advocate stricter enforcement, fewer exceptions, and eventual resumption of total war.
+    
+    [i]The Pragmatist Faction[/i]
+    Others argue that the Accord has saved countless human lives—that peaceful coexistence, however imperfect, is better than endless conflict. They advocate maintaining relationships with reasonable supernatural contacts.
+    
+    [i]The Faith Question[/i]
+    The Church officially condemns supernatural beings as damned. But some Legionnaires have met vampires who seem honorable, werewolves who protect innocents, hybrids who help humans. How do you reconcile doctrine with experience?
+
+*if (learned_legion_secrets)
+    [b]Legion Secrets:[/b]
+    
+    [i]The Bone Archive[/i]
+    More than a collection—it's leverage. The Archive contains remains that could be used for resurrection, texts that detail supernatural weaknesses, artifacts that could tilt the balance of power. The Church guards it jealously.
+    
+    [i]The Compromises[/i]
+    The Legion has made deals with supernatural factions that would horrify the membership if known. Information exchanges with Varkyr intelligence. Coordination with Lupine trackers. Even occasional contracts with the Assassin Guild. High Command justifies these as necessary; exposure would shatter Legion unity.
+    
+    [i]The Failures[/i]
+    Not every Legionnaire stays true. Some have been turned—Embraced by vampires, Bitten by werewolves—and the Legion must hunt its own. These cases are never publicized, but they happen more often than anyone admits.
+
+*choice
+    *if (learned_legion_training)
+        #Legion training and equipment
+            *goto legion_training
+    *if (learned_legion_operations)
+        #How Legion operations work
+            *goto legion_operations
+    #Return to factions
+        *goto factions_expanded_overview
+
+*label legion_training
+
+[b]BECOMING A LEGIONNAIRE[/b]
+
+Legion training is brutal, comprehensive, and designed to prepare ordinary humans to fight immortal predators.
+
+[b]Recruitment:[/b]
+Candidates typically come from:
+- Families with Legion history (the organization is somewhat hereditary)
+- Survivors of supernatural attacks seeking purpose
+- Devout believers who see monster hunting as divine calling
+- Church referrals of promising individuals
+
+Candidates must be adults (at least 18), physically capable, and willing to dedicate their lives to the cause. Married individuals are discouraged—the Legion demands everything.
+
+[b]Basic Training (2 years):[/b]
+- Physical conditioning (superhuman opponents require peak performance)
+- Weapons training (blessed blades, crossbows, specialized tools)
+- Supernatural theory (biology, weaknesses, behaviors)
+- Faith instruction (doctrine, blessed techniques, mental resistance)
+- Combat tactics (how to fight faster, stronger opponents)
+
+Approximately 40% of candidates wash out during basic training.
+
+[b]Advanced Training (1-3 years):[/b]
+Specialized tracks include:
+- Inquisitor track (elite hunter training)
+- Scholar track (research and analysis)
+- Support track (logistics, healing, administration)
+
+[b]Equipment:[/b]
+Standard Legionnaire gear includes:
+- Blessed silver blade (effective against both vampires and werewolves)
+- Crossbow with silver-tipped bolts
+- Holy water vials
+- Protective amulets (varying effectiveness)
+- Reinforced armor (won't stop supernatural strength, but helps with lesser threats)
+
+Inquisitors receive enhanced equipment, customized to their preferred fighting style.
+
+*choice
+    #Return to Silver Legion entry
+        *goto silver_legion_deep
+    #Return to factions
+        *goto factions_expanded_overview
+
+*label legion_operations
+
+[b]LEGION OPERATIONS[/b]
+
+The Legion maintains constant vigilance against supernatural threats. Their operations fall into several categories.
+
+[b]Patrol:[/b]
+Legion squads patrol Veilfall and surrounding areas, watching for supernatural activity. They monitor feeding patterns, track known rogues, and respond to civilian reports of unusual events.
+
+Most patrols are uneventful. When they're not, things escalate quickly.
+
+[b]Response:[/b]
+When supernatural violence occurs—rogue feeding, territorial conflict spilling into human areas, accidents—Legion response teams deploy. Their job: contain the situation, protect civilians, and if necessary, eliminate threats.
+
+Response operations require coordination with the Night Council; the Accord specifies procedures for handling incidents involving Accord-compliant supernaturals.
+
+[b]Hunt:[/b]
+When the Council designates a target as rogue, the Legion hunts them. Inquisitors lead these operations, tracking their prey through whatever means necessary.
+
+Hunt operations are dangerous. Targets are usually rogues precisely because they're too powerful or too mad to follow normal rules. Legion casualties during hunts are common.
+
+[b]Intelligence:[/b]
+The Scholar division maintains extensive records on supernatural individuals, factions, and activities. They track movement, analyze patterns, and provide briefings for operational teams.
+
+Information gathering sometimes requires uncomfortable cooperation with supernatural contacts. Pragmatist Legionnaires maintain these relationships; Purists pretend they don't exist.
+
+*choice
+    #Return to Silver Legion entry
+        *goto silver_legion_deep
+    #Return to factions
+        *goto factions_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE ASSASSIN GUILD - DETAILED
+*comment ═══════════════════════════════════════════════════════════
+
+*label assassin_guild_deep
+
+[b]THE ASSASSIN GUILD[/b]
+[i]The Neutral Blade, Death for Hire, The Balance Keepers[/i]
+
+The Assassin Guild is Veilfall's most dangerous neutral faction—a professional organization of killers who serve any client able to pay their price.
+
+[b]Philosophy:[/b]
+
+The Guild operates on absolute neutrality. They take contracts from Varkyrs, Lupines, Forsaken, humans—anyone. They don't judge targets; they judge payments. This neutrality is their greatest asset; if they favored any faction, they would become tools rather than professionals.
+
+[b]The Guild Master:[/b]
+
+Thorne—identity unknown, species unknown, even gender unknown. They took control approximately two centuries ago and have maintained the Guild's standards ever since.
+
+What is known about Thorne:
+- They never appear in person (always projections or proxies)
+- Their voice is magically distorted
+- They honor every deal absolutely
+- They have killed at least one person who tried to betray Guild secrets
+
+[b]Membership:[/b]
+
+The Guild numbers perhaps one hundred active assassins:
+- Humans (approximately 60%)
+- Varkyrs (approximately 25%)
+- Lupines (approximately 10%)
+- Others/Unknown (approximately 5%)
+
+Members join by demonstrating capability—usually by completing a test assignment successfully. The Guild doesn't recruit; candidates must seek them out.
+
+*if (learned_guild_rules)
+    [b]Guild Rules:[/b]
+    
+    1. Never betray a client's identity (violation: death)
+    2. Complete every accepted contract (violation: expulsion)
+    3. Never accept contracts on Guild members (violation: death)
+    4. Maintain neutrality in factional conflicts (violation: expulsion)
+    5. Share no Guild secrets with outsiders (violation: varies)
+    6. Never bring heat on Guild operations (violation: fines or worse)
+    
+    These rules are enforced absolutely. The Guild's reputation depends on reliability; any member who threatens that reputation is eliminated.
+
+*if (learned_guild_secrets)
+    [b]Guild Secrets:[/b]
+    
+    [i]The Archive[/i]
+    The Guild maintains files on every contract ever completed—clients, targets, methods, payments. This information is leverage; any faction that moves against the Guild risks exposure of every assassination they've ever commissioned.
+    
+    [i]The Balance Function[/i]
+    Thorne deliberately adjusts contract acceptance to maintain Veilfall's power balance. If one faction becomes too dominant, contracts against them become more affordable. If one becomes too weak, contracts against their enemies increase. The Guild is not neutral in outcome—only in accepting payments.
+    
+    [i]Thorne's Nature[/i]
+    Various theories exist about the Guild Master:
+    - Ancient vampire who grew bored with politics
+    - Werewolf who was expelled from their pack
+    - Human who achieved supernatural longevity through unknown means
+    - Something else entirely—not Varkyr, Lupine, or human
+    
+    The truth: no one knows. Thorne has maintained their mystery for two centuries, and no investigation has succeeded.
+
+*choice
+    *if (learned_guild_contracts)
+        #How contracts work
+            *goto guild_contracts
+    #Return to factions
+        *goto factions_expanded_overview
+
+*label guild_contracts
+
+[b]GUILD CONTRACTS[/b]
+
+Commissioning a Guild assassination is a formal process designed to protect all parties—client, assassin, and (to some extent) target.
+
+[b]Contact:[/b]
+Clients approach the Guild through known intermediaries—usually specific locations (a certain bar, a particular shop) where inquiries can be made. The intermediary arranges a meeting with a Guild representative.
+
+[b]Negotiation:[/b]
+The representative evaluates the contract:
+- Target (who are they? what protections do they have?)
+- Motivation (why do you want them dead?)
+- Timeline (when must it be done?)
+- Constraints (any special requirements or limitations?)
+
+Price is determined by difficulty. A random human with no protection: relatively cheap. A high-ranking Varkyr with extensive security: astronomically expensive. Some targets are deemed "not worth the risk" regardless of payment.
+
+[b]Acceptance:[/b]
+If terms are agreed, the client pays half upfront (held in escrow) and half upon completion. The contract becomes binding; neither party can withdraw without severe penalties.
+
+[b]Execution:[/b]
+An assassin is assigned based on capability and specialization. They handle the kill according to contract specifications. Upon confirmed completion, the client pays the remaining balance.
+
+[b]Failure:[/b]
+If an assassin fails, the Guild assigns another. If that fails, the contract may be deemed impossible, and the upfront payment is refunded (minus fees). The Guild's reputation depends on delivering results; they don't accept contracts they can't complete.
+
+[b]Refusal:[/b]
+The Guild refuses certain contracts:
+- Targets inside Guild headquarters
+- Contracts that would reveal Guild secrets
+- Contracts from clients who have betrayed previous deals
+- Contracts deemed "destabilizing" (Thorne's judgment)
+
+*choice
+    #Return to Assassin Guild entry
+        *goto assassin_guild_deep
+    #Return to factions
+        *goto factions_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE NIGHT COUNCIL - DETAILED
+*comment ═══════════════════════════════════════════════════════════
+
+*label night_council_deep
+
+[b]THE NIGHT COUNCIL[/b]
+[i]Shadow Government, The Hidden Authority, Where True Power Sits[/i]
+
+The Night Council is Veilfall's true government—a body composed of representatives from all major factions that makes the decisions shaping supernatural society.
+
+[b]Composition:[/b]
+
+The Council includes:
+- Two Varkyr representatives (appointed by the Matriarch)
+- Two Lupine representatives (appointed by the Alpha Council)
+- One Forsaken representative (appointed by Caius)
+- One Silver Legion representative (appointed by the High Commander)
+- One Crown representative (appointed by the monarch)
+- One Guild representative (appointed by Thorne)
+
+Decisions require majority vote. Each representative has one vote; the faction appointing them can replace them at will.
+
+[b]Function:[/b]
+
+The Council:
+- Enforces the Veilfall Accord
+- Adjudicates disputes between factions
+- Designates rogues for Legion action
+- Approves major territorial changes
+- Coordinates responses to external threats
+
+In theory, the Council maintains balance. In practice, it's a arena where factions pursue their interests through negotiation, manipulation, and careful alliance-building.
+
+*if (learned_council_politics)
+    [b]Council Politics:[/b]
+    
+    [i]The Varkyr-Lupine Dynamic[/i]
+    The two major factions have four of eight votes between them. When they agree, they can push through almost anything. When they disagree, the minor factions become kingmakers—their votes determining outcomes.
+    
+    [i]The Forsaken Position[/i]
+    Caius's representative typically votes to maintain status quo—any change risks the Forsaken's precarious position. This makes them a reliable ally for whoever wants to prevent change.
+    
+    [i]The Legion Complication[/i]
+    The Legion representative is supposed to protect human interests. In practice, they often align with whichever supernatural faction seems least threatening to humanity at the moment.
+    
+    [i]The Guild's Game[/i]
+    Thorne's representative is wildly unpredictable—sometimes supporting one faction, sometimes another, sometimes abstaining entirely. The Guild seems to vote based on maintaining overall balance rather than any consistent ideology.
+
+*if (learned_council_secrets)
+    [b]Council Secrets:[/b]
+    
+    [i]The Eclipse Theory[/i]
+    Some believe the Council's founding members included surviving Crimson Eclipse sympathizers—that the shadow government was their way of maintaining influence after the public organization was destroyed. Evidence is circumstantial but troubling.
+    
+    [i]The Real Power[/i]
+    Council votes determine official policy, but enforcement depends on faction cooperation. A Council ruling that the Varkyrs won't enforce is meaningless. This means actual power lies with whoever can convince factions to act, not merely whoever wins votes.
+    
+    [i]The Secret Sessions[/i]
+    Some Council meetings are classified—no records, no observers, no acknowledgment that they occurred. What's decided in these sessions is known only to participants.
+
+*choice
+    #Return to factions
+        *goto factions_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE CROWN - DETAILED
+*comment ═══════════════════════════════════════════════════════════
+
+*label crown_deep
+
+[b]THE CROWN OF VEILFALL[/b]
+[i]Human Authority, The Mortal Throne, Keepers of the Human Shard[/i]
+
+Veilfall has human governance—a monarchy that predates public awareness of supernatural factions but has long been aware of (and cooperative with) the powers that truly shape the city.
+
+[b]The Current Monarch:[/b]
+
+Queen Isolde III has ruled for thirty-seven years. She inherited the throne young, after her father's death under mysterious circumstances (officially an illness; unofficially, possibly Varkyr-related).
+
+She is perhaps the most capable monarch Veilfall has seen in centuries—politically astute, aware of supernatural reality, and skilled at playing factions against each other to maintain human relevance.
+
+[b]The Crown's Position:[/b]
+
+Humans officially govern Veilfall. The supernatural factions operate beneath official notice, maintaining the Veil that keeps most humans unaware of their existence.
+
+In practice, the Crown must constantly negotiate with beings who could destroy human civilization if they chose. The Human shard of the Ecliptic Amulet provides some protection, but leverage is limited.
+
+The Crown's strategy: make human governance useful enough that supernatural factions prefer cooperation to conquest.
+
+*if (learned_crown_politics)
+    [b]The Royal Court:[/b]
+    
+    Queen Isolde's advisors include:
+    - Lord Chancellor Marcus Thane (administration, human politics)
+    - High Marshal Elara Cross (military affairs, Legion liaison)
+    - Spymaster "Grey" (identity secret; intelligence operations)
+    - Archbishop Aurelius (Church relations, supernatural doctrine)
+    
+    The court maintains the fiction of normal governance while secretly coordinating with the Night Council on matters of supernatural concern.
+
+*if (learned_crown_secrets)
+    [b]Crown Secrets:[/b]
+    
+    [i]The Shard's Keeper[/i]
+    The Human shard is the Crown's ultimate protection. It nullifies supernatural powers nearby, reveals disguised supernaturals, and protects the holder from mental influence. Queen Isolde wears it constantly—the necklace is never removed.
+    
+    [i]The Succession Crisis[/i]
+    Isolde has no direct heir. Her marriage was childless; her siblings died young. The question of who inherits the shard—and the Crown's supernatural responsibilities—is becoming urgent.
+    
+    [i]The Contingency[/i]
+    The Crown maintains plans for "if everything falls apart"—if the Veil Protocol fails, if supernatural war erupts again, if humans must fight for survival. These plans are updated regularly and shared with no one outside the royal family.
+
+*choice
+    #Return to factions
+        *goto factions_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment RETURN / NAVIGATION
+*comment ═══════════════════════════════════════════════════════════
+
+*label factions_return
+*return

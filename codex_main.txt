@@ -17,6 +17,21 @@ The knowledge of ages past lies before you, compiled from fragments of history, 
         *goto_scene codex_locations location_overview
     #Notable Individuals
         *goto_scene codex_characters character_overview
+    #Deep Dossiers: Notable Individuals (Expanded)
+        *gosub_scene codex_characters_expanded characters_expanded_overview
+        *goto codex_main
+    #Deep Dossiers: Factions & Power Structures (Expanded)
+        *gosub_scene codex_factions_expanded factions_expanded_overview
+        *goto codex_main
+    #Deep Dossiers: Locations & Hidden Sites (Expanded)
+        *gosub_scene codex_locations_expanded locations_expanded_overview
+        *goto codex_main
+    #Legends of the Ancient World
+        *gosub_scene codex_legends legends_overview
+        *goto codex_main
+    #Mythology & Cosmology
+        *gosub_scene codex_mythology mythology_overview
+        *goto codex_main
     #The Ecliptic Amulet
         *goto artifact_entry
     #Return to stats

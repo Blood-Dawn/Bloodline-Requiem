@@ -1,0 +1,942 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment CODEX LOCATIONS EXPANDED - Deep Location Lore
+*comment Detailed histories, hidden areas, and supernatural significance
+*comment ═══════════════════════════════════════════════════════════
+
+*label locations_expanded_overview
+
+[b]THE PLACES OF POWER[/b]
+
+[i]"Every stone in Veilfall has tasted blood. Every shadow remembers what passed through it. The city is not merely haunted—it is aware."[/i]
+—Journal of an unknown Assassin Guild operative
+
+*choice
+    *if (learned_veilfall_deep)
+        #Veilfall City — Complete History
+            *goto veilfall_deep
+    *if (learned_mirror_lake_deep)
+        #Mirror Lake — The Scarred Nexus
+            *goto mirror_lake_deep
+    *if (learned_crimson_spire_deep)
+        #Crimson Spire — Fortress of Blood
+            *goto crimson_spire_deep
+    *if (learned_whispering_pines_deep)
+        #Whispering Pines — The Living Forest
+            *goto whispering_pines_deep
+    *if (learned_undercroft_deep)
+        #The Undercroft — Sanctuary Below
+            *goto undercroft_deep
+    *if (learned_warren_deep)
+        #The Warren — City of Shadows
+            *goto warren_deep
+    *if (learned_sunken_cathedral_deep)
+        #The Sunken Cathedral — Drowned Secrets
+            *goto sunken_cathedral_deep
+    *if (learned_hidden_locations)
+        #Hidden Locations
+            *goto hidden_locations_menu
+    #Return to codex
+        *goto locations_return
+
+*comment ═══════════════════════════════════════════════════════════
+*comment VEILFALL CITY - COMPLETE HISTORY
+*comment ═══════════════════════════════════════════════════════════
+
+*label veilfall_deep
+
+[b]VEILFALL — CITY OF VEILED SHADOWS[/b]
+[i]The Heart of Darkness, Where All Powers Converge[/i]
+
+[b]Foundation:[/b]
+Veilfall was not built by humans. It was built for humans, by Varkyrs who recognized that a stable feeding population required stable civilization.
+
+The city's foundations were laid in approximately 200 BW, during the Era of the Pact. Varkyr architects designed the original layout—the radial streets, the central plaza, the underground tunnel network that would later become the Warren. They built it on a ley line intersection, maximizing magical potential.
+
+Humans were brought in as settlers, given land grants and trading privileges. Within a generation, they had forgotten (or been made to forget) their supernatural landlords. They believed they had founded Veilfall themselves.
+
+This pattern—Varkyrs creating infrastructure, humans believing they created it—has repeated throughout the city's history. Most of Veilfall's oldest buildings have supernatural origins, though the humans who use them daily have no idea.
+
+[b]The Districts:[/b]
+
+[i]The Gilded Quarter[/i]
+Originally the Varkyr residential district, now officially a human noble neighborhood. The truth is more complex: most properties are still Varkyr-owned, held through shell companies and human thralls. The noble families who live here serve as cover, blood supply, and political proxies.
+
+Notable locations:
+- Ravencrest Manor — Seat of the Ravencrest family, humanity's oldest Varkyr collaborators
+- The Crimson Salon — An exclusive club where supernatural and human elites mingle
+- The Blood Gardens — Underground feeding facility beneath a public park
+
+[i]Cathedral Heights[/i]
+The Church's stronghold, constructed on ground that was deliberately consecrated during the post-war period. Supernatural beings find the area uncomfortable—not deadly, but draining. Extended presence causes weakness, irritation, and in sensitive individuals, pain.
+
+Notable locations:
+- The Grand Cathedral — Largest church in Veilfall, contains blessed vaults and ancient relics
+- Silver Legion Headquarters — Training facilities, armory, and intelligence center
+- The Scriptorium — Archive of supernatural knowledge maintained by the Church
+
+[i]The Warren[/i]
+Officially a slum, actually the city's shadow infrastructure. The tunnel network beneath the Warren connects to every district; those who know the passages can move unseen across Veilfall. Multiple factions operate here, sometimes cooperatively, often not.
+
+Notable locations:
+- Assassin Guild Headquarters — Location unknown to outsiders; only members can find it
+- The Crossroads — Underground market for illegal goods and information
+- Entrance points to the Undercroft, the sewers, and older tunnel systems
+
+[i]University Row[/i]
+Neutral ground by common agreement. The University of Veilfall and its associated research facilities are protected space—all factions recognize that knowledge benefits everyone. Faculty members include humans, disguised Varkyrs, and occasionally Lupines in human form.
+
+Notable locations:
+- The Arcane Library — Contains texts on supernatural subjects; access is restricted
+- The Observatory — Studies astronomical phenomena; actually monitors lunar power fluctuations
+- Research Laboratory 7 — Officially studies "alternative biology"; actually researches supernatural physiology
+
+[i]Harborfront[/i]
+Commercial district controlled through money rather than magic. Adrian Blackwell's trading empire operates from here, importing blood products, silver supplies, and other supernatural necessities. All factions do business on the Harborfront; conflicts are bad for commerce.
+
+Notable locations:
+- Blackwell Trading House — Headquarters of the Blackwell empire
+- The Midnight Exchange — Financial center for supernatural transactions
+- Warehouse District — Contains storage for everything from imported blood to captured artifacts
+
+*if (learned_veilfall_secrets)
+    [b]Hidden Veilfall:[/b]
+    Beneath the city most inhabitants know lies another city entirely. The tunnel network is just the surface; deeper excavation reveals:
+    
+    - Pre-foundation ruins from an unknown civilization
+    - Sealed chambers containing artifacts too dangerous to destroy
+    - A second river, running underground, that carries magical contamination from Mirror Lake
+    - The Progenitor's original lair, supposedly, though its exact location is lost
+
+*choice
+    *if (learned_veilfall_leylines)
+        #The ley line network
+            *goto veilfall_leylines
+    *if (learned_veilfall_founding)
+        #The true founding story
+            *goto veilfall_founding
+    #Return to locations
+        *goto locations_expanded_overview
+
+*label veilfall_leylines
+
+[b]THE LEY LINES OF VEILFALL[/b]
+
+Ley lines are channels of ambient magical energy that crisscross the world. Most cities are built without regard for these invisible rivers; Veilfall was built specifically to harness them.
+
+[b]The Network:[/b]
+Seven major ley lines converge beneath Veilfall's central plaza. This was not coincidence—the Varkyr founders identified the intersection and built around it. The concentration of magical energy makes the city ideal for:
+
+- Blood magic amplification (Varkyrs)
+- Lunar ritual enhancement (Lupines)
+- Veil manipulation (all factions)
+- Artifact creation and maintenance
+
+[b]The Nodes:[/b]
+Each ley line creates "nodes" at specific points—locations of heightened magical activity. Major nodes include:
+
+- The central plaza (strongest; all lines converge)
+- Mirror Lake (second strongest; lunar alignment)
+- The Crimson Spire (third; blood-aligned)
+- The Sunken Cathedral (fourth; mixed alignment)
+- Five lesser nodes throughout the city
+
+Controlling nodes provides significant magical advantages. The current distribution—Varkyrs controlling the Spire, Lupines controlling Mirror Lake approaches, the Undercroft sitting on a lesser node—reflects centuries of negotiation and conflict.
+
+[b]Dangers:[/b]
+Ley line concentration is not without risk. The magical energy can:
+- Attract things from the Beyond
+- Cause spontaneous supernatural manifestations
+- Corrupt organic matter with prolonged exposure
+- Create "wild magic" zones where normal rules don't apply
+
+The Veilfall Accord includes provisions for monitoring and managing these risks. The University Row research facilities focus largely on ley line stability.
+
+*choice
+    #Return to Veilfall entry
+        *goto veilfall_deep
+    #Return to locations
+        *goto locations_expanded_overview
+
+*label veilfall_founding
+
+[b]THE TRUE FOUNDING OF VEILFALL[/b]
+
+[i]Restricted historical document — Night Council archives[/i]
+
+The official history of Veilfall describes human settlers establishing a trading post that grew into a city. This history is a carefully maintained fiction.
+
+[b]The Progenitor's Vision:[/b]
+In the final centuries of the Era of the Pact, the Progenitor recognized a problem: Varkyr feeding patterns were unsustainable. Vampires drained villages dry, moved on, and eventually ran out of viable territory. A more sophisticated approach was needed.
+
+His solution was the cultivation model: create stable human populations, feed from them sustainably, and allow them to believe they were independent. Veilfall was the prototype.
+
+[b]Construction:[/b]
+Varkyr thralls—humans under deep mental influence—did the physical labor. Varkyr architects designed the layout. The ley line intersection was identified and built around. Underground infrastructure was excavated first, allowing Varkyrs to move through the future city without surface exposure.
+
+When the physical framework was complete, human settlers were "discovered" and encouraged to colonize the site. Their memories were manipulated; they believed they had found an empty location ideal for settlement. The underground network was presented as "natural caves" and "pre-existing tunnels from a lost civilization."
+
+Within fifty years, Veilfall had a thriving human population with no awareness of their vampire founders. Feeding was regularized—specific individuals designated as "vessels," regular rotations to prevent exhaustion, memory suppression after each feeding.
+
+[b]The Model Spreads:[/b]
+Veilfall's success led other Varkyr lords to attempt similar cultivation. By the time of the Millennium War, dozens of "farmed" cities existed across the known world. Most were destroyed during the conflict; Veilfall survived because it was protected by both sides at various points, neither willing to destroy such a valuable resource.
+
+After the war, the cultivation model became standard. Today, most major cities with significant Varkyr populations use some variation of the Veilfall approach.
+
+*choice
+    #Return to Veilfall entry
+        *goto veilfall_deep
+    #Return to locations
+        *goto locations_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment MIRROR LAKE - THE SCARRED NEXUS
+*comment ═══════════════════════════════════════════════════════════
+
+*label mirror_lake_deep
+
+[b]MIRROR LAKE — THE SCARRED NEXUS[/b]
+[i]Where Peace Was Forged and Broken, Where Gods Died[/i]
+
+Mirror Lake is more than a body of water. It is a wound in reality, a scar left by the worst moment in supernatural history. The lake remembers. The lake waits.
+
+[b]Before the War:[/b]
+In the Era of the Pact, Mirror Lake was the most sacred site in the supernatural world. Its waters possessed unique properties:
+
+- Perfect reflection regardless of light conditions
+- Natural amplification of both blood and lunar magic
+- Thinning of the Veil during specific astronomical alignments
+- Self-purification; nothing contaminated the lake for long
+
+The annual Mirror Lake ritual took place at the lake's center, on a platform built from the bones of both Varkyrs and Lupines who had volunteered their remains for sacred purpose. The Progenitor and Origin Wolf would stand together, channel their respective magics through the Veilstone, and maintain the balance that kept the world stable.
+
+For five hundred years, this ritual never failed.
+
+[b]The Night of Betrayal:[/b]
+When the Crimson Eclipse corrupted the final ritual, the lake itself responded. The magical backlash didn't merely affect the participants—it affected the water, the shore, the air above, and the ground below.
+
+The lake turned red. Not from blood, though blood was shed; the water itself changed color, absorbing the essence of the violence. It has remained red for fifteen centuries.
+
+The shore became hostile to life. Plants wither; animals sicken; humans who stay too long develop unexplained illnesses. Only supernatural beings can tolerate extended presence, and even they feel the wrongness.
+
+The Veil tore. Something looked through from the Beyond. What it saw, what it wanted, whether it's still watching—these questions have never been answered.
+
+[b]The Present Lake:[/b]
+Today, Mirror Lake serves several functions:
+
+[i]Neutral Ground[/i] — By common agreement, no faction claims sovereignty over the lake. Disputes can be negotiated here, duels can be fought here, and certain ceremonies can only be performed here.
+
+[i]Power Source[/i] — Despite the corruption, the lake remains a magical nexus. Rituals performed at the lake are significantly more powerful than those performed elsewhere.
+
+[i]Warning[/i] — The lake's condition reminds all factions what happened when cooperation failed. Some argue this alone has prevented another war.
+
+*if (learned_lake_depths)
+    [b]The Depths:[/b]
+    Mirror Lake is unnaturally deep—soundings have failed to find the bottom. Divers who have attempted exploration report:
+    
+    - Pressure that increases far faster than natural water
+    - Voices speaking in unknown languages
+    - Structures visible in the depths: buildings, perhaps, or bones
+    - A sense of being watched, evaluated, judged
+    
+    The Sunken Cathedral lies somewhere in these depths. So, supposedly, does the remains of the ritual platform. So, possibly, do the mingled ashes of the Progenitor and Origin Wolf.
+
+*choice
+    *if (learned_lake_ritual)
+        #The original ritual in detail
+            *goto lake_ritual
+    *if (learned_lake_effects)
+        #Magical effects of the lake
+            *goto lake_effects
+    #Return to locations
+        *goto locations_expanded_overview
+
+*label lake_ritual
+
+[b]THE MIRROR LAKE RITUAL[/b]
+
+[i]Reconstructed from pre-war texts[/i]
+
+The annual ritual that maintained the Veil was elaborate, dangerous, and absolutely essential. Its loss represents the greatest magical catastrophe in recorded history.
+
+[b]Preparation (One Month Before):[/b]
+Both factions would begin preparations thirty days before the ritual. This included:
+
+- Selecting representatives (twelve from each side)
+- Purification rituals for all participants
+- Gathering specific components (Varkyr blood willingly given, Lupine fur from transformed state)
+- Astronomical calculations to determine optimal timing
+
+[b]The Ritual Site:[/b]
+The bone platform at the lake's center was accessed by boats that only moved during the ritual period. Any attempt to reach the platform outside designated times resulted in the boats sinking, the swimmers drowning, the flyers falling—the lake itself rejected unauthorized access.
+
+[b]The Ritual Proper:[/b]
+At the moment of astronomical alignment (typically midnight during the autumn equinox), both leaders would:
+
+1. Stand at opposite ends of the platform, facing the Veilstone between them
+2. Begin channeling their respective magics into the stone
+3. Allow the stone to balance and redirect the energies into the Veil
+4. Maintain the connection for approximately one hour, until astronomical alignment ended
+5. Withdraw carefully, allowing the Veilstone to stabilize
+
+During the channeling, both leaders were vulnerable. Neither could defend themselves; all energy went to the ritual. This required absolute trust—either could kill the other during the ceremony.
+
+This trust was what the Crimson Eclipse exploited.
+
+[b]What Was Lost:[/b]
+Without the ritual, the Veil weakens gradually. The process is slow—imperceptible over years, barely noticeable over decades—but cumulative. Scholars estimate that in another millennium, the Veil will be significantly thinner than it was in the Era of the Pact.
+
+The Ecliptic Amulet shards provide some stabilization, but they are a poor substitute for the original ceremony. The world is slowly becoming more dangerous, and no one knows how to stop it.
+
+*choice
+    #Return to Mirror Lake entry
+        *goto mirror_lake_deep
+    #Return to locations
+        *goto locations_expanded_overview
+
+*label lake_effects
+
+[b]MAGICAL PROPERTIES OF MIRROR LAKE[/b]
+
+[i]Research notes from University Row[/i]
+
+Despite its corruption, Mirror Lake remains one of the most magically potent locations in the world. Understanding its properties is crucial for anyone who operates near it.
+
+[b]Amplification:[/b]
+Any magical effect performed at Mirror Lake is approximately three times as powerful as the same effect performed elsewhere. This applies to:
+- Blood magic (Varkyr)
+- Lunar magic (Lupine)
+- Hybrid abilities (Forsaken)
+- Blessed techniques (Human hunters)
+- Artifact activation
+
+This amplification makes the lake ideal for major rituals but also extremely dangerous. A spell that would normally be controllable becomes potentially catastrophic.
+
+[b]Reflection:[/b]
+The lake's surface reflects more than physical light. It reflects:
+- Magical auras (revealing hidden enchantments)
+- True forms (showing shapeshifters' actual nature)
+- Emotional states (displaying inner turmoil as visible distortion)
+- Sometimes, the future or past (unpredictable; cannot be controlled)
+
+Looking into the lake is not recommended. Some have seen things that drove them mad; others have seen things that obsessed them for the rest of their lives.
+
+[b]Hostility:[/b]
+The lake actively resists certain activities:
+- Violence near its shores triggers aggressive magical feedback
+- Lies spoken over its waters cause physical pain
+- Attempts to drain, contaminate, or modify the lake fail catastrophically
+
+The lake seems to have... preferences. It tolerates certain individuals more than others. Some can stand on its shores for hours without ill effect; others feel crushing pressure within minutes.
+
+No one understands why. The lake does not explain.
+
+*choice
+    #Return to Mirror Lake entry
+        *goto mirror_lake_deep
+    #Return to locations
+        *goto locations_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment CRIMSON SPIRE - FORTRESS OF BLOOD
+*comment ═══════════════════════════════════════════════════════════
+
+*label crimson_spire_deep
+
+[b]CRIMSON SPIRE — FORTRESS OF BLOOD[/b]
+[i]Heart of Varkyr Power, The Eternal Court[/i]
+
+The Crimson Spire is not merely a building. It is a statement, a symbol, and a weapon—a monument to Varkyr supremacy that has stood for over two thousand years.
+
+[b]Construction:[/b]
+The Spire was built during the Era of the Pact, when the Progenitor decided his court needed a permanent home. Construction took three centuries and required:
+
+- Bloodstone quarried from mountains that no longer exist
+- Mortar mixed with the blood of willing donors (thousands died)
+- Architectural plans allegedly drawn by the Progenitor himself
+- Enchantments woven into every stone, every timber, every nail
+
+The result is a tower that rises higher than any human structure of its era, built from red stone that actually pulses with faint light after dark. The Spire is alive, in a sense—it responds to its inhabitants, shifts its internal configuration, and actively defends against threats.
+
+[b]The Levels:[/b]
+
+[i]The Foundations (Below Ground)[/i]
+The Spire extends as far below ground as above. These levels contain:
+- Feeding chambers for emergency blood storage
+- Prison cells for enemies of the court
+- Ancient archives too sensitive for general access
+- The legendary sealed chamber where the Matriarch keeps... something
+
+[i]The Lower Halls (Floors 1-10)[/i]
+Training facilities, barracks for Knights, processing areas for newly Embraced vampires. This is where Varkyr commoners live and work, rarely ascending to higher levels.
+
+[i]The Middle Courts (Floors 11-30)[/i]
+Noble residences, diplomatic suites, administrative offices. Baron through Viscount-level Varkyrs operate here, managing the day-to-day affairs of the Spire.
+
+[i]The Upper Courts (Floors 31-50)[/i]
+Count and above only. These floors contain the true centers of power: the Matriarch's throne room, the High Council chamber, the diplomatic reception hall, and private suites for the most powerful nobles.
+
+[i]The Apex (Floors 51+)[/i]
+The Spire's peak is off-limits to all but the Matriarch and her personal attendants. What exists there is unknown. Those who have attempted to investigate have not returned.
+
+*if (learned_spire_secrets)
+    [b]Secrets of the Spire:[/b]
+    
+    [i]The Throne[/i] — The Progenitor's original throne sits in the main hall. No vampire has sat on it since his death; those who try burst into flames. The Matriarch conducts court standing beside it, not on it.
+    
+    [i]The Blood Gardens[/i] — An underground greenhouse where plants are fed vampire blood, growing into forms that exist nowhere else. Some produce substances valuable in alchemy; others are simply... wrong.
+    
+    [i]The Whispering Gallery[/i] — A corridor where the Spire's stone records and replays conversations. The Matriarch can reportedly hear anything said within the Spire's walls.
+    
+    [i]The Sealed Chamber[/i] — The Matriarch's greatest secret. Servants report hearing a heartbeat from within. No one else is allowed to approach.
+
+*choice
+    *if (learned_spire_politics)
+        #The political structure within the Spire
+            *goto spire_politics
+    *if (learned_spire_defenses)
+        #The Spire's defenses
+            *goto spire_defenses
+    #Return to locations
+        *goto locations_expanded_overview
+
+*label spire_politics
+
+[b]POLITICS OF THE CRIMSON SPIRE[/b]
+
+The Spire is not merely a residence—it is a battleground. Varkyr politics are a constant game of advancement, intrigue, and carefully measured violence.
+
+[b]The Hierarchy:[/b]
+Officially, power flows downward from the Matriarch through the High Council to the lesser nobles. In practice, influence is far more complex:
+
+[i]The Matriarch[/i] — Supreme authority, but not absolute. She rules through consent of the powerful; a Matriarch who loses noble support faces challenge or assassination.
+
+[i]The High Council[/i] — Dukes and Counts who advise the Matriarch. Officially consultative; actually a power bloc that can check the Matriarch's authority.
+
+[i]The Noble Houses[/i] — Family lines that have accumulated power over centuries. Each house has territory, resources, and alliances that must be navigated.
+
+[i]The Factions[/i] — Cross-house alignments based on ideology or interest. Current major factions include:
+- Traditionalists (maintain the Veil Protocol strictly)
+- Expansionists (seek greater influence in human society)
+- Purists (oppose any cooperation with Lupines or Forsaken)
+- Pragmatists (prioritize survival over ideology)
+
+[b]Advancement:[/b]
+Moving up the hierarchy requires:
+- Demonstrated power (magical ability, combat skill)
+- Political acumen (alliances, intelligence gathering)
+- Resources (blood access, territory, human influence)
+- Either eliminating competitors or making yourself indispensable to them
+
+Violence is permitted within strict rules. Duels must be formally declared. Assassination must be untraceable (obvious kills damage the perpetrator's reputation). Collateral damage to humans risks exposure and is severely punished.
+
+The game never ends. Every conversation is negotiation; every alliance is temporary; every friend is a potential enemy.
+
+*choice
+    #Return to Crimson Spire entry
+        *goto crimson_spire_deep
+    #Return to locations
+        *goto locations_expanded_overview
+
+*label spire_defenses
+
+[b]DEFENSES OF THE CRIMSON SPIRE[/b]
+
+[i]Security assessment — Silver Legion intelligence files[/i]
+
+The Crimson Spire is the most heavily defended location in Veilfall. No external force has successfully breached it since the Millennium War.
+
+[b]Physical Defenses:[/b]
+- Walls of bloodstone, resistant to mundane weapons
+- No windows below the tenth floor
+- Single main entrance, controlled by Knight guards
+- Secret entrances known only to High Council and above
+- Underground passages that can be flooded or collapsed
+
+[b]Magical Defenses:[/b]
+- Blood wards that detect non-Varkyr intruders
+- Shadow sentries—animated darkness that attacks threats
+- Alarm systems tied to the Spire's living structure
+- Anti-teleportation fields throughout
+- Sunlight channels that can be opened to trap invaders
+
+[b]Procedural Defenses:[/b]
+- Constant guard rotations
+- Identity verification through blood sampling
+- Visitors escorted at all times
+- Lower ranks prohibited from upper floors
+- Emergency protocols for siege situations
+
+[b]The Ultimate Defense:[/b]
+If the Spire ever faces existential threat, a final protocol exists: the Blood Tide. Every vampire within the Spire sacrifices their blood simultaneously, channeling the combined energy into a single devastating attack.
+
+This has never been used. The cost would be the destruction of Varkyr society. But the capability exists, and any attacker must consider it.
+
+*choice
+    #Return to Crimson Spire entry
+        *goto crimson_spire_deep
+    #Return to locations
+        *goto locations_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment WHISPERING PINES - THE LIVING FOREST
+*comment ═══════════════════════════════════════════════════════════
+
+*label whispering_pines_deep
+
+[b]WHISPERING PINES — THE LIVING FOREST[/b]
+[i]Lupine Heartland, The Wild Domain, Where the Moon Speaks[/i]
+
+The Whispering Pines is not just Lupine territory—it is Lupine soul made manifest. The forest responds to the pack, protects them, and in some ways thinks alongside them.
+
+[b]The Land:[/b]
+The forest covers approximately two hundred square miles of old-growth pine, oak, and birch. The trees are ancient—some have stood for over a thousand years, predating even the Millennium War. They have absorbed so much lunar magic that they are no longer entirely natural.
+
+[i]The Whispers:[/i]
+Wind through pine needles carries more than sound. Those attuned to lunar magic can hear:
+- Warnings of approaching threats
+- Guidance toward hidden paths
+- Sometimes, voices of dead pack members
+- During full moons, the echo of the Origin Wolf's final howl
+
+[i]The Paths:[/i]
+The forest has no fixed trails. Paths appear for those the forest accepts and vanish for those it rejects. Lupines can navigate by instinct; outsiders become hopelessly lost within minutes.
+
+[i]The Trees:[/i]
+Certain trees have absorbed enough magic to become semi-sentient. They don't think as humans do, but they remember, and they react. Enemies of the pack find branches blocking their way, roots tripping their feet, bark scraping their skin.
+
+[b]Sacred Sites:[/b]
+
+[i]The Moon-Born Trial Clearing[/i]
+A circular clearing where initiates face their first transformation. The pack gathers around the perimeter; the new Lupine stands at the center, alone, as the moon rises. If they survive the night without attacking their pack-mates, they are accepted.
+
+[i]The Alpha's Den[/i]
+Alpha Rurik's residence—a cave system beneath an ancient oak. The den has been occupied continuously for centuries; the walls are marked with the symbols of every Alpha who has ruled Whispering Pines.
+
+[i]Sacred Howling Ridge[/i]
+The highest point in the forest, where pack-wide ceremonies occur. When Lupines howl from the Ridge, the sound carries for miles—and something howls back from the sky.
+
+*if (learned_pines_secrets)
+    [b]Hidden Places:[/b]
+    
+    [i]The Ancestor Grove[/i] — Where Lupines are buried. The dead are not cremated or coffined; they are laid among the roots, allowing the forest to absorb them. Visitors report seeing ghostly wolves running among the trees.
+    
+    [i]The Forgotten Den[/i] — A sealed cave containing artifacts from the Origin Wolf's time. Opening it requires unanimous Alpha approval from all Lupine packs, which has never been achieved.
+    
+    [i]The Silver Cache[/i] — Stolen silver weapons, removed from hunters and stored against future need. The cache is moved regularly; only the Alpha knows its current location.
+
+*choice
+    *if (learned_pines_politics)
+        #Pack politics and structure
+            *goto pines_politics
+    *if (learned_pines_magic)
+        #The forest's magical nature
+            *goto pines_magic
+    #Return to locations
+        *goto locations_expanded_overview
+
+*label pines_politics
+
+[b]PACK STRUCTURE OF WHISPERING PINES[/b]
+
+The Whispering Pines pack has evolved a complex social structure over centuries. Understanding it is essential for anyone dealing with Lupines.
+
+[b]The Alpha:[/b]
+Currently Rurik Blackfang. The Alpha is not merely leader but embodiment of the pack—their strength is the pack's strength, their weakness is the pack's weakness. The Alpha:
+- Leads through demonstrated capability, not inheritance
+- Can be challenged at any time by any pack member
+- Must balance tradition with adaptation
+- Represents the pack in all external negotiations
+
+[b]The Betas:[/b]
+Two positions, currently held by Thane Silverpelt and Rhea Moonshadow. Betas serve as:
+- Advisors to the Alpha
+- Leaders in the Alpha's absence
+- Trainers for new pack members
+- Enforcers of pack law
+
+Beta positions are appointed by the Alpha, not won through challenge. A wise Alpha chooses Betas whose strengths complement their weaknesses.
+
+[b]The Hunters:[/b]
+The pack's working core—those who patrol territory, gather food, defend against threats. Hunters are ranked by demonstrated ability; the most skilled lead hunting parties.
+
+[b]The Omegas:[/b]
+Lowest rank—newly turned Lupines, those who have failed challenges, or those who prefer subordinate roles. Omega status is not permanent; any Lupine can rise through demonstrated worth.
+
+[b]Pack Law:[/b]
+Core rules that define Lupine society:
+- Loyalty to pack above all
+- Challenges must be fair (no weapons, no outside interference)
+- Killing a pack-mate requires Alpha sanction
+- Territory boundaries are absolute
+- Outsiders must be approved before entering pack lands
+- The full moon is sacred; violence between pack-mates forbidden
+
+Violation of pack law results in punishment ranging from reduced rank to exile to death, depending on severity and Alpha judgment.
+
+*choice
+    #Return to Whispering Pines entry
+        *goto whispering_pines_deep
+    #Return to locations
+        *goto locations_expanded_overview
+
+*label pines_magic
+
+[b]THE LIVING FOREST[/b]
+
+[i]Research notes — compiled from Lupine shamans' testimonies[/i]
+
+The Whispering Pines is saturated with lunar magic. Centuries of Lupine habitation, ritual, and transformation have changed the forest at a fundamental level.
+
+[b]Lunar Saturation:[/b]
+The trees, soil, water, and air of the Pines contain measurable lunar essence. Effects include:
+- Enhanced healing for Lupines within the forest
+- Easier transformation (some can shift regardless of moon phase)
+- Weakened effectiveness of silver (still harmful, but less so)
+- Strengthened pack bonds (mental connection extends further)
+
+[b]The Forest's Awareness:[/b]
+The Pines exhibits behavior that suggests some form of consciousness:
+- It directs prey toward hungry pack members
+- It conceals pack dens from searchers
+- It allows or denies passage based on unknown criteria
+- During full moons, it... watches
+
+Lupine shamans believe the forest contains the accumulated awareness of every werewolf who has lived and died within it. The trees remember; the wind speaks with their voices.
+
+[b]Interaction:[/b]
+Skilled Lupines can communicate with the forest through meditation and ritual:
+- Asking the trees to reveal paths
+- Requesting the wind to carry warnings
+- Seeking guidance from ancestor spirits
+
+These interactions are never commands. The forest cannot be ordered; it can only be asked. It responds to respect, sincerity, and need.
+
+[b]Dangers:[/b]
+The forest is not safe for non-Lupines:
+- Paths vanish, leading intruders in circles
+- Animals become aggressive
+- The environment itself becomes hostile (falling branches, sudden sinkholes, poisonous plants appearing in new locations)
+
+Even Lupines from other packs face difficulty. The Pines knows its own; everyone else is a potential threat.
+
+*choice
+    #Return to Whispering Pines entry
+        *goto whispering_pines_deep
+    #Return to locations
+        *goto locations_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE UNDERCROFT - FORSAKEN SANCTUARY
+*comment ═══════════════════════════════════════════════════════════
+
+*label undercroft_deep
+
+[b]THE UNDERCROFT — SANCTUARY BELOW[/b]
+[i]Forsaken Enclave, The Hidden Kingdom, Where Outcasts Become Family[/i]
+
+Beneath the streets of Veilfall, in tunnels and chambers that most city dwellers will never know exist, the Forsaken have built their home. The Undercroft is haven, fortress, laboratory, and testament to what hybrids can create when given the chance.
+
+[b]Origins:[/b]
+The Undercroft began as a sunken cathedral—a church that collapsed during the Millennium War and was buried by subsequent construction. Caius discovered it approximately two hundred years after the war's end, while the Forsaken were still nomadic refugees.
+
+He saw potential. A large underground space, structurally sound despite its age, with natural access to the city above and deeper tunnels below. He claimed it, fortified it, and declared it the first permanent Forsaken home.
+
+[b]The Space:[/b]
+The original cathedral provides the Undercroft's heart—a vast central chamber where the Forsaken gather, train, and conduct ceremonies. But centuries of expansion have added:
+
+[i]Residential Wings[/i] — Carved from bedrock, providing private quarters for permanent residents. Simple but functional; the Forsaken value utility over luxury.
+
+[i]The Crucible[/i] — Training facilities where hybrids learn to control their dual nature. Combat rings, meditation chambers, and "stability rooms" for those struggling with transformation.
+
+[i]The Laboratory[/i] — Caius's personal research space, where he refines hybridization techniques and studies the Forsaken shard. Access is strictly controlled.
+
+[i]The Infirmary[/i] — Medical facilities specializing in hybrid physiology. Knowledge accumulated here exceeds anything available in the surface world.
+
+[i]The Archives[/i] — Records of Forsaken history, including testimonies from first-generation hybrids, research notes, and documentation of war-era atrocities committed by both Varkyrs and Lupines.
+
+*if (learned_undercroft_secrets)
+    [b]Deeper Levels:[/b]
+    Below the main Undercroft, sealed tunnels lead to:
+    
+    [i]The First Chamber[/i] — Where Caius conducted his initial stabilization experiments. The walls are stained with blood from failures; the successful subjects' names are carved into the ceiling.
+    
+    [i]The Refuge[/i] — Emergency shelter, stocked and maintained for worst-case scenarios. Capacity: approximately 500 Forsaken for six months.
+    
+    [i]The Gate[/i] — A sealed entrance to something older than the cathedral, older than Veilfall. Caius has forbidden exploration. He has never explained why.
+
+*choice
+    *if (learned_undercroft_culture)
+        #Forsaken culture and society
+            *goto undercroft_culture
+    *if (learned_undercroft_security)
+        #Security and secrecy
+            *goto undercroft_security
+    #Return to locations
+        *goto locations_expanded_overview
+
+*label undercroft_culture
+
+[b]FORSAKEN SOCIETY[/b]
+
+The Forsaken have built a unique culture from the wreckage of two others. They are neither Varkyr nor Lupine, and they refuse to be defined by either.
+
+[b]Core Values:[/b]
+[i]Choice[/i] — The Forsaken were created without consent, but they insist on consent for everything else. Joining the Enclave is voluntary. Leaving is permitted. Transformation is only offered to those who genuinely understand and accept what they're becoming.
+
+[i]Merit[/i] — Status comes from demonstrated worth, not bloodline or pack position. A newcomer who proves themselves can rise faster than a long-term resident who coasts.
+
+[i]Unity[/i] — The Forsaken have no one else. External factions regard them with suspicion at best, hatred at worst. Internal solidarity is survival.
+
+[b]Structure:[/b]
+[i]Caius the Unbound[/i] — Founder and leader, but not dictator. He guides rather than commands, advises rather than orders. His authority comes from respect earned over centuries, not position claimed.
+
+[i]The Council[/i] — Senior Forsaken who advise on major decisions. Membership is fluid; those who contribute wisdom are included, those who don't are not.
+
+[i]The Sentinels[/i] — Security and defense forces. Entry requirements are strict; Sentinels represent the Enclave to the outside world.
+
+[i]The Scholars[/i] — Researchers and archivists. They maintain knowledge and develop new techniques for hybrid stabilization.
+
+[i]The General Population[/i] — Everyone else. No formal ranks below this point; individual relationships and informal respect determine standing.
+
+[b]Rituals:[/b]
+[i]The Welcoming[/i] — Ceremony for newly transformed Forsaken. The entire Enclave gathers to acknowledge the new member, sharing blood and lunar energy to help stabilize them.
+
+[i]The Remembering[/i] — Annual commemoration of those lost during the war and after. Names are read; stories are shared; the past is honored.
+
+[i]The Choosing[/i] — When someone requests transformation. The Council evaluates their understanding, Caius confirms stability, and if approved, the community witnesses the process.
+
+*choice
+    #Return to Undercroft entry
+        *goto undercroft_deep
+    #Return to locations
+        *goto locations_expanded_overview
+
+*label undercroft_security
+
+[b]SECURITY OF THE UNDERCROFT[/b]
+
+[i]Defensive assessment — Enclave internal documents[/i]
+
+The Forsaken's small population makes security essential. The Undercroft is designed to be difficult to find, harder to enter, and nearly impossible to assault successfully.
+
+[b]Concealment:[/b]
+- Multiple entrance points, none obvious
+- Entrances change regularly (tunnels collapse, new ones open)
+- Magical obscurement hides the main passages from detection
+- False entrances lead to dead ends or traps
+
+[b]Access Control:[/b]
+- Sentinels posted at all active entrances
+- Recognition based on scent, appearance, and passcode
+- Visitors must be vouched for by full members
+- Unknown individuals are detained for evaluation
+
+[b]Internal Defenses:[/b]
+- Corridors designed for defensive fighting (narrow, with cover)
+- Collapse mechanisms in case of major assault
+- Sealed sections that can isolate threats
+- Emergency protocols for evacuation to deeper levels
+
+[b]The Ultimate Defense:[/b]
+Caius himself. The Forsaken founder is over 1,500 years old and possesses powers that no other hybrid has matched. He rarely fights, preferring negotiation and planning. But those who have seen him in combat report abilities that rival legends:
+- Simultaneous full vampire and full werewolf transformation
+- Blood magic and lunar magic used in combination
+- Speed and strength that exceed either parent species
+- Perfect control, no loss of reason regardless of circumstances
+
+The last serious assault on the Undercroft occurred four hundred years ago. A Varkyr strike force, approximately fifty strong, attempted to seize the Forsaken shard.
+
+Caius killed them all. Alone.
+
+No one has tried since.
+
+*choice
+    #Return to Undercroft entry
+        *goto undercroft_deep
+    #Return to locations
+        *goto locations_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment HIDDEN LOCATIONS
+*comment ═══════════════════════════════════════════════════════════
+
+*label hidden_locations_menu
+
+[b]HIDDEN LOCATIONS[/b]
+
+Beyond the known places of power, Veilfall contains secrets that most inhabitants—human and supernatural alike—will never discover.
+
+*choice
+    *if (learned_void_gate)
+        #The Void Gate
+            *goto void_gate_entry
+    *if (learned_bone_archive)
+        #The Bone Archive
+            *goto bone_archive_entry
+    *if (learned_progenitor_tomb)
+        #The Progenitor's Resting Place
+            *goto progenitor_tomb
+    *if (learned_lunar_sanctuary)
+        #The Lunar Sanctuary
+            *goto lunar_sanctuary
+    #Return to locations
+        *goto locations_expanded_overview
+
+*label void_gate_entry
+
+[b]THE VOID GATE[/b]
+
+[i]Existence unconfirmed — theoretical construct based on multiple sources[/i]
+
+Somewhere beneath Veilfall, where the ley lines converge at their deepest point, there may exist a permanent connection to the Beyond.
+
+[b]Evidence:[/b]
+- The Void-Walker who created the Progenitor appeared "from nowhere" and vanished similarly
+- Certain beings in Veilfall's history demonstrate abilities inconsistent with any known supernatural type
+- The ley line convergence is far more powerful than any natural phenomenon should produce
+- Ancient texts reference "the door that should not open" beneath the city
+
+[b]Theories:[/b]
+If the Gate exists, it may explain:
+- Why Veilfall specifically became a supernatural hub
+- The source of the Void-Walker's power
+- Certain unexplained disappearances throughout history
+- The thing that watches from Mirror Lake's depths
+
+[b]Danger:[/b]
+A permanent connection to the Beyond would be catastrophic if misused—or if anything decided to use it from the other side. The Veil would be meaningless if a door bypassed it entirely.
+
+Every faction denies knowledge of the Gate's existence. Every faction has agents searching for it.
+
+*choice
+    #Return to hidden locations
+        *goto hidden_locations_menu
+
+*label bone_archive_entry
+
+[b]THE BONE ARCHIVE[/b]
+
+[i]Location: beneath Cathedral Heights — access restricted to Church hierarchy[/i]
+
+The Church maintains that supernatural beings are abominations deserving destruction. But the Church also maintains a vast collection of supernatural artifacts, texts, and specimens for "research purposes."
+
+The Bone Archive is the center of this collection.
+
+[b]Contents:[/b]
+- Preserved remains of destroyed supernatural beings (vampires, werewolves, hybrids, and things that don't fit any category)
+- Texts recovered from supernatural sources, including fragments of the Crimson Codex
+- Weapons and artifacts captured over centuries of hunting
+- Living specimens in stasis (rumored but unconfirmed)
+
+[b]Purpose:[/b]
+Officially: understanding the enemy to better destroy them.
+
+Unofficially: the Church has always hedged its bets. Knowledge is power. The supernatural represents a threat, but also an opportunity—one the Church may exploit if circumstances change.
+
+[b]Access:[/b]
+Only senior Church officials and Silver Legion commanders can enter the Archive. Others have disappeared for asking too many questions about it.
+
+*choice
+    #Return to hidden locations
+        *goto hidden_locations_menu
+
+*label progenitor_tomb
+
+[b]THE PROGENITOR'S RESTING PLACE[/b]
+
+[i]Location: unknown — multiple theories exist[/i]
+
+The Progenitor's body was never officially recovered from Mirror Lake. But Genesis Rebirth theoretically allows resurrection from any amount of blood. If even a fragment of him survived...
+
+[b]Theories:[/b]
+
+[i]The Lake Theory[/i] — He remains at Mirror Lake's bottom, slowly regenerating. This would explain the lake's hostility and the sense of "presence" visitors report.
+
+[i]The Spire Theory[/i] — The Matriarch's sealed chamber contains his remains, preserved and monitored. The heartbeat servants report would support this.
+
+[i]The Dispersion Theory[/i] — His blood scattered across continents, each fragment slowly regenerating a separate copy. Multiple Progenitors might eventually rise.
+
+[i]The Beyond Theory[/i] — Genesis Rebirth pulled his essence through the Veil. He exists now in the Beyond, waiting for a way back.
+
+[b]Implications:[/b]
+If the Progenitor returns, everything changes. He predates all current power structures, all treaties, all arrangements. He would have no obligation to honor agreements made after his death.
+
+Some Varkyrs pray for his return. Others dread it. The Night Council, if the rumors are true, has been preparing for both possibilities for centuries.
+
+*choice
+    #Return to hidden locations
+        *goto hidden_locations_menu
+
+*label lunar_sanctuary
+
+[b]THE LUNAR SANCTUARY[/b]
+
+[i]Location: mobile — exists only during specific lunar alignments[/i]
+
+Lupine legends speak of a place where Luna herself rests between her celestial duties—a realm accessible only when the moon aligns perfectly with certain points on Earth.
+
+[b]Descriptions:[/b]
+Those who claim to have visited describe:
+- A forest of silver trees under a permanent full moon
+- The presence of every wolf who has ever lived, running eternally
+- The Origin Wolf, still whole, still leading the great hunt
+- Luna herself, in whatever form the visitor most needs to see
+
+[b]Access:[/b]
+The Sanctuary cannot be sought deliberately. It opens for those the moon chooses:
+- Lupines at the moment of death, sometimes
+- Those who have given everything for their pack
+- Young Lupines during their first successful transformation
+- No one who has spoken of it publicly
+
+[b]Purpose:[/b]
+If the Sanctuary exists, it may be:
+- The afterlife Luna promised her children
+- A storage place for lunar power, accessible in emergencies
+- A testing ground where worthy Lupines receive enhanced abilities
+- Simply a beautiful hallucination caused by lunar magic saturation
+
+Rurik Blackfang has never confirmed whether he has seen the Sanctuary. His silence speaks volumes.
+
+*choice
+    #Return to hidden locations
+        *goto hidden_locations_menu
+
+*comment ═══════════════════════════════════════════════════════════
+*comment REMAINING LOCATION STUBS
+*comment ═══════════════════════════════════════════════════════════
+
+*label warren_deep
+
+[b]THE WARREN[/b]
+[i]City of Shadows, Where Secrets Are Currency[/i]
+
+[i]Full documentation pending discovery...[/i]
+
+The Warren is where Veilfall keeps its dirty secrets. Above ground, it appears to be merely a slum—poverty, crime, desperation. Below ground, it is something else entirely.
+
+The tunnel network beneath the Warren connects to every district of Veilfall. Those who know the paths can move unseen across the city, emerging wherever they wish. The Assassin Guild, the Forsaken, criminal organizations, and independent operatives all maintain presence here.
+
+*goto locations_expanded_overview
+
+*label sunken_cathedral_deep
+
+[b]THE SUNKEN CATHEDRAL[/b]
+[i]Drowned Secrets, Where the War's Truth Lies Buried[/i]
+
+[i]Full documentation pending discovery...[/i]
+
+Beneath Mirror Lake lies a cathedral—or what remains of one. Drowned during the final years of the Millennium War, it contains secrets that every faction would kill to possess:
+- Records of war crimes too terrible to be acknowledged
+- Artifacts sealed away because they couldn't be destroyed
+- The final resting place of the Progenitor and Origin Wolf, possibly
+- Something that predates both of them, definitely
+
+*goto locations_expanded_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment RETURN / NAVIGATION
+*comment ═══════════════════════════════════════════════════════════
+
+*label locations_return
+*return

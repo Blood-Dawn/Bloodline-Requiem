@@ -1,0 +1,922 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment CODEX LEGENDS - Mythic Figures of the Ancient World
+*comment In-universe documents, unlocked through gameplay discovery
+*comment ═══════════════════════════════════════════════════════════
+
+*label legends_overview
+
+[b]LEGENDS OF THE ANCIENT WORLD[/b]
+
+[i]"Before the courts, before the packs, before the accords—there were only the First. And in their shadow, we are all children playing at power."[/i]
+—Fragment from the Crimson Codex, author unknown
+
+*if learned_progenitor_lore
+    *goto legends_menu
+*elseif learned_origin_wolf_lore
+    *goto legends_menu
+*elseif learned_war_heroes
+    *goto legends_menu
+*elseif learned_crimson_eclipse
+    *goto legends_menu
+*elseif learned_first_forsaken
+    *goto legends_menu
+*else
+    [i]You have not yet uncovered knowledge of the ancient legends. Seek wisdom in the archives of the Crimson Spire, the oral histories of the Lupine elders, or the forbidden texts of the Forsaken.[/i]
+    
+    *goto legends_return
+
+*label legends_menu
+
+*choice
+    *if (learned_progenitor_lore)
+        #The Progenitor — First of the Varkyrs
+            *goto progenitor_main
+    *if (learned_origin_wolf_lore)
+        #The Origin Wolf — Lunar Progenitor of the Lupines
+            *goto origin_wolf_main
+    *if (learned_war_heroes)
+        #Heroes and Villains of the Millennium War
+            *goto war_heroes_menu
+    *if (learned_crimson_eclipse)
+        #The Crimson Eclipse — Architects of Betrayal
+            *goto crimson_eclipse_main
+    *if (learned_first_forsaken)
+        #The First Forsaken — Children of Forbidden Union
+            *goto first_forsaken_main
+    #Return to codex
+        *goto legends_return
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE PROGENITOR - FIRST VAMPIRE
+*comment ═══════════════════════════════════════════════════════════
+
+*label progenitor_main
+
+[b]THE PROGENITOR[/b]
+[i]First of the Varkyrs, Lord of Eternal Night, The Undying Sovereign[/i]
+
+*if (learned_progenitor_origin)
+    *goto progenitor_full
+*else
+    *goto progenitor_basic
+
+*label progenitor_basic
+
+[i]Your knowledge of the Progenitor remains incomplete. Fragments of his legend exist in what you have uncovered...[/i]
+
+The Progenitor was the first vampire—not merely the oldest, but the source from which all Varkyr bloodlines flow. His true name has been lost to time, deliberately erased from history by his own decree. To speak his mortal name, it was said, would summon his attention from beyond death itself.
+
+What is known: He ruled for over three thousand years before the Millennium War. Under his dominion, the Varkyrs rose from scattered predators to an aristocratic empire spanning continents. He created the blood hierarchy, the noble houses, and the fundamental laws that govern vampire society to this day.
+
+*if (learned_progenitor_powers)
+    *line_break
+    [b]Known Powers:[/b]
+    The Progenitor possessed abilities that no Varkyr since has fully replicated:
+    
+    [i]Genesis Rebirth[/i] — The ability to resurrect from complete destruction, reforming from a single drop of blood over centuries if necessary. Some scholars believe fragments of his essence still drift through the world, slowly coalescing.
+    
+    [i]Celestial Dominion[/i] — Command over the night sky itself. He could dim stars, summon perpetual darkness over entire regions, and reportedly once held back the dawn for three days during the Siege of Kar'Thalan.
+    
+    [i]Primordial Sanguine Surge[/i] — Blood magic of such magnitude that he could exsanguinate armies with a gesture, or grant temporary immortality to favored servants through a single drop of his blood.
+    
+    [i]Cosmic Damnation[/i] — The ability to sever a vampire's connection to their bloodline, rendering them mortal and vulnerable. This was his ultimate punishment, reserved for the most egregious betrayals.
+
+*choice
+    *if (learned_progenitor_origin)
+        #His mortal origins [UNLOCKED]
+            *goto progenitor_origin
+    *if (not (learned_progenitor_origin))
+        #His mortal origins [LOCKED - Seek the Crimson Codex]
+            You have not yet discovered the truth of his mortal life.
+            *goto progenitor_basic
+    *if (learned_progenitor_death)
+        #His death at Mirror Lake [UNLOCKED]
+            *goto progenitor_death
+    *if (learned_progenitor_legacy)
+        #His legacy in the modern era [UNLOCKED]
+            *goto progenitor_legacy
+    #Return to legends
+        *goto legends_overview
+
+*label progenitor_full
+
+*gosub progenitor_origin
+
+*choice
+    #Continue reading
+        *goto progenitor_origin
+
+*label progenitor_origin
+
+[b]THE MORTAL WHO BECAME DEATH[/b]
+
+[i]Extracted from the Crimson Codex, Volume I — "Before the Blood"[/i]
+
+Before he was the Progenitor, he was a king of a realm whose name has been deliberately expunged from all records. The Codex refers to it only as "the Drowned Kingdom"—a civilization that existed where the Ashen Sea now lies.
+
+He was dying. A wasting sickness had claimed him slowly over seven years, reducing a once-mighty warrior to a skeletal figure who could barely lift his own crown. His physicians had failed. His priests had failed. His gods, if they existed, had turned away.
+
+In his final year, a stranger came to his court. The histories describe them only as "the Void-Walker"—a being of uncertain nature, neither living nor dead, who offered a bargain.
+
+[i]"I can end your death,"[/i] the Void-Walker said. [i]"But I cannot preserve your life. You will become something else. Something hungry. Something eternal. And you will owe me a debt that spans forever."[/i]
+
+The king accepted.
+
+What followed was three days of agony that the Codex describes in clinical detail: the stopping of his heart, the cooling of his flesh, the first terrible awakening of the Thirst. When he rose on the third night, he was no longer human.
+
+His first act was to drain his entire court—servants, advisors, family. His second was to raise them as his children. His third was to sink his kingdom beneath the waves, erasing all evidence of his mortal weakness.
+
+The Void-Walker's debt remains unpaid. Some scholars believe the Progenitor's death at Mirror Lake was merely the first installment.
+
+*choice
+    *if (learned_progenitor_death)
+        #His death at Mirror Lake
+            *goto progenitor_death
+    *if (learned_progenitor_legacy)
+        #His legacy in the modern era
+            *goto progenitor_legacy
+    *if (learned_void_walker)
+        #The Void-Walker — Who or what was it?
+            *goto void_walker_entry
+    #Return to legends
+        *goto legends_overview
+
+*label progenitor_death
+
+[b]THE FINAL DUEL[/b]
+
+[i]From "The Last Dawn" — A Lupine oral history, recorded by the Archive of Whispering Pines[/i]
+
+The war had consumed a thousand years. A thousand years of blood and moonlight, of burning forests and shattered cities, of children turned to weapons and weapons turned to ash.
+
+By the final century, both sides had exhausted themselves. The Varkyrs had lost seventeen of their twenty noble houses. The Lupines had seen whole bloodlines hunted to extinction. The land itself had begun to sicken, corrupted by centuries of wild magic and spilled blood.
+
+The Progenitor and the Origin Wolf had never faced each other directly. For nine hundred years, they had commanded their forces from a distance, each knowing that a direct confrontation would end only one way: mutually.
+
+In the war's final year, they agreed to meet at Mirror Lake—the site where peace had once been forged, and where it had been broken.
+
+[i]"Let this end,"[/i] the Progenitor said. His voice, witnesses claimed, was the sound of tombs opening.
+
+[i]"It will,"[/i] the Origin Wolf replied. His voice was the howl of every wolf that had ever lived.
+
+The duel lasted three days and three nights.
+
+On the first day, they fought with magic. The Progenitor called down darkness so complete that the sun itself vanished. The Origin Wolf answered with a howl that cracked the moon.
+
+On the second day, they fought with their bodies. The Progenitor's claws rent mountains. The Origin Wolf's jaws could crush diamonds.
+
+On the third day, they fought with their souls. The very fabric of reality shuddered as two immortal beings poured everything they had into destroying each other.
+
+At dawn on the fourth day, the Origin Wolf tore out the Progenitor's heart.
+
+At dawn on the fourth day, the Progenitor tore out the Origin Wolf's throat.
+
+They fell together, their blood mingling in the waters of Mirror Lake. The magical backlash shattered the Veilstone into four fragments and killed every witness within a mile.
+
+When reinforcements arrived three days later, they found only ash, four glowing shards, and a lake that had turned permanently red.
+
+*choice
+    #The Aftermath
+        *goto progenitor_aftermath
+    *if (learned_progenitor_legacy)
+        #His legacy in the modern era
+            *goto progenitor_legacy
+    #Return to legends
+        *goto legends_overview
+
+*label progenitor_aftermath
+
+[b]WHAT REMAINED[/b]
+
+The Progenitor's death created a void that no single Varkyr could fill. Within a decade, the unified vampire empire had fractured into the competing noble houses that exist today.
+
+His personal effects were divided among the surviving Dukes:
+
+[i]The Crimson Throne[/i] — His seat of power, now housed in the Crimson Spire. No vampire has dared sit upon it since his death. Those who have tried reportedly burst into flames, regardless of their power or bloodline.
+
+[i]The Progenitor's Fang[/i] — A dagger carved from one of his own teeth. Currently missing; last seen during the Era of Shadows.
+
+[i]The Blood Codex[/i] — His personal journal, written in a language that only his direct descendants can read. Fragments have been translated, forming the basis of the Crimson Codex that now serves as Varkyr scripture.
+
+[i]His Heart[/i] — Never recovered. Some believe the Origin Wolf consumed it. Others believe it still beats somewhere, slowly regenerating its master through Genesis Rebirth.
+
+*choice
+    *if (learned_progenitor_legacy)
+        #His legacy in the modern era
+            *goto progenitor_legacy
+    #Return to legends
+        *goto legends_overview
+
+*label progenitor_legacy
+
+[b]THE SHADOW THAT REMAINS[/b]
+
+[i]Modern Varkyr perspective — From the private writings of Viscountess Isabella Crimson[/i]
+
+We speak of the Progenitor as though he is dead. We hold memorials on the anniversary of Mirror Lake. We teach our fledglings that his era has ended, that we now govern ourselves through council and compromise.
+
+This is a polite fiction.
+
+Every Varkyr of sufficient age knows the truth: Genesis Rebirth has no known limit. The Progenitor has returned from destruction before—from fire, from sunlight, from being scattered across three continents. His resurrection from the Mirror Lake duel may simply be taking longer than previous recoveries.
+
+The Matriarch keeps a sealed chamber in the deepest level of the Crimson Spire. Its contents are known only to her. But servants report sounds from within—a heartbeat, they claim. Slow. Patient. Growing stronger.
+
+We do not know if this is truth or propaganda designed to keep the houses in line. We do not know if the Progenitor's return would be salvation or catastrophe.
+
+We only know that the debt to the Void-Walker remains unpaid, and debts have a way of coming due.
+
+*choice
+    #Return to legends
+        *goto legends_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE ORIGIN WOLF - FIRST WEREWOLF
+*comment ═══════════════════════════════════════════════════════════
+
+*label origin_wolf_main
+
+[b]THE ORIGIN WOLF[/b]
+[i]Lunar Progenitor, First of the Pack, The Moon's Chosen Son[/i]
+
+*if (learned_origin_wolf_full)
+    *goto origin_wolf_full
+*else
+    *goto origin_wolf_basic
+
+*label origin_wolf_basic
+
+[i]Fragments of the Origin Wolf's legend have reached you through Lupine oral tradition...[/i]
+
+Where the Progenitor ruled through fear and hierarchy, the Origin Wolf led through unity and strength. He was not a king but an Alpha—the first and greatest, from whom all werewolf bloodlines descend.
+
+Unlike the Progenitor, the Origin Wolf never erased his mortal name. He was called [b]Fenrath[/b] by his first pack, though the name has evolved through millennia of retelling: Fenrir in northern traditions, Faolan in the western isles, Vukmir in the eastern mountains.
+
+The Lupines do not worship him as a god—they consider such veneration a Varkyr weakness. Instead, they remember him as the ideal: what every Alpha should strive to become, what every pack should aspire to emulate.
+
+*if (learned_origin_wolf_powers)
+    *line_break
+    [b]The Lunar Progenitor's Gifts:[/b]
+    
+    [i]Lunar Avatar[/i] — Complete mastery over the moon's influence. He could transform at will regardless of lunar phase, and grant or withhold the change in others. Under his will, the moon itself would brighten or dim.
+    
+    [i]Pack Consciousness[/i] — Every wolf within a hundred miles felt his presence. He could see through their eyes, speak through their howls, and coordinate thousands as though they were extensions of his own body.
+    
+    [i]Primal Fury[/i] — In his ultimate war form, he stood thirty feet tall. His howl could shatter castle walls. His claws could rend through Varkyr shadow-magic like tissue paper.
+    
+    [i]The Eternal Hunt[/i] — Those he killed in battle did not simply die. Their spirits were claimed for his pack, forced to run with him through the afterlife as spectral wolves. Legends say he commands an army of the dead that dwarfs any living force.
+
+*choice
+    *if (learned_origin_wolf_creation)
+        #How the First Wolf was made [UNLOCKED]
+            *goto origin_wolf_creation
+    *if (not (learned_origin_wolf_creation))
+        #How the First Wolf was made [LOCKED - Seek Lupine elders]
+            You must earn the trust of Lupine elders to learn this sacred history.
+            *goto origin_wolf_basic
+    *if (learned_progenitor_death)
+        #His death at Mirror Lake [UNLOCKED]
+            *goto origin_wolf_death
+    *if (learned_origin_wolf_legacy)
+        #His legacy among the packs [UNLOCKED]
+            *goto origin_wolf_legacy
+    #Return to legends
+        *goto legends_overview
+
+*label origin_wolf_full
+
+*gosub origin_wolf_creation
+
+*choice
+    #Continue reading
+        *goto origin_wolf_creation
+
+*label origin_wolf_creation
+
+[b]THE MOON'S FIRST CHILD[/b]
+
+[i]Sacred oral history of the Whispering Pines Pack — Shared only with those who have proven themselves to the pack[/i]
+
+In the age before ages, when the world was young and the moon hung closer to the earth, there lived a hunter named Fenrath. He was neither the strongest nor the fastest of his tribe, but he possessed something rarer: an understanding of the wild that bordered on communion.
+
+The animals did not flee from him. The forests opened paths at his approach. He could track prey across stone, predict weather by scent, and sense danger before it materialized.
+
+One night, hunting alone in the high mountains, Fenrath came upon a wolf trapped in a ravine—a she-wolf with fur the color of moonlight and eyes that held ancient intelligence. She was injured, her leg broken, surrounded by circling predators waiting for her to weaken.
+
+Fenrath could have walked away. The wise choice was to avoid the confrontation, to let nature take its course. Instead, he descended into the ravine.
+
+He fought through the night. By dawn, nine predators lay dead and Fenrath himself was dying, his body torn open in a dozen places. The she-wolf approached him as his vision darkened.
+
+[i]"You chose us over yourself,"[/i] she said—and he understood her, somehow, though she spoke no human tongue. [i]"The moon has watched. The moon remembers. Sleep now, little hunter. When you wake, you will run with us forever."[/i]
+
+Fenrath died in that ravine.
+
+Three nights later, under the full moon, something else rose in his place.
+
+The she-wolf was [b]Luna[/b]—the Moon herself, walking the earth in animal form. She had tested humanity for millennia, seeking one worthy of her gift. In Fenrath's sacrifice, she found her answer.
+
+He was the first werewolf. From him, all others descend. The ability to transform, the connection to lunar cycles, the pack instinct that binds Lupine society—all are echoes of that first blessing, that first choice to protect the wild over oneself.
+
+*choice
+    *if (learned_luna_mythology)
+        #Luna — The Moon Goddess
+            *goto luna_entry
+    *if (learned_origin_wolf_death)
+        #His death at Mirror Lake
+            *goto origin_wolf_death
+    *if (learned_origin_wolf_legacy)
+        #His legacy among the packs
+            *goto origin_wolf_legacy
+    #Return to legends
+        *goto legends_overview
+
+*label origin_wolf_death
+
+[b]THE LAST HUNT[/b]
+
+[i]From the Howling Chronicle — Official history of the Lupine clans[/i]
+
+By the war's final century, the Origin Wolf was tired.
+
+Not physically—his body remained as powerful as ever, capable of tearing through Varkyr armies single-handedly. But his spirit had weathered a thousand years of watching his children die, of burning forests and poisoned hunting grounds, of a conflict that had long since lost any meaning beyond mutual destruction.
+
+[i]"We have become what we hunted,"[/i] he told his council. [i]"Predators who kill not for sustenance but for territory, for pride, for vengeance. This is not the way Luna intended."[/i]
+
+When the Progenitor proposed the final duel, the Origin Wolf accepted immediately—not from confidence in victory, but from the certainty that the war could only end with both of them removed from the board.
+
+The night before Mirror Lake, he gathered his surviving Alphas and delivered his final command:
+
+[i]"When I fall—and I will fall—do not seek vengeance. Do not continue what I could not end. Take my death as permission to build something new. Something that remembers what we were before the blood, before the war. Be wolves again. Be a pack. Be family."[/i]
+
+He walked to Mirror Lake alone.
+
+The duel's details are recorded elsewhere. What matters to the Lupines is what came after: the Origin Wolf died with his jaws locked around the Progenitor's throat. Even in death, he did not let go.
+
+They had to bury them together, intertwined. Some say this is why the Varkyr and Lupine shards of the Ecliptic Amulet cannot be brought together without violent magical backlash—the spirits of their creators remain locked in eternal combat.
+
+*choice
+    *if (learned_origin_wolf_legacy)
+        #His legacy among the packs
+            *goto origin_wolf_legacy
+    #Return to legends
+        *goto legends_overview
+
+*label origin_wolf_legacy
+
+[b]RUNNING WITH THE ANCESTORS[/b]
+
+[i]Modern Lupine perspective — From a conversation with Alpha Rurik Blackfang[/i]
+
+Every full moon, every true Lupine can feel it: a presence at the edge of perception, a howl that resonates in blood and bone. The elders say it's the Origin Wolf, still running, still hunting, still watching over his children from the spirit realm.
+
+I felt him once, during my Alpha trial. Three days alone in the deep forest, hunted by pack elders, pushed to the absolute limit of survival. On the third night, with my body failing and hunters closing in, I saw a wolf larger than any I'd ever encountered. Silver fur that glowed like moonlight. Eyes that held the weight of millennia.
+
+He didn't speak. He didn't need to. He simply ran alongside me until I found the strength to continue. When I finally turned to thank him, he was gone—but I'd reached the trial's end. I'd survived.
+
+Every Alpha I've spoken to has a similar story. In our darkest moments, when the pack needs us most and we have nothing left to give, he appears. Not to save us—that would violate everything he stood for—but to remind us that we carry his strength in our blood.
+
+The Varkyrs wait for their Progenitor to return and rule them again. We Lupines know our father is already with us. He never left.
+
+*choice
+    #Return to legends
+        *goto legends_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment WAR HEROES AND VILLAINS
+*comment ═══════════════════════════════════════════════════════════
+
+*label war_heroes_menu
+
+[b]HEROES AND VILLAINS OF THE MILLENNIUM WAR[/b]
+
+The war lasted a thousand years. In that time, legends rose and fell like the tides. These are the figures whose names survived.
+
+*choice
+    *if (learned_vaelith)
+        #Vaelith the Crimson Queen — Varkyr War Leader
+            *goto vaelith_entry
+    *if (learned_blackthorn)
+        #Alaric Blackthorn — The Defector Duke
+            *goto blackthorn_entry
+    *if (learned_silverfang)
+        #Morrigan Silverfang — Alpha of the Lost Pack
+            *goto silverfang_entry
+    *if (learned_ironhowl)
+        #Korvak Ironhowl — The Siege Breaker
+            *goto ironhowl_entry
+    *if (learned_first_inquisitor)
+        #Helena the Pure — First Inquisitor
+            *goto helena_entry
+    *if (learned_caius_origin)
+        #Caius the Unbound — Origins of the Forsaken Leader
+            *goto caius_origin_entry
+    #Return to legends
+        *goto legends_overview
+
+*label vaelith_entry
+
+[b]VAELITH THE CRIMSON QUEEN[/b]
+[i]Duchess of the Eastern Dominion, Commander of the Blood Legions[/i]
+
+*if (not (learned_vaelith_full))
+    *goto vaelith_basic
+
+*label vaelith_basic
+
+Vaelith was not the Progenitor's eldest child, nor his most powerful. What she possessed was something rarer among Varkyrs: genuine tactical brilliance and the ability to inspire loyalty rather than merely command obedience.
+
+Born in the third century of the Progenitor's reign, she rose from Knight to Duchess in record time—not through assassination or intrigue, but through a series of military victories that secured the eastern borders against Lupine incursion for two hundred years.
+
+When the Millennium War erupted, the Progenitor appointed her as supreme commander of all Varkyr forces. It was under her leadership that the vampires came closest to total victory, during the campaigns of Years 450-470 when Lupine territories had been reduced to scattered mountain strongholds.
+
+[b]Notable Achievements:[/b]
+- The Siege of Howling Peak (Year 462): A three-year siege that broke the backbone of the Silverclaw Pack
+- The Red Wedding of Thornhaven (Year 455): Infiltration and elimination of an entire Lupine council
+- Development of the "Shadow Legion" strategy: Using shadow-step abilities to coordinate surprise attacks across multiple fronts simultaneously
+
+[b]Her End:[/b]
+Vaelith fell in Year 891, during the Battle of Crimson Valley. The Origin Wolf, who had avoided direct combat for centuries, specifically targeted her after she ordered the burning of the Sacred Grove—a Lupine holy site containing the ashes of their ancestral dead.
+
+He killed her personally, tearing her into pieces too small to regenerate from. Her ashes were scattered across seven continents to prevent any possibility of resurrection.
+
+*if (learned_vaelith_tactics)
+    *line_break
+    [b]Her Legacy:[/b]
+    Vaelith's tactical doctrines remain the foundation of Varkyr military thinking. The Crimson Spire's war college still teaches her "Seventeen Principles of Night Warfare," though three principles have been redacted for reasons the Matriarch has never explained.
+
+*choice
+    #Return to war heroes
+        *goto war_heroes_menu
+
+*label blackthorn_entry
+
+[b]ALARIC BLACKTHORN — THE DEFECTOR DUKE[/b]
+[i]Duke of the Northern Marches, Founder of the Thornguard[/i]
+
+In a war defined by absolute loyalty to one's faction, Alaric Blackthorn committed the unthinkable: he changed sides.
+
+Born a Varkyr noble of considerable power, Blackthorn commanded the Northern Marches—a frozen territory where Lupine packs had historically found refuge from vampire persecution. His orders were simple: exterminate every werewolf north of the Frostpine Mountains.
+
+For two centuries, he followed those orders with brutal efficiency. The "Blackthorn Hunts" became synonymous with Varkyr cruelty: entire pack lines erased, pups killed alongside their parents, territories salted to prevent regrowth.
+
+Then, in Year 612, something changed.
+
+The records are unclear on what exactly happened. Some claim he discovered evidence of Crimson Eclipse atrocities that exceeded even wartime norms. Others suggest he fell in love with a Lupine prisoner. The most persistent rumor holds that the Origin Wolf appeared to him in a vision and showed him the true cost of the war.
+
+Whatever the cause, Blackthorn stopped killing. He began smuggling Lupine refugees through his territory, warning packs of incoming Varkyr strikes, and feeding intelligence to the enemy. When discovered, he fled north with a personal guard of both vampires and werewolves—the first recorded mixed supernatural force in history.
+
+[b]The Thornguard:[/b]
+In the frozen wastes beyond Varkyr reach, Blackthorn established a sanctuary that welcomed both species. The "Thornguard" operated for three hundred years as a neutral faction, raiding both Varkyr and Lupine extremists while protecting civilians of all kinds.
+
+[b]His End:[/b]
+Blackthorn was finally killed in Year 934 by Vaelith's successor, who spent forty years planning the assault on his hidden fortress. His last words, reportedly, were: [i]"The war ends only when someone chooses to stop fighting. I chose. Perhaps, someday, others will too."[/i]
+
+[b]Legacy:[/b]
+The Thornguard's principles survived its founder. Some historians believe they evolved into the philosophical foundation of the Forsaken—the idea that species boundaries are less important than individual choice. Caius the Unbound has never confirmed or denied this connection.
+
+*choice
+    #Return to war heroes
+        *goto war_heroes_menu
+
+*label silverfang_entry
+
+[b]MORRIGAN SILVERFANG — ALPHA OF THE LOST PACK[/b]
+[i]The Guerrilla Queen, Terror of the Crimson Courts[/i]
+
+While Lupine males dominated the early war's military leadership, Morrigan Silverfang carved her legend through unconventional warfare that the Varkyrs never successfully countered.
+
+She was born in Year 203, during the war's first terrible century. Her pack—the Silverfang—was annihilated when she was barely twelve years old. She survived by hiding in a corpse pile, watching as Varkyr nobles drained her family one by one.
+
+Rather than seeking honorable vengeance through direct combat, Morrigan developed tactics that would later be called "shadow hunting":
+
+[b]The Shadow Hunt Doctrine:[/b]
+- Never attack Varkyr forces directly
+- Target supply lines, support staff, and daytime sanctuaries
+- Strike during daylight hours when vampires are weakest
+- Disappear before retaliation can be organized
+- Let the enemy's paranoia do half your work
+
+For six hundred years, Morrigan waged this quiet war. She personally killed over two hundred Varkyr nobles—not in battle, but in their beds, in their coaches, in what they believed were secure locations. The Crimson Courts lived in constant terror, never knowing when the Silverfang Alpha would strike next.
+
+[b]Her Greatest Achievement:[/b]
+In Year 789, Morrigan infiltrated the Crimson Spire itself—something no Lupine had ever accomplished. She didn't kill anyone. Instead, she left a single silver knife embedded in the Progenitor's throne, with a note that read: [i]"I could have reached you. Remember that."[/i]
+
+The psychological impact was immense. The Progenitor tripled his security and never sat on that throne again.
+
+[b]Her End:[/b]
+Morrigan disappeared in Year 801. No body was ever found. The Varkyrs claimed to have killed her in a coordinated strike. The Lupines believe she simply decided her war was over and walked into the wilderness to die on her own terms.
+
+Some packs maintain she never died at all—that she still lurks in the shadows, watching, waiting, ready to hunt again if the Varkyrs ever threaten Lupine extinction.
+
+*choice
+    #Return to war heroes
+        *goto war_heroes_menu
+
+*label ironhowl_entry
+
+[b]KORVAK IRONHOWL — THE SIEGE BREAKER[/b]
+[i]Alpha of the Mountain Clans, Voice of the Howling Thunder[/i]
+
+Where Morrigan Silverfang represented stealth and patience, Korvak Ironhowl embodied raw, devastating power. He was, by all accounts, the most physically powerful Lupine to ever live—excepting only the Origin Wolf himself.
+
+Standing over eight feet tall in human form and nearly twenty in full war-shift, Korvak could reportedly level castle walls with a single charge. His howl—the "Howling Thunder" that earned him his title—could shatter Varkyr shadow-magic and panic entire legions.
+
+[b]Notable Campaigns:[/b]
+
+[i]The Breaking of Kar'Thalan (Year 567):[/i] A Varkyr fortress considered impregnable, designed to withstand siege for decades. Korvak broke through its main gate in three hours of continuous assault, taking wounds that would have killed any lesser werewolf. The fortress fell that night.
+
+[i]The Mountain Campaign (Years 600-650):[/i] Korvak unified the scattered mountain packs under his banner and carved out a territory that the Varkyrs never successfully reclaimed. The "Iron Territories" remained Lupine strongholds until the war's end.
+
+[i]The Rescue of the Moonborn (Year 612):[/i] When a Varkyr breeding program began forcibly creating hybrid warriors (an early, crude precursor to the Forsaken), Korvak led a raid that freed over a hundred captives and burned the facility to the ground.
+
+[b]His End:[/b]
+Korvak died in Year 712, but not in battle. His body, pushed beyond natural limits for centuries, simply gave out. His heart stopped during a pack council, without warning or fanfare.
+
+His last words were to his successor: [i]"Strength is not enough. I broke their walls but could not break their will. Find another way."[/i]
+
+[b]Legacy:[/b]
+The Mountain Clans still sing the "Ironhowl Saga" during full moon gatherings—a three-hour epic detailing his deeds. Young Lupines who show exceptional physical prowess are sometimes called "Ironhowl's children," though the man himself never had offspring.
+
+His skull is preserved in the Alpha's Den at Whispering Pines—one of the few relics the packs maintain from the war era.
+
+*choice
+    #Return to war heroes
+        *goto war_heroes_menu
+
+*label helena_entry
+
+[b]HELENA THE PURE — FIRST INQUISITOR[/b]
+[i]Founder of the Silver Legion, Voice of Humanity's Resistance[/i]
+
+The Millennium War is often told as a conflict between Varkyrs and Lupines, but humanity was far from passive. Helena the Pure organized the first effective human resistance—and in doing so, shaped the faction that would become the Silver Legion.
+
+Helena was born in Year 423 to a noble family in what is now the Gilded Quarter of Veilfall. Her entire family was slaughtered when she was sixteen—not by werewolves, but by their Varkyr "protectors," who grew hungry during a blood shortage and viewed their human vassals as convenient cattle.
+
+She survived by hiding in a wine cellar for three days, listening to her family die above her.
+
+[b]The Rise of the Silver Legion:[/b]
+Helena spent the next decade gathering survivors of supernatural violence—Varkyr victims, Lupine survivors, anyone who had lost family to the war's collateral damage. She organized them into cells, trained them in the weaknesses of both supernatural species, and developed weapons and tactics specifically designed to kill immortal beings.
+
+Her innovations included:
+- Systematic use of silver weapons (previously known but not widely manufactured)
+- Development of "blessed water" techniques using specific ritual prayers
+- The first effective stake-and-burn protocol for eliminating vampires
+- Dawn raid tactics that exploited Varkyr daylight vulnerability
+- Wolfsbane distillation for area denial against Lupines
+
+[b]The Church Connection:[/b]
+Helena claimed divine inspiration for her mission—that an angel had appeared to her in that wine cellar and charged her with protecting humanity from the darkness. Whether this was genuine faith, tactical propaganda, or something else entirely remains debated.
+
+What's certain is that her religious framing attracted powerful allies. The early Church, seeking relevance in a world increasingly dominated by supernatural powers, embraced Helena's Legion as holy warriors. By Year 500, the Silver Legion had become the Church's military arm.
+
+[b]Her Philosophy:[/b]
+Unlike many human leaders who sought to ally with one supernatural faction against another, Helena preached absolute separation: [i]"They are not our allies. They are not our enemies. They are predators, and we are prey. Our only salvation lies in making ourselves too costly to hunt."[/i]
+
+This philosophy—defensive rather than offensive, focused on survival rather than victory—defined the Legion for centuries.
+
+[b]Her End:[/b]
+Helena died of old age in Year 491, one of the few war-era leaders to do so. On her deathbed, she reportedly said: [i]"I have bought humanity time. A few centuries, perhaps. What you do with that time determines whether I succeeded or merely delayed the inevitable."[/i]
+
+[b]Legacy:[/b]
+The Silver Legion she founded still exists, though its relationship with supernatural factions has grown more complex. Modern Legionnaires debate endlessly about what Helena would think of the current Veilfall Accord, which requires humans to coexist with vampires and werewolves rather than simply resist them.
+
+Her preserved writings—the "Purity Codex"—remain required reading for all Legion initiates.
+
+*choice
+    #Return to war heroes
+        *goto war_heroes_menu
+
+*label caius_origin_entry
+
+[b]CAIUS THE UNBOUND — ORIGINS[/b]
+[i]The First True Hybrid, Founder of the Forsaken Enclave[/i]
+
+*if (not (learned_caius_full_origin))
+    [i]You have learned fragments of Caius's origin, but the full truth remains hidden. Seek his trust to learn more...[/i]
+    *goto caius_basic_origin
+*else
+    *goto caius_full_origin
+
+*label caius_basic_origin
+
+The being known as Caius the Unbound was not born—he was made, in the cruelest laboratories of the Millennium War.
+
+By Year 500, both Varkyr and Lupine forces had begun experimenting with forced hybridization: capturing enemy prisoners and attempting to combine vampire and werewolf essence into living weapons. The experiments were almost universally fatal. Those who survived rarely remained sane.
+
+Caius was different.
+
+The records of his creation have been systematically destroyed, but fragments suggest he was the result of the most ambitious—and horrific—experiment ever attempted: a simultaneous Embrace and Bite, performed on a single human subject while both the Progenitor's blood and the Origin Wolf's essence were channeled through ritual magic.
+
+He should have died. Every previous subject had died.
+
+Instead, Caius became something new: neither vampire nor werewolf, but both. He possessed the Varkyr's immortality and blood magic alongside the Lupine's transformation and lunar connection. More importantly, he was stable—not torn apart by the conflicting essences, but unified.
+
+[b]The Escape:[/b]
+Within a year of his creation, Caius escaped his captors. Within a decade, he had freed every other surviving hybrid experiment and established the first Forsaken enclave. Within a century, he had developed techniques to create new hybrids—consensually—without the torture that had birthed him.
+
+[b]His Bargain:[/b]
+At the war's end, Caius demanded a seat at the negotiations. The Varkyrs and Lupines initially refused—the Forsaken were aberrations, they argued, not a legitimate faction. Caius responded by threatening to reveal every war crime both sides had committed in their hybrid experiments.
+
+He got his seat. He got his shard of the Ecliptic Amulet. And the Forsaken became the third supernatural power of Veilfall.
+
+*choice
+    *if (learned_caius_full_origin)
+        #The full truth of his creation
+            *goto caius_full_origin
+    #Return to war heroes
+        *goto war_heroes_menu
+
+*label caius_full_origin
+
+[b]THE TRUTH CAIUS GUARDS[/b]
+
+[i]From a private conversation with Caius — shared only with those who have earned his deepest trust[/i]
+
+The official story—that I was a random experiment, that my survival was luck—is a comfortable lie I've allowed to persist.
+
+The truth is more complicated.
+
+I was not captured by the Varkyrs. I volunteered.
+
+Before my transformation, I was a human scholar who had spent thirty years studying both vampire and werewolf biology. I had theorized that hybridization was possible, that the apparent incompatibility was not fundamental but merely technical.
+
+When the war's atrocities became unbearable, I approached the Crimson Eclipse—the radical faction that had started everything—with a proposal. I would offer my body as a test subject. In exchange, they would follow my precise instructions for the procedure.
+
+They agreed because they were desperate, because centuries of failure had made them willing to try anything.
+
+I knew there was only one way it could work: the transformation had to be simultaneous and equal. Previous experiments had failed because they tried to add werewolf essence to a vampire, or vampire essence to a werewolf. The existing nature fought the intrusion.
+
+I arranged to be bitten and embraced at the exact same moment, with blood drawn from the two most powerful sources available—salvaged from the aftermath of battles where the Progenitor and Origin Wolf had both bled.
+
+The ritual nearly killed everyone present. Three vampires and two werewolves died from the magical backlash. I spent six months in a coma while my body figured out what it was.
+
+When I woke, I was neither human nor vampire nor werewolf. I was something new. Something that had never existed before and might never exist again.
+
+I tell people I was "made" because it's simpler than explaining that I chose this. That I looked at a thousand years of war and decided the only way to end it was to become living proof that the boundaries between species were arbitrary—that if a single being could hold both natures, then perhaps the factions could learn to coexist.
+
+I'm still waiting to find out if I was right.
+
+*choice
+    #Return to war heroes
+        *goto war_heroes_menu
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE CRIMSON ECLIPSE
+*comment ═══════════════════════════════════════════════════════════
+
+*label crimson_eclipse_main
+
+[b]THE CRIMSON ECLIPSE[/b]
+[i]Architects of Betrayal, Igniters of the Millennium War[/i]
+
+*if (not (learned_eclipse_full))
+    *goto eclipse_basic
+
+*label eclipse_basic
+
+The Crimson Eclipse was a splinter faction of radical Varkyrs who believed the Mirror Lake Pact had made their species weak. They sought to break the treaty, steal lunar power, and create a hybrid magic that would render Varkyrs supreme over all other beings.
+
+Their betrayal at the final Mirror Lake ritual is what ignited the Millennium War.
+
+[b]Origins:[/b]
+The Eclipse formed approximately two hundred years before the war, from younger Varkyrs who chafed under the Progenitor's enforced peace. They believed that coexistence with Lupines was a temporary measure at best—that eventually, one species would dominate, and they intended it to be vampires.
+
+Their ideology held that the Pact's restrictions on blood magic had stunted Varkyr evolution. By combining blood magic with stolen lunar essence, they theorized, vampires could overcome their weaknesses: daylight immunity, enhanced healing, even the ability to survive without feeding.
+
+[b]The Betrayal:[/b]
+At the final Mirror Lake ritual, Eclipse agents infiltrated the Varkyr delegation. When the Veilstone activated to balance blood and lunar power, they triggered a secondary ritual designed to siphon lunar energy exclusively to the vampires present.
+
+The magical feedback was catastrophic. The Veilstone cracked. Dozens died instantly. The Origin Wolf, sensing the betrayal, attacked. The Progenitor, unable to control his rogue children, met the attack with force.
+
+War became inevitable.
+
+[b]Aftermath:[/b]
+The Crimson Eclipse was officially disbanded after the war's end—its surviving members publicly executed as war criminals during the Veilfall Accord negotiations. Both Varkyrs and Lupines demanded their destruction as a condition of peace.
+
+However, rumors persist that the Eclipse never truly died. Some believe they went underground, continuing their research in secret. Others claim they evolved into the Night Council, pursuing the same goals through more subtle means.
+
+The truth remains unknown.
+
+*choice
+    *if (learned_eclipse_members)
+        #Known members of the Crimson Eclipse
+            *goto eclipse_members
+    *if (learned_eclipse_modern)
+        #Modern Eclipse theories
+            *goto eclipse_modern
+    #Return to legends
+        *goto legends_overview
+
+*label eclipse_members
+
+[b]KNOWN MEMBERS OF THE CRIMSON ECLIPSE[/b]
+
+Most Eclipse members were systematically identified and destroyed after the war. However, a few names survived in the records:
+
+[b]Lord Malachar the Architect[/b] — Believed to be the Eclipse's founder, Malachar was a Duke-level Varkyr with expertise in both blood magic and arcane theory. He designed the ritual that corrupted Mirror Lake. Executed publicly in Year 3 AW by having his body scattered across all four continents.
+
+[b]Lady Seraphine Vex[/b] — Malachar's chief lieutenant, Seraphine specialized in infiltration and sabotage. She was responsible for positioning Eclipse agents within the Varkyr delegation. Her body was never recovered; officially listed as "destroyed in the Mirror Lake backlash," though some historians question this.
+
+[b]The Twins, Corvax and Revana[/b] — Assassins who eliminated Varkyrs and Lupines opposed to the Eclipse's plans in the years before the betrayal. Both confirmed killed during the war—Corvax by Korvak Ironhowl in Year 234, Revana by Morrigan Silverfang in Year 389.
+
+[b]The Unnamed Prophet[/b] — Eclipse records reference a figure who provided the theoretical framework for lunar siphoning, but no name or physical description exists. Some scholars believe this individual was never a Varkyr at all, but something else—possibly connected to the Void-Walker who created the Progenitor.
+
+*choice
+    *if (learned_eclipse_modern)
+        #Modern Eclipse theories
+            *goto eclipse_modern
+    #Return to legends
+        *goto legends_overview
+
+*label eclipse_modern
+
+[b]THE ECLIPSE'S SHADOW[/b]
+
+[i]Speculation and conspiracy — presented without endorsement[/i]
+
+Despite official histories claiming the Crimson Eclipse was utterly destroyed, several threads of evidence suggest otherwise:
+
+[b]Theory 1: The Night Council Connection[/b]
+The Night Council—Veilfall's shadowy supernatural government—emerged approximately a century after the war's end. Its founding members are unknown. Its goals, while officially focused on maintaining the Veilfall Accord, often seem to favor Varkyr interests in ways that echo Eclipse ideology.
+
+Some researchers note that the Council's inner circle includes several vampires whose lineages cannot be traced before the war's end—as though they appeared from nowhere. Or as though their previous identities were deliberately erased.
+
+[b]Theory 2: The Continuing Experiments[/b]
+Hybrid creation—the Eclipse's ultimate goal—did not stop with the war. Caius the Unbound developed stable hybridization techniques. The Forsaken exist as living proof that the Eclipse's core theory was sound.
+
+But Caius's methods require consent and careful preparation. Someone, somewhere, continues attempting the Eclipse's original approach: forced hybridization through stolen power. Disappearances of both Varkyrs and Lupines in the borderlands often go unexplained.
+
+[b]Theory 3: Lady Seraphine Lives[/b]
+No body was ever recovered for Lady Seraphine Vex. As a master of infiltration, she could have easily faked her death in the Mirror Lake chaos. Where might she be now? What face might she wear? How many Varkyr noble houses might unknowingly harbor the war's greatest fugitive?
+
+The Matriarch maintains a classified list of individuals suspected of Eclipse connections. The list has never been made public. Its length is rumored to be disturbing.
+
+*choice
+    #Return to legends
+        *goto legends_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE FIRST FORSAKEN
+*comment ═══════════════════════════════════════════════════════════
+
+*label first_forsaken_main
+
+[b]THE FIRST FORSAKEN[/b]
+[i]Children of Forbidden Union, The War's Living Consequences[/i]
+
+Before Caius developed stable hybridization, there were others—the first generation of Forsaken, created through violence and desperation during the Millennium War's darkest centuries.
+
+[b]The Failed Experiments:[/b]
+Both Varkyr and Lupine forces attempted forced hybridization as a military strategy. The logic was simple: combine vampire immortality with werewolf regeneration and physical power to create the ultimate soldier.
+
+The reality was horrific.
+
+Most subjects died within hours, their bodies torn apart by conflicting magical essences. Those who survived the initial transformation often went mad, unable to reconcile two predatory instincts within a single mind. They would turn on their creators, attack anything that moved, and eventually destroy themselves.
+
+The "success rate" of early hybridization was less than one percent. For every hybrid that remained functional, hundreds died in agony.
+
+[b]The Survivors:[/b]
+Despite the odds, some subjects proved resilient enough to survive and remain sane—or at least functional. These individuals, scattered across both sides of the war, shared certain characteristics:
+
+- Extreme mental discipline, often developed through previous trauma
+- Neither purely Varkyr nor Lupine identity—often individuals who had felt like outsiders in their original communities
+- A capacity to hold contradictions without breaking
+
+These survivors eventually found each other, drawn together by shared experience and mutual recognition. They called themselves the "Forsaken" because both parent species had rejected them as abominations.
+
+*if (learned_first_forsaken_names)
+    [b]Notable First-Generation Forsaken:[/b]
+    
+    [i]Vera the Twice-Born[/i] — A Lupine woman who volunteered for Varkyr experiments to save her captured packmates. She survived the transformation and eventually escaped, becoming one of Caius's first allies.
+    
+    [i]The Nameless Knight[/i] — A Varkyr noble forcibly injected with werewolf essence as punishment for defying his house. He never recovered his ability to speak, but his combat effectiveness was unmatched. Served as Caius's bodyguard until his death in Year 934.
+    
+    [i]Sister Mercy[/i] — A human nun captured by Lupines and subjected to experimental Bite-Embrace combinations. Retained her faith despite transformation. Founded the Forsaken's tradition of offering sanctuary to all who seek it, regardless of species.
+
+*choice
+    *if (learned_forsaken_formation)
+        #The formation of the Forsaken Enclave
+            *goto forsaken_formation
+    #Return to legends
+        *goto legends_overview
+
+*label forsaken_formation
+
+[b]FROM SURVIVORS TO FACTION[/b]
+
+[i]Compiled from Forsaken oral histories[/i]
+
+The Forsaken did not organize themselves—they were organized by circumstance and necessity.
+
+In the war's later centuries, as hybrid experiments became more common, escaped survivors began finding each other. The process was dangerous: initial contact often resulted in violence, as traumatized hybrids saw anything unfamiliar as a threat.
+
+Gradually, networks formed. Safe houses. Warning systems. Underground routes that avoided both Varkyr and Lupine territories.
+
+Caius the Unbound accelerated this process. As the first stable hybrid—and the only one capable of creating new hybrids without the torture of forced transformation—he became a natural rallying point. By Year 800, the scattered survivor network had coalesced into something resembling a faction.
+
+[b]The Founding Principles:[/b]
+Caius established three rules that defined the Forsaken from their inception:
+
+1. [i]No forced transformation.[/i] Any Forsaken who creates a hybrid without full consent faces execution. The horrors of the war's experiments would not be repeated.
+
+2. [i]Merit over birth.[/i] Unlike Varkyr bloodlines or Lupine pack hierarchy, the Forsaken valued demonstrated capability. Anyone could rise; anyone could fall.
+
+3. [i]Sanctuary for all.[/i] The Enclave would offer refuge to anyone fleeing supernatural violence, regardless of species. This principle, more than any other, distinguished the Forsaken from their parent factions.
+
+[b]The Veilfall Accord:[/b]
+When the war ended and the surviving powers gathered to negotiate peace, the Forsaken demanded recognition. Their population was tiny compared to Varkyrs or Lupines, but their strategic position was unique: they could expose the war crimes of both sides.
+
+Caius negotiated brilliantly. The Forsaken received one shard of the Ecliptic Amulet, territory beneath Veilfall for their Enclave, and official status as the fourth faction of the supernatural world.
+
+In exchange, they agreed to maintain strict neutrality in any future Varkyr-Lupine conflicts—and to keep the secrets of what both sides had done during the war.
+
+The deal has held for fifteen centuries. How much longer it will last, no one knows.
+
+*choice
+    #Return to legends
+        *goto legends_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment COSMOLOGICAL ENTRIES
+*comment ═══════════════════════════════════════════════════════════
+
+*label void_walker_entry
+
+[b]THE VOID-WALKER[/b]
+[i]Entity of Unknown Origin, Creator of the Progenitor[/i]
+
+*if (not (learned_void_walker_full))
+    [i]Your knowledge of this entity remains fragmentary. Only the most ancient texts contain references, and those texts are closely guarded...[/i]
+    *goto void_walker_basic
+
+*label void_walker_basic
+
+The being that transformed the first vampire is mentioned in exactly three surviving texts: the Crimson Codex, the Lunar Chronicle, and a fragmentary human manuscript known as the "Testament of Shadows."
+
+All three describe essentially the same entity:
+- Neither living nor dead
+- Appearing in moments of profound desperation
+- Offering bargains with costs that only become clear centuries later
+- Speaking in a voice "like silence made audible"
+
+The Codex names it the Void-Walker. The Chronicle calls it the "Shadow Between Stars." The Testament simply refers to "that which waits."
+
+[b]What Is Known:[/b]
+The Void-Walker appeared to the dying king who became the Progenitor and offered transformation in exchange for "a debt spanning forever." The nature of this debt has never been specified. The Progenitor never spoke of it, and his writings on the subject have been deliberately destroyed or encoded.
+
+[b]What Is Speculated:[/b]
+Some scholars believe the Void-Walker is:
+- A demon from beyond the Veil that separates realms
+- A fragment of primordial chaos that predates creation
+- An emissary of death itself, recruiting servants for some incomprehensible purpose
+- Simply a powerful vampire of unknown origin, operating under dramatic affectation
+
+[b]The Debt:[/b]
+Whatever the Progenitor owed, he apparently never paid it. Some theorists believe his death at Mirror Lake was arranged—that the Void-Walker manipulated events over millennia to ensure a specific outcome.
+
+Others believe the debt transferred to his descendants. Every vampire, in this reading, owes the Void-Walker something. The question is when it will come to collect.
+
+*choice
+    #Return to legends
+        *goto legends_overview
+
+*label luna_entry
+
+[b]LUNA — THE MOON'S SPIRIT[/b]
+[i]Divine Patron of the Lupines, Giver of the Gift[/i]
+
+The Lupines do not worship gods in the human sense. But they acknowledge a presence that transcends ordinary understanding: Luna, the spirit of the moon itself.
+
+[b]Origin Myth:[/b]
+According to Lupine tradition, Luna is not merely celestial body but conscious entity—one of the primordial forces that shaped the world before mortals arose. She watched humanity for millennia, seeking individuals worthy of her gift: the ability to shed human weakness and embrace the wild.
+
+The Origin Wolf was her first and greatest chosen. Through him, her blessing has spread to all Lupines.
+
+[b]Nature:[/b]
+Luna is rarely described as having a specific form. She appears as:
+- A silver wolf larger than any natural animal
+- A woman made of moonlight, features shifting with the lunar phases
+- A presence felt but not seen, a voice heard only in dreams
+- Simply the moon itself, radiating awareness
+
+She does not answer prayers, grant wishes, or intervene directly in mortal affairs. Her "blessing"—the transformation—is the only gift she has ever given, and it comes with no guarantees of safety or success.
+
+[b]The Lunar Connection:[/b]
+Every Lupine feels Luna's influence, whether they acknowledge her or not. The moon's phases affect their powers, their emotions, their very ability to transform. During new moons, they are weakest; during full moons, strongest and most prone to losing control.
+
+This connection is both blessing and curse. The Lupines depend on Luna for their power, but they cannot control when she shines.
+
+[b]Silence:[/b]
+Luna has not manifested directly since the Origin Wolf's death. Some Lupines believe she withdrew from the world in grief. Others believe she is simply waiting—for what, none can say.
+
+The hope remains that, in the Lupines' darkest hour, she will return to guide them once more.
+
+*choice
+    #Return to legends
+        *goto legends_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment RETURN / NAVIGATION
+*comment ═══════════════════════════════════════════════════════════
+
+*label legends_return
+*return

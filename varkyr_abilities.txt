@@ -14,6 +14,35 @@ The blood sings with newfound power. Your ascension to [b]${rank}[/b] unlocks de
 *temp abilities_selected 0
 *temp ability_choice_1 ""
 *temp ability_choice_2 ""
+*temp newly_unlocked ""
+
+*comment Align gendered ranks with player title preference so pronouns stay consistent
+*if ((gender_title_style = "feminine") or ((gender_title_style = "unspecified") and (gender = "female")))
+    *if (rank = "Baron")
+        *set rank "Baroness"
+    *if (rank = "Viscount")
+        *set rank "Viscountess"
+    *if (rank = "Count")
+        *set rank "Countess"
+    *if (rank = "Marquis")
+        *set rank "Marchioness"
+    *if (rank = "Duke")
+        *set rank "Duchess"
+    *if (rank = "Archduke")
+        *set rank "Archduchess"
+*elseif ((gender_title_style = "masculine") or ((gender_title_style = "unspecified") and (gender = "male")))
+    *if (rank = "Baroness")
+        *set rank "Baron"
+    *if (rank = "Viscountess")
+        *set rank "Viscount"
+    *if (rank = "Countess")
+        *set rank "Count"
+    *if (rank = "Marchioness")
+        *set rank "Marquis"
+    *if (rank = "Duchess")
+        *set rank "Duke"
+    *if (rank = "Archduchess")
+        *set rank "Archduke"
 
 *comment Route to appropriate rank tree
 *if (rank = "Commoner")
@@ -546,8 +575,13 @@ You are not merely powerful. You [i]are[/i] power.
 
 *comment Update unlocked_abilities tracking string
 *if (rank != "Progenitor")
-    *set unlocked_abilities &(" " & ability_choice_1 & ", " & ability_choice_2 & ";")
+    *set newly_unlocked " "
+    *set newly_unlocked & ability_choice_1
+    *set newly_unlocked & ", "
+    *set newly_unlocked & ability_choice_2
+    *set newly_unlocked & ";"
+    *set unlocked_abilities & newly_unlocked
 *else
-    *set unlocked_abilities &" ALL PROGENITOR ABILITIES;"
+    *set unlocked_abilities & " ALL PROGENITOR ABILITIES;"
 
 *return

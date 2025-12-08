@@ -19,6 +19,11 @@
     codex_factions
     codex_locations
     codex_characters
+    codex_characters_expanded
+    codex_factions_expanded
+    codex_locations_expanded
+    codex_legends
+    codex_mythology
     varkyr_abilities
     lupine_abilities_complete
     forsaken_abilities
@@ -106,6 +111,10 @@
 *create mage_rank ""
 *create bloodline "bloodline"
 *create age ""
+*comment Player identity
+*create gender "unspecified"
+*create gender_title_style "unspecified"
+*create gender_custom ""
 
 
 *comment Varkyrs Section
@@ -179,6 +188,163 @@
 *create met_Vincent false
 *create met_Mira false
 *create met_Rurik false
+
+*comment Codex unlock flags (expanded lore)
+*create learned_adrian_deep false
+*create learned_assassin_guild_deep false
+*create learned_bite_details false
+*create learned_blackthorn false
+*create learned_blood_magic_advanced false
+*create learned_blood_magic_full false
+*create learned_blood_magic_origin false
+*create learned_blood_magic_origin_full false
+*create learned_blood_magic_practice false
+*create learned_bone_archive false
+*create learned_caius_deep false
+*create learned_caius_full_history false
+*create learned_caius_full_origin false
+*create learned_caius_origin false
+*create learned_caius_powers false
+*create learned_caius_relationships false
+*create learned_caius_secrets false
+*create learned_cassandra_deep false
+*create learned_cassandra_military false
+*create learned_cassandra_origin false
+*create learned_cassandra_relationships false
+*create learned_cassandra_secrets false
+*create learned_council_politics false
+*create learned_council_secrets false
+*create learned_crimson_eclipse false
+*create learned_crimson_spire_deep false
+*create learned_crown_deep false
+*create learned_crown_politics false
+*create learned_crown_secrets false
+*create learned_eclipse_full false
+*create learned_eclipse_members false
+*create learned_eclipse_modern false
+*create learned_ecliptic_shards false
+*create learned_ecology_full false
+*create learned_elena_deep false
+*create learned_elena_origin false
+*create learned_elena_relationships false
+*create learned_elena_secrets false
+*create learned_elena_skills false
+*create learned_embrace_details false
+*create learned_final_death false
+*create learned_first_forsaken false
+*create learned_first_forsaken_names false
+*create learned_first_inquisitor false
+*create learned_forsaken_creation false
+*create learned_forsaken_enclave_deep false
+*create learned_forsaken_formation false
+*create learned_forsaken_politics false
+*create learned_forsaken_secrets false
+*create learned_forsaken_society false
+*create learned_guild_contracts false
+*create learned_guild_rules false
+*create learned_guild_secrets false
+*create learned_hidden_locations false
+*create learned_human_role false
+*create learned_hybrid_details false
+*create learned_immortality_mechanics false
+*create learned_ironhowl false
+*create learned_isabella_deep false
+*create learned_isabella_goals false
+*create learned_isabella_origin false
+*create learned_isabella_relationships false
+*create learned_isabella_secrets false
+*create learned_lake_depths false
+*create learned_lake_effects false
+*create learned_lake_ritual false
+*create learned_legion_operations false
+*create learned_legion_politics false
+*create learned_legion_secrets false
+*create learned_legion_training false
+*create learned_luna_mythology false
+*create learned_luna_silverbrook_deep false
+*create learned_lunar_advanced false
+*create learned_lunar_magic_full false
+*create learned_lunar_magic_origin false
+*create learned_lunar_origin false
+*create learned_lunar_sanctuary false
+*create learned_lunar_transformation false
+*create learned_lupine_culture false
+*create learned_lupine_packs_deep false
+*create learned_lupine_politics false
+*create learned_lupine_ranks false
+*create learned_lupine_secrets false
+*create learned_matriarch_deep false
+*create learned_mirror_lake_deep false
+*create learned_night_council_deep false
+*create learned_origin_wolf_creation false
+*create learned_origin_wolf_death false
+*create learned_origin_wolf_full false
+*create learned_origin_wolf_legacy false
+*create learned_origin_wolf_lore false
+*create learned_origin_wolf_powers false
+*create learned_pines_magic false
+*create learned_pines_politics false
+*create learned_pines_secrets false
+*create learned_progenitor_death false
+*create learned_progenitor_legacy false
+*create learned_progenitor_lore false
+*create learned_progenitor_origin false
+*create learned_progenitor_powers false
+*create learned_progenitor_tomb false
+*create learned_rurik_deep false
+*create learned_rurik_origin false
+*create learned_rurik_pack false
+*create learned_rurik_relationships false
+*create learned_rurik_secrets false
+*create learned_silver_legion_deep false
+*create learned_silverfang false
+*create learned_soul_full false
+*create learned_soul_mechanics false
+*create learned_spire_defenses false
+*create learned_spire_politics false
+*create learned_spire_secrets false
+*create learned_sunken_cathedral_deep false
+*create learned_supernatural_ecology false
+*create learned_territory_rules false
+*create learned_thorne_deep false
+*create learned_transformation_full false
+*create learned_transformation_mechanics false
+*create learned_undercroft_culture false
+*create learned_undercroft_deep false
+*create learned_undercroft_secrets false
+*create learned_undercroft_security false
+*create learned_vaelith false
+*create learned_vaelith_full false
+*create learned_vaelith_tactics false
+*create learned_vale_deep false
+*create learned_varkyr_court_deep false
+*create learned_varkyr_houses false
+*create learned_varkyr_politics false
+*create learned_varkyr_rituals false
+*create learned_varkyr_secrets false
+*create learned_veil_full false
+*create learned_veil_guardians false
+*create learned_veil_manipulation false
+*create learned_veil_nature false
+*create learned_veil_tears false
+*create learned_veilfall_deep false
+*create learned_veilfall_founding false
+*create learned_veilfall_leylines false
+*create learned_veilfall_secrets false
+*create learned_veilstone_creation false
+*create learned_veilstone_destruction false
+*create learned_veilstone_full false
+*create learned_vincent_deep false
+*create learned_vincent_origin false
+*create learned_vincent_relationships false
+*create learned_vincent_secrets false
+*create learned_vincent_skills false
+*create learned_void_gate false
+*create learned_void_walker false
+*create learned_void_walker_full false
+*create learned_war_heroes false
+*create learned_warren_deep false
+*create learned_whispering_pines_deep false
 *create met_Selene false
 *create met_Imani false
 *create met_Tamsin false
