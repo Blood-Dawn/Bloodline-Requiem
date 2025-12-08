@@ -96,6 +96,7 @@
 *create Night_Council_relation 0
 *create war_with_lupine false
 *create war_with_varkyrs false
+*create millennium_war_2 false
 
 *comment Variables for tracking player's bloodline, lupine rank, and age
 
