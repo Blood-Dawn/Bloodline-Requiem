@@ -1,7 +1,7 @@
 *comment ═══════════════════════════════════════════════════════════
 *comment RANK PROGRESSION SYSTEM
 *comment ═══════════════════════════════════════════════════════════
-*comment Handles rank-ups for all factions: Varkyr, Lupine, Forsaken
+*comment Handles rank-ups for all factions: Varkyr, Lupine, Forsaken, Mage
 *comment Call this after mission completion or major achievements
 *comment ═══════════════════════════════════════════════════════════
 
@@ -14,6 +14,8 @@
     *gosub lupine_progression_check
 *elseif (alignment = "forsaken")
     *gosub forsaken_progression_check
+*elseif (alignment = "mage")
+    *gosub mage_progression_check
 *elseif (alignment = "human")
     *gosub human_progression_check
 
@@ -380,6 +382,77 @@ When it's done, you stand in your War Form: an avatar of hybrid perfection.
 *return
 
 *comment ═══════════════════════════════════════════════════════════
+*comment MAGE PROGRESSION
+*comment ═══════════════════════════════════════════════════════════
+
+*label mage_progression_check
+*comment Arcane rank-ups tied to study, fieldwork, and guild trust
+
+*temp rankup_earned false
+
+*if ((mage_rank = "") or (mage_rank = "Apprentice")) and (mage_xp >= 120)
+    *set rankup_earned true
+    *set mage_rank "Journeymage"
+    *set rank mage_rank
+    *goto mage_rankup_ritual
+
+*elseif (mage_rank = "Journeymage") and (mage_xp >= 300)
+    *set rankup_earned true
+    *choice
+        #Specialize as Battlemage
+            *set mage_rank "Battlemage"
+            *set mage_specialty "battlemage"
+            *set rank mage_rank
+            *goto mage_rankup_ritual
+        #Specialize as Spellwright
+            *set mage_rank "Spellwright"
+            *set mage_specialty "spellwright"
+            *set rank mage_rank
+            *goto mage_rankup_ritual
+
+*elseif (mage_rank = "Battlemage") and (mage_xp >= 700) and (arcanum_relation >= 55) and (ward_stability >= 55)
+    *set rankup_earned true
+    *set mage_rank "Arcanist"
+    *set rank mage_rank
+    *goto mage_rankup_ritual
+
+*elseif (mage_rank = "Spellwright" and mage_xp >= 700 and arcanum_relation >= 55 and ward_stability >= 55)
+    *set rankup_earned true
+    *set mage_rank "Arcanist"
+    *set rank mage_rank
+    *goto mage_rankup_ritual
+
+*elseif (mage_rank = "Arcanist") and (mage_xp >= 1300) and (arcanum_relation >= 80) and (ward_stability >= 70)
+    *set rankup_earned true
+    *set mage_rank "Archmage"
+    *set rank mage_rank
+    *goto mage_rankup_ritual
+
+*return
+
+*label mage_rankup_ritual
+*line_break
+
+The Veilguard Arcanum assembles beneath the mirrored dome of their hall. Sigils ignite along the floor as Archmage Selene and the Circle channel stabilizing wards. Arcane force thrums in your bones, testing whether you can hold it—or be consumed by it.
+
+Power settles. You stand taller, senses sharpened, threads of the Veil visible like strands of silver light.
+
+*comment Call spell selection
+*gosub_scene mage_abilities mage_ability_select
+
+*line_break
+[b]Rank Achieved:[/b] ${mage_rank}
+
+*set arcanum_relation +10
+*set ward_stability +5
+
+*if (mage_rank = "Archmage")
+    *set mana +10
+    The dome's mirrored ceiling reflects a second moon above you—a sign of mastery recognized by every mage present.
+
+*return
+
+*comment ═══════════════════════════════════════════════════════════
 *comment HUMAN PROGRESSION
 *comment ═══════════════════════════════════════════════════════════
 
@@ -417,6 +490,11 @@ When it's done, you stand in your War Form: an avatar of hybrid perfection.
     *set forsaken_xp + xp_amount
     *if (xp_amount >= 50)
         [i]+${xp_amount} Forsaken XP (${reason})[/i]
+
+*elseif (alignment = "mage")
+    *set mage_xp + xp_amount
+    *if (xp_amount >= 50)
+        [i]+${xp_amount} Mage XP (${reason})[/i]
 
 *return
 

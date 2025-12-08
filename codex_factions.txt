@@ -15,6 +15,8 @@ Veilfall survives because its powers balance ambition with secrecy. Each faction
         *goto pack_entry
     #Forsaken Enclave (Hybrids)
         *goto enclave_entry
+    #Veilguard Arcanum (Mage Guild)
+        *goto arcanum_entry
     #Silver Legion (Human Inquisition)
         *goto legion_entry
     #Assassin Guild (Neutral Blades)
@@ -34,6 +36,22 @@ The Crimson Spire rises over the Gilded Quarter, a fortress-palace of bloodstone
 - [b]Goal:[/b] Secure the Varkyr shard of the Ecliptic Amulet to strengthen blood magic and maintain aristocratic dominion.  
 - [b]Methods:[/b] Political marriages, controlled Embraces, shadow assassinations, trade pacts with wealthy humans (Adrian Blackwell).  
 - [b]Weaknesses:[/b] Sunlight, factional rivalries, overreliance on secrecy.
+
+*choice
+    #Return to faction list
+        *goto faction_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label arcanum_entry
+[b]VEILGUARD ARCANUM - MAGES OF THE VEIL[/b]
+
+An order of awakened humans who wield arcane arts to reinforce the Veil and police magical catastrophes. Their headquarters crowns Veilfall's old observatory, layered in wards that hum with stored mana.
+
+- [b]Structure:[/b] Archmage Council  Battlemages & Spellwrights  Journeymages  Apprentices  
+- [b]Goal:[/b] Stabilize Veilstones, prevent reality tears, and keep magic from becoming another warfront.  
+- [b]Methods:[/b] Citywide ward grids, counter-ritual teams, rune-sealed prisons for rogue casters, joint strike ops with the Silver Legion.  
+- [b]Weaknesses:[/b] Mortal bodies with finite mana; political pressure from Crown and Church; internal debate over neutrality vs. intervention.
 
 *choice
     #Return to faction list

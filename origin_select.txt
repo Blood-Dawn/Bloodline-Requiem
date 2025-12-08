@@ -99,6 +99,21 @@ But every legend begins with a choice. Every bloodline has an origin. Every shad
 
         *goto_scene origin_hunter order_briefing
 
+    #Arcane Apprentice - Veilguard Arcanum
+        *set alignment "mage"
+        *set mage_rank "Apprentice"
+        *set rank "Apprentice"
+        *set age 26
+        *set latent_magic true
+        *set mana 70
+        *set ward_stability 55
+
+        The Veil whispered to you before the Arcanum ever knocked. Now, your spark is no longer secret. As an apprentice, you weave wards to keep the city intact and chase anomalies before they turn into rifts.
+
+        Tonight, the wards are screaming. The Circle is calling every mage to the observatory. Your trial will not be a written exam—it will be surviving whatever is clawing at the Veil.
+
+        *goto_scene origin_mage apprenticeship_call
+
 *comment ═══════════════════════════════════════════════════════════
 *comment NOTE: This file is called from startup.txt
 *comment Each origin sets appropriate initial stats and routes to

@@ -189,23 +189,23 @@ Shapeshifters bound to the moon and the primal hunt. Lupines are born (natural w
 [b]Lupine Types:[/b]
 
 1. [b]Wolf-Only Lupines[/b]
-   • Human ↔ Full Wolf transformation
-   • Often scouts, trackers, infiltrators
-   • Alpha wolves can reach F-150 truck size
-   • Beta wolves average motorcycle size
+• Human ↔ Full Wolf transformation
+• Often scouts, trackers, infiltrators
+• Alpha wolves can reach F-150 truck size
+• Beta wolves average motorcycle size
 
 2. [b]Werewolf-Only Lupines[/b]
-   • Human ↔ Bipedal Werewolf (hybrid form)
-   • Frontline warriors and enforcers
-   • Stand 7-9 feet tall in hybrid form
-   • Massive strength and durability
+• Human ↔ Bipedal Werewolf (hybrid form)
+• Frontline warriors and enforcers
+• Stand 7-9 feet tall in hybrid form
+• Massive strength and durability
 
 3. [b]Omega Variants (Dual-Form)[/b]
-   • Human ↔ Wolf ↔ Hybrid (access to both forms)
-   • Extremely rare; considered blessed by the moon
-   • Beta form as large as other alphas
-   • Omega alpha form ~ 8 feet tall, tree-trunk build
-   • Elite among Lupines; often become pack leaders
+• Human ↔ Wolf ↔ Hybrid (access to both forms)
+• Extremely rare; considered blessed by the moon
+• Beta form as large as other alphas
+• Omega alpha form ~ 8 feet tall, tree-trunk build
+• Elite among Lupines; often become pack leaders
 
 [b]Rank Hierarchy:[/b]
 1. [b]Turned Omega[/b] - Newly turned; weakest rank
@@ -370,16 +370,16 @@ Forsaken combine and transcend their parent races:
 [b]Forsaken Sub-Types:[/b]
 
 1. [b]Vamp-Wolf (Vampiric Core)[/b]
-   • Stronger in blood magic and shadow manipulation
-   • Closer to Varkyr appearance and weaknesses
-   • Sunlight more dangerous; lunar connection weaker
-   • Excel as assassins and blood mages
+• Stronger in blood magic and shadow manipulation
+• Closer to Varkyr appearance and weaknesses
+• Sunlight more dangerous; lunar connection weaker
+• Excel as assassins and blood mages
 
 2. [b]Wolf-Vamp (Lupine Core)[/b]
-   • Stronger physical attributes and lunar synergy
-   • Closer to Lupine appearance and culture
-   • Better sunlight tolerance; silver more dangerous
-   • Excel as warriors and pack leaders
+• Stronger physical attributes and lunar synergy
+• Closer to Lupine appearance and culture
+• Better sunlight tolerance; silver more dangerous
+• Excel as warriors and pack leaders
 
 [b]Forms:[/b]
 Forsaken can shift between:
@@ -488,29 +488,29 @@ Fragile, short-lived, yet endlessly adaptable. Humans lack supernatural powers b
 [b]Human Factions:[/b]
 
 1. [b]The Crown of Veilfall[/b]
-   • Monarchy and noble houses
-   • Hold the Human Shard of the Ecliptic Amulet
-   • Balance supernatural influence through treaties and force
+• Monarchy and noble houses
+• Hold the Human Shard of the Ecliptic Amulet
+• Balance supernatural influence through treaties and force
 
 2. [b]The Assassin Guild[/b]
-   • Shadow operatives maintaining balance
-   • Neutral mercenaries serving all factions
-   • Elite training and supernatural countermeasures
+• Shadow operatives maintaining balance
+• Neutral mercenaries serving all factions
+• Elite training and supernatural countermeasures
 
 3. [b]The Legion / Military[/b]
-   • Standing army with anti-supernatural divisions
-   • Silver weaponry and blessed munitions
-   • Arcane artillery and mage-killer squads
+• Standing army with anti-supernatural divisions
+• Silver weaponry and blessed munitions
+• Arcane artillery and mage-killer squads
 
 4. [b]The Church[/b]
-   • Faith-based wards and blessed weapons
-   • Exorcists and holy warriors
-   • Push for purges and crusades
+• Faith-based wards and blessed weapons
+• Exorcists and holy warriors
+• Push for purges and crusades
 
 5. [b]Hunter Orders (Rumored)[/b]
-   • Specialized monster slayers
-   • Operate outside official channels
-   • Extreme methods and obsessive dedication
+• Specialized monster slayers
+• Operate outside official channels
+• Extreme methods and obsessive dedication
 
 [b]Human Potential:[/b]
 Humans can become:
@@ -532,6 +532,8 @@ Thus, all factions have vested interest in maintaining the Veil... while secretl
         *goto guild_detail
     #Becoming supernatural from human
         *goto human_transformation
+    #Awakening Mages
+        *goto mage_detail
     #Return to races
         *goto race_overview
 
@@ -600,10 +602,10 @@ Mortals can transcend their humanity through transformation:
 [b]Awakening Latent Magic:[/b]
 • Rare humans possess dormant arcane potential
 • Awakened through:
-  - Intense trauma or near-death experience
-  - Exposure to powerful artifacts
-  - Ritual training by a mentor
-  - Bloodline inheritance (distant supernatural ancestry)
+- Intense trauma or near-death experience
+- Exposure to powerful artifacts
+- Ritual training by a mentor
+- Bloodline inheritance (distant supernatural ancestry)
 • Allows use of spells and rituals
 • Remains mortal but gains supernatural edge
 
@@ -616,6 +618,38 @@ Mortals can transcend their humanity through transformation:
 *choice
     #Return to Human entry
         *goto humans_entry
+
+*label mage_detail
+[b]AWAKENED MAGES[/b]
+
+While most humans remain mundane, a rare few awaken to arcane sight. Some are born with the spark; others ignite when exposed to relics or near-death experiences. The Veilguard Arcanum recruits and regulates these casters to keep magic from tearing Veilfall apart.
+
+[b]Path to Power:[/b]
+1. [b]Awakening[/b] - Latent magic stirs after trauma, relic contact, or lineage trigger.  
+2. [b]Apprenticeship[/b] - Basic sigils, mana control, and wardcraft under supervision.  
+3. [b]Journeymage[/b] - Licensed to act in the field; rotates through ward patrols and research.  
+4. [b]Specialization[/b] - [i]Battlemage[/i] (combat casting) or [i]Spellwright[/i] (rituals/wards).  
+5. [b]Arcanist[/b] - Trusted with Veilstone maintenance and high-risk anomalies.  
+6. [b]Archmage[/b] - Sits on the Council; shapes policy and magical doctrine.
+
+[b]Common Disciplines:[/b]
+• [i]Wardcraft[/i] - Shields, barrier lattices, citywide alert glyphs.  
+• [i]Aether Manipulation[/i] - Mana channeling, aether bolts, explosive overcharge.  
+• [i]Spatial Weaving[/i] - Short-range blinks, tether anchors, portal sealing.  
+• [i]Veilcraft[/i] - Stabilizing reality tears, dampening shadow magic, cleansing corrupted sigils.
+
+[b]Risks:[/b]
+• [i]Burnout[/i] - Overuse scars nerves and senses; severe cases end in coma.  
+• [i]Corruption[/i] - Improper rituals can let void entities ride mana currents.  
+• [i]Politics[/i] - Crown and Church both demand Arcanum loyalty; independence is costly.
+
+The Arcanum walks a tightrope: wield enough power to keep the Veil intact without becoming another tyrant faction. Every mage decides whether to stay neutral, ally with a faction, or rewrite the rules entirely.
+
+*choice
+    #Return to Human entry
+        *goto humans_entry
+    #Return to races
+        *goto race_overview
 
 *label race_comparison
 [b]Comparative Strengths:[/b]

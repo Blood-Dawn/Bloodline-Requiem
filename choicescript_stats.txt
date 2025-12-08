@@ -28,6 +28,10 @@
   *stat_chart
     text rank Rank
 
+*if (mage_rank != "")
+  *stat_chart
+    text mage_rank Mage Rank
+
 *if (bloodline != "")
   *stat_chart
     text bloodline Bloodline
@@ -46,29 +50,32 @@
 
 *comment ---------- FACTION RELATIONS ----------
 *stat_chart
-  opposed_pair varkyrs_relation Varkyrs
+  opposed_pair varkyrs_relation
     Hated
     Revered
-  opposed_pair lupine_relation Lupines
+  opposed_pair lupine_relation
     Hated
     Revered
-  opposed_pair forsaken_relation Forsaken
+  opposed_pair forsaken_relation
     Hated
     Revered
-  opposed_pair human_relation Humans
+  opposed_pair human_relation
     Hated
     Revered
-  opposed_pair AssassinGuild_relation Assassin Guild
+  opposed_pair arcanum_relation
     Hostile
     Trusted
-  opposed_pair Night_Council_relation Night Council
+  opposed_pair AssassinGuild_relation
+    Hostile
+    Trusted
+  opposed_pair Night_Council_relation
     Hostile
     Trusted
 
 *comment ---------- FACTION-SPECIFIC RESOURCES ----------
 *if (alignment = "lupine")
   *stat_chart
-    opposed_pair control Control vs Rage
+    opposed_pair control
       Controlled
       Feral
     text moon_phase Moon Phase
@@ -92,6 +99,13 @@
     text forsaken_type Hybrid Type
     text ecliptic_shards_controlled Ecliptic Shards
 
+*if (alignment = "mage")
+  *stat_chart
+    opposed_pair ward_stability Ward Stability
+      Unstable
+      Sealed
+    percent mana Mana Reserve
+
 *comment ---------- SPECIAL FLAGS & ARTIFACTS ----------
 *if (artifact)
   *line_break
@@ -113,6 +127,10 @@
 *if (alignment = "forsaken")
   *stat_chart
     text forsaken_xp Forsaken XP
+
+*if (alignment = "mage")
+  *stat_chart
+    text mage_xp Mage XP
 
 *line_break
 *line_break
@@ -145,6 +163,8 @@ Choose a faction to view:
     *goto lupine_characters
   #Forsaken Characters
     *goto forsaken_characters
+  #Mage Characters
+    *goto mage_characters
   #Human Characters
     *goto human_characters
   #View All Met Characters (Simple List)
@@ -228,6 +248,8 @@ Choose a faction to view:
     *goto lupine_characters
   #View Forsaken Characters
     *goto forsaken_characters
+  #View Mage Characters
+    *goto mage_characters
   #View Human Characters
     *goto human_characters
   #Back to Stats
@@ -330,6 +352,8 @@ Choose a faction to view:
     *goto varkyr_characters
   #View Forsaken Characters
     *goto forsaken_characters
+  #View Mage Characters
+    *goto mage_characters
   #View Human Characters
     *goto human_characters
   #Back to Stats
@@ -417,6 +441,76 @@ Choose a faction to view:
     *goto varkyr_characters
   #View Lupine Characters
     *goto lupine_characters
+  #View Mage Characters
+    *goto mage_characters
+  #View Human Characters
+    *goto human_characters
+  #Back to Stats
+    *goto main
+
+*comment ═══════════════════════════════════════════════════════════
+*comment MAGE CHARACTERS
+*comment ═══════════════════════════════════════════════════════════
+
+*label mage_characters
+
+[b]═══ MAGE FACTION ═══[/b]
+
+*comment ────────────────────────────────────────
+*if (met_Selene)
+  *line_break
+  [b]Archmage Selene Voss[/b]
+  [i]Title:[/i] Grand Warden of the Veilguard Arcanum
+  [i]Focus:[/i] Wards and Veilcraft
+
+  Selene orchestrates the Arcanum's defense of Veilfall's Veilstones. Calm and relentless, she treats magic as civic duty rather than vanity. Apprentices earn her respect by solving problems, not reciting theory.
+
+  *stat_chart
+    opposed_pair Selene_relation Selene's Opinion
+      Distrusted
+      Favored
+
+  *line_break
+
+*comment ────────────────────────────────────────
+*if (met_Imani)
+  *line_break
+  [b]Spellblade Imani Grey[/b]
+  [i]Title:[/i] Battlemage Captain
+  [i]Focus:[/i] Martial casting, anti-faction tactics
+
+  Imani leads the Arcanum's strike teams when wards fail. She respects decisiveness and loathes dithering. Her spellblade style blends silvered steel with sigils etched along the edge.
+
+  *stat_chart
+    opposed_pair Imani_relation Imani's Opinion
+      Skeptical
+      Battle-Forged
+
+  *line_break
+
+*comment ────────────────────────────────────────
+*if (met_Tamsin)
+  *line_break
+  [b]Arcanist Tamsin Reed[/b]
+  [i]Title:[/i] Seer of the Outer Mirrors
+  [i]Focus:[/i] Divination and anomaly mapping
+
+  Tamsin reads ripples in the Veil like weather. Her warnings keep the Arcanum ahead of Varkyr shadow gates and Forsaken experiments. She is gentle, but there is steel beneath the starlight.
+
+  *stat_chart
+    opposed_pair Tamsin_relation Tamsin's Opinion
+      Reserved
+      Kindred
+
+  *line_break
+
+*choice
+  #View Varkyr Characters
+    *goto varkyr_characters
+  #View Lupine Characters
+    *goto lupine_characters
+  #View Forsaken Characters
+    *goto forsaken_characters
   #View Human Characters
     *goto human_characters
   #Back to Stats
@@ -585,6 +679,21 @@ Choose a faction to view:
     opposed_pair Mira_relation Mira Thornveil (Forsaken)
       Feared
       Cherished
+*if (met_Selene)
+  *stat_chart
+    opposed_pair Selene_relation Archmage Selene Voss (Mage)
+      Distrusted
+      Favored
+*if (met_Imani)
+  *stat_chart
+    opposed_pair Imani_relation Spellblade Imani Grey (Mage)
+      Skeptical
+      Battle-Forged
+*if (met_Tamsin)
+  *stat_chart
+    opposed_pair Tamsin_relation Arcanist Tamsin Reed (Mage)
+      Reserved
+      Kindred
 *if (met_Lucan)
   *stat_chart
     opposed_pair Lucan_relation Lucan Graves (Human)

@@ -12,6 +12,7 @@
     origin_varkyr
     origin_lupine
     origin_forsaken
+    origin_mage
     codex_main
     codex_world
     codex_races
@@ -21,11 +22,13 @@
     varkyr_abilities
     lupine_abilities_complete
     forsaken_abilities
+    mage_abilities
     rank_progression
     power_tier_calc
     act1_human
     act1_lupine
     act1_varkyr
+    act1_mage
     act1_forsaken_ng+
     act2_common_hub
     hub_city
@@ -51,6 +54,8 @@
 *create will 0
 *create power_core 0
 *create latent_magic false
+*create mana 60
+*create ward_stability 50
 *create blood_slots 0
 *create vale_relation 0
 *create human_rep 0
@@ -86,16 +91,18 @@
 *create lupine_relation 50
 *create forsaken_relation 50
 *create human_relation 50
+*create arcanum_relation 50
 *create AssassinGuild_relation 50
 *create Night_Council_relation 0
 *create war_with_lupine false
 *create war_with_varkyrs false
 
-*comment Variables for tracking player’s bloodline, lupine rank, and age
+*comment Variables for tracking player's bloodline, lupine rank, and age
 
 *create bloodline_or_rank ""
 *create faction_stat ""
 *create lupine_rank ""
+*create mage_rank ""
 *create bloodline "bloodline"
 *create age ""
 
@@ -110,6 +117,7 @@
 *create rage 0
 *create venom_potency 0
 *create lupine_xp 0
+*create mage_xp 0
 *create moon_phase "Full"
 *comment Moon phases: New, Waxing Crescent, First Quarter, Waxing Gibbous, Full, Waning Gibbous, Last Quarter, Waning Crescent
 *create packs_united 0
@@ -152,6 +160,9 @@
 *create Vincent_relation 0
 *create Mira_relation 0
 *create Rurik_relation 0
+*create Selene_relation 0
+*create Imani_relation 0
+*create Tamsin_relation 0
 
 *comment Track if the player has met each NPC
 *create met_Isabella false
@@ -167,6 +178,9 @@
 *create met_Vincent false
 *create met_Mira false
 *create met_Rurik false
+*create met_Selene false
+*create met_Imani false
+*create met_Tamsin false
 
 *comment Forsaken section
 *comment Unique Forsaken Abilities
@@ -218,6 +232,24 @@
 
 *comment abilities for everyone
 *create unlocked_abilities ""
+*create arcane_bolt false
+*create mage_sight false
+*create wardweave false
+*create focus_mind false
+*create blink_step false
+*create aegis_sigil false
+*create mana_flare false
+*create veil_pierce false
+*create rune_trap false
+*create spellshield_dome false
+*create storm_nova false
+*create etheric_chains false
+*create temporal_anchor false
+*create rift_step false
+*create soul_ward false
+*create cataclysmic_arc false
+*create mage_specialty ""
+*create mage_burnout 0
 
 *comment Varkyrs section
 

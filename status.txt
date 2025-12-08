@@ -21,3 +21,11 @@
 *if (alignment = "forsaken")
     *set faction_stat "Human"
     *return
+
+*if (alignment = "mage")
+    *if (mage_rank != "")
+        *set faction_stat mage_rank
+        *return
+    *else
+        *set faction_stat "Mage"
+        *return

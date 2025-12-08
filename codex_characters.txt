@@ -19,6 +19,12 @@ Twelve lives can shift the fate of Veilfall. These figures anchor each faction-a
         *goto vale_entry
     #Elena Cross
         *goto elena_entry
+    #Archmage Selene Voss
+        *goto selene_entry
+    #Spellblade Imani Grey
+        *goto imani_entry
+    #Arcanist Tamsin Reed
+        *goto tamsin_entry
     #Guild Master (Assassin Guild)
         *goto guildmaster_entry
     #Captain Thorne
@@ -103,6 +109,54 @@ Age: 31
 - Survived an ambush by rogue Varkyrs, making her wary of diplomacy without leverage.  
 - Advocates for using the Amulet defensively rather than destroying it outright.  
 - Values loyalty and preparation; distrusts reckless heroics.
+
+*choice
+    #Return to character list
+        *goto character_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label selene_entry
+[b]ARCHMAGE SELENE VOSS[/b]  
+Role: Grand Warden of the Veilguard Arcanum  
+Age: 47  
+
+- Oversees Veilfall's ward lattice and training of apprentices. Calm, methodical, intolerant of magical recklessness.  
+- Believes neutrality only works if the Arcanum stays indispensable to every faction. Negotiates with Crown, Legion, and Night Council alike.  
+- Sees the Ecliptic Amulet as a dangerous amplifier; wants it sealed or used to repair the Veil, never as a weapon.  
+- Tests the player with real crises rather than lectures—earn her respect through results.
+
+*choice
+    #Return to character list
+        *goto character_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label imani_entry
+[b]SPELLBLADE IMANI GREY[/b]  
+Role: Battlemage Captain of the Arcanum  
+Age: 29  
+
+- Leads field teams responding to rogue rituals, Forsaken experiments, and Varkyr shadow incursions.  
+- Mixes swordplay with runic overcharge, favoring decisive strikes over drawn-out duels.  
+- Suspicious of politics; cares about keeping people alive first, alliances second.  
+- Judges the player by action under fire—cowardice earns contempt, boldness earns mentorship.
+
+*choice
+    #Return to character list
+        *goto character_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label tamsin_entry
+[b]ARCANIST TAMSIN REED[/b]  
+Role: Seer and anomaly mapper  
+Age: 33  
+
+- Charts disturbances in the Veil using mirrored pools and star charts. Her predictions prevent disasters before they start.  
+- Soft-spoken, but fearless when facing eldritch anomalies. Keeps meticulous notes on the Amulet's resonance.  
+- Wonders whether the Ecliptic Amulet could stabilize magic worldwide—or shatter reality if mishandled.  
+- Values empathy and curiosity; warms to players who ask questions instead of rushing in blind.
 
 *choice
     #Return to character list

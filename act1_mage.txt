@@ -1,0 +1,148 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment ACT 1 - MAGE / VEILGUARD ARCANUM ROUTE
+*comment Player arrives here from origin_mage
+*comment ═══════════════════════════════════════════════════════════
+
+*label breach_alarm
+
+*set act 1
+*set chapter 1
+
+The portal deposits your team on the rocky shore of Mirror Lake. The moon hangs bloated and red above—echoes of the old Pact rituals. Tonight, the lake's surface ripples upward, as if reality itself is trying to climb out.
+
+Archmage Selene stands at the center of a spinning ward circle, hands raised. Spellblade Imani Grey guards her flank, silvered blade humming with runes. Arcanist Tamsin Reed kneels beside a mirrored bowl, eyes distant as she reads the Veil's currents.
+
+Selene doesn't look away from her work. "Apprentice, this is not a drill. Something is pulling at the Veil from beneath the lake. We hold, or Veilfall floods with horrors."
+
+*set met_Selene true
+*set met_Imani true
+*set met_Tamsin true
+*set Selene_relation +10
+*set Imani_relation +5
+*set Tamsin_relation +5
+
+Tamsin's voice is a whisper. "I'm seeing Varkyr shadow signatures... and Forsaken blood resonance. Someone is mixing magics."
+
+Imani grins without humor. "Great. Hybrid nightmares. Apprentice, pick your task."
+
+*choice
+    #Help Selene anchor the ward lattice.
+        You step into the circle, lending your mana to Selene's weave. The sigils burn hot under your palms; sweat rolls down your spine as the lattice stabilizes.
+
+        *set ward_stability +10
+        *set mana -10
+        *set arcanum_relation +5
+        *gosub_scene rank_progression gain_xp 50 "Anchored the lake wards"
+        *goto hybrid_signal
+
+    #Join Imani on the shoreline—stop anything that crawls out.
+        You fall in beside Imani, spellblade ready. The lake bulges; clawed hands of living shadow probe through before you slash them away with crackling runes.
+
+        *set strength +5
+        *set agility +5
+        *set mage_burnout +5
+        *set Imani_relation +10
+        *gosub_scene rank_progression gain_xp 50 "Held the breach line"
+        *goto hybrid_signal
+
+    #Coordinate with Tamsin to trace the mixed resonance.
+        You crouch by Tamsin, using mage-sight lenses to parse the shimmering frequencies in her bowl. Patterns emerge: a ritual below the waterline, anchored with stolen Varkyr blood.
+
+        *set cunning +10
+        *set Tamsin_relation +10
+        *gosub_scene rank_progression gain_xp 50 "Decoded mixed ritual signatures"
+        *goto hybrid_signal
+
+*label hybrid_signal
+
+Tamsin gasps. "There's a conduit directly beneath us. Not natural—someone built it."
+
+Imani gestures. "Selene, give us an opening."
+
+The Archmage nods. The ward circle pivots, creating a descending light-bridge into the lake's heart. Mist coils around you as you descend into an air pocket carved by magic.
+
+At the bottom, a lone figure stands in a half-flooded ruin. A rogue mage, robes slick with lakewater, feeds Varkyr blood into a runic device while chanting a Forsaken mantra. His eyes gleam feverishly.
+
+"You don't understand," he hisses. "The Ecliptic currents down here can [i]free[/i] us. No more hiding. No more Veil."
+
+*choice
+    #Command him to stand down and seal the conduit.
+        Your voice cuts through the roar of water and magic. "Drop the vial. Step away. You're tearing the city apart."
+
+        He hesitates, eyes darting to the runes. Selene's wards loom behind you like judgment itself.
+
+        *set will +5
+        *set arcanum_relation +5
+        *gosub_scene rank_progression gain_xp 60 "Defused rogue mage without bloodshed"
+        *goto rogue_resolution
+
+    #Disrupt the ritual with a surge of raw mana.
+        You rip open your channels, flooding the runes with white-hot aether. The device sparks; the blood boils off; the conduit shrieks as it snaps shut.
+
+        *set mana -15
+        *set mage_burnout +10
+        *set ward_stability +5
+        *gosub_scene rank_progression gain_xp 70 "Overpowered the hybrid ritual"
+        *goto rogue_resolution
+
+    #Let Imani lead with steel—strike before he finishes.
+        Imani moves as soon as your eyes meet. Her spellblade sings, carving through the device and the mage's shoulder in one arc. The ritual stutters and dies.
+
+        *set Imani_relation +10
+        *set strength +5
+        *gosub_scene rank_progression gain_xp 65 "Neutralized rogue mage decisively"
+        *goto rogue_resolution
+
+*label rogue_resolution
+
+The conduit collapses, water rushing to fill the vacuum before Selene's wards slam shut. The rogue mage, bleeding and shaken, glares up at you. "You could have given us power. Instead, you serve the cage."
+
+Selene answers, voice like iron. "Power without control is annihilation. We will not trade one apocalypse for another."
+
+*choice
+    #Offer the mage a chance at redemption within the Arcanum.
+        "You wanted freedom. Learn to use it without killing a city," you say. "Return, face judgment, and maybe earn a place."
+
+        He looks away, ashamed. "Fine. Try your way."
+
+        *set arcanum_relation +10
+        *set mage_burnout -5
+        *goto aftermath
+
+    #Bind him and hand him to the Silver Legion for trial.
+        You etch binding sigils into the wet stone; chains of light snap around his wrists. "Legion courts can sort your ideology from your crimes."
+
+        *set AssassinGuild_relation -5
+        *set arcanum_relation +5
+        *set human_relation +5
+        *goto aftermath
+
+    #Interrogate him about the mixed blood he used.
+        You kneel, keeping your blade ready. "Who gave you Varkyr blood and Forsaken sigils?"
+
+        "A Caius sympathizer," he spits. "Said we'd crack the Veil open together. Said the Varkyrs would choke on daylight."
+
+        *set forsaken_relation -5
+        *set varkyrs_relation -5
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 30 "Extracted intel on hybrid conspirators"
+        *goto aftermath
+
+*label aftermath
+
+Back on the shore, dawn light breaks through thinning clouds. Selene's wards hum quietly now—stable, calm. Imani cleans her blade; Tamsin sketches frantic notes about the conduit.
+
+Selene turns to you. "You held. The city sleeps, unaware it almost drowned in unreality. Remember this: our work is invisible when done right. It must stay that way."
+
+*set arcanum_relation +5
+*set ward_stability +5
+*set chapter 2
+
+*comment Check for rank progression
+*gosub_scene rank_progression check_progression
+
+*page_break
+
+The Archmage dismisses the Circle. "Rest. Study what happened here. The Veil will shudder again soon."
+
+*finish
