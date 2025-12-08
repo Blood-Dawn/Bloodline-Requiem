@@ -1,0 +1,248 @@
+*comment ==================================================
+*comment  Vampire Ability Selector
+*comment  Usage:  *gosub_scene vampire_abilities "commoner"
+*comment          *gosub_scene vampire_abilities "knight"
+*comment          *gosub_scene vampire_abilities "baron"
+*comment ==================================================
+
+*params rank
+*temp picks 0
+
+*if (rank = "commoner")
+  *goto rank_commoner
+*elseif (rank = "knight")
+  *goto rank_knight
+*elseif (rank = "baron")
+  *goto rank_baron
+*else
+  *comment unexpected rank
+  *return
+
+*label rank_commoner
+As a newly acknowledged **Commoner**, choose **two** gifts:
+
+*label commoner_menu
+*choice
+  *if (night_vision = false) #Night Vision – see in perfect darkness.
+    *set night_vision true
+    *set perception +10
+    *set picks +1
+  *if (blood_sense = false)  #Blood Sense – feel every heartbeat nearby.
+    *set blood_sense true
+    *set awareness +10
+    *set picks +1
+  *if (fledgling_charm = false) #Fledgling’s Charm – subtle influence.
+    *set fledgling_charm true
+    *set charm +10
+    *set picks +1
+  *if (veil_of_shadows = false) #Veil of Shadows – melt into darkness.
+    *set veil_of_shadows true
+    *set stealth +10
+    *set picks +1
+*if (picks < 2)
+  You have chosen *picks* of 2 abilities.
+  *goto commoner_menu
+Power surges through your fledgling veins.
+*return
+
+
+*label rank_knight
+The **Knight** rank grants you one advanced discipline. Choose wisely:
+
+*choice
+  #Combat Mastery – superior weapon skill.
+    *set combat_mastery true
+    *set combat +10
+  #Shadow Step – near-instant short teleport.
+    *set shadow_step true
+    *set stealth +10
+  #Blood Bond – empower allies with your vitae.
+    *set blood_bond true
+    *set charm +10
+Your knighthood is sealed in crimson.
+*return
+
+
+*label rank_baron
+Elevated to **Baron/Baroness**, select one aristocratic art:
+
+*choice
+  #Blood Alchemy – transmute vitae into poisons or elixirs.
+    *set blood_alchemy true
+    *set awareness +10
+  #Sanguine Shield – conjure a barrier of hardened blood.
+    *set sanguine_shield true
+    *set combat +10
+  #Shadow Veil – cloak nearby allies in darkness.
+    *set shadow_veil true
+    *set stealth +10
+Your noble power resonates through the night.
+*return
+*label rank_viscount
+*comment Viscount/Viscountess Abilities (Inherits Baron/Baroness, Knight, and Commoner abilities)
+The **Viscount/Viscountess** rank grants you mastery over the most potent vampire arts. Choose one:
+*choice
+  #Umbral Weapons – forge weapons from pure shadow.
+    *set umbral_weapons true
+    *set combat +10
+  #Blood Alchemy Mastery – create powerful elixirs and poisons.
+    *set blood_alchemy true
+    *set awareness +10
+  #Sanguine Shield Mastery – enhance your protective barrier.
+    *set sanguine_shield true
+    *set combat +10
+    #Shadow Veil Mastery – extend your cloak to shield allies.
+    *set shadow_veil true
+    *set stealth +10
+Your viscountcy is a testament to your mastery of the night.
+*return
+*label rank_duke
+*comment Duke/Duchess Abilities (Inherits Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities)
+The **Duke/Duchess** rank signifies your dominion over the vampire courts. Choose one of these powerful abilities:
+*choice
+  #Aura of Majesty – command respect and fear.
+    *set aura_of_majesty true
+    *set charm +10
+  #Eclipse – shroud the battlefield in darkness.
+    *set eclipse true
+    *set stealth +10
+  #Crimson Storm – unleash a tempest of blood magic.
+    *set crimson_storm true
+    *set combat +10
+  #Shadow Dominion – bend shadows to your will.
+    *set shadow_dominion true
+    *set stealth +10
+Your dukedom is a beacon of power and influence.
+*return 
+*label rank_marquis
+*comment Marquis/Marchioness Abilities (Inherits Duke/Duchess, Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities)
+The **Marquis/Marchioness** rank is a pinnacle of vampiric authority. Choose one of these formidable abilities:
+*choice
+  #Advanced Blood Bond – deepen your connection with allies.
+    *set advanced_blood_bond true
+    *set charm +10
+  #Territorial Command – assert dominance over your domain.
+    *set territorial_command true
+    *set combat +10
+  #Sanguine Phantasm – create illusions from blood.
+    *set sanguine_phantasm true
+    *set awareness +10
+  #Nether Chains – bind enemies with shadowy tendrils.
+    *set nether_chains true
+    *set combat +10
+Your marquisate is a testament to your mastery of the vampiric arts.
+*return
+*label rank_count
+*comment Count/Countess Abilities (Inherits Marquis/Marchioness, Duke/Duchess, Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities)
+The **Count/Countess** rank signifies your mastery over the darkest vampiric powers. Choose one of these formidable abilities:
+*choice
+  #Psychic Shield – protect your mind from intrusion.
+    *set psychic_shield true
+    *set awareness +10
+  #Sanguine Resilience – enhance your physical durability.
+    *set sanguine_resilience true
+    *set combat +10
+  #Life Leech – drain vitality from your foes.
+    *set life_leech true
+    *set combat +10
+  #Whisper of Madness – drive enemies to insanity.
+    *set whisper_of_madness true
+    *set charm +10
+Your countship is a testament to your mastery of the vampiric arts.
+*return
+*label rank_marchioness
+*comment Marquis/Marchioness Abilities (Inherits Count/Countess, Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities)
+The **Marchioness** rank signifies your mastery over the darkest vampiric powers. Choose one of these formidable abilities:
+*choice
+  #Advanced Blood Bond – deepen your connection with allies.
+    *set advanced_blood_bond true
+    *set charm +10
+  #Territorial Command – assert dominance over your domain.
+    *set territorial_command true
+    *set combat +10
+  #Sanguine Phantasm – create illusions from blood.
+    *set sanguine_phantasm true
+    *set awareness +10
+  #Nether Chains – bind enemies with shadowy tendrils.
+    *set nether_chains true
+    *set combat +10
+Your marchionessate is a testament to your mastery of the vampiric arts.
+*return
+*label rank_emperor
+*comment Emperor/Empress Abilities (Inherits Marquis/Marchioness, Count/Countess, Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities) 
+The **Emperor/Empress** rank is the pinnacle of vampiric power. Choose one of these legendary abilities:
+*choice
+  #Blood Sovereign – command the blood of all vampires.
+    *set blood_sovereign true
+    *set charm +10
+  #Veil of Eternity – shroud yourself in timeless darkness.
+    *set veil_of_eternity true
+    *set stealth +10
+  #Crimson Apocalypse – unleash a cataclysmic storm of blood magic.
+    *set crimson_apocalypse true
+    *set combat +10
+  #Shadow Dominion Mastery – bend shadows to your will with unparalleled mastery.
+    *set shadow_dominion_mastery true
+    *set stealth +10
+Your emperorship is a testament to your mastery of the vampiric arts.
+*return 
+*label rank_archduke
+*comment Archduke/Archduchess Abilities (Inherits Duke/Duchess, Marquis/Marchioness, Count/Countess, Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities)
+The **Archduke/Archduchess** rank is the pinnacle of vampiric power. Choose one of these legendary abilities:
+*choice
+  #Bloodstorm – summon a tempest of blood magic.
+    *set bloodstorm true
+    *set combat +10
+  #Veil of Eternity – shroud yourself in timeless darkness.
+    *set veil_of_eternity true
+    *set stealth +10
+  #Hemorrhagic Maelstrom – unleash a storm of blood and shadow.
+    *set hemorrhagic_maelstrom true
+    *set combat +10
+    *set combat +10
+  #Abyssal Gateway – open portals to the abyss.
+    *set abyssal_gateway true
+    *set awareness +10
+Your archduchy is a testament to your mastery of the vampiric arts.
+*return
+*label rank_imperial
+*comment Imperial Abilities (Inherits Archduke/Archduchess, Duke/Duchess, Marquis/Marchioness, Count/Countess, Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities)
+The **Imperial** rank is the pinnacle of vampiric power. Choose one of these legendary abilities:
+*choice
+  #Imperial Decree – command the loyalty of all vampires.
+    *set imperial_decree true
+    *set charm +10
+  #Sovereign Sanctuary – create a haven of protection.
+    *set sovereign_sanctuary true
+    *set combat +10
+  #Crimson Storm – unleash a cataclysmic storm of blood magic.
+    *set crimson_storm true
+    *set combat +10
+  #Shadow Dominion Mastery – bend shadows to your will with unparalleled mastery.
+    *set shadow_dominion_mastery true
+    *set stealth +10
+Your imperial reign is a testament to your mastery of the vampiric arts.
+*return
+*label rank_blood_sovereign
+*comment Blood Sovereign Abilities (Inherits Imperial, Archduke/Archduchess, Duke/Duchess, Marquis/Marchioness, Count/Countess, Viscount/Viscountess, Baron/Baroness, Knight, and Commoner abilities)
+The **Blood Sovereign** rank is the pinnacle of vampiric power. Choose one of these legendary abilities:
+*choice
+  #Blood Sovereign – command the blood of all vampires.
+    *set blood_sovereign true
+    *set charm +10
+  #Veil of Eternity – shroud yourself in timeless darkness.
+    *set veil_of_eternity true
+    *set stealth +10
+  #Crimson Apocalypse – unleash a cataclysmic storm of blood magic.
+    *set crimson_apocalypse true
+    *set combat +10
+  #Shadow Dominion Mastery – bend shadows to your will with unparalleled mastery.
+    *set shadow_dominion_mastery true
+    *set stealth +10
+Your blood sovereignty is a testament to your mastery of the vampiric arts.
+*return
+*finish
+*comment ================================================== 
+*comment  End of Vampire Ability Selector
+*comment ==================================================
+*comment This code is used to select vampire abilities based on the rank of the vampire.
