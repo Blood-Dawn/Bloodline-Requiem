@@ -254,7 +254,7 @@ Rurik nods once. "Welcome to Whispering Pines. Run with us."
 *page_break
 
 *comment Route to Act 1 Lupine content
-*goto_scene act1_lupine lupine_route
+*goto_scene hub_city entry
 
 *comment ═══════════════════════════════════════════════════════════
 *comment NOTES:
@@ -262,5 +262,5 @@ Rurik nods once. "Welcome to Whispering Pines. Run with us."
 *comment - First kill doctrine integrated
 *comment - Calls lupine_abilities_complete.txt
 *comment - Grants 50 XP for trial
-*comment - Routes to act1_lupine.txt
+*comment - Routes to hub_city entry
 *comment ═══════════════════════════════════════════════════════════

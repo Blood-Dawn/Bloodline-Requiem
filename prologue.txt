@@ -22,10 +22,10 @@ The parchment reads:
         *goto forsaken_route
     #Confront a pack of Lupines.
         *set alignment "lupine"
-        *goto_scene act1_lupine lupine_route
+        *goto_scene hub_city entry
     #Eliminate a rogue Varkyr.
         *set alignment "varkyrs"
-        *goto_scene act1_varkyr varkyrs_route
+        *goto_scene hub_city entry
 
 *comment TODO: Forsaken extraction
 *label forsaken_route

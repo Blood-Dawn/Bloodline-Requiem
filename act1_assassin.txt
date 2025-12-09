@@ -24,10 +24,10 @@ The parchment reads:
         *goto forsaken_route
     #Confront a pack of Lupines.
         *set alignment "lupine"
-        *goto_scene act1_lupine 
+        *goto lupine_route
     #Eliminate a rogue Varkyr.
         *set alignment "varkyrs"
-        *goto_scene act1_varkyr 
+        *goto varkyrs_route
 
 *comment TODO: Forsaken extraction
 *label forsaken_route
@@ -188,3 +188,74 @@ He dismisses you with a gesture, and as you step out of the room, the weight of 
 
 (not done) *comment ... narrative for preparing for the next assignment ...
 *ending
+
+*comment ═══════════════════════════════════════════════════════════
+*comment LUPINE CONTRACT ROUTE (Assassin path)
+*comment ═══════════════════════════════════════════════════════════
+
+*label lupine_route
+The forest edge smells of pine, iron, and tension. The Whispering Pines Pack has crossed into human farmland, and the Guild wants answers without igniting a war.
+
+*choice
+    #Approach openly and request parley.
+        You raise empty hands and announce yourself. The wolves circle but hold. Alpha Rurik emerges, measuring you with amber eyes.
+        *set will +5
+        *gosub_scene rank_progression gain_xp 25 "Opened parley with the pack"
+        *goto lupine_outcome
+    #Stalk the perimeter and scout their numbers.
+        You ghost along the treeline, counting silhouettes, sniffing campfire smoke, noting patrol routes.
+        *set stealth +5
+        *gosub_scene rank_progression gain_xp 25 "Scouted Whispering Pines positions"
+        *goto lupine_outcome
+    #Set traps with silver tripwires.
+        You rig shallow pits and silver wire snares where the pack must pass to reach the fields.
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 25 "Prepared silvered traps"
+        *goto lupine_outcome
+
+*label lupine_outcome
+Rurik's rumble carries through the pines. "Assassin. You hunt for coin. We hunt for survival. Tell your Guild this land is contested. Bring us the one stirring the factions, and the farmers remain unharmed."
+
+You leave with their warning—and leverage. The Guild will decide whether to honor a fragile truce or escalate.
+*finish
+
+*comment ═══════════════════════════════════════════════════════════
+*comment VARKYR CONTRACT ROUTE (Assassin path)
+*comment ═══════════════════════════════════════════════════════════
+
+*label varkyrs_route
+Gaslight pools in the Gilded Quarter, painting alleys in gold and shadow. Lord Vaelis hunts somewhere nearby, breaking the Veil with every body he drains.
+
+*choice
+    #Track his feeding pattern and strike.
+        You stake out the three alleys marked on your map, watching for mist and movement.
+        *set awareness +5
+        *gosub_scene rank_progression gain_xp 25 "Stalked Vaelis's hunting grounds"
+        *goto varkyr_confront
+    #Bait him with rumors of a courier carrying relic blood.
+        You leak whispers at taverns, then wait under a balcony with a blessed stake.
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 25 "Set bait for the rogue Varkyr"
+        *goto varkyr_confront
+    #Call in a Spire contact to lure him.
+        A discreet Spire agent agrees to draw Vaelis out in exchange for discretion.
+        *set varkyrs_relation +5
+        *gosub_scene rank_progression gain_xp 25 "Leveraged Spire contact"
+        *goto varkyr_confront
+
+*label varkyr_confront
+Vaelis emerges—eyes feral, manners long abandoned. The alley holds just enough space for a duel.
+
+*choice
+    #Stake him mid-charge.
+        You sidestep his lunge and drive the blessed stake through his heart. Ash scatters across cobblestone.
+        *set strength +5
+        *finish
+    #Offer him exile instead of death.
+        You argue the Veil is fragile; his death will spark more bloodshed. He sneers, then melts into mist—gone, but warned.
+        *set cunning +5
+        *finish
+    #Bind him for Spire pickup.
+        You use silverwire and holy seals. The Spire's hunters arrive, impressed and wary.
+        *set varkyrs_relation +10
+        *finish

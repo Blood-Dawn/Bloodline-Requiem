@@ -186,28 +186,32 @@ You descend into the Undercroft. Hybrid eyes follow. Caius stands at the altar o
 You remain human-but not naive. The factions maneuver around the Ecliptic Amulet, and the Order needs someone who has seen their faces up close. Nadia prepares a briefing. Your war continues.
 
 *page_break
-*goto_scene act1_human human_route
+*goto_scene hub_city entry
 
 *label hunter_departure_varkyr
 
 The Spire's halls open before you. Power, politics, and predation await. You traded sunrise for eternity-and a chance to shape how the Crimson Court uses the Amulet.
 
 *page_break
-*goto_scene act1_varkyr varkyrs_route
+*goto_scene hub_city entry
 
 *label hunter_departure_lupine
 
 The pack accepts you as kin, if barely. The Whispering Pines will test your resolve-and your ability to balance Order training with the pull of the moon.
 
 *page_break
-*goto_scene act1_lupine lupine_route
+*goto_scene hub_city entry
 
 *label hunter_departure_forsaken
 
 Hybrid power hums in your veins. Among the Forsaken, you will decide whether to weaponize the Amulet, protect humanity, or burn every faction that ever hunted you.
 
 *page_break
-*goto_scene act1_forsaken_ng+ forsaken_infiltration
+*if (ng_plus_unlocked)
+    *goto_scene act1_forsaken_ngplus forsaken_infiltration
+*else
+    New Game Plus content is locked. Finish a full campaign to unlock the Forsaken NG+ route.
+    *goto_scene hub_city entry
 
 *comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
 *comment NOTES:

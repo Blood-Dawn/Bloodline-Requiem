@@ -151,7 +151,7 @@ Night has fallen by the time you reach the Warren's edge. The descent to 123 Str
 
 *comment Route to Forsaken investigation scene
 *page_break
-*goto_scene act1_forsaken_ng+ forsaken_infiltration
+*goto_scene act1_assassin forsaken_route
 
 *comment ═══════════════════════════════════════════════════════════
 *comment LUPINE BRIEFING
@@ -195,7 +195,7 @@ The Whispering Pines wait. You set out toward the forest's edge, silver dagger c
 
 *comment Route to Lupine investigation scene
 *page_break
-*goto_scene act1_lupine lupine_route
+*goto_scene act1_assassin lupine_route
 
 *comment ═══════════════════════════════════════════════════════════
 *comment VARKYR BRIEFING
@@ -246,7 +246,7 @@ Tonight, you hunt him.
 
 *comment Route to Varkyr elimination scene
 *page_break
-*goto_scene act1_varkyr varkyrs_route
+*goto_scene act1_assassin varkyrs_route
 
 *comment ═══════════════════════════════════════════════════════════
 *comment NOTE: This file sets initial assassin stats and routes to

@@ -340,7 +340,7 @@ The shadows descend.
 *comment They now enter Act 1 Varkyr content
 
 *page_break
-*goto_scene act1_varkyr varkyrs_route
+*goto_scene hub_city entry
 
 *comment ═══════════════════════════════════════════════════════════
 *comment NOTES FOR INTEGRATION:
@@ -349,5 +349,5 @@ The shadows descend.
 *comment - Calls varkyr_abilities.txt for ability selection
 *comment - Grants 50 XP for initiation
 *comment - Blood satiation mechanics demonstrated
-*comment - Routes to act1_varkyr.txt at end
+*comment - Routes to hub_city entry at end
 *comment ═══════════════════════════════════════════════════════════

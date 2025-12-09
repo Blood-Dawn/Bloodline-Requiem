@@ -8,6 +8,14 @@
 *temp ability_choice_1 ""
 *temp ability_choice_2 ""
 
+*comment Skip if we're not currently on the mage track
+*if (alignment != "mage")
+    *finish
+
+*comment Default to Apprentice if no rank has been set yet
+*if (mage_rank = "")
+    *set mage_rank "Apprentice"
+
 Your rank as [b]${mage_rank}[/b] unlocks deeper arcane patterns. Choose [b]two spells[/b] to inscribe into your grimoire.
 
 *if (mage_rank = "Apprentice")

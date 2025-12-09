@@ -1,5 +1,20 @@
 *title Bloodline Requiem
 *author Kheiven D'Haiti
+*achievement forsaken_ngplus visible 10 New Game Plus Unlocked
+	Complete the campaign once.
+	You unlocked New Game Plus content.
+*achievement assassin_initiate visible 5 Guild Blade
+	Survive your first Guild contract.
+	The Assassin Guild recognizes your skill.
+*achievement crimson_initiate visible 5 Crimson Fledgling
+	Complete the Crimson Spire initiation.
+	The Matriarch acknowledges your ascent.
+*achievement moon_trial visible 5 Moon-Born
+	Pass the Moon-Born Trial with the pack.
+	The Whispering Pines accept you as kin.
+*achievement veil_apprentice visible 5 Veilguard Apprentice
+	Answer the observatory's emergency call.
+	The Arcanum records your first defense.
 *scene_list
 	startup
 	origin_select
@@ -11,6 +26,7 @@
 	origin_lupine
 	origin_forsaken
 	origin_mage
+	achievements
 	codex_main
 	codex_world
 	codex_races
@@ -30,11 +46,8 @@
 	mage_abilities
 	rank_progression
 	power_tier_calc
-	act1_human
-	act1_lupine
-	act1_varkyr
-	act1_mage
-	act1_forsaken_ng+
+	act1_assassin
+	act1_forsaken_ngplus
 	act2_common_hub
 	hub_city
 	mission_board
@@ -86,6 +99,7 @@
 *create mission_board false
 *create mission_board_request false
 *create mission_board_request_text ""
+*create ng_plus_unlocked false
 *create partner_elena false
 *comment ── Commoner-rank ability flags
 *create blood_sense false

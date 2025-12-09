@@ -4,6 +4,9 @@
 Version: 0.5.0
 Date: December 5, 2025
 
+*set ng_plus_unlocked true
+*achieve forsaken_ngplus
+
 Systems operational:
 - Varkyr abilities
 - Lupine abilities

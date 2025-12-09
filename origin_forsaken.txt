@@ -223,13 +223,13 @@ He gestures to the tunnels. "The Forsaken Enclave is your sanctuary. But you can
 
 *choice
     #Infiltrate the Varkyr courts
-        *goto_scene act1_varkyr varkyrs_route
+        *goto_scene hub_city entry
 
     #Observe the Lupine packs
-        *goto_scene act1_lupine lupine_route
+        *goto_scene hub_city entry
 
     #Investigate human activity
-        *goto_scene act1_human human_route
+        *goto_scene hub_city entry
 
 *comment ═══════════════════════════════════════════════════════════
 *comment NOTES:

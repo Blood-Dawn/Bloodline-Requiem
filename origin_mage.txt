@@ -57,4 +57,4 @@ Your pulse syncs with the wardlines. Mana thrums beneath your skin, begging to b
 The Circle finishes their incantation. A portal of controlled light opens—your corridor to Mirror Lake. Apprentices fall in beside seasoned battlemages. No written exams; only action.
 
 *page_break
-*goto_scene act1_mage breach_alarm
+*goto_scene hub_city entry

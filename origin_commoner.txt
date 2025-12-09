@@ -205,28 +205,32 @@ Before he rends you apart, an arrow sprouts from his throat. A woman in silver-a
 You trade fear for purpose. Whether under the Silver Legion's banners or the Guild's knives, you will never be prey again. The Ecliptic murders won't claim another commoner if you can stop it.
 
 *page_break
-*goto_scene act1_human human_route
+*goto_scene hub_city entry
 
 *label commoner_departure_varkyr
 
 Blood seals your bargain. The Spire offers protection and hunger in equal measure. In the courts above the slums, power is there for the taking-if you can stomach eternity.
 
 *page_break
-*goto_scene act1_varkyr varkyrs_route
+*goto_scene hub_city entry
 
 *label commoner_departure_lupine
 
 The forest's chorus drowns out the city's lies. The pack will test you, shape you, and perhaps free you from ever being hunted again.
 
 *page_break
-*goto_scene act1_lupine lupine_route
+*goto_scene hub_city entry
 
 *label commoner_departure_forsaken
 
 Hybrid blood thrums under your skin. Neither Varkyr nor Lupine will claim you. With the Forsaken, you will decide whether balance or vengeance defines your new life.
 
 *page_break
-*goto_scene act1_forsaken_ng+ forsaken_infiltration
+*if (ng_plus_unlocked)
+    *goto_scene act1_forsaken_ngplus forsaken_infiltration
+*else
+    New Game Plus content is locked. Finish a full campaign to unlock the Forsaken NG+ route.
+    *goto_scene hub_city entry
 
 *comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
 *comment NOTES:

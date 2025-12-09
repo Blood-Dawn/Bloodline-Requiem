@@ -232,21 +232,21 @@ From a nearby rooftop, a shadow detaches-Isabella's watcher. Across the street, 
 House Ravencrest will not die in darkness. Whether through Legion rank or Guild knives, you'll drag the truth into the light-and seize the human shard of the Ecliptic Amulet before anyone else.
 
 *page_break
-*goto_scene act1_human human_route
+*goto_scene hub_city entry
 
 *label noble_departure_varkyr
 
 The Crimson Spire claims your blood and House. Eternity yawns before you-a ladder of ranks to climb, secrets to harvest, and debts to collect.
 
 *page_break
-*goto_scene act1_varkyr varkyrs_route
+*goto_scene hub_city entry
 
 *label noble_departure_lupine
 
 The Whispering Pines pack howls as you cross their border. Blood feud or moon-sworn alliance-your choice binds your House's fate to the wild.
 
 *page_break
-*goto_scene act1_lupine lupine_route
+*goto_scene hub_city entry
 
 *comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
 *comment NOTES:

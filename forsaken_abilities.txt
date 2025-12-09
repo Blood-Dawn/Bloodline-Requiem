@@ -23,6 +23,11 @@ You feel the conflicting magics within you stabilize and grow stronger. The bloo
 *if (rank = "Eclipse Lord/Lady")
     *set power_level 5
 
+*comment If no rank is set, bail out to avoid an infinite return loop
+*if (power_level = 0)
+    No new hybrid abilities are available yet.
+    *finish
+
 *comment Track selections
 *temp abilities_selected 0
 *temp ability_choice_1 ""

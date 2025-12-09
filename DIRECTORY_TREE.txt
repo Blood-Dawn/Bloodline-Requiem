@@ -70,10 +70,8 @@ codex_world.txt
 ./origins:
 
 ./scenes:
-act1_forsaken_ng+.txt
-act1_human.txt
-act1_lupine.txt
-act1_varkyr.txt
+act1_assassin.txt
+act1_forsaken_ngplus.txt
 act2_common_hub.txt
 codex_lore.txt
 

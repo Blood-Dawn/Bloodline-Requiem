@@ -31,7 +31,7 @@ Under the pale moonlight, you journey to the Lupine's territory, the ominous Whi
 
         *set cunning +5
         *gosub_scene rank_progression gain_xp 10 "Retreated strategically"
-        *goto_scene act1_chapter1 report_back
+        *goto_scene act1_assassin report_back
     #Pull out a weapon to defend yourself.
         With a swift motion, you unsheathe your weapon, the steel gleaming under the moonlight. The wolves grow tense, their growls resonating through the silent forest. Yet, amidst the tension, a white-furred wolf, a rare sight signifying a special status, steps forward with a calming aura, seemingly offering a chance for peaceful interaction.
 
@@ -94,7 +94,7 @@ As the grenade erupts, blinding light scatters across the clearing. The wolves y
 *choice
     #Capitalize on the confusion and retreat.
         Knowing the pack will soon recover, you slip back into the tree line, determined to report your findings before they regroup.
-        *goto_scene act1_chapter1 report_back
+        *goto_scene act1_assassin report_back
     #Try to deescalate the situation.
         You hold your hands up and speak quickly, urging calm before hostility reignites. Perhaps reason can still win the day.
         *goto explain_mission

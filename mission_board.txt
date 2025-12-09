@@ -34,16 +34,13 @@ The mission board stands at the heart of Veilfall, a place where adventurers and
     #View available missions
       You scan the board for missions that catch your eye. Each one offers a unique challenge and potential rewards.
       *goto_scene mission_list
-    #Post a new mission request
-      You consider posting your own request on the board, seeking assistance for a personal task or quest.
-      *goto_scene post_mission_request
-    #Leave the mission board
-      You decide to step away from the board for now, perhaps to gather more information or prepare for a mission later.
-      *finish
-    #Check back later
-      You decide to wait and see if new missions will be posted soon. The board may fill up again with requests as the city’s needs change.
-      *finish
-    #Leave the mission board
-      You step away from the board, feeling a mix of anticipation and uncertainty about what lies ahead.
-      *finish
+  #Post a new mission request
+    You consider posting your own request on the board, seeking assistance for a personal task or quest.
+    *goto_scene post_mission_request
+  #Wait for new postings
+    You decide to check back later when new requests appear.
+    *finish
+  #Leave the mission board
+    You step away from the board, filing away what you saw for later.
+    *finish
 *comment ---------- NO MISSIONS AVAILABLE ----------
