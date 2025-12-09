@@ -15,6 +15,8 @@ The blood sings with newfound power. Your ascension to [b]${rank}[/b] unlocks de
 *temp ability_choice_1 ""
 *temp ability_choice_2 ""
 *temp newly_unlocked ""
+*temp rank_recognized false
+*temp title_adjusted false
 
 *comment Align gendered ranks with player title preference so pronouns stay consistent
 *if ((gender_title_style = "feminine") or ((gender_title_style = "unspecified") and (gender = "female")))
@@ -30,7 +32,9 @@ The blood sings with newfound power. Your ascension to [b]${rank}[/b] unlocks de
         *set rank "Duchess"
     *if (rank = "Archduke")
         *set rank "Archduchess"
-*elseif ((gender_title_style = "masculine") or ((gender_title_style = "unspecified") and (gender = "male")))
+    *set title_adjusted true
+
+*if ((not(title_adjusted)) and ((gender_title_style = "masculine") or ((gender_title_style = "unspecified") and (gender = "male"))))
     *if (rank = "Baroness")
         *set rank "Baron"
     *if (rank = "Viscountess")
@@ -46,28 +50,40 @@ The blood sings with newfound power. Your ascension to [b]${rank}[/b] unlocks de
 
 *comment Route to appropriate rank tree
 *if (rank = "Commoner")
+    *set rank_recognized true
     *goto commoner_abilities
 *elseif (rank = "Knight")
+    *set rank_recognized true
     *goto knight_abilities
 *elseif (rank = "Baron") or (rank = "Baroness")
+    *set rank_recognized true
     *goto baron_abilities
 *elseif (rank = "Viscount") or (rank = "Viscountess")
+    *set rank_recognized true
     *goto viscount_abilities
 *elseif (rank = "Count") or (rank = "Countess")
+    *set rank_recognized true
     *goto count_abilities
 *elseif (rank = "Marquis") or (rank = "Marchioness")
+    *set rank_recognized true
     *goto marquis_abilities
 *elseif (rank = "Duke") or (rank = "Duchess")
+    *set rank_recognized true
     *goto duke_abilities
 *elseif (rank = "Archduke") or (rank = "Archduchess")
+    *set rank_recognized true
     *goto archduke_abilities
 *elseif (rank = "Imperial")
+    *set rank_recognized true
     *goto imperial_abilities
 *elseif (rank = "Progenitor")
+    *set rank_recognized true
     *goto progenitor_abilities
-*else
-    *comment Fallback for unrecognized rank
-    *bug Unrecognized Varkyr rank: ${rank}
+
+*if (not(rank_recognized))
+    *comment Fallback for unrecognized rank; default to commoner abilities so flow continues
+    *set rank "Commoner"
+    *goto commoner_abilities
 
 *comment ═══════════════════════════════════════════════════════════
 *comment COMMONER RANK
@@ -558,9 +574,13 @@ You are not merely powerful. You [i]are[/i] power.
 *if (abilities_selected = 0)
     *set ability_choice_1 ability_name
     *set abilities_selected +1
-*else
+    *goto record_selection_done
+
+*if (abilities_selected > 0)
     *set ability_choice_2 ability_name
     *set abilities_selected +1
+
+*label record_selection_done
 *return
 
 *label apply_varkyr_abilities
@@ -568,7 +588,8 @@ You are not merely powerful. You [i]are[/i] power.
 
 *if (rank = "Progenitor")
     The transformation is complete. You stand as the pinnacle of vampiric evolution—the [b]Progenitor Reborn[/b].
-*else
+
+*if (rank != "Progenitor")
     You have mastered [b]${ability_choice_1}[/b] and [b]${ability_choice_2}[/b].
 
     The blood remembers. These powers are yours eternally.
@@ -581,7 +602,8 @@ You are not merely powerful. You [i]are[/i] power.
     *set newly_unlocked & ability_choice_2
     *set newly_unlocked & ";"
     *set unlocked_abilities & newly_unlocked
-*else
+
+*if (rank = "Progenitor")
     *set unlocked_abilities & " ALL PROGENITOR ABILITIES;"
 
 *return

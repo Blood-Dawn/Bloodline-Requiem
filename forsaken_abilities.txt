@@ -14,13 +14,13 @@ You feel the conflicting magics within you stabilize and grow stronger. The bloo
 *temp power_level 0
 *if (rank = "Initiate")
     *set power_level 1
-*elseif (rank = "Adept")
+*if (rank = "Adept")
     *set power_level 2
-*elseif (rank = "Sentinel")
+*if (rank = "Sentinel")
     *set power_level 3
-*elseif (rank = "Warden")
+*if (rank = "Warden")
     *set power_level 4
-*elseif (rank = "Eclipse Lord/Lady")
+*if (rank = "Eclipse Lord/Lady")
     *set power_level 5
 
 *comment Track selections
@@ -31,7 +31,7 @@ You feel the conflicting magics within you stabilize and grow stronger. The bloo
 *label select_first_ability
 *if (abilities_selected = 0)
     [b]Select your first ability:[/b]
-*else
+*if (abilities_selected > 0)
     [b]Select your second ability:[/b]
 
 *choice
@@ -56,7 +56,7 @@ You feel the conflicting magics within you stabilize and grow stronger. The bloo
 These powers exist only in those who bridge blood and moon.
 
 *choice
-    *if (power_level >= 1) and (not twilight_veil)
+    *if (power_level >= 1) and (twilight_veil = false)
         #Twilight Veil
             [i]Merge shadow and moonlight for perfect concealment.[/i]
 
@@ -64,7 +64,7 @@ These powers exist only in those who bridge blood and moon.
             *gosub record_ability "Twilight Veil"
             *goto selection_complete
 
-    *if (power_level >= 1) and (not hybrid_regeneration)
+    *if (power_level >= 1) and (hybrid_regeneration = false)
         #Hybrid Regeneration
             [i]Heal using blood OR moonlight—whichever is available.[/i]
 
@@ -72,7 +72,7 @@ These powers exist only in those who bridge blood and moon.
             *gosub record_ability "Hybrid Regeneration"
             *goto selection_complete
 
-    *if (power_level >= 2) and (not sanguine_howl)
+    *if (power_level >= 2) and (sanguine_howl = false)
         #Sanguine Howl
             [i]A battle cry fusing vampiric dread and lupine dominance.[/i]
 
@@ -80,7 +80,7 @@ These powers exist only in those who bridge blood and moon.
             *gosub record_ability "Sanguine Howl"
             *goto selection_complete
 
-    *if (power_level >= 2) and (not ecliptic_surge)
+    *if (power_level >= 2) and (ecliptic_surge = false)
         #Ecliptic Surge
             [i]Channel blood and lunar power simultaneously for devastating combos.[/i]
 
@@ -88,7 +88,7 @@ These powers exist only in those who bridge blood and moon.
             *gosub record_ability "Ecliptic Surge"
             *goto selection_complete
 
-    *if (power_level >= 3) and (not apex_senses)
+    *if (power_level >= 3) and (apex_senses = false)
         #Apex Senses
             [i]Combine vampiric precision and lupine tracking.[/i]
 
@@ -96,7 +96,7 @@ These powers exist only in those who bridge blood and moon.
             *gosub record_ability "Apex Senses"
             *goto selection_complete
 
-    *if (power_level >= 4) and (not war_form)
+    *if (power_level >= 4) and (war_form = false)
         #War Form Transformation
             [i]Unlock your ultimate hybrid avatar.[/i]
 
@@ -104,7 +104,7 @@ These powers exist only in those who bridge blood and moon.
             *gosub record_ability "War Form"
             *goto selection_complete
 
-    *if (power_level >= 5) and (not eclipse_ascendant)
+    *if (power_level >= 5) and (eclipse_ascendant = false)
         #Eclipse Ascendant
             [i]Temporary apotheosis—become the living eclipse.[/i]
 
@@ -126,37 +126,37 @@ These powers exist only in those who bridge blood and moon.
 You can learn Varkyr abilities, though not as efficiently as pure-bloods.
 
 *choice
-    *if (power_level >= 1) and (not enhanced_strength)
+    *if (power_level >= 1) and (enhanced_strength = false)
         #Enhanced Strength (Varkyr)
             *gosub record_ability "Enhanced Strength"
             *goto selection_complete
 
-    *if (power_level >= 1) and (not night_vision)
+    *if (power_level >= 1) and (night_vision = false)
         #Night Vision (Varkyr)
             *gosub record_ability "Night Vision"
             *goto selection_complete
 
-    *if (power_level >= 2) and (not shadow_step)
+    *if (power_level >= 2) and (shadow_step = false)
         #Shadow Step (Varkyr)
             *gosub record_ability "Shadow Step"
             *goto selection_complete
 
-    *if (power_level >= 2) and (not blood_alchemy)
+    *if (power_level >= 2) and (blood_alchemy = false)
         #Blood Alchemy (Varkyr)
             *gosub record_ability "Blood Alchemy"
             *goto selection_complete
 
-    *if (power_level >= 3) and (not mesmerize)
+    *if (power_level >= 3) and (mesmerize = false)
         #Mesmerize (Varkyr)
             *gosub record_ability "Mesmerize"
             *goto selection_complete
 
-    *if (power_level >= 3) and (not mist_form)
+    *if (power_level >= 3) and (mist_form = false)
         #Mist Form (Varkyr)
             *gosub record_ability "Mist Form"
             *goto selection_complete
 
-    *if (power_level >= 4) and (not crimson_storm)
+    *if (power_level >= 4) and (crimson_storm = false)
         #Crimson Storm (Varkyr)
             *gosub record_ability "Crimson Storm"
             *goto selection_complete
@@ -175,32 +175,32 @@ You can learn Varkyr abilities, though not as efficiently as pure-bloods.
 You can learn Lupine abilities, though not as efficiently as pure-bloods.
 
 *choice
-    *if (power_level >= 1) and (not lupine_enhanced_senses)
+    *if (power_level >= 1) and (lupine_enhanced_senses = false)
         #Enhanced Senses (Lupine)
             *gosub record_ability "Enhanced Senses (Lupine)"
             *goto selection_complete
 
-    *if (power_level >= 1) and (not lupine_regenerative_healing)
+    *if (power_level >= 1) and (lupine_regenerative_healing = false)
         #Regenerative Healing (Lupine)
             *gosub record_ability "Regenerative Healing"
             *goto selection_complete
 
-    *if (power_level >= 2) and (not lunar_infusion)
+    *if (power_level >= 2) and (omega_lunar_infusion = false)
         #Lunar Infusion (Lupine)
             *gosub record_ability "Lunar Infusion"
             *goto selection_complete
 
-    *if (power_level >= 2) and (not natures_ally)
+    *if (power_level >= 2) and (omega_natures_ally = false)
         #Nature's Ally (Lupine)
             *gosub record_ability "Nature's Ally"
             *goto selection_complete
 
-    *if (power_level >= 3) and (not battle_howl)
+    *if (power_level >= 3) and (werewolf_battle_howl = false)
         #Battle Howl (Lupine)
             *gosub record_ability "Battle Howl"
             *goto selection_complete
 
-    *if (power_level >= 4) and (not moons_fury)
+    *if (power_level >= 4) and (moons_fury = false)
         #Moon's Fury (Lupine)
             *gosub record_ability "Moon's Fury"
             *goto selection_complete
@@ -222,7 +222,7 @@ You can learn Lupine abilities, though not as efficiently as pure-bloods.
 
     [i]${ability_name} learned.[/i]
     *return
-*else
+*if (abilities_selected > 0)
     *set ability_choice_2 ability_name
     *set abilities_selected +1
 
@@ -232,7 +232,7 @@ You can learn Lupine abilities, though not as efficiently as pure-bloods.
 *label selection_complete
 *if (abilities_selected < 2)
     *goto select_first_ability
-*else
+*if (abilities_selected >= 2)
     *goto apply_abilities
 
 *label apply_abilities
@@ -294,18 +294,20 @@ The hybrid energies settle within you, both blood and moon acknowledging your gr
     *set lupine_regenerative_healing true
 
 *if (ability_choice_1 = "Lunar Infusion") or (ability_choice_2 = "Lunar Infusion")
-    *set lunar_infusion true
+    *set omega_lunar_infusion true
 
 *if (ability_choice_1 = "Nature's Ally") or (ability_choice_2 = "Nature's Ally")
-    *set natures_ally true
+    *set omega_natures_ally true
 
 *if (ability_choice_1 = "Battle Howl") or (ability_choice_2 = "Battle Howl")
-    *set battle_howl true
+    *set werewolf_battle_howl true
 
 *if (ability_choice_1 = "Moon's Fury") or (ability_choice_2 = "Moon's Fury")
     *set moons_fury true
 
 *comment Update unlocked_abilities string for display
-*set unlocked_abilities &(" " & ability_choice_1 & ", " & ability_choice_2 & ";")
+*set unlocked_abilities &(" " & ability_choice_1)
+*set unlocked_abilities &(", " & ability_choice_2)
+*set unlocked_abilities &(";")
 
 *return

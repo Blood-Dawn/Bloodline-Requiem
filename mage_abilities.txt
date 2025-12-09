@@ -12,17 +12,21 @@ Your rank as [b]${mage_rank}[/b] unlocks deeper arcane patterns. Choose [b]two s
 
 *if (mage_rank = "Apprentice")
     *goto apprentice_spells
-*elseif (mage_rank = "Journeymage")
+
+*if (mage_rank = "Journeymage")
     *goto journeymage_spells
-*elseif ((mage_rank = "Battlemage") or (mage_rank = "Spellwright"))
+
+*if ((mage_rank = "Battlemage") or (mage_rank = "Spellwright"))
     *goto specialist_spells
-*elseif (mage_rank = "Arcanist")
+
+*if (mage_rank = "Arcanist")
     *goto arcanist_spells
-*elseif (mage_rank = "Archmage")
+
+*if (mage_rank = "Archmage")
     *goto archmage_spells
-*else
-    *comment Fallback for unexpected rank
-    *bug Unrecognized mage rank: ${mage_rank}
+
+*comment Fallback for unexpected rank
+*bug Unrecognized mage rank: ${mage_rank}
 
 *comment Shared tracking helpers
 *label record_selection
@@ -30,7 +34,8 @@ Your rank as [b]${mage_rank}[/b] unlocks deeper arcane patterns. Choose [b]two s
 *set abilities_selected +1
 *if (abilities_selected = 1)
     *set ability_choice_1 ability_name
-*elseif (abilities_selected = 2)
+
+*if (abilities_selected = 2)
     *set ability_choice_2 ability_name
 
 *if (abilities_selected >= 2)
@@ -43,7 +48,7 @@ Your rank as [b]${mage_rank}[/b] unlocks deeper arcane patterns. Choose [b]two s
 Choose two:
 
 *choice
-    *if (not arcane_bolt)
+    *if (arcane_bolt = false)
         #Arcane Bolt
             [i]Condense raw aether into a guided projectile.[/i]
 
@@ -51,7 +56,7 @@ Choose two:
             *set arcane_bolt true
             *gosub record_selection "Arcane Bolt"
             *goto check_apprentice_complete
-    *if (not mage_sight)
+    *if (mage_sight = false)
         #Mage Sight
             [i]See the flows of the Veil and trace hidden sigils.[/i]
 
@@ -59,7 +64,7 @@ Choose two:
             *set mage_sight true
             *gosub record_selection "Mage Sight"
             *goto check_apprentice_complete
-    *if (not wardweave)
+    *if (wardweave = false)
         #Wardweave
             [i]Stitch a quick ward to blunt a single strike or spell.[/i]
 
@@ -67,7 +72,7 @@ Choose two:
             *set wardweave true
             *gosub record_selection "Wardweave"
             *goto check_apprentice_complete
-    *if (not focus_mind)
+    *if (focus_mind = false)
         #Focus Mind
             [i]Breathe mana through your nerves, sharpening concentration.[/i]
 
@@ -87,7 +92,7 @@ Choose two:
 Choose two:
 
 *choice
-    *if (not blink_step)
+    *if (blink_step = false)
         #Blink Step
             [i]Slip a few strides through folded space.[/i]
 
@@ -95,7 +100,7 @@ Choose two:
             *set blink_step true
             *gosub record_selection "Blink Step"
             *goto check_journeymage_complete
-    *if (not aegis_sigil)
+    *if (aegis_sigil = false)
         #Aegis Sigil
             [i]Anchor a shield glyph that blooms into a dome on impact.[/i]
 
@@ -103,7 +108,7 @@ Choose two:
             *set aegis_sigil true
             *gosub record_selection "Aegis Sigil"
             *goto check_journeymage_complete
-    *if (not mana_flare)
+    *if (mana_flare = false)
         #Mana Flare
             [i]Overcharge your next spell with volatile aether.[/i]
 
@@ -111,7 +116,7 @@ Choose two:
             *set mana_flare true
             *gosub record_selection "Mana Flare"
             *goto check_journeymage_complete
-    *if (not veil_pierce)
+    *if (veil_pierce = false)
         #Veil Pierce
             [i]Cut through illusions and shadow veils.[/i]
 
@@ -131,7 +136,7 @@ Choose two:
 Choose two:
 
 *choice
-    *if (not storm_nova)
+    *if (storm_nova = false)
         #Storm Nova
             [i]Release a ring of crackling force around you.[/i]
 
@@ -139,7 +144,7 @@ Choose two:
             *set storm_nova true
             *gosub record_selection "Storm Nova"
             *goto check_specialist_complete
-    *if (not spellshield_dome)
+    *if (spellshield_dome = false)
         #Spellshield Dome
             [i]Erect a sustained barrier fueled by steady mana flow.[/i]
 
@@ -147,7 +152,7 @@ Choose two:
             *set spellshield_dome true
             *gosub record_selection "Spellshield Dome"
             *goto check_specialist_complete
-    *if (not rune_trap)
+    *if (rune_trap = false)
         #Rune Trap
             [i]Lay a hidden sigil that detonates into binding chains.[/i]
 
@@ -155,7 +160,7 @@ Choose two:
             *set rune_trap true
             *gosub record_selection "Rune Trap"
             *goto check_specialist_complete
-    *if (not etheric_chains)
+    *if (etheric_chains = false)
         #Etheric Chains
             [i]Project bindings of condensed mana to immobilize a foe.[/i]
 
@@ -175,7 +180,7 @@ Choose two:
 Choose two:
 
 *choice
-    *if (not temporal_anchor)
+    *if (temporal_anchor = false)
         #Temporal Anchor
             [i]Fix a moment in place; snap back to it when overwhelmed.[/i]
 
@@ -183,7 +188,7 @@ Choose two:
             *set temporal_anchor true
             *gosub record_selection "Temporal Anchor"
             *goto check_arcanist_complete
-    *if (not rift_step)
+    *if (rift_step = false)
         #Rift Step
             [i]Tear a short-lived rift to bypass walls or appear behind foes.[/i]
 
@@ -191,7 +196,7 @@ Choose two:
             *set rift_step true
             *gosub record_selection "Rift Step"
             *goto check_arcanist_complete
-    *if (not soul_ward)
+    *if (soul_ward = false)
         #Soul Ward
             [i]Shield the mind and spirit from domination or terror magic.[/i]
 
@@ -199,7 +204,7 @@ Choose two:
             *set soul_ward true
             *gosub record_selection "Soul Ward"
             *goto check_arcanist_complete
-    *if (not cataclysmic_arc)
+    *if (cataclysmic_arc = false)
         #Cataclysmic Arc
             [i]Channel a devastating beam that drains your mana reserve.[/i]
 
@@ -219,16 +224,16 @@ Choose two:
 Choose two:
 
 *choice
-    *if (not temporal_anchor)
+    *if (temporal_anchor = false)
         #Temporal Anchor
             *goto select_archmage_anchor
-    *if (not rift_step)
+    *if (rift_step = false)
         #Rift Step
             *goto select_archmage_rift
-    *if (not soul_ward)
+    *if (soul_ward = false)
         #Soul Ward
             *goto select_archmage_soul
-    *if (not cataclysmic_arc)
+    *if (cataclysmic_arc = false)
         #Cataclysmic Arc
             *goto select_archmage_arc
     #Focus on refining existing spells instead

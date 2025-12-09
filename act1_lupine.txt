@@ -474,6 +474,20 @@ His grin turns feral.
             *gosub_scene rank_progression gain_xp 125 "Agreed to aid the Lupine faction"
             *goto lupine_conclusion
 
+        *else
+            "I'll help," you say. "The Lupines deserve freedom as much as anyone."
+
+            Rurik nods, respect clear in his eyes.
+
+            "Then you are friend to the pack. We will not forget."
+
+            *set lupine_agent true
+            *set lupine_independent false
+            *set lupine_opposed false
+            *set lupine_relation +25
+            *gosub_scene rank_progression gain_xp 125 "Agreed to aid the Lupine faction"
+            *goto lupine_conclusion
+
     #Maintain neutrality—you'll pursue the amulet for yourself
         "I won't make promises I might not keep," you say honestly. "I'll search for the amulet, but I can't guarantee I'll give it to the pack."
 
@@ -490,6 +504,18 @@ His grin turns feral.
             *goto lupine_conclusion
 
         *if (pack_outsider)
+            Rurik shrugs, the gesture almost human.
+
+            "Fair enough. We are allies, not masters and servants. Do what you think is right."
+
+            *set lupine_independent true
+            *set lupine_agent false
+            *set lupine_opposed false
+            *set will +20
+            *gosub_scene rank_progression gain_xp 125 "Maintained independence from all factions"
+            *goto lupine_conclusion
+
+        *else
             Rurik shrugs, the gesture almost human.
 
             "Fair enough. We are allies, not masters and servants. Do what you think is right."
@@ -520,6 +546,20 @@ His grin turns feral.
             *goto exile_path
 
         *if (pack_outsider)
+            Rurik's expression hardens.
+
+            "Then we are no longer allies. If we meet on the hunt for the amulet, it will be as rivals."
+
+            *set lupine_opposed true
+            *set lupine_agent false
+            *set lupine_independent false
+            *set pack_outsider false
+            *set lupine_relation -25
+            *set will +25
+            *gosub_scene rank_progression gain_xp 100 "Chose to oppose Lupine interests"
+            *goto exile_path
+
+        *else
             Rurik's expression hardens.
 
             "Then we are no longer allies. If we meet on the hunt for the amulet, it will be as rivals."

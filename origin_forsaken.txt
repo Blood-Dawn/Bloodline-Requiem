@@ -13,7 +13,7 @@
 *set hybrid_stability 50
 *set control 50
 *set rage 30
-*set Bloodlust 30
+*set bloodlust 30
 *set strength 75
 *set agility 75
 *set will 70
@@ -129,7 +129,7 @@ He gestures for you to focus inward.
         The bloodlust calls louder than the rage. You are predator first, beast second.
 
         *set forsaken_type "Vamp-Wolf"
-        *set Bloodlust +20
+        *set bloodlust +20
         *set rage -10
         *set cunning +10
 
@@ -142,7 +142,7 @@ He gestures for you to focus inward.
 
         *set forsaken_type "Wolf-Vamp"
         *set rage +20
-        *set Bloodlust -10
+        *set bloodlust -10
         *set strength +15
 
         "Wolf-Vamp," Caius says. "Physical prowess will be your strength. Silver will hurt more. Sunlight less."

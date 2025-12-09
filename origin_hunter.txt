@@ -73,7 +73,7 @@ Isabella Crimson intercepts you before you reach Vaelis's wing. "Hunter in silk,
         *set rank "Commoner"
         *set Turned true
         *set blood_satiation 75
-        *set Bloodlust +15
+        *set bloodlust +15
         *set varkyrs_relation +20
         *gosub_scene rank_progression gain_xp 150 "Defected to the Crimson Spire"
         *goto hunter_departure_varkyr

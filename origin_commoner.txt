@@ -69,7 +69,7 @@ He offers you a hand. "Live as prey... or stand as something new. Choose quickly
         *set Turned true
         *set hybrid_stability 45
         *set control 55
-        *set Bloodlust 20
+        *set bloodlust 20
         *set rage 20
         *set forsaken_relation +25
         *gosub_scene rank_progression gain_xp 100 "Accepted Caius's hybrid salvation"
@@ -141,7 +141,7 @@ Hands clamp over your mouth. You're dragged through secret doors into a candleli
         *set rank "Commoner"
         *set Turned true
         *set varkyrs_relation +15
-        *set Bloodlust +5
+        *set bloodlust +5
         *gosub_scene rank_progression gain_xp 100 "Sold ritual intel for vampiric patronage"
         *goto commoner_departure_varkyr
 

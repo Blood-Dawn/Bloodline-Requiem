@@ -4,8 +4,6 @@
 *label introduction
 *set act 1
 *set chapter 1
-*image https://i.imgur.com/vHxUAEN.png
-
 Now, centuries later, you find yourself in the heart of Veilfall, a skilled assassin taking requests from the elusive Assassin Guild. Your reputation for getting the job done, no matter the complexity, precedes you. Today, a new assignment lands on your table, a choice that could unveil the deep-seated mysteries of Veilfall, or thrust you into the heart of the ancient conflict brewing afresh.
 
 

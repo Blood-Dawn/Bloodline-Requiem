@@ -11,7 +11,7 @@
 *set rank "Commoner"
 *set age 0
 *set Turned true
-*set Bloodlust 50
+*set bloodlust 50
 *set control 50
 *set blood_satiation 100
 *set strength 70
@@ -54,7 +54,7 @@ You are Varkyr now. Fledgling. Commoner. The lowest rank of an immortal aristocr
 
         You are apex predator now. Humanity was a chrysalis you've shed.
 
-        *set Bloodlust +20
+        *set bloodlust +20
         *set control -10
         *set will +10
         *goto awakening
@@ -65,7 +65,7 @@ You are Varkyr now. Fledgling. Commoner. The lowest rank of an immortal aristocr
         Now you are cold. Empty. A monster wearing your face.
 
         *set control +20
-        *set Bloodlust -10
+        *set bloodlust -10
         *set will +10
         *goto awakening
 
@@ -122,7 +122,7 @@ You glimpse movement. Eyes. Hunger that makes your own seem tame.
         Her eyes narrow slightly—but there's a glimmer of respect there. Boldness has its place.
 
         *set will +10
-        *set Bloodlust +5
+        *set bloodlust +5
         *goto first_trial
 
     #Study the other fledglings
@@ -250,7 +250,7 @@ The hunger roars in your veins.
             *set Bloodlust +5
             *goto feeding_complete
 
-*elseif (Bloodlust >= 60)
+*elseif (bloodlust >= 60)
     The beast within [i]screams[/i]. Control is a distant concept.
 
     *choice
@@ -273,7 +273,7 @@ The hunger roars in your veins.
 
             *set blood_satiation 100
             *set control -20
-            *set Bloodlust +20
+            *set bloodlust +20
             *set varkyrs_relation -15
             *goto feeding_failed
 
@@ -294,7 +294,7 @@ The hunger roars in your veins.
             The answer: quite a lot. But you pull back just in time.
 
             *set blood_satiation 100
-            *set Bloodlust +10
+            *set bloodlust +10
             *set cunning +5
             *goto feeding_complete
 

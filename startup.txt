@@ -1,56 +1,64 @@
 *title Bloodline Requiem
 *author Kheiven D'Haiti
-
-
 *scene_list
-    startup
-    origin_select
-    origin_assassin
-    origin_noble
-    origin_commoner
-    origin_hunter
-    origin_varkyr
-    origin_lupine
-    origin_forsaken
-    origin_mage
-    codex_main
-    codex_world
-    codex_races
-    codex_factions
-    codex_locations
-    codex_characters
-    codex_characters_expanded
-    codex_factions_expanded
-    codex_locations_expanded
-    codex_legends
-    codex_mythology
-    varkyr_abilities
-    lupine_abilities_complete
-    forsaken_abilities
-    mage_abilities
-    rank_progression
-    power_tier_calc
-    act1_human
-    act1_lupine
-    act1_varkyr
-    act1_mage
-    act1_forsaken_ng+
-    act2_common_hub
-    hub_city
-    mission_board
-    mission_list
-    post_mission_request
-    NewGame_plus
-    Ending_Scenarios
-    choicescript_stats
-    status
-*comment CoGDemos automatically saves your progress; smPlugin is not supported.
-*comment General Section
+	startup
+	origin_select
+	origin_assassin
+	origin_noble
+	origin_commoner
+	origin_hunter
+	origin_varkyr
+	origin_lupine
+	origin_forsaken
+	origin_mage
+	codex_main
+	codex_world
+	codex_races
+	codex_factions
+	codex_locations
+	codex_characters
+	codex_characters_expanded
+	codex_factions_expanded
+	codex_locations_expanded
+	codex_legends
+	codex_mythology
+	codex_lore
+	varkyr_abilities
+	lupine_abilities_complete
+	lupine_abilities
+	forsaken_abilities
+	mage_abilities
+	rank_progression
+	power_tier_calc
+	act1_human
+	act1_lupine
+	act1_varkyr
+	act1_mage
+	act1_forsaken_ng+
+	act2_common_hub
+	hub_city
+	mission_board
+	mission_list
+	post_mission_request
+	NewGame_plus
+	Ending_Scenarios
+	choicescript_stats
+	status
+	COMPLETION_BANNER
+	DIRECTORY_TREE
+	FILE_MAP
+	GIT_COMMIT_MESSAGE
+	prologue
+	vampire_abilities
 *create control 100
 *create Race ""
 *create alignment ""
 *create rank ""
 *create legion_rank ""
+*create legion_agent false
+*create legion_independent false
+*create legion_opposed false
+*create legion_relation 0
 *create artifact false
 *create reputation 0
 *create strength 0
@@ -66,7 +74,6 @@
 *create human_rep 0
 *create varkyr_rep 0
 *create lupine_rep 0
-*gosub_scene power_tier_calc update_magic
 *create has_killed_innocent false
 *create act 0
 *create chapter 0
@@ -78,6 +85,8 @@
 *create mission_board_requests false 
 *create mission_board false
 *create mission_board_request false
+*create mission_board_request_text ""
+*create partner_elena false
 *comment ── Commoner-rank ability flags
 *create blood_sense false
 *create fledgling_charm false
@@ -88,6 +97,7 @@
 *create awareness 0
 *create charm 0
 *create stealth 0
+*create combat 0
 
 
 *comment factions
@@ -118,7 +128,7 @@
 
 
 *comment Varkyrs Section
-*create Bloodlust 0
+*create bloodlust 0
 *create varkyr_xp 0
 *create blood_satiation 100
 *comment Blood satiation: 100 = recently fed, 0 = starving

@@ -85,7 +85,7 @@
 
 *if (alignment = "varkyrs")
   *stat_chart
-    opposed_pair control Control vs Bloodlust
+    opposed_pair bloodlust
       Controlled
       Frenzied
     percent blood_satiation Blood Satiation
@@ -93,7 +93,7 @@
 
 *if (alignment = "forsaken")
   *stat_chart
-    opposed_pair hybrid_stability Hybrid Stability
+    opposed_pair hybrid_stability
       Unstable
       Balanced
     text forsaken_type Hybrid Type
@@ -101,7 +101,7 @@
 
 *if (alignment = "mage")
   *stat_chart
-    opposed_pair ward_stability Ward Stability
+    opposed_pair ward_stability
       Unstable
       Sealed
     percent mana Mana Reserve
@@ -188,14 +188,14 @@ Choose a faction to view:
   [i]Bloodline:[/i] Royal
   [i]Age:[/i] 247 years
 
-  *image isabella_portrait.jpg center
+  *comment portrait placeholder (Isabella)
 
   Isabella is a Royal bloodline Varkyr of Viscountess rank, known for her mastery of blood magic and political manipulation. She serves as one of the Crimson Spire's most cunning diplomats, often negotiating treaties between the supernatural factions. Her crimson eyes miss nothing, and her silver tongue has ended more conflicts than her fangs ever could.
 
   Despite her cold exterior, those who earn her trust find a fiercely loyal ally. She believes in maintaining the Veil Protocol at all costs, viewing exposure as the greatest threat to Varkyr survival.
 
   *stat_chart
-    opposed_pair Isabella_relation Isabella's Opinion
+    opposed_pair Isabella_relation
       Hostile
       Devoted
 
@@ -209,14 +209,14 @@ Choose a faction to view:
   [i]Bloodline:[/i] Shadow
   [i]Age:[/i] 412 years
 
-  *image vincent_portrait.jpg center
+  *comment portrait placeholder (Vincent)
 
   Vincent is a Shadow bloodline Varkyr who has mastered the art of assassination and stealth. Once a mortal assassin, he was Embraced during the Millennium War and has since become one of the Crimson Spire's most feared enforcers. His Shadow Step ability is so refined that even ancient Varkyrs struggle to detect his presence.
 
   He rarely speaks, preferring to let his actions convey his intent. Those who cross the Night Council often find Vincent waiting in their shadows. He values efficiency and skill above all else.
 
   *stat_chart
-    opposed_pair Vincent_relation Vincent's Opinion
+    opposed_pair Vincent_relation
       Hostile
       Respectful
 
@@ -230,14 +230,14 @@ Choose a faction to view:
   [i]Bloodline:[/i] War
   [i]Age:[/i] 598 years
 
-  *image cassandra_portrait.jpg center
+  *comment portrait placeholder (Cassandra)
 
   Cassandra is a War bloodline Duchess who led Varkyr legions during the final centuries of the Millennium War. Her martial prowess is legendary—she once held a fortress against 10,000 Lupines for three months, alone. Her Crimson Storm ability can devastate entire battlefields.
 
   In the modern era, she serves as the Crimson Spire's military commander, training younger Varkyrs in combat. She despises weakness and believes only the strong deserve immortality. Her respect must be earned through action, not words.
 
   *stat_chart
-    opposed_pair Cassandra_relation Cassandra's Opinion
+    opposed_pair Cassandra_relation
       Contempt
       Admiration
 
@@ -271,14 +271,14 @@ Choose a faction to view:
   [i]Type:[/i] Omega Variant
   [i]Pack:[/i] Whispering Pines
 
-  *image rurik_portrait.jpg center
+  *comment portrait placeholder (Rurik)
 
   Rurik is the Alpha of the Whispering Pines Pack, one of the oldest and most respected packs in Veilfall's territories. His massive black wolf form is instantly recognizable, and his amber eyes carry the weight of centuries of leadership. As an Omega Variant, he can shift between wolf and hybrid forms with perfect ease.
 
   He values honor above all else and expects his pack—and those who deal with his pack—to uphold the old codes. He remembers the Millennium War firsthand and seeks to prevent its horrors from repeating. Under his leadership, the Whispering Pines have become mediators between feuding packs.
 
   *stat_chart
-    opposed_pair Rurik_relation Rurik's Opinion
+    opposed_pair Rurik_relation
       Enemy
       Pack Brother
 
@@ -292,14 +292,14 @@ Choose a faction to view:
   [i]Type:[/i] Werewolf-Only
   [i]Pack:[/i] Whispering Pines
 
-  *image thane_portrait.jpg center
+  *comment portrait placeholder (Thane)
 
   Thane is Rurik's Beta and oldest companion. His grey fur marks him as an elder, and his wisdom guides the Whispering Pines in matters of tradition and ritual. As a werewolf-only type, he embodies raw martial strength and serves as the pack's primary warrior trainer.
 
   He was Bitten during the Post-War Era and has dedicated his immortal life to preserving Lupine culture. He teaches young wolves about the First Kill doctrine and the importance of control over rage. Despite his fearsome appearance, he has a gentle side reserved for packmates.
 
   *stat_chart
-    opposed_pair Thane_relation Thane's Opinion
+    opposed_pair Thane_relation
       Distrusted
       Honored Elder
 
@@ -313,14 +313,14 @@ Choose a faction to view:
   [i]Type:[/i] Wolf-Only
   [i]Pack:[/i] Whispering Pines
 
-  *image rhea_portrait.jpg center
+  *comment portrait placeholder (Rhea)
 
   Rhea is the Whispering Pines' fastest scout, her white wolf form a blur through the forest. As a wolf-only type, she has perfected the art of speed and stealth, able to traverse the entire territory in a single night. Her rare white fur marks her as moon-blessed, a Lupine touched by lunar magic.
 
   She's younger than most pack members, Bitten only 50 years ago, but her natural talent has earned her a place of honor. She's curious about the world beyond the packs and often questions tradition—much to Thane's frustration. She dreams of uniting all Lupine packs under one banner.
 
   *stat_chart
-    opposed_pair Rhea_relation Rhea's Opinion
+    opposed_pair Rhea_relation
       Suspicious
       Close Friend
 
@@ -334,14 +334,14 @@ Choose a faction to view:
   [i]Type:[/i] Omega Variant
   [i]Pack:[/i] None (Exiled)
 
-  *image skylar_portrait.jpg center
+  *comment portrait placeholder (Skylar)
 
   Skylar was once a rising star in the Bloodmoon Pack, destined for Alpha status. But after refusing to participate in a raid on human settlements, she was exiled for "weakness." Now she roams Veilfall's territories as a lone wolf, helping those in need regardless of faction.
 
   Her Omega Variant abilities make her incredibly versatile, and her combat skills are unmatched. She believes the old pack hierarchies are outdated and dreams of a new Lupine society based on individual merit rather than dominance. Her exile has made her both cynical and fiercely independent.
 
   *stat_chart
-    opposed_pair Skylar_relation Skylar's Opinion
+    opposed_pair Skylar_relation
       Avoided
       Trusted Companion
 
@@ -375,7 +375,7 @@ Choose a faction to view:
   [i]Type:[/i] Balanced Hybrid
   [i]Age:[/i] Unknown (est. 800+ years)
 
-  *image caius_portrait.jpg center
+  *comment portrait placeholder (Caius)
 
   Caius is the founder and leader of the Forsaken, the first known hybrid of Varkyr and Lupine bloodlines. His existence defies the laws of both parent races—he should not be possible, yet he thrives. His Eclipse Ascendant form combines the raw power of Lupines with the refined magic of Varkyrs.
 
@@ -384,7 +384,7 @@ Choose a faction to view:
   Charismatic and visionary, Caius dreams of a world where Forsaken are not hunted but celebrated. He controls three of the four Ecliptic Amulet shards.
 
   *stat_chart
-    opposed_pair caius_relation Caius's Opinion
+    opposed_pair caius_relation
       Rejected
       Right Hand
 
@@ -398,7 +398,7 @@ Choose a faction to view:
   [i]Type:[/i] Vamp-Wolf
   [i]Age:[/i] 156 years
 
-  *image dante_portrait.jpg center
+  *comment portrait placeholder (Dante)
 
   Dante is a Vamp-Wolf Forsaken, leaning more heavily toward his vampiric heritage. He was Embraced first by a Varkyr, then later Bitten by a Lupine during a territorial dispute. The conflicting bloodlines nearly killed him, but Caius intervened and taught him to balance both natures.
 
@@ -407,7 +407,7 @@ Choose a faction to view:
   Despite his loyalty to Caius, he harbors secret doubts about the inevitability of war between factions.
 
   *stat_chart
-    opposed_pair Dante_relation Dante's Opinion
+    opposed_pair Dante_relation
       Rival
       Brother in Arms
 
@@ -421,7 +421,7 @@ Choose a faction to view:
   [i]Type:[/i] Wolf-Vamp
   [i]Age:[/i] 89 years
 
-  *image mira_portrait.jpg center
+  *comment portrait placeholder (Mira)
 
   Mira is a Wolf-Vamp Forsaken who leans toward her Lupine heritage. She was born a Lupine but nearly died from silver poisoning during a hunter attack. In desperation, her pack sought help from a sympathetic Varkyr who Embraced her to save her life. The result was a hybrid no one expected to survive.
 
@@ -430,7 +430,7 @@ Choose a faction to view:
   Kind-hearted but volatile, Mira represents the Forsaken's greatest hope and deepest fear: what happens when the bloodlines can't be balanced?
 
   *stat_chart
-    opposed_pair Mira_relation Mira's Opinion
+    opposed_pair Mira_relation
       Feared
       Cherished
 
@@ -466,7 +466,7 @@ Choose a faction to view:
   Selene orchestrates the Arcanum's defense of Veilfall's Veilstones. Calm and relentless, she treats magic as civic duty rather than vanity. Apprentices earn her respect by solving problems, not reciting theory.
 
   *stat_chart
-    opposed_pair Selene_relation Selene's Opinion
+    opposed_pair Selene_relation
       Distrusted
       Favored
 
@@ -482,7 +482,7 @@ Choose a faction to view:
   Imani leads the Arcanum's strike teams when wards fail. She respects decisiveness and loathes dithering. Her spellblade style blends silvered steel with sigils etched along the edge.
 
   *stat_chart
-    opposed_pair Imani_relation Imani's Opinion
+    opposed_pair Imani_relation
       Skeptical
       Battle-Forged
 
@@ -498,7 +498,7 @@ Choose a faction to view:
   Tamsin reads ripples in the Veil like weather. Her warnings keep the Arcanum ahead of Varkyr shadow gates and Forsaken experiments. She is gentle, but there is steel beneath the starlight.
 
   *stat_chart
-    opposed_pair Tamsin_relation Tamsin's Opinion
+    opposed_pair Tamsin_relation
       Reserved
       Kindred
 
@@ -532,7 +532,7 @@ Choose a faction to view:
   [i]Specialty:[/i] Supernatural Contracts
   [i]Age:[/i] 34 years
 
-  *image lucan_portrait.jpg center
+  *comment portrait placeholder (Lucan)
 
   Lucan is the Assassin Guild's most successful contractor for supernatural targets. He's survived encounters with Varkyrs, Lupines, and even a Forsaken Eclipse Lord. His success comes not from brute strength but meticulous planning and an encyclopedic knowledge of supernatural weaknesses.
 
@@ -541,7 +541,7 @@ Choose a faction to view:
   Despite his ruthlessness, he follows the Guild's strict code: only authorized targets, minimal collateral damage, and absolute discretion. He's curious whether you'll remain human or succumb to the supernatural world's temptations.
 
   *stat_chart
-    opposed_pair Lucan_relation Lucan's Opinion
+    opposed_pair Lucan_relation
       Mark for Death
       Trusted Partner
 
@@ -555,7 +555,7 @@ Choose a faction to view:
   [i]Position:[/i] Merchant Lord
   [i]Age:[/i] 42 years
 
-  *image adrian_portrait.jpg center
+  *comment portrait placeholder (Adrian)
 
   Adrian is one of Veilfall's wealthiest merchants and a secret member of the human faction that knows about the supernatural world. His family has traded with Varkyrs for generations, providing them with blood donations in exchange for protection and wealth.
 
@@ -564,7 +564,7 @@ Choose a faction to view:
   He's pragmatic to a fault, viewing everything through a lens of profit and loss. Yet he genuinely cares for Veilfall's human population and works to minimize supernatural violence in populated areas.
 
   *stat_chart
-    opposed_pair Adrian_relation Adrian's Opinion
+    opposed_pair Adrian_relation
       Business Rival
       Valued Associate
 
@@ -578,7 +578,7 @@ Choose a faction to view:
   [i]Specialty:[/i] Varkyr Extermination
   [i]Age:[/i] 28 years
 
-  *image nadia_portrait.jpg center
+  *comment portrait placeholder (Nadia)
 
   Nadia is a monster hunter who specializes in tracking and eliminating rogue Varkyrs. Her family was slaughtered by a Bloodlust-crazed vampire when she was young, and she's dedicated her life to revenge. She's killed 47 Varkyrs, earning both fear and respect from the Crimson Spire.
 
@@ -587,7 +587,7 @@ Choose a faction to view:
   Despite her single-minded vengeance, she's not reckless. She plans every hunt meticulously and never takes contracts she can't complete. She's curious whether you'll remain on the side of humanity or betray it.
 
   *stat_chart
-    opposed_pair Nadia_relation Nadia's Opinion
+    opposed_pair Nadia_relation
       Enemy
       Reluctant Ally
 
@@ -601,7 +601,7 @@ Choose a faction to view:
   [i]Specialty:[/i] Supernatural History
   [i]Age:[/i] 51 years
 
-  *image julian_portrait.jpg center
+  *comment portrait placeholder (Julian)
 
   Julian is a historian who has spent decades researching the Millennium War and the origins of supernatural factions. He knows more about the Pact of the Midnight Sun than most Varkyrs and Lupines who lived through it. His private library contains texts that would make the Night Council burn down cities to acquire.
 
@@ -610,7 +610,7 @@ Choose a faction to view:
   Scholarly and mild-mannered, Julian avoids violence but has survived numerous attempts on his life through cleverness and contingency plans. He's looking for someone who can help him locate the fourth Ecliptic Shard.
 
   *stat_chart
-    opposed_pair Julian_relation Julian's Opinion
+    opposed_pair Julian_relation
       Untrustworthy
       Confidant
 
@@ -636,82 +636,82 @@ Choose a faction to view:
 
 *if (met_Isabella)
   *stat_chart
-    opposed_pair Isabella_relation Isabella Crimson (Varkyr)
+    opposed_pair Isabella_relation
       Hostile
       Devoted
 *if (met_Vincent)
   *stat_chart
-    opposed_pair Vincent_relation Vincent Ashenheart (Varkyr)
+    opposed_pair Vincent_relation
       Hostile
       Respectful
 *if (met_Cassandra)
   *stat_chart
-    opposed_pair Cassandra_relation Cassandra Nightfall (Varkyr)
+    opposed_pair Cassandra_relation
       Contempt
       Admiration
 *if (met_Rurik)
   *stat_chart
-    opposed_pair Rurik_relation Rurik Blackfang (Lupine)
+    opposed_pair Rurik_relation
       Enemy
       Pack Brother
 *if (met_Thane)
   *stat_chart
-    opposed_pair Thane_relation Thane Silverpelt (Lupine)
+    opposed_pair Thane_relation
       Distrusted
       Honored Elder
 *if (met_Rhea)
   *stat_chart
-    opposed_pair Rhea_relation Rhea Moonshadow (Lupine)
+    opposed_pair Rhea_relation
       Suspicious
       Close Friend
 *if (met_Skylar)
   *stat_chart
-    opposed_pair Skylar_relation Skylar Ironclaw (Lupine)
+    opposed_pair Skylar_relation
       Avoided
       Trusted Companion
 *if (met_Dante)
   *stat_chart
-    opposed_pair Dante_relation Dante Ashwood (Forsaken)
+    opposed_pair Dante_relation
       Rival
       Brother in Arms
 *if (met_Mira)
   *stat_chart
-    opposed_pair Mira_relation Mira Thornveil (Forsaken)
+    opposed_pair Mira_relation
       Feared
       Cherished
 *if (met_Selene)
   *stat_chart
-    opposed_pair Selene_relation Archmage Selene Voss (Mage)
+    opposed_pair Selene_relation
       Distrusted
       Favored
 *if (met_Imani)
   *stat_chart
-    opposed_pair Imani_relation Spellblade Imani Grey (Mage)
+    opposed_pair Imani_relation
       Skeptical
       Battle-Forged
 *if (met_Tamsin)
   *stat_chart
-    opposed_pair Tamsin_relation Arcanist Tamsin Reed (Mage)
+    opposed_pair Tamsin_relation
       Reserved
       Kindred
 *if (met_Lucan)
   *stat_chart
-    opposed_pair Lucan_relation Lucan Graves (Human)
+    opposed_pair Lucan_relation
       Mark for Death
       Trusted Partner
 *if (met_Adrian)
   *stat_chart
-    opposed_pair Adrian_relation Adrian Blackwell (Human)
+    opposed_pair Adrian_relation
       Business Rival
       Valued Associate
 *if (met_Nadia)
   *stat_chart
-    opposed_pair Nadia_relation Nadia Winters (Human)
+    opposed_pair Nadia_relation
       Enemy
       Reluctant Ally
 *if (met_Julian)
   *stat_chart
-    opposed_pair Julian_relation Julian Cross (Human)
+    opposed_pair Julian_relation
       Untrustworthy
       Confidant
 
@@ -778,7 +778,7 @@ These five Lupine leaders became the pillars of their society, embodying the qua
     *goto faction_leaders_menu
 
 *label lupine_aeliana
-*image https://i.imgur.com/24IYmW6.png center
+*comment placeholder image (Millennium War map)
 
 *set Name "Aeliana"
 *set Title "She-Wolf of the Northern Gale"
@@ -804,7 +804,7 @@ These five Lupine leaders became the pillars of their society, embodying the qua
     *goto main
 
 *label lupine_theron
-*image https://i.imgur.com/placeholder_theron.png center
+*comment placeholder image (Theron)
 
 *set Name "Theron"
 *set Title "Guardian of the Crescent Moon"
@@ -830,7 +830,7 @@ These five Lupine leaders became the pillars of their society, embodying the qua
     *goto main
 
 *label lupine_calista
-*image https://i.imgur.com/placeholder_calista.png center
+*comment placeholder image (Calista)
 
 *set Name "Calista"
 *set Title "The Silent Huntress"
@@ -856,7 +856,7 @@ These five Lupine leaders became the pillars of their society, embodying the qua
     *goto main
 
 *label lupine_elara
-*image https://i.imgur.com/placeholder_elara.png center
+*comment placeholder image (Elara)
 
 *set Name "Elara"
 *set Title "The Moonlit Seer"
@@ -882,7 +882,7 @@ These five Lupine leaders became the pillars of their society, embodying the qua
     *goto main
 
 *label lupine_orion
-*image https://i.imgur.com/placeholder_orion.png center
+*comment placeholder image (Orion)
 
 *set Name "Orion"
 *set Title "The Howling Tempest"
@@ -934,7 +934,7 @@ These Varkyr leaders etched their names into history with blood, strategy, and a
     *goto faction_leaders_menu
 
 *label varkyr_valerius
-*image https://i.imgur.com/placeholder_valerius.png center
+*comment placeholder image (Valerius)
 
 *set Name "Valerius"
 *set Title "The Eternal Strategist"
@@ -960,7 +960,7 @@ These Varkyr leaders etched their names into history with blood, strategy, and a
     *goto main
 
 *label varkyr_seraphina
-*image https://i.imgur.com/placeholder_seraphina.png center
+*comment placeholder image (Seraphina)
 
 *set Name "Seraphina"
 *set Title "The Crimson Diplomat"
@@ -986,7 +986,7 @@ These Varkyr leaders etched their names into history with blood, strategy, and a
     *goto main
 
 *label varkyr_cassius
-*image https://i.imgur.com/placeholder_cassius.png center
+*comment placeholder image (Cassius)
 
 *set Name "Cassius"
 *set Title "The Shadowblade"
@@ -1012,7 +1012,7 @@ These Varkyr leaders etched their names into history with blood, strategy, and a
     *goto main
 
 *label varkyr_lysandra
-*image https://i.imgur.com/placeholder_lysandra.png center
+*comment placeholder image (Lysandra)
 
 *set Name "Lysandra"
 *set Title "The Sanguine Sorceress"
@@ -1038,7 +1038,7 @@ These Varkyr leaders etched their names into history with blood, strategy, and a
     *goto main
 
 *label varkyr_draven
-*image https://i.imgur.com/placeholder_draven.png center
+*comment placeholder image (Draven)
 
 *set Name "Draven"
 *set Title "The Iron Will"

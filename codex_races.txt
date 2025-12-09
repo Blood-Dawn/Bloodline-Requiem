@@ -17,6 +17,8 @@ Four primary lineages walk the shadows of this world, each shaped by ancient mag
         *goto forsaken_entry
     #Humans
         *goto humans_entry
+    #Compare strengths and roles
+        *goto race_comparison
     #Return to codex
         *goto_scene codex_main codex_main
 

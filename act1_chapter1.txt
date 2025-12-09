@@ -4,7 +4,7 @@
 *label introduction
 *set act 1
 *set chapter 1
-*image https://i.imgur.com/vHxUAEN.png
+
 
 Now, centuries later, you find yourself in the heart of Veilfall, a skilled assassin taking requests from the elusive Assassin Guild. Your reputation for getting the job done, no matter the complexity, precedes you. Today, a new assignment lands on your table, a choice that could unveil the deep-seated mysteries of Veilfall, or thrust you into the heart of the ancient conflict brewing afresh.
 
@@ -102,7 +102,31 @@ The Forsaken leader nods, intrigued by your proposal. "Very well, assassin. We s
 *line_break
 The ritual concludes with a surge of energy, and the artifact's power resonates through you. The Forsaken leader nods approvingly. "You have chosen wisely, assassin. Together, we will reclaim Veilfall from the shadows of its past."
 *finish
+
+*label forsaken_exit
+*line_break
+
+You leave the cavern before blood is spilled. The Forsaken part to let you go, their whispers promising that your departure will not be forgotten.
+*finish
+
+*label forsaken_theft_attempt
+*line_break
+
+The Forsaken close in before you can seize the artifact. Realizing you're outmatched, you retreat into the tunnels, the sound of their pursuit fading as you disappear into the city.
+*finish
+
+*label forsaken_duel
+*line_break
+
+Steel rings against steel as you duel the Forsaken leader. The clash is fierce but decisive—you disarm them and force a grudging nod of respect before slipping away into the shadows.
+*finish
 *label forsaken_ritual_observation
+
+*label forsaken_confrontation
+*line_break
+
+Steel flashes and shadows erupt as the Forsaken turn on you. Outnumbered and pressed, you force a path through the cavern mouth, escaping with bruises and the lingering promise of retaliation.
+*finish
 
 *label observe_from_distance
 *line_break

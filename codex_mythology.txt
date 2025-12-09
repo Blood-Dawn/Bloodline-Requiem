@@ -1047,9 +1047,24 @@ Territorial violations are handled through the Night Council—Veilfall's shadow
 
 The system is imperfect. Violations occur regularly. But for fifteen centuries, it has prevented another Millennium War.
 
+*comment Appendix stubs for full-text versions
 *choice
     #Return to mythology
         *goto mythology_overview
+    #View appendix references
+        *goto mythology_appendices
+
+*label mythology_appendices
+*gosub progenitor_origin_text
+*gosub origin_wolf_creation_text
+*gosub veil_complete_text
+*gosub blood_magic_complete_text
+*gosub lunar_complete_text
+*gosub transformation_complete_text
+*gosub soul_complete_text
+*gosub veilstone_complete_text
+*gosub ecology_complete_text
+*goto mythology_overview
 
 *comment ═══════════════════════════════════════════════════════════
 *comment GOSUB TEXT BLOCKS (for full versions)

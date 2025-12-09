@@ -10,15 +10,21 @@
 
 *if (alignment = "varkyrs")
     *gosub varkyr_progression_check
+    *goto progression_end
 *elseif (alignment = "lupine")
     *gosub lupine_progression_check
+    *goto progression_end
 *elseif (alignment = "forsaken")
     *gosub forsaken_progression_check
+    *goto progression_end
 *elseif (alignment = "mage")
     *gosub mage_progression_check
+    *goto progression_end
 *elseif (alignment = "human")
     *gosub human_progression_check
+    *goto progression_end
 
+*label progression_end
 *return
 
 *comment ═══════════════════════════════════════════════════════════
@@ -38,7 +44,7 @@
     *set rank "Knight"
     *goto varkyr_rankup_ceremony
 
-*elseif (rank = "Knight") and (varkyr_xp >= 250)
+*if (rank = "Knight") and (varkyr_xp >= 250)
     *set rankup_earned true
     *choice
         #Become Baron
@@ -48,7 +54,7 @@
             *set rank "Baroness"
             *goto varkyr_rankup_ceremony
 
-*elseif (rank = "Baron" or rank = "Baroness") and (varkyr_xp >= 500) and (varkyrs_relation >= 60)
+*if (((rank = "Baron") and (varkyr_xp >= 500)) and (varkyrs_relation >= 60))
     *set rankup_earned true
     *choice
         #Become Viscount
@@ -58,7 +64,17 @@
             *set rank "Viscountess"
             *goto varkyr_rankup_ceremony
 
-*elseif (rank = "Viscount" or rank = "Viscountess") and (varkyr_xp >= 1000) and (varkyrs_relation >= 70)
+*if (((rank = "Baroness") and (varkyr_xp >= 500)) and (varkyrs_relation >= 60))
+    *set rankup_earned true
+    *choice
+        #Become Viscount
+            *set rank "Viscount"
+            *goto varkyr_rankup_ceremony
+        #Become Viscountess
+            *set rank "Viscountess"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Viscount") and (varkyr_xp >= 1000)) and (varkyrs_relation >= 70))
     *set rankup_earned true
     *choice
         #Become Count
@@ -68,7 +84,17 @@
             *set rank "Countess"
             *goto varkyr_rankup_ceremony
 
-*elseif (rank = "Count" or rank = "Countess") and (varkyr_xp >= 2000) and (varkyrs_relation >= 80) and (humans_turned >= 5)
+*if (((rank = "Viscountess") and (varkyr_xp >= 1000)) and (varkyrs_relation >= 70))
+    *set rankup_earned true
+    *choice
+        #Become Count
+            *set rank "Count"
+            *goto varkyr_rankup_ceremony
+        #Become Countess
+            *set rank "Countess"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Count") and (varkyr_xp >= 2000)) and ((varkyrs_relation >= 80) and (humans_turned >= 5)))
     *set rankup_earned true
     *choice
         #Become Marquis
@@ -78,7 +104,17 @@
             *set rank "Marchioness"
             *goto varkyr_rankup_ceremony
 
-*elseif (rank = "Marquis" or rank = "Marchioness") and (varkyr_xp >= 4000) and (varkyrs_relation >= 90) and (artifact)
+*if (((rank = "Countess") and (varkyr_xp >= 2000)) and ((varkyrs_relation >= 80) and (humans_turned >= 5)))
+    *set rankup_earned true
+    *choice
+        #Become Marquis
+            *set rank "Marquis"
+            *goto varkyr_rankup_ceremony
+        #Become Marchioness
+            *set rank "Marchioness"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Marquis") and (varkyr_xp >= 4000)) and ((varkyrs_relation >= 90) and (artifact)))
     *set rankup_earned true
     *comment Requires possessing a shard of Ecliptic Amulet
     *choice
@@ -89,7 +125,18 @@
             *set rank "Duchess"
             *goto varkyr_rankup_ceremony
 
-*elseif (rank = "Duke" or rank = "Duchess") and (varkyr_xp >= 8000) and (Night_Council_relation >= 50)
+*if (((rank = "Marchioness") and (varkyr_xp >= 4000)) and ((varkyrs_relation >= 90) and (artifact)))
+    *set rankup_earned true
+    *comment Requires possessing a shard of Ecliptic Amulet
+    *choice
+        #Become Duke
+            *set rank "Duke"
+            *goto varkyr_rankup_ceremony
+        #Become Duchess
+            *set rank "Duchess"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Duke") and (varkyr_xp >= 8000)) and (Night_Council_relation >= 50))
     *set rankup_earned true
     *choice
         #Become Archduke
@@ -99,14 +146,31 @@
             *set rank "Archduchess"
             *goto varkyr_rankup_ceremony
 
-*elseif (rank = "Archduke" or rank = "Archduchess") and (varkyr_xp >= 15000)
+*if (((rank = "Duchess") and (varkyr_xp >= 8000)) and (Night_Council_relation >= 50))
+    *set rankup_earned true
+    *choice
+        #Become Archduke
+            *set rank "Archduke"
+            *goto varkyr_rankup_ceremony
+        #Become Archduchess
+            *set rank "Archduchess"
+            *goto varkyr_rankup_ceremony
+
+*if ((rank = "Archduke") and (varkyr_xp >= 15000))
     *comment Special quest required for Imperial
     *if (ecliptic_shards_controlled >= 2)
         *set rankup_earned true
         *set rank "Imperial"
         *goto varkyr_rankup_ceremony
 
-*elseif (rank = "Imperial")
+*if ((rank = "Archduchess") and (varkyr_xp >= 15000))
+    *comment Special quest required for Imperial
+    *if (ecliptic_shards_controlled >= 2)
+        *set rankup_earned true
+        *set rank "Imperial"
+        *goto varkyr_rankup_ceremony
+
+*if (rank = "Imperial")
     *comment Special endgame quest for Progenitor
     *if (ecliptic_shards_controlled >= 4)
         The impossible beckons. You stand on the threshold of apotheosis.
@@ -150,12 +214,12 @@ You are now [b]${rank}[/b] of the Crimson Spire. Lesser vampires bow as you pass
 *comment Lupines rank up through trials, not just XP
 *comment You'll need to add *create lupine_xp 0 to startup.txt
 
-*if (lupine_rank = "Turned Omega" or lupine_rank = "Omega") and (lupine_xp >= 50)
+*if ((((lupine_rank = "Turned Omega") or (lupine_rank = "Omega")) and (lupine_xp >= 50)))
     *set rankup_earned true
     *set lupine_rank "Zeta Scout"
     *goto lupine_rankup_trial
 
-*elseif (lupine_rank = "Zeta Scout") and (lupine_xp >= 100)
+*if ((lupine_rank = "Zeta Scout") and (lupine_xp >= 100))
     *set rankup_earned true
     *choice
         #Become Epsilon Forager
@@ -165,7 +229,7 @@ You are now [b]${rank}[/b] of the Crimson Spire. Lesser vampires bow as you pass
             *set lupine_rank "Epsilon Artisan"
             *goto lupine_rankup_trial
 
-*elseif (lupine_rank = "Epsilon Forager" or lupine_rank = "Epsilon Artisan") and (lupine_xp >= 200)
+*if ((((lupine_rank = "Epsilon Forager") or (lupine_rank = "Epsilon Artisan")) and (lupine_xp >= 200)))
     *set rankup_earned true
     *choice
         #Become Gamma Healer
@@ -175,7 +239,7 @@ You are now [b]${rank}[/b] of the Crimson Spire. Lesser vampires bow as you pass
             *set lupine_rank "Gamma Warder"
             *goto lupine_rankup_trial
 
-*elseif (lupine_rank = "Gamma Healer" or lupine_rank = "Gamma Warder") and (lupine_xp >= 400) and (lupine_relation >= 60)
+*if ((((lupine_rank = "Gamma Healer") or (lupine_rank = "Gamma Warder")) and (lupine_xp >= 400)) and (lupine_relation >= 60))
     *set rankup_earned true
     *choice
         #Become Delta Emissary
@@ -185,7 +249,7 @@ You are now [b]${rank}[/b] of the Crimson Spire. Lesser vampires bow as you pass
             *set lupine_rank "Delta Sentinel"
             *goto lupine_rankup_trial
 
-*elseif (lupine_rank = "Delta Emissary" or lupine_rank = "Delta Sentinel") and (lupine_xp >= 800) and (lupine_relation >= 70)
+*if ((((lupine_rank = "Delta Emissary") or (lupine_rank = "Delta Sentinel")) and (lupine_xp >= 800)) and (lupine_relation >= 70))
     *set rankup_earned true
     *choice
         #Become Beta Guardian
@@ -195,21 +259,21 @@ You are now [b]${rank}[/b] of the Crimson Spire. Lesser vampires bow as you pass
             *set lupine_rank "Beta Councilor"
             *goto lupine_rankup_trial
 
-*elseif (lupine_rank = "Beta Guardian" or lupine_rank = "Beta Councilor") and (lupine_xp >= 1500)
+*if ((((lupine_rank = "Beta Guardian") or (lupine_rank = "Beta Councilor")) and (lupine_xp >= 1500)))
     *comment Must challenge current alpha or be nominated
-    *if (lupine_relation >= 80) and (control >= 70)
+    *if ((lupine_relation >= 80) and (control >= 70))
         *set rankup_earned true
         *set lupine_rank "Alpha Commandant"
         *goto lupine_alpha_challenge
 
-*elseif (lupine_rank = "Alpha Commandant") and (lupine_xp >= 3000)
+*if ((lupine_rank = "Alpha Commandant") and (lupine_xp >= 3000))
     *comment Must unite multiple packs
     *if (packs_united >= 3)
         *set rankup_earned true
         *set lupine_rank "Alpha Prime"
         *goto lupine_rankup_trial
 
-*elseif (lupine_rank = "Alpha Prime")
+*if (lupine_rank = "Alpha Prime")
     *comment Crisis-only rank; elected by all alphas
     *if (millennium_war_2 = true)
         The packs howl for a Sovereign. Will you answer?
@@ -316,25 +380,26 @@ You are [b]Alpha Sovereign[/b]—supreme leader of all Lupines.
 
 *temp rankup_earned false
 
-*if (forsaken_rank = "") or (forsaken_rank = "Initiate")
-    *if (hybrid_stability >= 40) and (forsaken_relation >= 50)
+*if ((forsaken_rank = "") or (forsaken_rank = "Initiate"))
+    *if ((hybrid_stability >= 40) and (forsaken_relation >= 50))
         *set rankup_earned true
         *set forsaken_rank "Adept"
         *goto forsaken_rankup_ritual
+    *goto forsaken_progression_end
 
-*elseif (forsaken_rank = "Adept") and (hybrid_stability >= 60) and (forsaken_relation >= 60)
+*elseif (((forsaken_rank = "Adept") and (hybrid_stability >= 60)) and (forsaken_relation >= 60))
     *set rankup_earned true
     *set forsaken_rank "Sentinel"
     *goto forsaken_rankup_ritual
 
-*elseif (forsaken_rank = "Sentinel") and (hybrid_stability >= 80) and (forsaken_relation >= 70)
+*elseif (((forsaken_rank = "Sentinel") and (hybrid_stability >= 80)) and (forsaken_relation >= 70))
     *set rankup_earned true
     *set forsaken_rank "Warden"
     *goto forsaken_rankup_ritual
 
-*elseif (forsaken_rank = "Warden") and (hybrid_stability >= 95)
+*elseif ((forsaken_rank = "Warden") and (hybrid_stability >= 95))
     *comment Must have Caius's personal recognition
-    *if (met_Caius = true) and (forsaken_relation >= 85)
+    *if ((met_Caius = true) and (forsaken_relation >= 85))
         *set rankup_earned true
         *choice
             #Become Eclipse Lord
@@ -343,6 +408,8 @@ You are [b]Alpha Sovereign[/b]—supreme leader of all Lupines.
             #Become Eclipse Lady
                 *set forsaken_rank "Eclipse Lady"
                 *goto forsaken_eclipse_ascension
+
+*label forsaken_progression_end
 
 *return
 
@@ -390,13 +457,13 @@ When it's done, you stand in your War Form: an avatar of hybrid perfection.
 
 *temp rankup_earned false
 
-*if ((mage_rank = "") or (mage_rank = "Apprentice")) and (mage_xp >= 120)
+*if (((mage_rank = "") or (mage_rank = "Apprentice")) and (mage_xp >= 120))
     *set rankup_earned true
     *set mage_rank "Journeymage"
     *set rank mage_rank
     *goto mage_rankup_ritual
 
-*elseif (mage_rank = "Journeymage") and (mage_xp >= 300)
+*elseif ((mage_rank = "Journeymage") and (mage_xp >= 300))
     *set rankup_earned true
     *choice
         #Specialize as Battlemage
@@ -410,19 +477,19 @@ When it's done, you stand in your War Form: an avatar of hybrid perfection.
             *set rank mage_rank
             *goto mage_rankup_ritual
 
-*elseif (mage_rank = "Battlemage") and (mage_xp >= 700) and (arcanum_relation >= 55) and (ward_stability >= 55)
+*elseif ((((mage_rank = "Battlemage") and (mage_xp >= 700)) and (arcanum_relation >= 55)) and (ward_stability >= 55))
     *set rankup_earned true
     *set mage_rank "Arcanist"
     *set rank mage_rank
     *goto mage_rankup_ritual
 
-*elseif (mage_rank = "Spellwright" and mage_xp >= 700 and arcanum_relation >= 55 and ward_stability >= 55)
+*elseif ((((mage_rank = "Spellwright") and (mage_xp >= 700)) and (arcanum_relation >= 55)) and (ward_stability >= 55))
     *set rankup_earned true
     *set mage_rank "Arcanist"
     *set rank mage_rank
     *goto mage_rankup_ritual
 
-*elseif (mage_rank = "Arcanist") and (mage_xp >= 1300) and (arcanum_relation >= 80) and (ward_stability >= 70)
+*elseif ((((mage_rank = "Arcanist") and (mage_xp >= 1300)) and (arcanum_relation >= 80)) and (ward_stability >= 70))
     *set rankup_earned true
     *set mage_rank "Archmage"
     *set rank mage_rank
@@ -480,22 +547,37 @@ Power settles. You stand taller, senses sharpened, threads of the Veil visible l
     *set varkyr_xp + xp_amount
     *if (xp_amount >= 50)
         [i]+${xp_amount} Varkyr XP (${reason})[/i]
+    *goto gain_xp_end
 
-*elseif (alignment = "lupine")
+*if (alignment = "lupine")
     *set lupine_xp + xp_amount
     *if (xp_amount >= 50)
         [i]+${xp_amount} Lupine XP (${reason})[/i]
+    *goto gain_xp_end
 
-*elseif (alignment = "forsaken")
+*if (alignment = "forsaken")
     *set forsaken_xp + xp_amount
     *if (xp_amount >= 50)
         [i]+${xp_amount} Forsaken XP (${reason})[/i]
+    *goto gain_xp_end
 
-*elseif (alignment = "mage")
+*if (alignment = "mage")
     *set mage_xp + xp_amount
     *if (xp_amount >= 50)
         [i]+${xp_amount} Mage XP (${reason})[/i]
+    *goto gain_xp_end
 
+*comment Default handling for humans or undefined alignment
+*if (alignment = "human")
+    *if (xp_amount >= 50)
+        [i]+${xp_amount} Experience (${reason})[/i]
+    *goto gain_xp_end
+
+*comment Fallback catch-all so we never fall into a stray *else
+*if (xp_amount >= 50)
+    [i]+${xp_amount} Experience (${reason})[/i]
+
+*label gain_xp_end
 *return
 
 *comment ═══════════════════════════════════════════════════════════

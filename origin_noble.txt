@@ -91,7 +91,7 @@ Isabella's proposal is simple: accept the Embrace and secure your house under Sp
         *set rank "Commoner"
         *set Turned true
         *set blood_satiation 80
-        *set Bloodlust +15
+        *set bloodlust +15
         *set varkyrs_relation +20
         *gosub_scene rank_progression gain_xp 100 "Accepted Varkyr Embrace to save House Ravencrest"
 
@@ -204,7 +204,7 @@ From a nearby rooftop, a shadow detaches-Isabella's watcher. Across the street, 
         *set rank "Commoner"
         *set Turned true
         *set varkyrs_relation +15
-        *set Bloodlust +10
+        *set bloodlust +10
         *gosub_scene rank_progression gain_xp 100 "Surrendered to the Crimson Spire to survive"
         *goto noble_departure_varkyr
 

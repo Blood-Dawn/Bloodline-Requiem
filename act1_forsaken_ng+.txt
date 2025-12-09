@@ -16,7 +16,8 @@ You descend stone stairs worn smooth by centuries of footfalls. Each step takes 
     You are one of them now. Hybrid. Cursed with dual nature—vampire and werewolf merged into something both greater and lesser than either parent lineage.
 
     The other Forsaken will recognize you as kin. But trust? Trust must be earned.
-*else
+
+*if (alignment != "forsaken")
     You are an outsider here—fully human or aligned with one of the pure bloodlines. The Forsaken do not trust easily. They have been betrayed too many times.
 
 *page_break
@@ -189,7 +190,7 @@ You descend into the damp passages, every sense alert.
 
         *set strength +20
         *set rage +15
-        *set Bloodlust +20
+        *set bloodlust +20
         *gosub_scene rank_progression gain_xp 90 "Unleashed Blood Frenzy"
         *goto cistern_victory
 

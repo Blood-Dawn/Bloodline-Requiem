@@ -17,35 +17,52 @@ The moon calls to you with renewed strength. Your ascension to [b]${lupine_rank}
 
 *comment Determine lupine type from game state
 *temp lupine_type ""
+*temp lupine_type_set false
 *if (omega_variant = true)
     *set lupine_type "Omega"
-*elseif (werewolf_only = true)
+    *set lupine_type_set true
+*if ((werewolf_only = true) and (lupine_type_set = false))
     *set lupine_type "Werewolf"
-*else
+    *set lupine_type_set true
+*if (lupine_type_set = false)
     *set lupine_type "Wolf"
+    *set lupine_type_set true
+*if (lupine_type_set = false)
+    *bug Unrecognized Lupine type while determining lupine_type
 
 *comment Route to appropriate rank tree
+*temp lupine_rank_recognized false
 *if (lupine_rank = "Turned Omega") or (lupine_rank = "Omega")
+    *set lupine_rank_recognized true
     *goto omega_base_abilities
-*elseif (lupine_rank = "Zeta Scout")
+*if (lupine_rank = "Zeta Scout")
+    *set lupine_rank_recognized true
     *goto zeta_abilities
-*elseif (lupine_rank = "Epsilon Forager") or (lupine_rank = "Epsilon Artisan")
+*if (lupine_rank = "Epsilon Forager") or (lupine_rank = "Epsilon Artisan")
+    *set lupine_rank_recognized true
     *goto epsilon_abilities
-*elseif (lupine_rank = "Gamma Healer") or (lupine_rank = "Gamma Warder")
+*if (lupine_rank = "Gamma Healer") or (lupine_rank = "Gamma Warder")
+    *set lupine_rank_recognized true
     *goto gamma_abilities
-*elseif (lupine_rank = "Delta Emissary") or (lupine_rank = "Delta Sentinel")
+*if (lupine_rank = "Delta Emissary") or (lupine_rank = "Delta Sentinel")
+    *set lupine_rank_recognized true
     *goto delta_abilities
-*elseif (lupine_rank = "Beta Guardian") or (lupine_rank = "Beta Councilor")
+*if (lupine_rank = "Beta Guardian") or (lupine_rank = "Beta Councilor")
+    *set lupine_rank_recognized true
     *goto beta_abilities
-*elseif (lupine_rank = "Alpha Commandant")
+*if (lupine_rank = "Alpha Commandant")
+    *set lupine_rank_recognized true
     *goto alpha_abilities
-*elseif (lupine_rank = "Alpha Prime")
+*if (lupine_rank = "Alpha Prime")
+    *set lupine_rank_recognized true
     *goto alpha_prime_abilities
-*elseif (lupine_rank = "Alpha Sovereign")
+*if (lupine_rank = "Alpha Sovereign")
+    *set lupine_rank_recognized true
     *goto alpha_sovereign_abilities
-*elseif (lupine_rank = "Lunar Progenitor")
+*if (lupine_rank = "Lunar Progenitor")
+    *set lupine_rank_recognized true
     *goto lunar_progenitor_abilities
-*else
+*if (lupine_rank_recognized = false)
     *bug Unrecognized Lupine rank: ${lupine_rank}
 
 *comment ═══════════════════════════════════════════════════════════
@@ -187,6 +204,13 @@ Choose two:
     *goto apply_lupine_abilities
 *else
     *goto zeta_abilities
+
+*comment Placeholder routing for Epsilon and Delta ranks until bespoke trees are authored
+*label epsilon_abilities
+*goto gamma_abilities
+
+*label delta_abilities
+*goto beta_abilities
 
 *comment ═══════════════════════════════════════════════════════════
 *comment GAMMA HEALER/WARDER ABILITIES
@@ -469,9 +493,12 @@ You are not merely a wolf. You [i]are[/i] the moon's will incarnate.
 *if (abilities_selected = 0)
     *set ability_choice_1 ability_name
     *set abilities_selected +1
-*else
+    *return
+*if (abilities_selected = 1)
     *set ability_choice_2 ability_name
     *set abilities_selected +1
+    *return
+*comment Unexpected abilities_selected count while recording: ${abilities_selected}
 *return
 
 *label apply_lupine_abilities
@@ -479,15 +506,20 @@ You are not merely a wolf. You [i]are[/i] the moon's will incarnate.
 
 *if (lupine_rank = "Lunar Progenitor")
     The transformation is absolute. You are the [b]Origin Wolf Reborn[/b]—legend made real.
-*else
+    *set unlocked_abilities &" ALL LUNAR PROGENITOR ABILITIES;"
+*if (lupine_rank != "Lunar Progenitor")
     You have mastered [b]${ability_choice_1}[/b] and [b]${ability_choice_2}[/b].
 
     The moon witnesses your growth. These powers are yours under her gaze.
 
 *comment Update unlocked_abilities tracking string
+*temp new_unlock ""
 *if (lupine_rank != "Lunar Progenitor")
-    *set unlocked_abilities &(" " & ability_choice_1 & ", " & ability_choice_2 & ";")
-*else
-    *set unlocked_abilities &" ALL LUNAR PROGENITOR ABILITIES;"
+    *set new_unlock " "
+    *set new_unlock &ability_choice_1
+    *set new_unlock &", "
+    *set new_unlock &ability_choice_2
+    *set new_unlock &";"
+    *set unlocked_abilities &new_unlock
 
 *return

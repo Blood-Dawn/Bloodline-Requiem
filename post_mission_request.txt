@@ -6,31 +6,33 @@ You approach the mission board with the intent to post your own request. Perhaps
 *if (mission_board_request)
   You already have a request posted. You can update it or leave it as is.
   *line_break
-*else
+*if (not(mission_board_request))
   You take a moment to gather your thoughts and write down the details of your request. What kind of help do you need? What are the specifics of the task? You want to make sure that those who read it understand what is required.
   *line_break
   *input_text mission_board_request_text
   *line_break
   You post your request on the board, hoping that someone will take notice and offer their assistance.
-  *set mission_board_request true   
-    *set mission_board_request_text mission_board_request_text
+  *set mission_board_request true
+  *set mission_board_request_text mission_board_request_text
 *line_break
 *comment ---------- REQUEST OPTIONS ----------
 *choice
   #View your posted request
     You take a moment to read over your posted request, ensuring that it is clear and concise.
     *line_break
-    *if (mission_board_request_text)
+    *if (mission_board_request_text != "")
       Your request: ${mission_board_request_text}
-    *else
+    *if (mission_board_request_text = "")
       No request posted yet.
     *line_break
+    *goto_scene mission_board
   #Update your request
     You decide to make changes to your request. Perhaps you want to clarify some details or add more information.
     *input_text mission_board_request_text
     *set mission_board_request_text mission_board_request_text
     *line_break
     Your request has been updated.
+    *goto_scene mission_board
   #Return to the mission board
     You step away from the board, feeling satisfied that your request is now posted and ready for potential helpers.
     *finish

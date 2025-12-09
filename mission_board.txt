@@ -5,13 +5,16 @@
 The mission board stands at the heart of Veilfall, a place where adventurers and mercenaries alike gather to seek their fortunes. Requests from various factions and individuals cover its surface, each one a call to action in this city of intrigue and danger.
 *if (mission_board_requests)
   You scan the board, noting the variety of tasks available. Some are simple fetch quests, while others promise greater rewards for dealing with threats both mundane and supernatural. The air buzzes with the excitement of potential adventure.
-*else
+
+*if (not(mission_board_requests))
   You approach the mission board, but it seems eerily empty. Perhaps the recent events have caused a lull in requests, or maybe the factions are keeping their needs more secretive for now. You feel a sense of anticipation, wondering when new missions will appear.
+
 *if (alignment = "human")
   *line_break
   *comment ---------- HUMAN ALIGNMENT ----------
   You are a human, navigating the complexities of Veilfall's politics and power struggles. The High Inquisitor's aide has informed you that the mission board is your gateway to serving the city and its people. You can choose to accept missions that align with your values or those that promise greater rewards.
-*else
+
+*if (alignment != "human")
   *line_break
   *comment ---------- Vampire ALIGNMENTS ----------
   You are a vampire, navigating the shadows of Veilfall. The mission board offers you a chance to prove your worth to the factions of the city. Whether you seek to gain power, influence, or simply survive, each request is an opportunity to further your own goals.

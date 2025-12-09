@@ -172,7 +172,7 @@ When the moment comes to end it, he withdraws slightly, leaving you with the cho
         With a decisive lunge you aim for his heart, refusing to be swayed by
         charisma or history.
 
-        *set Bloodlust +15
+        *set bloodlust +15
         *set varkyrs_relation -20
         *gosub_scene rank_progression gain_xp 50 "Attempted to eliminate Vaelis"
         *goto varkyr_end
@@ -329,7 +329,8 @@ She gestures, and a figure steps from the shadows—Lord Vaelis himself, very mu
 
 *if (varkyrs_relation >= 20)
     "And you," she says, "have proven yourself worthy of our attention."
-*else
+
+*if (varkyrs_relation < 20)
     "You have shown... competence," she allows. "Enough to warrant further consideration."
 
 *choice
@@ -384,9 +385,10 @@ She gestures, and a figure steps from the shadows—Lord Vaelis himself, very mu
         *set agility +10
         *set cunning +10
         *set will +10
-        *set Bloodlust +20
+        *set bloodlust +20
         *gosub_scene rank_progression gain_xp 200 "Elevated to Knight by the Matriarch"
-    *else
+
+    *if (rank = "Knight")
         The ancient blood reinforces what you've already become. The power settles into your bones like familiar weight.
 
         *set strength +5
