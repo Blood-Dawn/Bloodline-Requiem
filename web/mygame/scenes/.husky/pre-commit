@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+git diff --cached --name-only -- '*.txt' | xargs dos2unix -q

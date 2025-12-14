@@ -1,0 +1,12 @@
+# Text files – LF
+*.txt       text eol=lf
+*.md        text eol=lf
+*.patch     text eol=lf
+*.json      text eol=lf
+# Windows scripts
+*.bat       text eol=crlf
+# Binary assets
+*.{png,jpg,jpeg,ogg} binary -merge
+# GitHub linguist
+Assets/*    linguist-vendored
+

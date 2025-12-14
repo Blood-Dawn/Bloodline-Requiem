@@ -1,0 +1,147 @@
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment CODEX FACTIONS - Powers of Veilfall
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label faction_overview
+
+[b]FACTIONS & POWER BLOCS[/b]
+
+Veilfall survives because its powers balance ambition with secrecy. Each faction covets the Ecliptic Amulet for different reasons-and each will move against the others if the balance tips.
+
+*choice
+    #Crimson Spire (Varkyr Courts)
+        *goto spire_entry
+    #Whispering Pines Pack (Lupines)
+        *goto pack_entry
+    #Forsaken Enclave (Hybrids)
+        *goto enclave_entry
+    #Veilguard Arcanum (Mage Guild)
+        *goto arcanum_entry
+    #Silver Legion (Human Inquisition)
+        *goto legion_entry
+    #Assassin Guild (Neutral Blades)
+        *goto guild_entry
+    #Night Council (Shadow Government)
+        *goto council_entry
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label spire_entry
+[b]CRIMSON SPIRE - VARKYR COURTS[/b]
+
+The Crimson Spire rises over the Gilded Quarter, a fortress-palace of bloodstone where Varkyr nobility convene. The Matriarch oversees rival courts, adjudicates bloodline disputes, and enforces the Veil Protocol (keep humans ignorant or perish).
+
+- [b]Structure:[/b] Matriarch → High Council of Dukes/Counts → Viscounts/Barons → Knights/Commoners  
+- [b]Notable Figures:[/b] Matriarch (unnamed), Viscount Vaelis (executed/assessed in Act 1), Viscountess Isabella Crimson (diplomat), Vincent Ashenheart (enforcer)  
+- [b]Goal:[/b] Secure the Varkyr shard of the Ecliptic Amulet to strengthen blood magic and maintain aristocratic dominion.  
+- [b]Methods:[/b] Political marriages, controlled Embraces, shadow assassinations, trade pacts with wealthy humans (Adrian Blackwell).  
+- [b]Weaknesses:[/b] Sunlight, factional rivalries, overreliance on secrecy.
+
+*choice
+    #Return to faction list
+        *goto faction_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label arcanum_entry
+[b]VEILGUARD ARCANUM - MAGES OF THE VEIL[/b]
+
+An order of awakened humans who wield arcane arts to reinforce the Veil and police magical catastrophes. Their headquarters crowns Veilfall's old observatory, layered in wards that hum with stored mana.
+
+- [b]Structure:[/b] Archmage Council  Battlemages & Spellwrights  Journeymages  Apprentices  
+- [b]Goal:[/b] Stabilize Veilstones, prevent reality tears, and keep magic from becoming another warfront.  
+- [b]Methods:[/b] Citywide ward grids, counter-ritual teams, rune-sealed prisons for rogue casters, joint strike ops with the Silver Legion.  
+- [b]Weaknesses:[/b] Mortal bodies with finite mana; political pressure from Crown and Church; internal debate over neutrality vs. intervention.
+
+*choice
+    #Return to faction list
+        *goto faction_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label pack_entry
+[b]WHISPERING PINES PACK - LUPINE TERRITORY[/b]
+
+The Whispering Pines forest serves as heartland for Lupine society. Alpha Rurik Blackfang leads through strength tempered by honor. Pack law values loyalty and the hunt; betrayal is answered by blood.
+
+- [b]Structure:[/b] Alpha → Betas (Thane, Rhea) → Hunters → Omegas/Newly Turned  
+- [b]Goal:[/b] Claim the Lupine shard of the Ecliptic Amulet to master their curse and control transformations across the lunar cycle.  
+- [b]Methods:[/b] Rite of the Moon-Born Trial for new wolves, sacred howls to rally packs, direct confrontation, debt-bound pacts with select humans (ancient Ravencrest oath).  
+- [b]Weaknesses:[/b] Silver, new moon vulnerability, internal tension between honor-bound traditionalists and radicals who favor total war.
+
+*choice
+    #Return to faction list
+        *goto faction_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label enclave_entry
+[b]FORSAKEN ENCLAVE - CHILDREN OF BLOOD AND MOON[/b]
+
+Caius the Unbound forged a sanctuary beneath Veilfall for hybrids rejected by both parent bloodlines. The Enclave values innovation, resilience, and self-determination. They believe controlling the Amulet could free them from persecution-or elevate them above all.
+
+- [b]Structure:[/b] Caius (Founder) → Wardens (enforcers/teachers) → Sentinels/Adepts → Initiates  
+- [b]Goal:[/b] Stabilize hybrid transformations, then leverage the Forsaken shard to bargain or conquer.  
+- [b]Methods:[/b] Experimental rituals, covert infiltration of other factions, offering sanctuary to outcasts (commoners, hunters, failed Varkyrs/Lupines).  
+- [b]Weaknesses:[/b] Unstable hybrids, scarce resources, external hatred, internal debate over coexistence vs dominance.
+
+*choice
+    #Return to faction list
+        *goto faction_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label legion_entry
+[b]SILVER LEGION - HUMAN INQUISITION[/b]
+
+The Silver Legion operates from Cathedral Heights under Inquisitor Vale. They safeguard humanity from the shadows, guided by Church sanction and royal funding. Exposure of the supernatural would validate their warnings-and risk mass panic.
+
+- [b]Structure:[/b] Inquisitor General → Captains (Vale) → Sentinels → Recruits  
+- [b]Goal:[/b] Secure or destroy the human shard of the Ecliptic Amulet to prevent supernatural domination.  
+- [b]Methods:[/b] Silvered weaponry, blessed wards, intelligence networks, aggressive recruitment of skilled mortals (hunters, nobles, assassins).  
+- [b]Weaknesses:[/b] Political constraints, limited understanding of hybrid magic, potential corruption within ranks (Captain Thorne's rogue cell).
+
+*choice
+    #Return to faction list
+        *goto faction_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label guild_entry
+[b]ASSASSIN GUILD - NEUTRAL BLADES[/b]
+
+Hidden beneath Veilfall's Warren, the Assassin Guild sells silence and death to any payer. Officially neutral, they maintain precarious truces with all factions while hoarding secrets that could topple nobles or alphas.
+
+- [b]Structure:[/b] Guild Master → Cell Leaders → Contracted Blades (including the player Assassin origin)  
+- [b]Goal:[/b] Profit and survival; some cells secretly seek the Ecliptic Amulet to end all faction dominance and elevate the Guild.  
+- [b]Methods:[/b] Contracts for any faction, information brokering, smuggling across district lines, clandestine training.  
+- [b]Weaknesses:[/b] Fragile neutrality, internal schisms over who to back, dependence on secrecy.
+
+*choice
+    #Return to faction list
+        *goto faction_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label council_entry
+[b]NIGHT COUNCIL - SHADOW GOVERNMENT[/b]
+
+An informal coalition of influential humans and supernaturals who coordinate to keep the Veil intact. Membership shifts; motives vary between genuine balance and personal gain.
+
+- [b]Structure:[/b] Loose alliance of nobles, Varkyr envoys, Lupine emissaries, Forsaken observers, and Guild liaisons.  
+- [b]Goal:[/b] Prevent open war in Veilfall and manage the fallout if the Ecliptic Amulet resurfaces.  
+- [b]Methods:[/b] Backroom deals, quiet assassinations, information suppression, funding research into countermeasures.  
+- [b]Weaknesses:[/b] No unified chain of command, mutual distrust, easy to infiltrate or manipulate.
+
+*choice
+    #Return to faction list
+        *goto faction_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment NOTES:
+*comment - Mirrors codex_main navigation expectations (*label faction_overview)
+*comment - Provides goals and weaknesses tied to the Ecliptic Amulet
+*comment - Includes neutral human-adjacent powers (Guild, Night Council)
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ

@@ -1,0 +1,516 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment ACT 1 - FORSAKEN INVESTIGATION
+*comment Player arrives here from origin_forsaken.txt or origin_assassin.txt
+*comment ═══════════════════════════════════════════════════════════
+
+*label forsaken_infiltration
+
+The catacombs beneath Veilfall swallow all sound, their narrow passages thick with the scent of damp stone and lingering death. This is 123 Street Underground—one of the Forsaken's primary gathering places, hidden beneath the poorest quarter of the city.
+
+You descend stone stairs worn smooth by centuries of footfalls. Each step takes you deeper into the realm of outcasts and hybrids—beings rejected by both Varkyr and Lupine alike.
+
+*comment Grant XP for beginning investigation
+*gosub_scene rank_progression gain_xp 50 "Began Forsaken Underground investigation"
+
+*if (alignment = "forsaken")
+    You are one of them now. Hybrid. Cursed with dual nature—vampire and werewolf merged into something both greater and lesser than either parent lineage.
+
+    The other Forsaken will recognize you as kin. But trust? Trust must be earned.
+
+*if (alignment != "forsaken")
+    You are an outsider here—fully human or aligned with one of the pure bloodlines. The Forsaken do not trust easily. They have been betrayed too many times.
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE UNDERGROUND
+*comment ═══════════════════════════════════════════════════════════
+
+*label the_underground
+
+The underground chamber opens before you—a cathedral carved from living rock. Hundreds of Forsaken fill the space, their features a disturbing blend of vampire and wolf. Some have fangs and fur. Others possess blood-red eyes and lupine claws. Each is unique. Each is an abomination in the eyes of the pure bloodlines.
+
+At the center, atop a raised platform of ancient stone, stands Caius the Unbound.
+
+He is the first. The original Forsaken—created during the Millennium War when a Varkyr and Lupine bloodline were forcibly merged through dark ritual. Where others show unstable features, Caius is perfect: vampire grace and lupine power seamlessly combined.
+
+His voice carries without shouting. "Brothers. Sisters. Children of two bloodlines and heirs to neither."
+
+The crowd falls silent.
+
+"We gather tonight because the time of hiding is ending. The Lupines and Varkyrs war over scraps of territory while treating us as vermin. But we are not vermin. We are the [i]future[/i]."
+
+*choice
+    #Listen quietly from the shadows
+        You blend into the crowd, observing without drawing attention.
+
+        *set stealth +10
+        *set awareness +10
+        *gosub_scene rank_progression gain_xp 30 "Observed Forsaken gathering undetected"
+        *goto caius_speech
+
+    *if (forsaken_dual_nature) #Use Dual Nature to sense the crowd's emotions
+        Your hybrid senses extend outward—you feel the pain, the rage, the desperate hope emanating from hundreds of tortured souls. They want to believe Caius. They [i]need[/i] to believe.
+
+        *set cunning +10
+        *set forsaken_relation +15
+        *gosub_scene rank_progression gain_xp 50 "Used Dual Nature to read the crowd"
+        *goto caius_speech
+
+    #Step forward to be seen
+        You move toward the platform, making your presence known. Eyes turn toward you—some curious, some hostile.
+
+        Caius's gaze finds you. He smiles slightly.
+
+        *set will +10
+        *set forsaken_relation +10
+        *gosub_scene rank_progression gain_xp 40 "Made yourself known to Caius"
+        *goto caius_speech
+
+*label caius_speech
+
+Caius continues, his words building in intensity.
+
+"The Crimson Spire views us as failed experiments. The Whispering Pines see us as diseased mongrels. Even humans hunt us with more fervor than they hunt pure-bloods, because our very existence proves that the boundaries between species are not as fixed as they wish to believe."
+
+Murmurs of agreement ripple through the crowd.
+
+"But I have discovered something. An artifact lost during the Millennium War—the Ecliptic Amulet. Legend claims it can manipulate the Veil itself, the barrier that separates supernatural beings from mortal awareness."
+
+Your attention sharpens. The same amulet the Varkyrs and Lupines seek.
+
+"But what the pure-bloods do not know," Caius says, his smile turning predatory, "is that the amulet has a [i]third[/i] power. It can stabilize hybrid forms. With the Ecliptic Amulet, we Forsaken would no longer suffer the instability that plagues us. No more pain. No more madness. No more slow death as our bloodlines war within our flesh."
+
+*set ecliptic_amulet_known true
+
+The crowd erupts in excited whispers.
+
+"I have found the first clue to its location," Caius announces. "Ancient texts recovered from Millennium War ruins. They speak of a [i]test[/i]—a trial designed to identify those worthy of wielding the amulet's power."
+
+He pauses, letting anticipation build.
+
+"I need agents to undergo this trial. Those brave enough to risk everything for our people's salvation."
+
+*page_break
+
+*choice
+    #Volunteer immediately
+        You step forward without hesitation. "I'll do it."
+
+        Caius's eyes gleam with approval. "Bold. I admire that."
+
+        *set forsaken_relation +20
+        *set will +15
+        *gosub_scene rank_progression gain_xp 60 "Volunteered for the Ecliptic Trial"
+        *goto trial_briefing
+
+    #Wait to see if others volunteer first
+        You remain silent, observing who else steps forward. Three Forsaken volunteer—young, eager, desperate to prove themselves.
+
+        Caius nods to each, then his gaze finds you in the crowd. "And you. I sense potential in you. Will you join them?"
+
+        *set cunning +10
+        *gosub_scene rank_progression gain_xp 40 "Observed before volunteering"
+        *goto trial_briefing
+
+    #Question what this trial entails
+        "What exactly does this trial involve?" you call out.
+
+        Caius's expression shows respect for the question. "Pain. Danger. Possibly death. But for those who survive, power and purpose."
+
+        *set cunning +15
+        *set awareness +10
+        *gosub_scene rank_progression gain_xp 50 "Asked critical questions"
+        *goto trial_briefing
+
+*label trial_briefing
+
+The gathering disperses, leaving you and three other volunteers with Caius. He leads you to a smaller chamber, where ancient murals depict the Millennium War in horrific detail.
+
+"The trial," Caius explains, "is three-fold. Physical prowess. Mental fortitude. And the ability to master your dual nature without succumbing to instability."
+
+He produces a map marked with three locations in Veilfall.
+
+"Each location holds a fragment of the ancient text that reveals the amulet's hiding place. But each is guarded—by traps, by enemies, or by your own inner demons."
+
+*choice
+    #"I'll take the physical challenge"
+        "Combat, then," you say. "I'm ready."
+
+        Caius nods. "The Old Cistern. Varkyr assassins have been using it as a staging ground. Retrieve the fragment from their leader. Stealth or slaughter—your choice."
+
+        *set strength +10
+        *goto cistern_mission
+
+    #"I'll take the mental challenge"
+        "My mind is my weapon," you state.
+
+        "The Abandoned Asylum," Caius says. "Haunted by the ghosts of Forsaken who went mad from instability. The fragment is hidden within, protected by illusions and psychic attacks."
+
+        *set cunning +10
+        *goto asylum_mission
+
+    #"I'll master my dual nature"
+        "I need to understand what I am," you admit.
+
+        Caius's expression softens slightly. "The Reflection Pool in the Deep Forest. An ancient site of power. Face yourself there—truly face yourself—and the fragment will be revealed."
+
+        *set will +10
+        *goto pool_mission
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE OLD CISTERN - PHYSICAL CHALLENGE
+*comment ═══════════════════════════════════════════════════════════
+
+*label cistern_mission
+
+The Old Cistern sprawls beneath the merchant quarter—a maze of waterways and stone tunnels. Varkyr assassins have claimed it, using the darkness to ambush their targets.
+
+You descend into the damp passages, every sense alert.
+
+*choice
+    *if (hybrid_regeneration) #Use Hybrid Regeneration to tank through combat
+        Your regeneration will let you take risks pure-bloods can't. You charge forward, trusting your body to heal.
+
+        Combat erupts—three Varkyr assassins emerge from shadow. They strike fast, precise, lethal. Your blood flows.
+
+        But you [i]heal[/i]. Wounds close as fast as they open. The assassins' confidence turns to fear.
+
+        *set strength +15
+        *set forsaken_relation +20
+        *gosub_scene rank_progression gain_xp 80 "Demonstrated overwhelming regeneration"
+        *goto cistern_victory
+
+    *if (blood_frenzy) #Enter Blood Frenzy and overwhelm them
+        The scent of blood—theirs and yours—triggers the frenzy. Vampire hunger and lupine rage merge into something terrifying.
+
+        You become a whirlwind of fangs and claws. The Varkyr assassins are skilled, but you are [i]savage[/i].
+
+        When the frenzy fades, they're dead or fleeing.
+
+        *set strength +20
+        *set rage +15
+        *set bloodlust +20
+        *gosub_scene rank_progression gain_xp 90 "Unleashed Blood Frenzy"
+        *goto cistern_victory
+
+    #Fight with skill and strategy
+        You're outnumbered but not outmatched. You use the terrain—narrow passages favor skilled fighters over numbers.
+
+        One by one, you eliminate the assassins. It's brutal, methodical work.
+
+        *set strength +10
+        *set cunning +10
+        *gosub_scene rank_progression gain_xp 60 "Fought with tactical superiority"
+        *goto cistern_victory
+
+*label cistern_victory
+
+The assassin leader lies dying at your feet. You retrieve the fragment—a piece of ancient parchment covered in runic script.
+
+*set fragment_physical true
+
+"Caius... will betray you..." the dying Varkyr gasps. "The amulet... he doesn't want stability... he wants [i]power[/i]..."
+
+*choice
+    #Listen to the dying vampire's warning
+        You kneel closer. "What do you mean?"
+
+        "The amulet... can do more than stabilize... it can [i]ascend[/i]... create a new bloodline... Caius wants to become... Progenitor..."
+
+        Then she dies.
+
+        *set caius_suspicious true
+        *set cunning +15
+        *gosub_scene rank_progression gain_xp 75 "Learned disturbing truth about Caius"
+        *goto return_to_underground
+
+    #Ignore the dying enemy's lies
+        Varkyr lies with her last breath. Typical.
+
+        You take the fragment and leave.
+
+        *set will +10
+        *gosub_scene rank_progression gain_xp 40 "Dismissed enemy propaganda"
+        *goto return_to_underground
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE ABANDONED ASYLUM - MENTAL CHALLENGE
+*comment ═══════════════════════════════════════════════════════════
+
+*label asylum_mission
+
+The Abandoned Asylum looms on Veilfall's outskirts—a monument to suffering. Forsaken who succumbed to instability were locked here to die. Their ghosts remain.
+
+You enter through broken doors. Immediately, whispers assault your mind.
+
+[i]"You are abomination..."[/i]
+
+[i]"Neither vampire nor wolf..."[/i]
+
+[i]"You will go mad like we did..."[/i]
+
+*choice
+    *if (mental_fortress) #Use Mental Fortress to resist
+        You've trained for this. Your mind is disciplined, fortified against psychic assault.
+
+        The whispers slide off your mental shields like water off stone. You walk through the asylum untouched by the madness.
+
+        *set will +20
+        *set cunning +10
+        *gosub_scene rank_progression gain_xp 85 "Resisted psychic assault with Mental Fortress"
+        *goto asylum_fragment
+
+    #Embrace the whispers, understanding their pain
+        You don't resist. Instead, you [i]listen[/i]. You understand.
+
+        These ghosts were like you—caught between two natures, slowly torn apart. You share their pain. You acknowledge it.
+
+        And in acknowledging, you find peace. The whispers quiet.
+
+        *set will +15
+        *set forsaken_relation +15
+        *gosub_scene rank_progression gain_xp 70 "Found empathy in madness"
+        *goto asylum_fragment
+
+    #Push through with pure willpower
+        You grit your teeth and [i]endure[/i]. The whispers claw at your sanity, but you refuse to break.
+
+        Step by agonizing step, you advance through the asylum.
+
+        *set will +25
+        *gosub_scene rank_progression gain_xp 60 "Endured through sheer determination"
+        *goto asylum_fragment
+
+*label asylum_fragment
+
+In the asylum's deepest chamber, you find the fragment—protected by one final illusion.
+
+It shows you your future: madness, instability, death as your bloodlines tear you apart from within.
+
+*choice
+    #Accept this might be your fate
+        "Maybe," you whisper to the illusion. "But not today."
+
+        The illusion shatters. You take the fragment.
+
+        *set fragment_mental true
+        *set control +15
+        *gosub_scene rank_progression gain_xp 80 "Confronted mortality with acceptance"
+        *goto return_to_underground
+
+    #Refuse to believe it
+        "No," you say firmly. "I will find stability. I will [i]survive[/i]."
+
+        Your conviction breaks the illusion. The fragment is yours.
+
+        *set fragment_mental true
+        *set will +20
+        *gosub_scene rank_progression gain_xp 90 "Refused prophecy of doom"
+        *goto return_to_underground
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE REFLECTION POOL - MASTERY CHALLENGE
+*comment ═══════════════════════════════════════════════════════════
+
+*label pool_mission
+
+The Deep Forest pools with shadow and moonlight. At its heart lies the Reflection Pool—a body of water so still it mirrors not the sky, but your soul.
+
+You kneel at the pool's edge and look.
+
+Your reflection shifts. Sometimes vampire. Sometimes wolf. Sometimes horrifically both. The instability made visible.
+
+[i]"What are you?"[/i] the reflection asks in your voice.
+
+*choice
+    #"I am Forsaken—and that is enough"
+        You speak the truth you've learned: "I am neither Varkyr nor Lupine. I am Forsaken. I am what I choose to be."
+
+        The reflection smiles. "Acceptance is the first step to mastery."
+
+        The pool glows, and the fragment rises from its depths.
+
+        *set fragment_mastery true
+        *set hybrid_stability +30
+        *set forsaken_relation +25
+        *gosub_scene rank_progression gain_xp 100 "Achieved self-acceptance"
+        *goto return_to_underground
+
+    #"I am a weapon against those who created me"
+        "I am vengeance," you snarl. "The Varkyrs and Lupines made me. I will unmake them."
+
+        The reflection's expression hardens. "Hatred is power. But it is a fire that consumes."
+
+        Still, the pool yields the fragment.
+
+        *set fragment_mastery true
+        *set rage +20
+        *set forsaken_relation +15
+        *gosub_scene rank_progression gain_xp 80 "Chose path of vengeance"
+        *goto return_to_underground
+
+    #"I don't know what I am"
+        "I don't have an answer," you admit. "I'm still searching."
+
+        The reflection nods. "Honesty is rare. Perhaps you will find your truth in time."
+
+        The fragment appears anyway.
+
+        *set fragment_mastery true
+        *set cunning +15
+        *gosub_scene rank_progression gain_xp 70 "Embraced uncertainty"
+        *goto return_to_underground
+
+*comment ═══════════════════════════════════════════════════════════
+*comment RETURN TO THE UNDERGROUND
+*comment ═══════════════════════════════════════════════════════════
+
+*label return_to_underground
+
+You return to the underground chamber with your fragment. The other volunteers have not all returned—one lies dead, brought back by comrades. The trial claimed them.
+
+Caius examines your fragment with satisfaction.
+
+"Well done. With all three fragments, we can decipher the location of the Ecliptic Amulet's trial site."
+
+He combines the fragments with those retrieved by the other survivors. Ancient text becomes legible.
+
+"The Sunken Cathedral," Caius reads. "Buried beneath Veilfall during the Millennium War. The amulet waits there, protected by the final trial."
+
+*page_break
+
+*comment Check for rank progression
+*gosub_scene rank_progression check_progression
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment CAIUS'S OFFER
+*comment ═══════════════════════════════════════════════════════════
+
+*label caius_offer
+
+Caius turns to you specifically, his ancient eyes calculating.
+
+"You have proven yourself exceptional. When I retrieve the Ecliptic Amulet and unlock its power, I will need lieutenants. Those who believe in the Forsaken cause. Those willing to do whatever it takes to elevate our people."
+
+He steps closer.
+
+"The Varkyrs have their Crimson Spire. The Lupines have their packs. We Forsaken will have our own power structure—with me at its apex and warriors like you as my enforcers."
+
+*if (caius_suspicious)
+    The dying Varkyr's words echo in your mind: [i]"He wants to become Progenitor..."[/i]
+
+    Is Caius truly seeking stability for the Forsaken? Or is he using them to achieve personal ascension?
+
+*choice
+    #Pledge loyalty to Caius and the Forsaken cause
+        "I'm with you," you say firmly. "The Forsaken deserve power. Whatever it takes."
+
+        Caius smiles, satisfied. "Then you are my right hand. When the amulet is ours, you will stand at my side as we reshape the world."
+
+        *set forsaken_agent true
+        *set forsaken_independent false
+        *set forsaken_opposed false
+        *set forsaken_relation +40
+        *set Forsaken_rank "Convergent"
+        *if (forsaken_rank = "Initiate")
+            *set strength +10
+            *set agility +10
+            *set will +15
+        *gosub_scene rank_progression gain_xp 200 "Became Caius's lieutenant"
+        *goto forsaken_conclusion
+
+    #Maintain independence—help but don't pledge loyalty
+        "I'll help find the amulet," you say carefully, "but I won't swear allegiance. I need to know more first."
+
+        Caius's expression hardens slightly, but he nods.
+
+        "Caution is wise. But remember—when the final battle comes, hesitation can be fatal."
+
+        *set forsaken_independent true
+        *set forsaken_agent false
+        *set forsaken_opposed false
+        *set will +20
+        *gosub_scene rank_progression gain_xp 150 "Maintained independence"
+        *goto forsaken_conclusion
+
+    *if (caius_suspicious) #Oppose Caius—you suspect his true motives
+        "No," you say. "I heard what you're really after. You don't want stability for the Forsaken. You want personal power."
+
+        The chamber goes deadly silent. Every Forsaken turns to stare.
+
+        Caius's face becomes an unreadable mask. "Careful, young one. Accusations like that can be... fatal."
+
+        *set forsaken_opposed true
+        *set forsaken_agent false
+        *set forsaken_independent false
+        *set forsaken_relation -40
+        *set will +25
+        *gosub_scene rank_progression gain_xp 100 "Confronted Caius with suspicions"
+        *goto opposition_path
+
+*label forsaken_conclusion
+
+*if (forsaken_agent)
+    You leave the underground as Caius's chosen lieutenant. The Forsaken look to you with a mixture of respect and fear. The hunt for the Ecliptic Amulet intensifies.
+
+    You will stand with the outcasts. Whatever the cost.
+
+*if (forsaken_independent)
+    You leave the underground with knowledge but without allegiance. The Forsaken respect your strength but question your loyalty. The hunt for the Ecliptic Amulet continues—but whose side will you truly be on?
+
+    Only you know the answer.
+
+*set chapter 2
+*set act 2
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ACT 1 COMPLETE - FORSAKEN ROUTE
+*comment Player has:
+*comment - Infiltrated Forsaken Underground
+*comment - Met Caius the Unbound
+*comment - Completed one of three trials
+*comment - Retrieved fragment of ancient text
+*comment - Learned of Ecliptic Amulet and Sunken Cathedral
+*comment - Chosen relationship with Forsaken faction
+*comment
+*comment Next: Route to Act 2 hub when implemented
+*comment ═══════════════════════════════════════════════════════════
+
+*comment TODO: Route to Act 2 hub when implemented
+*finish
+
+*label opposition_path
+
+Caius's expression turns cold. "You have made a grave mistake."
+
+The Forsaken close in around you—loyal to their leader, unwilling to hear dissent.
+
+"Leave," Caius commands. "Before I decide you're too dangerous to allow free."
+
+You flee the underground, branded as traitor by the very people you sought to help.
+
+The hunt for the Ecliptic Amulet continues—but now the Forsaken are your enemies.
+
+*set chapter 2
+*set act 2
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ACT 1 COMPLETE - FORSAKEN ROUTE (OPPOSITION ENDING)
+*comment Player has:
+*comment - Opposed Caius the Unbound
+*comment - Made enemies of Forsaken faction
+*comment - Learned dangerous truths about Caius's ambitions
+*comment - Chosen a difficult path
+*comment
+*comment Next: Route to Act 2 hub when implemented
+*comment ═══════════════════════════════════════════════════════════
+
+*comment TODO: Route to Act 2 hub when implemented
+*finish

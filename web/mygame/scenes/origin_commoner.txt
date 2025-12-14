@@ -1,0 +1,241 @@
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment COMMONER ORIGIN - Survivor of the Undercity
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label undercity_chase
+
+*comment Set initial Commoner stats
+*set act 1
+*set chapter 1
+*set alignment "human"
+*set rank ""
+*set age 22
+*set strength 60
+*set agility 70
+*set cunning 65
+*set will 55
+*set human_relation +5
+
+The Warren never sleeps-it just changes which predator hunts which prey. Tonight, you were in the wrong alley at the wrong time. Hooded figures carved sigils into a corpse, chanting about an "Ecliptic fragment." You watched from the shadows until one looked up and [i]smelled[/i] you.
+
+Now you run. Footfalls thunder behind you, too fast to be human. Claws scrape stone. The ritualists want their witness dead.
+
+*choice
+    #Run for the surface streets
+        You vault crates and dodge beggars, lungs burning.
+
+        *set agility +5
+        *gosub_scene rank_progression gain_xp 50 "Escaped the initial pursuit"
+        *goto surface_sprint
+
+    #Hide in the trash tunnels
+        You slip into a refuse chute and hold your breath.
+
+        *set stealth +5
+        *set awareness +5
+        *gosub_scene rank_progression gain_xp 50 "Evaded the hunters"
+        *goto guild_grab
+
+    #Turn and fight with what you can grab
+        You grab a rusted pipe. Fight or die.
+
+        *set strength +5
+        *set will +5
+        *gosub_scene rank_progression gain_xp 50 "Stood your ground against supernaturals"
+        *goto desperate_stand
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment SURFACE SPRINT - Caius Watches
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label surface_sprint
+
+You burst onto the lantern-lit main road. Merchants shout. Guards look confused. The hooded figures emerge seconds later-hybrid eyes glowing.
+
+A tall man in a tattered cloak steps between you and them. Heterochromatic eyes. Calm amid chaos. "Enough," he says. The hunters freeze.
+
+"Caius the Unbound," one hisses.
+
+He offers you a hand. "Live as prey... or stand as something new. Choose quickly."
+
+*set met_Caius true
+
+*choice
+    #Take Caius's hand and accept the hybrid offer
+        Caius slices his palm and presses it to your mouth. Blood and lunar venom mix. Agony sears through you as both magics fuse.
+
+        *set alignment "forsaken"
+        *set forsaken_rank "Initiate"
+        *set Turned true
+        *set hybrid_stability 45
+        *set control 55
+        *set bloodlust 20
+        *set rage 20
+        *set forsaken_relation +25
+        *gosub_scene rank_progression gain_xp 100 "Accepted Caius's hybrid salvation"
+        *goto commoner_departure_forsaken
+
+    #Refuse and beg the guards for protection
+        Cathedral bells toll. Guards form a line between you and the hybrids. Caius steps back, measuring.
+
+        *set alignment "human"
+        *set human_relation +15
+        *set forsaken_relation -10
+        *gosub_scene rank_progression gain_xp 90 "Chose mortal protection over hybrid power"
+        *goto commoner_departure_human
+
+    #Offer the ritual notes you stole to the Crimson Spire
+        You flash the bloody parchment. "Deal. I have something your Matriarch will want."
+
+        Caius narrows his eyes but lets you pass. A Varkyr courier melts from the shadows to escort you.
+
+        *set alignment "varkyrs"
+        *set rank "Commoner"
+        *set Turned true
+        *set varkyrs_relation +20
+        *set blood_satiation 70
+        *gosub_scene rank_progression gain_xp 100 "Traded ritual secrets for the Embrace"
+        *goto commoner_departure_varkyr
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment GUILD GRAB - Assassin Ultimatum
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label guild_grab
+
+Hands clamp over your mouth. You're dragged through secret doors into a candlelit chamber. Lucan Graves of the Assassin Guild regards you, amused.
+
+"You saw something valuable. You could die... or you could work for us."
+
+*set met_Lucan true
+*set Lucan_relation +10
+
+*choice
+    #Accept Guild training to survive
+        Survival over pride. You nod.
+
+        *set alignment "human"
+        *set AssassinGuild_relation +20
+        *set cunning +10
+        *gosub_scene rank_progression gain_xp 100 "Joined the Assassin Guild for protection"
+        *goto commoner_departure_human
+
+    #Use the Guild to reach the Lupines
+        "Smuggle me to the forests," you whisper. "The packs will pay for info on ritual murders."
+
+        Lucan grins. "Bold."
+
+        *set alignment "lupine"
+        *set lupine_rank "Omega"
+        *set Turned true
+        *set rage 30
+        *set control 60
+        *set lupine_relation +15
+        *gosub_scene rank_progression gain_xp 100 "Traded secrets for a Lupine bite"
+        *goto commoner_departure_lupine
+
+    #Sell the information to a Varkyr patron
+        Lucan arranges a meeting with a Varkyr sponsor in exchange for a cut. Isabella's agent listens, intrigued.
+
+        *set alignment "varkyrs"
+        *set rank "Commoner"
+        *set Turned true
+        *set varkyrs_relation +15
+        *set bloodlust +5
+        *gosub_scene rank_progression gain_xp 100 "Sold ritual intel for vampiric patronage"
+        *goto commoner_departure_varkyr
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment DESPERATE STAND - Blood or Moon
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label desperate_stand
+
+You swing. The pipe connects. A ritualist staggers-then snarls, eyes turning molten gold. A Lupine. The pipe bends like clay in his grip.
+
+Before he rends you apart, an arrow sprouts from his throat. A woman in silver-and-blue armor strides forward. Inquisitor Vale's lieutenant, Elena Cross.
+
+"Get up," she orders. "If you want to live, run with me."
+
+*set met_Julian true
+*set met_Nadia true
+
+*choice
+    #Follow Elena to the Silver Legion safehouse
+        You sprint beside her as silver-tipped bolts rain down on your pursuers.
+
+        *set alignment "human"
+        *set legion_rank "Recruit"
+        *set human_relation +20
+        *gosub_scene rank_progression gain_xp 125 "Rescued by the Silver Legion"
+        *goto commoner_departure_human
+
+    #Take the fallen Lupine's offered hand instead
+        The wounded Lupine grabs your wrist. "Better to run with us than be caged by humans," he growls, teeth lengthening.
+
+        You let him bite. The world turns silver and savage.
+
+        *set alignment "lupine"
+        *set lupine_rank "Omega"
+        *set Turned true
+        *set rage 40
+        *set control 55
+        *set lupine_relation +20
+        *gosub_scene rank_progression gain_xp 125 "Chose the moon over the Legion"
+        *goto commoner_departure_lupine
+
+    #Call out to the lurking hybrid for aid
+        Caius steps from shadow, impressed by your defiance. "Still standing? You deserve a choice."
+
+        *set alignment "forsaken"
+        *set forsaken_rank "Initiate"
+        *set Turned true
+        *set hybrid_stability 50
+        *set control 60
+        *set forsaken_relation +20
+        *gosub_scene rank_progression gain_xp 125 "Invited by Caius after surviving the ritualists"
+        *goto commoner_departure_forsaken
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment DEPARTURES TO ACT 1
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label commoner_departure_human
+
+You trade fear for purpose. Whether under the Silver Legion's banners or the Guild's knives, you will never be prey again. The Ecliptic murders won't claim another commoner if you can stop it.
+
+*page_break
+*goto_scene hub_city entry
+
+*label commoner_departure_varkyr
+
+Blood seals your bargain. The Spire offers protection and hunger in equal measure. In the courts above the slums, power is there for the taking-if you can stomach eternity.
+
+*page_break
+*goto_scene hub_city entry
+
+*label commoner_departure_lupine
+
+The forest's chorus drowns out the city's lies. The pack will test you, shape you, and perhaps free you from ever being hunted again.
+
+*page_break
+*goto_scene hub_city entry
+
+*label commoner_departure_forsaken
+
+Hybrid blood thrums under your skin. Neither Varkyr nor Lupine will claim you. With the Forsaken, you will decide whether balance or vengeance defines your new life.
+
+*page_break
+*if (ng_plus_unlocked)
+    *goto_scene act1_forsaken_ngplus forsaken_infiltration
+*else
+    New Game Plus content is locked. Finish a full campaign to unlock the Forsaken NG+ route.
+    *goto_scene hub_city entry
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment NOTES:
+*comment - Sets starting stats for Commoner origin
+*comment - Presents survival routes through Forsaken, Varkyr, Lupine, or Human alliances
+*comment - Awards 50-125 XP through choices
+*comment - Introduces Caius, Lucan, Elena, and faction hooks to match Act 1 entry points
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ

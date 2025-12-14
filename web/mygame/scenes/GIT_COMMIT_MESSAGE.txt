@@ -1,0 +1,14 @@
+*comment Simplified commit template for quicktest
+Commit message:
+feat: Phase 1 refactoring complete - core systems & codex
+
+Notes:
+- Adds new variables and scenes
+- Updates codex navigation
+- Integrates ability systems
+
+Testing:
+- quicktest
+- randomtest (planned)
+
+*finish

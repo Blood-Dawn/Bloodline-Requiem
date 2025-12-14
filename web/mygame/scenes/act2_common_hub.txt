@@ -1,0 +1,28 @@
+*comment Act 2 common hub
+*set act 2
+*set chapter 1
+The vaulted chamber of Greyhaven's High Council stands silent as you enter, a sanctum where the fates of nations are whispered into being. Ancient banners hang from stone pillars, their faded colors telling tales of wars long settled. At the center, a circular table gleams under the glow of enchanted braziers, every seat occupied by figures cloaked in authority. The air hums with restrained power, a tension that crawls across your skin.
+
+Today the council convenes to decide the course of the coming conflict. Representatives from every faction have gathered: stoic Lupine envoys, imposing Varkyr nobles, and the mortal advisers who balance the scales. They watch your approach with measured interest—your actions have earned a reputation that carries weight in these halls. When the chamber doors close, murmurs hush, and all eyes fix upon you.
+
+The Chancellor rises, voice echoing off the vaulted ceiling. "Veilfall stands at the brink," he declares. "Your alliances will shape where we march next."
+
+*if (lupine_relation > varkyrs_relation)
+    The Lupine envoys bow their heads in approval, acknowledging your loyalty to their cause.
+    *set war_with_varkyrs true
+    *set war_with_lupine false
+    *goto council_aftermath
+*elseif (varkyrs_relation > lupine_relation)
+    The Varkyr nobles flash razor smiles, sensing your favor rests with them.
+    *set war_with_lupine true
+    *set war_with_varkyrs false
+    *goto council_aftermath
+*else
+    The council notes your balanced stance, awaiting a decisive push from you before taking sides.
+    *set war_with_lupine false
+    *set war_with_varkyrs false
+    *goto council_aftermath
+
+*label council_aftermath
+With the council's decree ringing in your ears, you are dismissed to prepare for what lies ahead.
+*finish

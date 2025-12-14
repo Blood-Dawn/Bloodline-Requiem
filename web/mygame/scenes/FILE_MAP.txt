@@ -1,0 +1,28 @@
+*comment Simplified file map for quicktest
+BLOODLINE REQUIEM - FILE MAP
+Project root: C:/dev/choicescript/choicescript-main/web/mygame
+
+Core scenes:
+- startup.txt
+- choicescript_stats.txt
+- status.txt
+
+Systems:
+- systems/varkyr_abilities.txt
+- systems/lupine_abilities_complete.txt
+- systems/forsaken_abilities.txt
+- systems/rank_progression.txt
+- systems/power_tier_calc.txt
+
+Codex:
+- codex/codex_main.txt
+- codex/codex_world.txt
+- codex/codex_races.txt
+- codex/codex_mythology.txt
+
+Docs and helpers:
+- DIRECTORY_TREE.txt
+- COMPLETION_BANNER.txt
+- GIT_COMMIT_MESSAGE.txt
+
+*finish

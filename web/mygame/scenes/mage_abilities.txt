@@ -1,0 +1,288 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment MAGE ABILITIES - Spell Selection System
+*comment ═══════════════════════════════════════════════════════════
+*comment Mages pick two new spells each time they rank up.
+
+*label mage_ability_select
+*temp abilities_selected 0
+*temp ability_choice_1 ""
+*temp ability_choice_2 ""
+
+*comment Skip if we're not currently on the mage track
+*if (alignment != "mage")
+    *finish
+
+*comment Default to Apprentice if no rank has been set yet
+*if (mage_rank = "")
+    *set mage_rank "Apprentice"
+
+Your rank as [b]${mage_rank}[/b] unlocks deeper arcane patterns. Choose [b]two spells[/b] to inscribe into your grimoire.
+
+*if (mage_rank = "Apprentice")
+    *goto apprentice_spells
+
+*if (mage_rank = "Journeymage")
+    *goto journeymage_spells
+
+*if ((mage_rank = "Battlemage") or (mage_rank = "Spellwright"))
+    *goto specialist_spells
+
+*if (mage_rank = "Arcanist")
+    *goto arcanist_spells
+
+*if (mage_rank = "Archmage")
+    *goto archmage_spells
+
+*comment Fallback for unexpected rank
+*bug Unrecognized mage rank: ${mage_rank}
+
+*comment Shared tracking helpers
+*label record_selection
+*params ability_name
+*set abilities_selected +1
+*if (abilities_selected = 1)
+    *set ability_choice_1 ability_name
+
+*if (abilities_selected = 2)
+    *set ability_choice_2 ability_name
+
+*if (abilities_selected >= 2)
+    *goto ability_selection_complete
+*return
+
+*label apprentice_spells
+[b]Apprentice Spells[/b] - Fundamentals every mage must master.
+
+Choose two:
+
+*choice
+    *if (arcane_bolt = false)
+        #Arcane Bolt
+            [i]Condense raw aether into a guided projectile.[/i]
+
+            Reliable ranged attack; can disrupt lesser rituals.
+            *set arcane_bolt true
+            *gosub record_selection "Arcane Bolt"
+            *goto check_apprentice_complete
+    *if (mage_sight = false)
+        #Mage Sight
+            [i]See the flows of the Veil and trace hidden sigils.[/i]
+
+            Reveals magical traps, disguises, and resonance trails.
+            *set mage_sight true
+            *gosub record_selection "Mage Sight"
+            *goto check_apprentice_complete
+    *if (wardweave = false)
+        #Wardweave
+            [i]Stitch a quick ward to blunt a single strike or spell.[/i]
+
+            Grants brief damage reduction; stacks with other defenses.
+            *set wardweave true
+            *gosub record_selection "Wardweave"
+            *goto check_apprentice_complete
+    *if (focus_mind = false)
+        #Focus Mind
+            [i]Breathe mana through your nerves, sharpening concentration.[/i]
+
+            Reduces burnout, improves ritual control under stress.
+            *set focus_mind true
+            *gosub record_selection "Focus Mind"
+            *goto check_apprentice_complete
+
+*label check_apprentice_complete
+*if (abilities_selected < 2)
+    *goto apprentice_spells
+*goto ability_selection_complete
+
+*label journeymage_spells
+[b]Journeymage Spells[/b] - Fieldwork essentials.
+
+Choose two:
+
+*choice
+    *if (blink_step = false)
+        #Blink Step
+            [i]Slip a few strides through folded space.[/i]
+
+            Evade attacks, close gaps, or bypass barriers in a blink.
+            *set blink_step true
+            *gosub record_selection "Blink Step"
+            *goto check_journeymage_complete
+    *if (aegis_sigil = false)
+        #Aegis Sigil
+            [i]Anchor a shield glyph that blooms into a dome on impact.[/i]
+
+            Absorbs one heavy blow for you or an ally before fading.
+            *set aegis_sigil true
+            *gosub record_selection "Aegis Sigil"
+            *goto check_journeymage_complete
+    *if (mana_flare = false)
+        #Mana Flare
+            [i]Overcharge your next spell with volatile aether.[/i]
+
+            Boosts spell potency at the cost of temporary burnout.
+            *set mana_flare true
+            *gosub record_selection "Mana Flare"
+            *goto check_journeymage_complete
+    *if (veil_pierce = false)
+        #Veil Pierce
+            [i]Cut through illusions and shadow veils.[/i]
+
+            Nullifies basic glamour, reveals hidden doorways and portals.
+            *set veil_pierce true
+            *gosub record_selection "Veil Pierce"
+            *goto check_journeymage_complete
+
+*label check_journeymage_complete
+*if (abilities_selected < 2)
+    *goto journeymage_spells
+*goto ability_selection_complete
+
+*label specialist_spells
+[b]Specialist Spells[/b] - Tools favored by Battlemages and Spellwrights.
+
+Choose two:
+
+*choice
+    *if (storm_nova = false)
+        #Storm Nova
+            [i]Release a ring of crackling force around you.[/i]
+
+            Staggers foes and disrupts unstable rituals within range.
+            *set storm_nova true
+            *gosub record_selection "Storm Nova"
+            *goto check_specialist_complete
+    *if (spellshield_dome = false)
+        #Spellshield Dome
+            [i]Erect a sustained barrier fueled by steady mana flow.[/i]
+
+            Protects an area against projectiles and minor spells while channeled.
+            *set spellshield_dome true
+            *gosub record_selection "Spellshield Dome"
+            *goto check_specialist_complete
+    *if (rune_trap = false)
+        #Rune Trap
+            [i]Lay a hidden sigil that detonates into binding chains.[/i]
+
+            Excellent for ambushes or slowing fast targets.
+            *set rune_trap true
+            *gosub record_selection "Rune Trap"
+            *goto check_specialist_complete
+    *if (etheric_chains = false)
+        #Etheric Chains
+            [i]Project bindings of condensed mana to immobilize a foe.[/i]
+
+            Holds most targets briefly; stronger when cast from stealth.
+            *set etheric_chains true
+            *gosub record_selection "Etheric Chains"
+            *goto check_specialist_complete
+
+*label check_specialist_complete
+*if (abilities_selected < 2)
+    *goto specialist_spells
+*goto ability_selection_complete
+
+*label arcanist_spells
+[b]Arcanist Spells[/b] - Mastery of space and time.
+
+Choose two:
+
+*choice
+    *if (temporal_anchor = false)
+        #Temporal Anchor
+            [i]Fix a moment in place; snap back to it when overwhelmed.[/i]
+
+            Acts as a personal save-point during encounters.
+            *set temporal_anchor true
+            *gosub record_selection "Temporal Anchor"
+            *goto check_arcanist_complete
+    *if (rift_step = false)
+        #Rift Step
+            [i]Tear a short-lived rift to bypass walls or appear behind foes.[/i]
+
+            Risky but invaluable for infiltration.
+            *set rift_step true
+            *gosub record_selection "Rift Step"
+            *goto check_arcanist_complete
+    *if (soul_ward = false)
+        #Soul Ward
+            [i]Shield the mind and spirit from domination or terror magic.[/i]
+
+            Grants resistance to mental influence and fear effects.
+            *set soul_ward true
+            *gosub record_selection "Soul Ward"
+            *goto check_arcanist_complete
+    *if (cataclysmic_arc = false)
+        #Cataclysmic Arc
+            [i]Channel a devastating beam that drains your mana reserve.[/i]
+
+            Ends most fights—but risks total burnout if overused.
+            *set cataclysmic_arc true
+            *gosub record_selection "Cataclysmic Arc"
+            *goto check_arcanist_complete
+
+*label check_arcanist_complete
+*if (abilities_selected < 2)
+    *goto arcanist_spells
+*goto ability_selection_complete
+
+*label archmage_spells
+[b]Archmage Invocations[/b] - Apex spells few dare to touch.
+
+Choose two:
+
+*choice
+    *if (temporal_anchor = false)
+        #Temporal Anchor
+            *goto select_archmage_anchor
+    *if (rift_step = false)
+        #Rift Step
+            *goto select_archmage_rift
+    *if (soul_ward = false)
+        #Soul Ward
+            *goto select_archmage_soul
+    *if (cataclysmic_arc = false)
+        #Cataclysmic Arc
+            *goto select_archmage_arc
+    #Focus on refining existing spells instead
+        [i]Deepen your understanding rather than add new tools.[/i]
+
+        Increase mana efficiency and ward stability slightly.
+        *set mana +5
+        *set ward_stability +5
+        *gosub record_selection "Refined repertoire"
+        *goto check_archmage_complete
+
+*label select_archmage_anchor
+Temporal Anchor becomes near-instant—no chant required.
+*set temporal_anchor true
+*gosub record_selection "Temporal Anchor (Perfected)"
+*goto check_archmage_complete
+
+*label select_archmage_rift
+Rift Step extends farther and can pull one ally with you.
+*set rift_step true
+*gosub record_selection "Rift Step (Extended)"
+*goto check_archmage_complete
+
+*label select_archmage_soul
+Soul Ward can now shelter nearby allies when cast.
+*set soul_ward true
+*gosub record_selection "Soul Ward (Shared)"
+*goto check_archmage_complete
+
+*label select_archmage_arc
+Cataclysmic Arc costs slightly less mana and leaves a lingering burn.
+*set cataclysmic_arc true
+*gosub record_selection "Cataclysmic Arc (Refined)"
+*goto check_archmage_complete
+
+*label check_archmage_complete
+*if (abilities_selected < 2)
+    *goto archmage_spells
+
+*label ability_selection_complete
+
+You inscribe ${ability_choice_1} and ${ability_choice_2} into your spellbook. Power hums, eager to be tested.
+
+*return

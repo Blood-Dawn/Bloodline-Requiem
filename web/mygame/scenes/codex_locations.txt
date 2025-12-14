@@ -1,0 +1,126 @@
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment CODEX LOCATIONS - Realms and Strongholds
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label location_overview
+
+[b]LOCATIONS OF VEILFALL[/b]
+
+From cathedral spires to moonlit forests, power concentrates in a few key places. Knowing who owns the ground often matters more than the ground itself.
+
+*choice
+    #Veilfall City
+        *goto veilfall_city
+    #Crimson Spire
+        *goto crimson_spire
+    #Whispering Pines Forest
+        *goto whispering_pines
+    #Mirror Lake
+        *goto mirror_lake
+    #Undercroft / Forsaken Enclave
+        *goto undercroft
+    #Sunken Cathedral
+        *goto sunken_cathedral
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label veilfall_city
+[b]VEILFALL - CITY OF VEILED SHADOWS[/b]
+
+Population: ~500,000 (unknown supernatural count)  
+Districts:
+- [b]Gilded Quarter:[/b] Noble estates, hidden Varkyr courts, intrigue behind silk curtains.  
+- [b]Cathedral Heights:[/b] Silver Legion headquarters, Church archives, Order of the Silver Dawn training halls.  
+- [b]The Warren:[/b] Slums, Assassin Guild safehouses, black markets, Forsaken access tunnels.  
+- [b]Harborfront:[/b] Trade hub; Adrian Blackwell's fleets; rumor channels.  
+- [b]University Row:[/b] Arcane research, alchemists studying blood and moon residue.
+
+Veilfall sits on ley lines that amplify both blood magic and lunar rites, making it the inevitable focal point for the Ecliptic Amulet's resonance.
+
+*choice
+    #Return to location list
+        *goto location_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label crimson_spire
+[b]CRIMSON SPIRE[/b]
+
+The Spire is both academy and throne for Varkyrs. Its lower halls train Commoners; higher floors host duels of etiquette and power among nobles. Windows are narrow to limit sunlight; mirrors are rare to avoid vanity's distractions.
+
+- [b]Security:[/b] Shadow sentries, blood wards, rotating guard rotations of Knights.  
+- [b]Notable Sites:[/b] Matriarch's Hall (judgment), Blood Gardens (feeding under supervision), Archives of Hemomancy.  
+- [b]Relevance:[/b] Houses the Varkyr shard of the Ecliptic Amulet; site of Act 1 trials for Varkyr origins.
+
+*choice
+    #Return to location list
+        *goto location_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label whispering_pines
+[b]WHISPERING PINES FOREST[/b]
+
+Old-growth pines whisper secrets in the wind. Moonlight breaks in silver shafts, illuminating ritual stones used for pack oaths and rank challenges. The forest conceals tunnels, traps, and hidden caches of silvered weaponry stolen from hunters.
+
+- [b]Territory:[/b] Claimed by the Whispering Pines Pack; trespassers risk immediate reprisal.  
+- [b]Notable Sites:[/b] Moon-Born Trial Clearing, Alpha's Den, Sacred Howling Ridge.  
+- [b]Relevance:[/b] Lupine shard is guarded nearby; Act 1 Lupine routes converge here.
+
+*choice
+    #Return to location list
+        *goto location_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label mirror_lake
+[b]MIRROR LAKE[/b]
+
+Site of the ancient Mirror Lake Pact between the Progenitor and the Origin Wolf. The lake's surface amplifies moonlight and reflects blood rituals, acting as a natural scrying mirror.
+
+- [b]Ritual Use:[/b] Annual Veilstone ceremony (now fractured), clandestine meetings between factions seeking neutral ground.  
+- [b]Hazards:[/b] Lunar-touched spirits, lingering wards, unpredictable magical surges when blood touches the water.  
+- [b]Relevance:[/b] Potential location for reforging or shattering the Ecliptic Amulet; desired by all sides.
+
+*choice
+    #Return to location list
+        *goto location_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label undercroft
+[b]UNDERCROFT / FORSAKEN ENCLAVE[/b]
+
+An abandoned cathedral buried beneath the Warren. Caius reshaped it into a hybrid sanctuary with training rings, makeshift laboratories, and communal quarters carved from bedrock.
+
+- [b]Access Points:[/b] Sewers in the Warren, collapsed mausoleums in Cathedral Heights, forgotten well shafts.  
+- [b]Culture:[/b] Merit over birth; experimentation encouraged; scars worn as badges.  
+- [b]Relevance:[/b] Acts as Forsaken hub in Act 1; staging ground for hybrid missions and Amulet research.
+
+*choice
+    #Return to location list
+        *goto location_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*label sunken_cathedral
+[b]SUNKEN CATHEDRAL[/b]
+
+A drowned ruin beneath Mirror Lake, revealed by shifting tides and arcane tremors. Stained glass depicting the Millennium War lies shattered under water; runes glow faintly in the depths.
+
+- [b]Rumors:[/b] Final trial site for the full Ecliptic Amulet; contains wards keyed to both blood and moon essence.  
+- [b]Challenges:[/b] Flooded chambers, air pockets laced with hallucinatory spores, guardian constructs attuned to ancient oaths.  
+- [b]Relevance:[/b] End of Act 1 Forsaken rebuild, potential Act 2 catalyst depending on who reaches it first.
+
+*choice
+    #Return to location list
+        *goto location_overview
+    #Return to codex
+        *goto_scene codex_main codex_main
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment NOTES:
+*comment - Mirrors codex_main navigation expectations (*label location_overview)
+*comment - Emphasizes Act 1 hubs and Amulet touchpoints
+*comment - Provides return options to list or main codex
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ

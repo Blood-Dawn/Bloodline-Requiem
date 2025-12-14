@@ -1,0 +1,92 @@
+diff --git "a/Assets/DALL\302\267E 2023-10-24 03.55.04 - Render of an alpha wolf, the leader of the pack, with a majestic and commanding presence. Its fur is thick and lustrous, its eyes are intense, an.png" b/Assets/alpha-wolf.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 03.55.04 - Render of an alpha wolf, the leader of the pack, with a majestic and commanding presence. Its fur is thick and lustrous, its eyes are intense, an.png"
+rename to Assets/alpha-wolf.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 04.02.17 - Drawing of an ancient and powerful vampire, with a commanding presence and centuries-old features.png" b/Assets/ancient-vampire.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 04.02.17 - Drawing of an ancient and powerful vampire, with a commanding presence and centuries-old features.png"
+rename to Assets/ancient-vampire.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 03.57.48 - Photo of a dark fantasy alpha wolf with piercing red eyes, standing amidst a foggy forest with twisted trees. Its fur is black and sleek, and it .png" b/Assets/dark-alpha-wolf.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 03.57.48 - Photo of a dark fantasy alpha wolf with piercing red eyes, standing amidst a foggy forest with twisted trees. Its fur is black and sleek, and it .png"
+rename to Assets/dark-alpha-wolf.png
+diff --git a/Assets/dashpic.png b/Assets/dash-pic.png
+similarity index 100%
+rename from Assets/dashpic.png
+rename to Assets/dash-pic.png
+diff --git a/Assets/download.jpg b/Assets/download-image.jpg
+similarity index 100%
+rename from Assets/download.jpg
+rename to Assets/download-image.jpg
+diff --git "a/Assets/DALL\302\267E 2023-10-24 04.04.03 - Photo of a powerful elder male vampire, with deep-set eyes and a weathered face that speaks of centuries lived. He's dressed in ornate, ancient r.png" b/Assets/elder-vampire.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 04.04.03 - Photo of a powerful elder male vampire, with deep-set eyes and a weathered face that speaks of centuries lived. He's dressed in ornate, ancient r.png"
+rename to Assets/elder-vampire.png
+diff --git a/Assets/Intro_image2.png b/Assets/intro-image.png
+similarity index 100%
+rename from Assets/Intro_image2.png
+rename to Assets/intro-image.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 04.01.16 - Photo of a noble vampire, dressed in elegant and regal attire, with pale skin and refined features. They stand in a grand, candlelit chamber, exu.png" b/Assets/noble-vampire-chamber.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 04.01.16 - Photo of a noble vampire, dressed in elegant and regal attire, with pale skin and refined features. They stand in a grand, candlelit chamber, exu.png"
+rename to Assets/noble-vampire-chamber.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 04.02.22 - Photo of a noble vampire, dressed in elegant and regal attire, in a grand, candlelit chamber.png" b/Assets/noble-vampire.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 04.02.22 - Photo of a noble vampire, dressed in elegant and regal attire, in a grand, candlelit chamber.png"
+rename to Assets/noble-vampire.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 04.01.12 - Drawing of an old but powerful vampire, with deep-set eyes and weathered features that tell tales of centuries lived. Their posture, however, is .png" b/Assets/old-vampire.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 04.01.12 - Drawing of an old but powerful vampire, with deep-set eyes and weathered features that tell tales of centuries lived. Their posture, however, is .png"
+rename to Assets/old-vampire.png
+diff --git a/Assets/Rurik.png b/Assets/rurik-portrait.png
+similarity index 100%
+rename from Assets/Rurik.png
+rename to Assets/rurik-portrait.png
+diff --git "a/Assets/DALL\302\267E 2023-10-26 21.29.25 - Illustration of Alpha Rurik transforming between his human and wolf forms. In his wolf form, he has a coat of sleek black fur, signifying strengt.png" b/Assets/rurik-transform.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-26 21.29.25 - Illustration of Alpha Rurik transforming between his human and wolf forms. In his wolf form, he has a coat of sleek black fur, signifying strengt.png"
+rename to Assets/rurik-transform.png
+diff --git "a/Assets/DALL\302\267E 2023-10-26 21.30.57 - Illustration of Alpha Rurik in his full wolf form, standing majestically amidst the Whispering Pines. He has a sleek black coat and dominant post.png" b/Assets/rurik-wolf.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-26 21.30.57 - Illustration of Alpha Rurik in his full wolf form, standing majestically amidst the Whispering Pines. He has a sleek black coat and dominant post.png"
+rename to Assets/rurik-wolf.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 03.56.20 - Render of an alpha wolf in a more ethereal, spirit-like form, glowing with a mystical aura, hovering above the ground with semi-transparent fur a.png" b/Assets/spirit-alpha-wolf.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 03.56.20 - Render of an alpha wolf in a more ethereal, spirit-like form, glowing with a mystical aura, hovering above the ground with semi-transparent fur a.png"
+rename to Assets/spirit-alpha-wolf.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 03.52.49 - Illustration of a dark and stormy battlefield with wolves lunging at vampires, hybrids soaring in the air with bat-like wings and wolf features, .png" b/Assets/stormy-battlefield.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 03.52.49 - Illustration of a dark and stormy battlefield with wolves lunging at vampires, hybrids soaring in the air with bat-like wings and wolf features, .png"
+rename to Assets/stormy-battlefield.png
+diff --git "a/Assets/DALL\302\267E 2023-11-09 22.11.41 - Create an intricately detailed image of a vampire army ready for battle under the full moon's ethereal glow. The ancient, ruined cityscape around them.png" b/Assets/vampire-army.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-11-09 22.11.41 - Create an intricately detailed image of a vampire army ready for battle under the full moon's ethereal glow. The ancient, ruined cityscape around them.png"
+rename to Assets/vampire-army.png
+diff --git a/Assets/war1.png b/Assets/war-scene.png
+similarity index 100%
+rename from Assets/war1.png
+rename to Assets/war-scene.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 03.52.40 - Render of a war zone set in a dense forest at night. Packs of wolves attack vampires who use their supernatural abilities, while hybrids, a mix o.png" b/Assets/war-zone.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 03.52.40 - Render of a war zone set in a dense forest at night. Packs of wolves attack vampires who use their supernatural abilities, while hybrids, a mix o.png"
+rename to Assets/war-zone.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 03.59.39 - Photo of a mystical wolf pack, moving through a fog-laden forest under a luminescent moon. The wolves' fur glows faintly, and their eyes shimmer .png" b/Assets/wolf-pack-moon.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 03.59.39 - Photo of a mystical wolf pack, moving through a fog-laden forest under a luminescent moon. The wolves' fur glows faintly, and their eyes shimmer .png"
+rename to Assets/wolf-pack-moon.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 03.59.30 - Drawing of a wolf pack on a mountain peak, surrounded by swirling mists and ethereal northern lights in the sky. Their fur glistens with dew, and.png" b/Assets/wolf-pack-mountain.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 03.59.30 - Drawing of a wolf pack on a mountain peak, surrounded by swirling mists and ethereal northern lights in the sky. Their fur glistens with dew, and.png"
+rename to Assets/wolf-pack-mountain.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 03.59.26 - Render of a mystical wolf pack gathered around a magical spring, with water that glows in vibrant hues. The reflection in the water shows stars a.png" b/Assets/wolf-pack-spring.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 03.59.26 - Render of a mystical wolf pack gathered around a magical spring, with water that glows in vibrant hues. The reflection in the water shows stars a.png"
+rename to Assets/wolf-pack-spring.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 03.59.35 - Illustration of a wolf pack set in a mystical landscape, with shimmering waterfalls and glowing flora surrounding them. The alpha stands prominen.png" b/Assets/wolf-pack-waterfalls.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 03.59.35 - Illustration of a wolf pack set in a mystical landscape, with shimmering waterfalls and glowing flora surrounding them. The alpha stands prominen.png"
+rename to Assets/wolf-pack-waterfalls.png
+diff --git "a/Assets/DALL\302\267E 2023-10-24 04.03.58 - Illustration of a young female vampire, exuding power and confidence. Her attire is a blend of modern and ancient, with a dark crimson cloak. Her.png" b/Assets/young-vampire.png
+similarity index 100%
+rename from "Assets/DALL\302\267E 2023-10-24 04.03.58 - Illustration of a young female vampire, exuding power and confidence. Her attire is a blend of modern and ancient, with a dark crimson cloak. Her.png"
+rename to Assets/young-vampire.png

@@ -1,0 +1,22 @@
+*comment Phase completion banner (text-only)
+
+[b]Phase 1 Refactoring Complete[/b]
+Version: 0.5.0
+Date: December 5, 2025
+
+*set ng_plus_unlocked true
+*achieve forsaken_ngplus
+
+Systems operational:
+- Varkyr abilities
+- Lupine abilities
+- Forsaken abilities
+- Rank progression
+- Codex navigation
+
+Next steps:
+- Integrate origins
+- Expand Act 1 content
+- Flesh out codex entries for factions/locations
+
+*finish

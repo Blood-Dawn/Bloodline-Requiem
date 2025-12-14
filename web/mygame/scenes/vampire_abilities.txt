@@ -1,0 +1,5 @@
+*comment Deprecated vampire abilities placeholder for quicktest coverage
+
+This scene is a stub for legacy vampire abilities. Use systems/varkyr_abilities.txt instead.
+
+*finish

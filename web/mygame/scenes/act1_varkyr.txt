@@ -1,0 +1,551 @@
+Crimson Spire Initiation
+In the subterranean courts beneath Veilfall, the Crimson Spire stands as the beating heart of Varkyr tradition. Flickering torches cast long shadows across stone walls etched with centuries of blood rites. Tonight you are summoned here by the Matriarch herself, a regal figure whose presence silences even the most defiant fledgling. The assembled initiates kneel before her obsidian throne while the scent of fresh vitae saturates the air. Rumor whispers that those who fail these trials are never seen again, their essence feeding the Spire's crimson glow. Before you lies a choice that will define your standing among the undead aristocracy.
+*choice
+    #Submit to the Matriarch's decree, swearing absolute loyalty.
+        You lower your gaze and feel the chill kiss of the Matriarch's claws upon your brow. Her voice curls around you like mist, binding you to the ancient edicts of the Spire. In obedience you sense power awaiting, though at the cost of your free will.
+        *set alignment "varkyrs"
+        *goto varkyrs_route
+    #Challenge tradition and test the limits of this initiation.
+        Defiance flares in your veins as you meet the Matriarch's gaze. A murmur ripples through the court—few dare question her, yet fascination flickers in those predatory eyes. You vow to forge your own path, even if it means courting exile or worse.
+        *set alignment "varkyrs"
+        *goto varkyrs_route
+*label varkyrs_route
+*comment Act 1 - Varkyr Investigation
+*comment Player arrives here from origin_varkyr.txt or origin_assassin.txt (Varkyr contract)
+
+As the night shrouds Veilfall in a veil of mystery, you embark on the trail of the elusive vampire who has been haunting the city. The streets, once bustling, now lay silent under the moon's pale gaze. Your senses heighten as you delve into the shadows, the realm of the Varkyrs.
+
+*comment Grant XP for starting investigation
+*gosub_scene rank_progression gain_xp 50 "Began Varkyr Investigation"
+
+*choice
+    *if (acute_senses) #Use Acute Senses to track the vampire's trail
+        Your Varkyr senses flare to life—every heartbeat within blocks registers like a drum, every scent telling a story. You isolate the signature of old blood and follow it unerringly through winding alleys and darkened pathways.
+
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 25 "Used Acute Senses successfully"
+        *goto varkyrs_confrontation
+
+    #Track the vampire using scent.
+        The night air carries tales from the unseen world. You follow the subtle, iron-rich scent of blood, which leads you through winding alleys and darkened pathways.
+        *set faction_stat  "Royal Vampire"
+        *set bloodline_or_rank "Bloodline"
+        *goto varkyrs_confrontation
+    #Seek eyewitnesses who have seen the vampire.
+        You delve into the whispers of the night, questioning the few souls that dare to tread in the darkness, gathering fragments of a face haunting in its beauty yet fearsome in its pale coldness.
+
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 15 "Gathered intelligence from witnesses"
+        *goto varkyrs_confrontation
+    #Investigate recent killings for clues.
+        The ominous silence of the city is broken only by the cries of sorrow. You follow the trail of death, each scene telling a story of fear and desperation, edging you closer to the vampire.
+
+        *set awareness +5
+        *gosub_scene rank_progression gain_xp 20 "Analyzed crime scenes"
+        *goto varkyrs_confrontation
+    #Utilize a network of informants to gather information.
+        You delve into the underbelly of Veilfall, seeking those who dwell in shadows, their eyes and ears extending to the corners where light fears to tread. Piece by piece, a picture of the vampire's haunting presence forms.
+
+        *set cunning +10
+        *gosub_scene rank_progression gain_xp 30 "Built informant network"
+        *goto varkyrs_confrontation
+    #Set a trap using yourself as bait.
+        As night deepens, you venture into the heart of darkness, offering yourself as bait to the creature of the night, each heartbeat a call to the unseen.
+
+        *set will +5
+        *gosub_scene rank_progression gain_xp 20 "Set daring trap"
+        *goto varkyrs_confrontation
+
+*label varkyrs_confrontation
+The trail culminates in a forgotten part of the city, where the veil between the seen and unseen seems thin. There, amidst the shadows, the vampire emerges, his eyes a void yet filled with the ages he's witnessed.
+
+*choice
+    #Warn the vampire about the traces left behind.
+        You speak words of warning, of the hunters that lurk in the shadows. The vampire studies you, his gaze piercing the veil of mortality as he whispers words of the ancient curse. The world around you shatters, reborn in the blood-red hue of the Varkyr's reality.
+        *set alignment "varkyrs"
+        *set varkyrs_relation +5
+        *goto varkyr_alliance
+    #Engage the vampire in combat.
+        With a swift motion, you unsheathe your weapon, the steel singing the song of confrontation. The vampire, with a grace born of ages, engages you in a dance of death and survival.
+        *goto vamp_battle
+    #Follow the vampire discreetly.
+        You meld with the shadows, your every step a whisper as you follow the vampire through the veiled pathways of Veilfall, each moment a step deeper into the world of the unknown.
+        *goto vamp_follow
+    #Offer the vampire assistance in covering his tracks.
+        You offer a hand in shadows, your words weaving the essence of stealth and caution. The vampire, intrigued, nods, the night bearing witness to an unexpected alliance.
+        *goto varkyr_alliance
+    #Attempt to gather more information discreetly before acting.
+        You bide your time, your eyes and ears attuned to the world of the unseen, gathering the threads of information that may unveil the true narrative of the vampire's tale.
+        *goto vamp_investigation
+
+*label varkyr_alliance
+The vampire's lips curl into a wry smile as you speak of a common enemy. He
+introduces himself as Lord Vaelis, one of the Crimson Spire's wandering
+agents. His words drip with old-world charm as he proposes a pact: together you
+could unsettle those who hunt his kin while elevating your own reputation in
+Varkyr society. The alley seems to close in, muffling the distant sounds of
+Veilfall as he awaits your answer. A sense of dark opportunity hangs in the air
+along with the faint smell of iron and incense. Vaelis's eyes never leave you,
+measuring whether you are merely a pawn or a potential ally of worth.
+
+*gosub_scene rank_progression gain_xp 40 "Negotiated with Lord Vaelis"
+
+*choice
+    #Accept his offer and pledge cooperation.
+        The prospect of an influential patron is tempting. You clasp forearms
+        with Vaelis, sealing a tentative alliance that could unlock the inner
+        circles of the Crimson Spire.
+
+        *set varkyrs_relation +20
+        *set Night_Council_relation +10
+        *gosub_scene rank_progression gain_xp 100 "Forged alliance with Crimson Spire agent"
+        *goto varkyr_end
+    #Refuse politely and maintain your independence.
+        Trust does not come easily. You decline, stating your intention to hunt
+        alone until his motives become clear.
+
+        *set will +10
+        *set varkyrs_relation +5
+        *gosub_scene rank_progression gain_xp 60 "Maintained independence from Varkyr politics"
+        *goto varkyr_end
+
+*label vamp_battle
+Steel flashes and fangs gleam as the clash erupts. Vaelis moves with
+unnerving grace, every strike meant to test your resolve rather than kill. The
+two of you trade blows through deserted streets until the echo of battle sets
+dogs barking in the distance. Sweat beads on your brow while the vampire shows
+little sign of fatigue, yet you sense he respects your ferocity.
+
+*comment Combat ability options
+*choice
+    *if (shadow_step) #Use Shadow Step to gain advantage
+        You dissolve into shadow, reappearing behind Vaelis. His eyes widen—impressed—as your blade finds his shoulder. Not a killing blow, but proof of skill.
+
+        "You know the Shadow Arts," he murmurs. "Interesting."
+
+        *set agility +10
+        *set varkyrs_relation +5
+        *gosub_scene rank_progression gain_xp 50 "Demonstrated Shadow Step in combat"
+        *goto vamp_battle_resolution
+
+    *if (enhanced_strength) #Use Enhanced Strength to overpower
+        Vampiric power floods your limbs. Your next strike carries the force of centuries—Vaelis barely parries, driven back three steps.
+
+        "Impressive," he admits. "You've awakened your true nature."
+
+        *set strength +10
+        *set varkyrs_relation +5
+        *gosub_scene rank_progression gain_xp 50 "Used Enhanced Strength effectively"
+        *goto vamp_battle_resolution
+
+    *if (night_vision) #Use Night Vision to anticipate his movements
+        In the darkness, you see everything. Every flicker of muscle, every tell before he strikes. You counter effortlessly, a dance you control.
+
+        Vaelis laughs. "You see in the dark as I do. Good."
+
+        *set cunning +5
+        *set varkyrs_relation +5
+        *gosub_scene rank_progression gain_xp 40 "Exploited Night Vision advantage"
+        *goto vamp_battle_resolution
+
+    #Fight with skill and determination
+        You trade blows with pure technique, no special abilities—just steel and will. Vaelis respects the honesty of it.
+
+        *set will +10
+        *gosub_scene rank_progression gain_xp 30 "Held your own against Vaelis"
+        *goto vamp_battle_resolution
+
+*label vamp_battle_resolution
+When the moment comes to end it, he withdraws slightly, leaving you with the choice to spill his ancient blood or stay your hand. The future of your relationship hangs on this decision.
+
+*choice
+    #Spare him and demand a parley.
+        You lower your weapon, signaling a willingness to talk. Vaelis nods in
+        appreciation and offers a grudging truce in return for information about
+        his enemies.
+
+        *set control +10
+        *set varkyrs_relation +10
+        *gosub_scene rank_progression gain_xp 75 "Showed mercy and diplomacy"
+        *goto varkyr_end
+    #Strike to finish him off.
+        With a decisive lunge you aim for his heart, refusing to be swayed by
+        charisma or history.
+
+        *set bloodlust +15
+        *set varkyrs_relation -20
+        *gosub_scene rank_progression gain_xp 50 "Attempted to eliminate Vaelis"
+        *goto varkyr_end
+
+*label vamp_follow
+*if (veil_of_shadows)
+    Your Veil of Shadows ability cloaks you perfectly. Vaelis has no idea you're there.
+
+    *set stealth +10
+    *gosub_scene rank_progression gain_xp 30 "Used Veil of Shadows for stealth"
+
+You melt into the night, tailing Vaelis at a cautious distance. He weaves
+through narrow alleyways and over moonlit rooftops until the city opens upon a
+gothic courtyard hidden from mundane eyes. Statues of forgotten nobles watch as
+he exchanges coded words with cloaked figures. The glimpse you catch hints at a
+network far deeper than a lone predator. Before you can gather more, Vaelis
+senses your presence and turns, amusement flickering across his features. He
+appears less angry than intrigued that you managed to keep up with him.
+
+*gosub_scene rank_progression gain_xp 60 "Successfully tailed Lord Vaelis"
+
+*choice
+    #Reveal yourself and request a formal audience.
+        Stepping from the shadows, you express your desire to learn more about
+        the Crimson Spire's reach. Vaelis considers for a moment before agreeing
+        to discuss matters further.
+
+        *set cunning +5
+        *set varkyrs_relation +15
+        *gosub_scene rank_progression gain_xp 80 "Gained audience with Varkyr network"
+        *goto varkyr_end
+    #Vanish before he can react, keeping your secrets safe.
+        Rather than risk confrontation, you fade back into the maze of streets,
+        content with the knowledge you've gleaned for now.
+
+        *set stealth +10
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 50 "Escaped detection successfully"
+        *goto varkyr_end
+
+*label vamp_investigation
+The clues you gather lead to hidden tombs beneath the oldest quarter of
+Veilfall. There you pore over faded murals depicting the Crimson Spire's rise
+and the pacts forged with mortals long ago. Cryptic inscriptions suggest the
+Matriarch now maneuvers to claim absolute dominion. As your torchlight flickers
+across stone coffins, you weigh how this knowledge might tilt the balance of
+power—should you aid her ascent or expose her schemes to rival factions?
+Even the dust seems to vibrate with the whisper of old oaths, and every
+inscription pulses with ancient magic, hinting at sacrifices yet to come.
+
+*set cunning +15
+*gosub_scene rank_progression gain_xp 100 "Uncovered ancient Varkyr secrets"
+
+*choice
+    #Bring these revelations to the Assassin Guild.
+        Loyalty to the guild compels you. Armed with the Matriarch's secrets,
+        you head back to report, ready to trade information for future support.
+
+        *set AssassinGuild_relation +20
+        *set varkyrs_relation -10
+        *gosub_scene rank_progression gain_xp 75 "Reported intelligence to the Guild"
+        *goto varkyr_end
+    #Confront Vaelis with what you've learned.
+        Determined to understand his role in this conspiracy, you seek him out
+        once more, holding the evidence close until he earns your trust.
+
+        *set cunning +10
+        *set varkyrs_relation +10
+        *gosub_scene rank_progression gain_xp 90 "Confronted Vaelis with evidence"
+        *goto varkyr_end
+
+*label varkyr_end
+
+*comment Check for rank progression at end of investigation
+*gosub_scene rank_progression check_progression
+
+*line_break
+
+*if (alignment = "varkyrs")
+    The investigation complete, you feel the weight of new knowledge—and new power. Your actions tonight have shaped your standing among the Varkyrs.
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment CRIMSON SPIRE SUMMONS
+*comment ═══════════════════════════════════════════════════════════
+
+*label spire_summons
+
+The night air shifts as a figure materializes from shadow—a courier bearing the Crimson Spire's seal. A blood-red envelope, warm to the touch, as if recently pressed against living skin.
+
+"The Matriarch requests your presence," the courier intones. "Immediately."
+
+It's not a request. It's a command.
+
+You make your way through Veilfall's winding streets toward the ancient structure that serves as the heart of Varkyr power. The Crimson Spire rises from the noble quarter like a spike of frozen blood, its gothic architecture defying mortal engineering.
+
+Gargoyles watch your approach with eyes that seem too aware. The great obsidian doors open without touch, revealing a spiraling descent into the earth.
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE COURT OF CRIMSON
+*comment ═══════════════════════════════════════════════════════════
+
+*label crimson_court
+
+The Court of Crimson sprawls beneath the city—a cathedral carved from living stone, its vaulted ceiling lost in shadow. Hundreds of Varkyrs fill the chamber, organized by bloodline and rank. Royal vampires in their finery occupy the upper tiers. Shadow bloodline assassins lurk in the periphery. War bloodline champions stand like sentinels.
+
+All eyes turn to you as you enter.
+
+The Matriarch sits upon a throne of blackened bone, her presence so overwhelming that reality itself seems to bend around her. She is ancient beyond measure—some whisper she walked the earth before the Millennium War, before even the oldest records began.
+
+"Approach," her voice resonates, not spoken but felt.
+
+You step forward, acutely aware of the weight of centuries of tradition pressing down upon you.
+
+*choice
+    #Kneel before the Matriarch in respect
+        You drop to one knee, head bowed. The traditional show of deference.
+
+        Murmurs of approval ripple through the court. The Matriarch's lips curve slightly.
+
+        *set varkyrs_relation +10
+        *set control +5
+        *goto matriarch_speech
+
+    #Stand tall but bow your head slightly
+        You remain standing but incline your head in acknowledgment. Respect without submission.
+
+        Several nobles exchange glances. The Matriarch's expression remains unreadable.
+
+        *set will +10
+        *goto matriarch_speech
+
+    #Meet her gaze directly with confidence
+        You meet the Matriarch's ancient eyes without flinching. A bold move.
+
+        The court falls silent. Even the shadows seem to hold their breath. Then—the Matriarch laughs, a sound like ice cracking.
+
+        "Bold," she observes. "We shall see if you survive that boldness."
+
+        *set will +15
+        *set varkyrs_relation -5
+        *goto matriarch_speech
+
+*label matriarch_speech
+
+"You have completed the investigation we set before you," the Matriarch begins. "Lord Vaelis's... situation has been handled. Your performance has been noted."
+
+She gestures, and a figure steps from the shadows—Lord Vaelis himself, very much alive (or undead, as it were). His eyes meet yours with amused recognition.
+
+"The rogue vampire assignment was a test," the Matriarch continues. "We wished to measure your capability, your judgment, your potential allegiance. Vaelis is no rogue. He is one of our most trusted agents."
+
+*if (varkyrs_relation >= 20)
+    "And you," she says, "have proven yourself worthy of our attention."
+
+*if (varkyrs_relation < 20)
+    "You have shown... competence," she allows. "Enough to warrant further consideration."
+
+*choice
+    #"I'm honored by your trust, Matriarch"
+        Diplomacy. The safest path through vampire politics.
+
+        *set cunning +5
+        *set varkyrs_relation +10
+        *goto rank_ceremony
+
+    #"I don't appreciate being tested without my knowledge"
+        Resentment colors your words. You were manipulated.
+
+        The Matriarch's smile widens. "All of existence is a test, fledgling. Those who resent tests rarely survive them."
+
+        *set will +10
+        *set varkyrs_relation -5
+        *goto rank_ceremony
+
+    #Say nothing, simply observe
+        You remain silent, studying the power dynamics at play.
+
+        The Matriarch nods approvingly. "Wise. Those who speak least often learn most."
+
+        *set cunning +10
+        *goto rank_ceremony
+
+*label rank_ceremony
+
+*if (rank = "Commoner") or (rank = "Knight")
+    The Matriarch rises from her throne—a movement that sends waves of power through the chamber.
+
+    "You entered this court as a Commoner, the lowest of our ranks. But you have shown promise."
+
+    She descends the steps, each footfall echoing like a heartbeat. When she reaches you, she extends one pale hand, a single nail sharpened to a point.
+
+    "Kneel."
+
+    *page_break
+
+    You kneel. The Matriarch's nail opens her own palm—blood wells, impossibly red, impossibly potent. Ancient vitae. Progenitor blood.
+
+    "Drink, and rise as a Knight of the Crimson Spire."
+
+    *if (rank = "Commoner")
+        The blood touches your lips and liquid fire floods your veins. Power. Raw, terrible power. Your body convulses as the essence rewrites you at a fundamental level.
+
+        When the transformation completes, you rise—stronger, faster, sharper.
+
+        *set rank "Knight"
+        *set strength +15
+        *set agility +10
+        *set cunning +10
+        *set will +10
+        *set bloodlust +20
+        *gosub_scene rank_progression gain_xp 200 "Elevated to Knight by the Matriarch"
+
+    *if (rank = "Knight")
+        The ancient blood reinforces what you've already become. The power settles into your bones like familiar weight.
+
+        *set strength +5
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 100 "Reaffirmed as Knight of the Spire"
+
+    The court erupts in measured applause—a sound like rain on stone.
+
+    *goto political_landscape
+
+*else
+    "Your rank is already established," the Matriarch notes. "But all Knights of the Spire must understand the political landscape they navigate."
+
+    *goto political_landscape
+
+*label political_landscape
+
+The Matriarch returns to her throne, her expression grave.
+
+"Veilfall teeters on the edge of chaos. The Lupines grow bold, encroaching on territories they once feared to enter. The Forsaken multiply in the shadows, Caius the Unbound gathering an army of hybrids. And whispers speak of the Ecliptic Amulet—an artifact of immense power, said to control the very Veil that separates our world from mortal awareness."
+
+She pauses, letting the weight of her words settle.
+
+"Three factions seek this amulet. The Lupines believe it can end the curse of the moon, granting them control over their transformations. The Forsaken think it will stabilize their hybrid forms, ending their suffering. And we..."
+
+Her smile is cold and terrible.
+
+"We know its true purpose. The Ecliptic Amulet doesn't just manipulate the Veil—it can [i]shatter[/i] it. Or reinforce it eternally. Whoever controls the amulet controls the fate of all supernatural beings."
+
+*set ecliptic_amulet_known true
+
+*choice
+    #"Where is this amulet now?"
+        A practical question. If it's so important, you need to know its location.
+
+        The Matriarch shakes her head. "Unknown. Lost during the Millennium War. But our seers sense stirrings—someone is searching for it. Someone powerful."
+
+        *set cunning +5
+        *goto spire_allegiance
+
+    #"Why tell me this?"
+        You're still relatively new. Why share such critical intelligence?
+
+        "Because," the Matriarch says, "you will be one of those searching for it. Your investigation begins now."
+
+        *set awareness +5
+        *goto spire_allegiance
+
+    #"This sounds like a problem for the Council, not a single vampire"
+        The scope is too large. This requires coordination.
+
+        "The Night Council is compromised," Lord Vaelis interjects. "We suspect infiltration. Trust no one beyond this chamber."
+
+        *set cunning +10
+        *goto spire_allegiance
+
+*label spire_allegiance
+
+The Matriarch leans forward, her gaze piercing.
+
+"I offer you a choice, Knight. A choice that will define your path forward."
+
+"You may serve the Crimson Spire as a loyal agent—following our directives, hunting the amulet for Varkyr interests, ensuring our faction emerges dominant. In return, you will have our full resources, our protection, our favor."
+
+"Or," she continues, "you may operate independently—pursuing the amulet for your own reasons, making your own alliances, forging your own path. You will still be acknowledged as Varkyr, but you will not have our backing when politics turn dangerous."
+
+"Or finally," her smile turns dangerous, "you may [i]oppose[/i] us. Seek to claim the amulet for another faction, or destroy it entirely. This path leads to exile—or execution—but some believe freedom is worth any price."
+
+The court is utterly silent. Even the torches seem to still their flickering.
+
+This is the moment that will define everything.
+
+*page_break
+
+*choice
+    #Pledge loyalty to the Crimson Spire
+        "I am yours, Matriarch," you say clearly. "The Spire's interests are my interests."
+
+        Satisfaction flashes across her ancient features. "Then you are bound to us, and we to you. Rise, Agent of the Crimson Spire."
+
+        A blood-red signet ring appears in her palm—enchanted, ancient, a symbol of authority.
+
+        "This marks you as ours. Wear it with honor."
+
+        *set spire_agent true
+        *set spire_independent false
+        *set spire_rebel false
+        *set varkyrs_relation +30
+        *set Night_Council_relation +15
+        *gosub_scene rank_progression gain_xp 150 "Became Agent of the Crimson Spire"
+        *goto act1_conclusion
+
+    #Maintain independence
+        "I will hunt the amulet," you say carefully, "but I answer to no one. My loyalty is to myself first."
+
+        The Matriarch's expression doesn't change, but something dangerous flickers in her eyes.
+
+        "Independence is a luxury few can afford. But you have earned the right to try. Remember—when you fall, the Spire will not catch you."
+
+        *set spire_independent true
+        *set spire_agent false
+        *set spire_rebel false
+        *set will +20
+        *gosub_scene rank_progression gain_xp 125 "Chose the path of independence"
+        *goto act1_conclusion
+
+    #Refuse—you cannot serve the Spire's ambitions
+        "No," you say quietly. "I've seen enough of vampire politics. I won't be your weapon."
+
+        The court erupts in shocked whispers. Lord Vaelis's hand moves to his blade.
+
+        But the Matriarch merely nods, as if she expected this.
+
+        "Then you are no longer welcome here. Leave Veilfall, or face the consequences of your defiance. The Crimson Spire has a long memory, fledgling."
+
+        *set spire_rebel true
+        *set spire_agent false
+        *set spire_independent false
+        *set varkyrs_relation -40
+        *set will +25
+        *gosub_scene rank_progression gain_xp 100 "Defied the Crimson Spire"
+        *goto act1_conclusion
+
+*label act1_conclusion
+
+*if (spire_agent)
+    As you leave the Court of Crimson, the weight of the blood-red ring on your finger feels like both power and chain. You are an agent of the Spire now—with all the resources and burdens that entails.
+
+    The hunt for the Ecliptic Amulet begins.
+
+*if (spire_independent)
+    You ascend from the Court of Crimson alone, beholden to no one. The path ahead is uncertain, but it's yours.
+
+    The hunt for the Ecliptic Amulet begins.
+
+*if (spire_rebel)
+    You flee the Crimson Spire as threats echo behind you. You've made powerful enemies—but you've kept your soul.
+
+    Now the question is: can you survive what comes next?
+
+*set chapter 2
+*set act 2
+
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ACT 1 COMPLETE - VARKYR ROUTE
+*comment Player has:
+*comment - Completed investigation of Lord Vaelis
+*comment - Been tested by the Matriarch
+*comment - Potentially ranked up to Knight
+*comment - Learned of the Ecliptic Amulet
+*comment - Chosen their relationship with the Crimson Spire
+*comment
+*comment Next: Route to Act 2 hub when implemented
+*comment ═══════════════════════════════════════════════════════════
+
+*comment TODO: Route to Act 2 hub when implemented
+*finish
+

@@ -1,0 +1,31 @@
+*label status
+*if (alignment = "varkyrs")
+    *if (bloodline = "noble")
+        *set faction_stat "Royal vampire"
+        *return
+    *elseif (bloodline = "commoner")
+        *set faction_stat "Common vampire"
+        *return
+    *else
+        *set faction_stat "Human"
+        *return
+    
+*if (alignment = "lupine")
+    *if (lupine_rank != "rank")
+        *set faction_stat lupine_rank
+        *return
+    *else
+        *set faction_stat "Human"
+        *return
+
+*if (alignment = "forsaken")
+    *set faction_stat "Human"
+    *return
+
+*if (alignment = "mage")
+    *if (mage_rank != "")
+        *set faction_stat mage_rank
+        *return
+    *else
+        *set faction_stat "Mage"
+        *return

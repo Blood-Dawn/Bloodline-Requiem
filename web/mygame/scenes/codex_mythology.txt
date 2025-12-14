@@ -1,0 +1,1105 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment CODEX MYTHOLOGY - The Hidden Laws of Reality
+*comment Deep cosmology, magic systems, and supernatural mechanics
+*comment ═══════════════════════════════════════════════════════════
+
+*label mythology_overview
+
+[b]THE HIDDEN LAWS[/b]
+
+[i]"Reality is a skin stretched thin over something vast and hungry. We are the creatures that have learned to pierce that skin—and in doing so, we have let other things through."[/i]
+—The Testament of Shadows
+
+*if (learned_veil_nature)
+    *goto mythology_menu
+*elseif (learned_blood_magic_origin)
+    *goto mythology_menu
+*elseif (learned_lunar_magic_origin)
+    *goto mythology_menu
+*elseif (learned_transformation_mechanics)
+    *goto mythology_menu
+*else
+    [i]You have not yet uncovered knowledge of the world's deeper mysteries. Study the arcane texts of the Crimson Spire, seek the wisdom of Lupine shamans, or delve into forbidden Forsaken research.[/i]
+    
+    *goto mythology_return
+
+*label mythology_menu
+
+*choice
+    *if (learned_veil_nature)
+        #The Veil — The Boundary Between Worlds
+            *goto veil_main
+    *if (learned_blood_magic_origin)
+        #Blood Magic — The Crimson Art
+            *goto blood_magic_main
+    *if (learned_lunar_magic_origin)
+        #Lunar Magic — The Moon's Gift
+            *goto lunar_magic_main
+    *if (learned_transformation_mechanics)
+        #The Nature of Transformation
+            *goto transformation_main
+    *if (learned_soul_mechanics)
+        #Souls and Immortality
+            *goto soul_main
+    *if (learned_veilstone_creation)
+        #The Veilstone — Artifact of Balance
+            *goto veilstone_main
+    *if (learned_supernatural_ecology)
+        #The Ecology of the Night
+            *goto ecology_main
+    #Return to codex
+        *goto mythology_return
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE VEIL - BOUNDARY BETWEEN WORLDS
+*comment ═══════════════════════════════════════════════════════════
+
+*label veil_main
+
+[b]THE VEIL[/b]
+[i]The Membrane of Reality, The Barrier That Bleeds[/i]
+
+*if (learned_veil_full)
+    *goto veil_full
+*else
+    *goto veil_basic
+
+*label veil_basic
+
+When supernatural beings speak of "the Veil," they refer not to a physical barrier but to a fundamental property of reality itself—the separation between the mortal world and what lies beyond.
+
+[b]The Nature of the Boundary:[/b]
+The mortal world exists as a stable bubble within a larger, chaotic expanse that scholars call "the Beyond," "the Outer Dark," or simply "what lies outside." The Veil is the skin of this bubble, preventing the two realities from mixing.
+
+Think of it like the membrane of a cell: permeable enough to allow certain exchanges, but strong enough to maintain separation. Without the Veil, the rules that govern mortal existence—physics, time, causality—would unravel.
+
+[b]What Lies Beyond:[/b]
+No mortal has crossed the Veil and returned coherent. Those who have glimpsed the Beyond describe:
+- Colors that don't exist in mortal perception
+- Geometry that violates spatial logic
+- Entities too large and too complex to comprehend
+- A hunger—not for flesh or blood, but for existence itself
+
+The Beyond wants to consume reality. The Veil is all that prevents it.
+
+[b]The Thinning:[/b]
+The Veil is not equally strong everywhere. Certain locations—Mirror Lake, the Sunken Cathedral, places where great magical violence occurred—have thinner barriers. In these locations, the Beyond can be sensed more easily, and certain powers work more effectively.
+
+The Millennium War created dozens of such thin points. The magical feedback from centuries of blood magic and lunar power left permanent scars on reality's skin.
+
+*if (learned_veil_tears)
+    [b]Veil Tears:[/b]
+    Occasionally, the Veil doesn't merely thin—it tears. These events are catastrophic. Things from the Beyond slip through, taking forms that the mortal mind interprets as monsters, spirits, or simply wrongness made manifest.
+    
+    The Mirror Lake betrayal created a significant tear. It took three centuries and the combined efforts of all factions to seal it. Some scholars believe it was never fully repaired—that something came through during those centuries and remains hidden in our world.
+
+*choice
+    *if (learned_veil_guardians)
+        #Those who guard the Veil
+            *goto veil_guardians
+    *if (learned_veil_manipulation)
+        #Manipulating the Veil
+            *goto veil_manipulation
+    #Return to mythology
+        *goto mythology_overview
+
+*label veil_full
+
+*gosub veil_complete_text
+
+*choice
+    #Continue reading
+        *goto veil_guardians
+
+*label veil_guardians
+
+[b]GUARDIANS OF THE BOUNDARY[/b]
+
+[i]From restricted archives of the Silver Legion[/i]
+
+The Veil does not maintain itself. Throughout history, certain beings have taken responsibility for preserving the boundary—often without mortal awareness.
+
+[b]The Original Guardians:[/b]
+Before the Progenitor, before the Origin Wolf, before recorded supernatural history, something else guarded the Veil. The oldest texts refer to them as the "Wardens" or the "First Watch."
+
+These beings were neither vampire nor werewolf nor human. They were something older—possibly native to the boundary itself, existing in the space between worlds. They maintained the Veil's integrity for eons before withdrawing.
+
+Why they left is unknown. Some theories suggest they were destroyed. Others believe they simply moved on, passing guardianship to younger species. A few disturbing accounts suggest they didn't leave voluntarily—that something drove them away, and that something remains.
+
+[b]The Pact's True Purpose:[/b]
+The Mirror Lake ritual between Varkyrs and Lupines was not merely about maintaining peace between factions. It was designed to reinforce the Veil itself.
+
+Blood magic pulls energy from within—from the life force of living beings. Lunar magic pulls energy from without—from celestial bodies that exist partially beyond the Veil. The ritual balanced these forces, channeling them into the boundary rather than letting them accumulate and weaken it.
+
+When the Crimson Eclipse disrupted the ritual, they didn't just break a peace treaty. They damaged the Veil itself. The consequences are still being felt fifteen centuries later.
+
+[b]Modern Guardianship:[/b]
+With the ritual broken and the Veilstone shattered, no single faction maintains the Veil anymore. Instead, it persists through:
+- Natural resilience (the boundary tends to heal itself over time)
+- Reduced magical activity (both sides limit their power use, consciously or not)
+- The Ecliptic Amulet (the shards, even separated, exert stabilizing influence)
+- Unknown factors (some scholars believe the Wardens never fully left)
+
+How long this patchwork guardianship will hold is a matter of constant concern among those who understand the stakes.
+
+*choice
+    *if (learned_veil_manipulation)
+        #Manipulating the Veil
+            *goto veil_manipulation
+    #Return to mythology
+        *goto mythology_overview
+
+*label veil_manipulation
+
+[b]WORKING WITH THE BOUNDARY[/b]
+
+[i]Compiled from multiple arcane traditions[/i]
+
+While the Veil cannot be destroyed by any known power, it can be manipulated—thinned, strengthened, pierced, or mended. Different supernatural traditions approach this differently.
+
+[b]Varkyr Techniques:[/b]
+Blood magic interacts with the Veil through what practitioners call "anchoring." By spilling blood—life force made physical—vampires can temporarily anchor a small section of the Veil, making it more rigid and preventing interference from the Beyond.
+
+Advanced practitioners can also thin the Veil deliberately, creating small windows through which they can sense or communicate with things on the other side. This is extremely dangerous; the Beyond is always hungry, and anything that notices you will try to reach through.
+
+The Progenitor reportedly could open stable gates to the Beyond—a power no vampire since has replicated. What he did on the other side, and what he brought back, remains unknown.
+
+[b]Lupine Techniques:[/b]
+Lunar magic works differently. Rather than anchoring or thinning the Veil, werewolves can harmonize with it—attuning themselves to its natural rhythms and frequencies.
+
+This explains the lunar cycle's effect on transformation. The moon exists partially beyond the Veil, and its phases correspond to fluctuations in the boundary's strength. When the Veil is weakest (full moon), lunar power flows most freely; when strongest (new moon), werewolves struggle to transform at all.
+
+Lupine shamans can read the Veil's condition through meditation and ritual. They serve as early warning systems for tears or thinning, able to sense problems before they become visible.
+
+[b]Forsaken Techniques:[/b]
+The Forsaken occupy a unique position. As hybrids of blood and lunar magic, they can both anchor and harmonize with the Veil—though neither as effectively as pure practitioners.
+
+More importantly, Forsaken seem to be partially resistant to Veil fluctuations. Things that would drive a vampire or werewolf mad from Beyond-exposure merely disorient them. This has led to theories that hybridization creates a "personal veil"—a miniature boundary that protects the individual.
+
+Caius the Unbound has never confirmed this theory, but he has been observed working in thin-Veil areas that would be lethal to others.
+
+*choice
+    #Return to mythology
+        *goto mythology_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment BLOOD MAGIC - THE CRIMSON ART
+*comment ═══════════════════════════════════════════════════════════
+
+*label blood_magic_main
+
+[b]BLOOD MAGIC — THE CRIMSON ART[/b]
+[i]Hemomancy, The Living Fuel, The Price of Power[/i]
+
+Blood magic—hemomancy—is the foundational supernatural art of the Varkyrs. But it existed before vampires, and it will exist after them. Blood is simply the most potent form of life force, and life force is the most accessible energy source in the mortal world.
+
+*if (learned_blood_magic_full)
+    *goto blood_magic_full
+*else
+    *goto blood_magic_basic
+
+*label blood_magic_basic
+
+[b]The Principle:[/b]
+Every living thing contains life force—an energy that animates flesh, drives thought, and separates the living from the dead. Blood is where this force concentrates. A single drop contains more usable magical energy than a month of meditation or a decade of study.
+
+This is why vampires feed. Not merely for sustenance, but for power. Every drop of blood consumed is fuel for their abilities, raw energy that can be shaped into speed, strength, healing, or more esoteric effects.
+
+[b]The Cost:[/b]
+Blood magic is fundamentally consumptive. Unlike other magical traditions that draw on ambient energy or personal reserves that regenerate, hemomancy requires a constant supply of fuel. A vampire who doesn't feed doesn't merely grow hungry—they grow weak, their powers fading until they fall into torpor.
+
+This creates the central Varkyr dilemma: they are powerful beyond mortal comprehension, but eternally dependent on the living. Without humans (or other blood sources), vampires would starve into immobility within decades.
+
+[b]The Branches:[/b]
+Blood magic has evolved into several specialized schools:
+
+[i]Shadow Magic[/i] — Using blood energy to manipulate darkness, step through shadows, and create zones of supernatural gloom. Considered the "basic" hemomantic art.
+
+[i]Dark Magic[/i] — Advanced techniques that affect life force directly: draining, transferring, corrupting, or enhancing. Only available to Count-level and higher vampires.
+
+[i]Mental Influence[/i] — Blood can forge connections between minds. Feeding creates a link that skilled vampires exploit for hypnosis, memory manipulation, or outright control.
+
+[i]Physical Enhancement[/i] — The most straightforward application: channeling blood energy into speed, strength, durability, and regeneration.
+
+*if (learned_blood_magic_advanced)
+    *line_break
+    [b]The Forbidden Arts:[/b]
+    Certain hemomantic techniques are outlawed even among Varkyrs:
+    
+    [i]Blood Puppetry[/i] — Controlling a living being by manipulating the blood within their body. Considered obscene by Varkyr standards, as it reduces feeding to mere mechanics.
+    
+    [i]Exsanguination Rituals[/i] — Mass draining designed to harvest life force on an industrial scale. Used during the Millennium War; banned afterward.
+    
+    [i]Genesis Theft[/i] — Attempting to steal the Progenitor's Genesis Rebirth ability by consuming his bloodline descendants. Multiple attempts have been made; none have succeeded.
+
+*choice
+    *if (learned_blood_magic_origin_full)
+        #The origin of blood magic
+            *goto blood_magic_origin
+    *if (learned_blood_magic_practice)
+        #How blood magic is practiced
+            *goto blood_magic_practice
+    #Return to mythology
+        *goto mythology_overview
+
+*label blood_magic_full
+
+*gosub blood_magic_complete_text
+
+*choice
+    #Continue reading
+        *goto blood_magic_origin
+
+*label blood_magic_origin
+
+[b]BEFORE THE VAMPIRES[/b]
+
+[i]From the Crimson Codex, Volume III — "The Red Beginning"[/i]
+
+Blood magic predates the Progenitor. Predates humanity, according to some accounts. Life force is a universal constant, and wherever life exists, blood magic is theoretically possible.
+
+The first hemomancers were human. Cave paintings from the Era before the Pact depict shamans using blood sacrifice to power rituals—healing the sick, cursing enemies, communing with spirits. These practices were crude by modern standards, but the fundamental principle was sound.
+
+What the Progenitor contributed was not the invention of blood magic, but its perfection.
+
+When the Void-Walker transformed him, something fundamental changed about how blood energy could be processed. Human hemomancers could use blood as fuel, but they couldn't become blood-dependent—they remained mortal, limited by human physiology.
+
+The Progenitor became a living conduit for blood energy. His body didn't merely use blood; it was optimized for blood, every cell designed to process life force with supernatural efficiency. This transformation came with costs (sunlight vulnerability, blood dependency) but also capabilities no human mage had ever matched.
+
+Every vampire since carries a fragment of this optimization. The Embrace doesn't just transfer vampirism—it transfers a modified physiology designed for hemomancy. This is why turned vampires can use blood magic instinctively, while human practitioners spend decades mastering basic techniques.
+
+[b]The Void-Walker's Gift:[/b]
+The question remains: where did the Void-Walker learn to create such a transformation? The Beyond contains things that feed on life force, but nothing that processes it the way vampires do.
+
+Some scholars theorize that the Void-Walker experimented for millennia before perfecting the technique. Others believe it didn't create the transformation at all—that it merely knows how to access something that already existed, a template for blood-dependent life that predates our reality.
+
+If the latter is true, there may be other beings, somewhere, that share vampiric characteristics. The thought is not comforting.
+
+*choice
+    *if (learned_blood_magic_practice)
+        #How blood magic is practiced
+            *goto blood_magic_practice
+    #Return to mythology
+        *goto mythology_overview
+
+*label blood_magic_practice
+
+[b]THE PRACTICE OF HEMOMANCY[/b]
+
+[i]Instructional overview for newly Embraced vampires[/i]
+
+Blood magic is not learned—it is felt. Every vampire possesses instinctive hemomantic ability from the moment of their Embrace. Training merely refines this instinct into controllable skill.
+
+[b]The Basics:[/b]
+All Varkyr blood magic begins with satiation. A well-fed vampire has abundant energy to work with; a hungry one struggles to perform even basic techniques. This is why feeding is not merely sustenance but preparation for magical activity.
+
+The simplest technique is enhancement: channeling blood energy into physical capabilities. Newly turned vampires learn to move faster, hit harder, and heal wounds by consciously directing their internal reserves. This requires no study—only practice.
+
+[b]Intermediate Skills:[/b]
+Shadow manipulation represents the first "true" magical skill most vampires learn. The technique involves extending blood energy outward, using it to interact with darkness as though it were a physical substance. Well-fed vampires can create shadow constructs, teleport through dark spaces, or simply deepen existing shadows for concealment.
+
+Mental influence comes next. Feeding creates a temporary link between vampire and victim; skilled hemomancers learn to exploit this link, implanting suggestions or extracting memories. The strength of influence depends on how much blood has been exchanged and how recently.
+
+[b]Advanced Arts:[/b]
+Dark magic—manipulation of life force itself—requires Count-level power reserves and years of dedicated study. The techniques are not intuitively accessible; they must be learned from masters or ancient texts.
+
+At this level, hemomancers can:
+- Drain life force at a distance, without physical contact
+- Transfer vitality between subjects (healing one by harming another)
+- Create blood constructs that persist even after the caster's attention wanders
+- Sense life force concentrations over long distances
+
+[b]The Progenitor Arts:[/b]
+Certain techniques were unique to the Progenitor and have never been replicated:
+- Genesis Rebirth (resurrection from any amount of blood)
+- Celestial Dominion (manipulation of celestial bodies)
+- Cosmic Damnation (severing bloodline connections)
+
+Whether these abilities died with him or merely await rediscovery remains unknown.
+
+*choice
+    #Return to mythology
+        *goto mythology_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment LUNAR MAGIC - THE MOON'S GIFT
+*comment ═══════════════════════════════════════════════════════════
+
+*label lunar_magic_main
+
+[b]LUNAR MAGIC — THE MOON'S GIFT[/b]
+[i]Selenomancy, The Wild Power, The Cycle of Change[/i]
+
+Where blood magic draws power from within—from the life force of living beings—lunar magic draws power from without, channeling celestial energies that exist partially beyond the Veil.
+
+*if (learned_lunar_magic_full)
+    *goto lunar_magic_full
+*else
+    *goto lunar_magic_basic
+
+*label lunar_magic_basic
+
+[b]The Principle:[/b]
+The moon is not merely a celestial body. It exists simultaneously in the mortal world and the Beyond, acting as a bridge between realities. Its light carries energy from places where the rules of our world don't apply.
+
+Lunar magic involves attuning oneself to this energy, allowing it to flow through the body and trigger transformations that would otherwise be impossible. The werewolf transformation is the most dramatic example, but lunar energy can power many effects.
+
+Unlike blood magic, lunar magic cannot be stored. It must be drawn in real-time, and it fluctuates with the moon's phases. This makes Lupine powers less reliable than Varkyr abilities but potentially more powerful when conditions align.
+
+[b]The Phases:[/b]
+[i]New Moon[/i] — Minimal lunar energy; Lupines are weakest. Transformation is difficult; magical effects are muted.
+
+[i]Waxing[/i] — Energy builds; powers strengthen. Most Lupines can transform at will during this period.
+
+[i]Full Moon[/i] — Maximum lunar energy; Lupines are strongest but also most volatile. Young werewolves may transform involuntarily; emotional control becomes difficult.
+
+[i]Waning[/i] — Energy recedes; powers diminish. The period of greatest control, as lunar influence fades.
+
+[b]The Price:[/b]
+Lunar magic demands submission. Where blood mages command their power, selenomancers must align themselves with forces beyond mortal comprehension. The moon does not obey—it provides.
+
+This is why werewolf culture emphasizes discipline and pack structure. Without rigid social frameworks, the lunar influence would overwhelm individual Lupines, reducing them to beasts driven by instinct.
+
+*if (learned_lunar_advanced)
+    [b]Advanced Techniques:[/b]
+    High-rank Lupines develop abilities that go beyond simple transformation:
+    
+    [i]Lunar Communion[/i] — Direct communication with the moon's energy. Shamans report receiving visions, warnings, or guidance through this technique.
+    
+    [i]Pack Resonance[/i] — Sharing lunar energy among pack members, boosting each other's capabilities.
+    
+    [i]Silver Immunity[/i] — Legendary ability to resist silver through perfect lunar attunement. Only the Origin Wolf demonstrated this reliably.
+
+*choice
+    *if (learned_lunar_origin)
+        #The origin of lunar magic
+            *goto lunar_origin
+    *if (learned_lunar_transformation)
+        #The transformation process
+            *goto lunar_transformation
+    #Return to mythology
+        *goto mythology_overview
+
+*label lunar_magic_full
+
+*gosub lunar_complete_text
+
+*choice
+    #Continue reading
+        *goto lunar_origin
+
+*label lunar_origin
+
+[b]THE MOON'S AWAKENING[/b]
+
+[i]From the Lunar Chronicle — Sacred history of the Lupine clans[/i]
+
+The moon has always been magical. Human civilizations worshipped it for millennia before the first werewolf existed. Its connection to tides, to fertility cycles, to the rhythms of nature—these are not coincidences but expressions of its fundamental power.
+
+What Luna (if the Lupine legends are true) contributed was a method of channeling this power through living beings.
+
+The Origin Wolf was not merely transformed—he was made into a conduit. His body became a living antenna for lunar energy, constantly drawing it in and processing it into physical capability. The transformation aspect was almost incidental; the true gift was the connection.
+
+Every Lupine since carries a fragment of this connection. The Bite doesn't merely transfer lycanthropy—it creates a new conduit, a new channel through which the moon can express its power.
+
+[b]Why the Moon?[/b]
+Scholars have long debated why the moon specifically serves as a power source for werewolves. Several theories exist:
+
+[i]The Bridge Theory[/i] — The moon's position between Earth and the Beyond makes it uniquely suited for channeling extra-dimensional energy without the risks of direct Veil manipulation.
+
+[i]The Resonance Theory[/i] — Something about lunar cycles resonates with mammalian biology (tides, hormones, circadian rhythms), making it easier to integrate lunar power into living systems.
+
+[i]The Luna Theory[/i] — If the Lupine myths are accurate and Luna is a conscious entity, then werewolf power exists because she specifically chose to grant it. The moon is special because she is special.
+
+Regardless of explanation, the practical result is clear: lunar magic is tied to the moon's physical presence. When the moon is hidden (new moon, heavy cloud cover, underground locations), Lupines weaken. When it's visible and full, they're nearly unstoppable.
+
+*choice
+    *if (learned_lunar_transformation)
+        #The transformation process
+            *goto lunar_transformation
+    #Return to mythology
+        *goto mythology_overview
+
+*label lunar_transformation
+
+[b]THE PROCESS OF CHANGE[/b]
+
+[i]Medical and mystical analysis of lycanthropic transformation[/i]
+
+The werewolf transformation is one of the most dramatic magical phenomena ever documented. Within seconds, a human body reshapes itself into something entirely different—and then reshapes back. Understanding how this works has occupied scholars for millennia.
+
+[b]What Happens:[/b]
+During transformation, the Lupine's body doesn't actually change in the conventional sense. Instead, lunar energy creates a temporary pocket dimension around the subject—a bubble where normal physical laws are suspended.
+
+Within this bubble, the body is disassembled and reassembled according to a template carried in the Lupine's magical signature. The process is near-instantaneous because it's not physically moving matter; it's replacing one physical form with another that was always potential within the lunar framework.
+
+This explains several observed phenomena:
+- Mass change (werewolf forms are larger than human forms) — The extra mass is drawn from or released to the pocket dimension
+- Clothing destruction — Non-living matter isn't included in the template
+- Injury persistence — Wounds transfer because they alter the underlying template
+
+[b]The Templates:[/b]
+Different Lupine types have different templates available:
+
+[i]Wolf-Only[/i] — Human form and wolf form. The simplest transformation, requiring the least lunar energy.
+
+[i]Werewolf-Only[/i] — Human form and hybrid war-form. More complex, requiring more energy but providing greater combat capability.
+
+[i]Omega Variants[/i] — All three forms available. Requires the most energy and the most sophisticated template management.
+
+[b]Control:[/b]
+Young Lupines struggle with transformation because they haven't learned to manage the pocket dimension consciously. Their bodies transform when lunar energy exceeds a threshold, regardless of their intentions.
+
+Training involves developing sensitivity to lunar energy levels and learning to either suppress or encourage the transformation trigger. Masters can transform at will in any lunar phase; they've essentially learned to manipulate the pocket dimension directly.
+
+The Origin Wolf reportedly needed no trigger at all. He existed in a permanent state of semi-transformation, able to shift forms as easily as breathing.
+
+*choice
+    #Return to mythology
+        *goto mythology_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment TRANSFORMATION - THE NATURE OF CHANGE
+*comment ═══════════════════════════════════════════════════════════
+
+*label transformation_main
+
+[b]THE NATURE OF TRANSFORMATION[/b]
+[i]Becoming Other — The Embrace, The Bite, The Hybrid Process[/i]
+
+Transformation from human to supernatural being is not merely physical change. It is a fundamental rewriting of what a being is—body, mind, and soul.
+
+*if (learned_transformation_full)
+    *goto transformation_full
+*else
+    *goto transformation_basic
+
+*label transformation_basic
+
+[b]What Changes:[/b]
+When a human becomes a vampire or werewolf, three aspects transform:
+
+[i]The Body[/i] — Physical structure reorganizes to accommodate new capabilities. Vampires gain blood-processing organs; Lupines gain transformation templates. Neither is quite alive in the mortal sense anymore.
+
+[i]The Mind[/i] — Consciousness remains continuous, but instincts shift. Vampires develop the Thirst; Lupines develop pack awareness. These aren't merely urges—they're fundamental drives that compete with original personality.
+
+[i]The Soul[/i] — The most controversial aspect. Some traditions believe transformation severs the soul from divine grace. Others argue it merely transforms the soul along with everything else. The truth may never be knowable.
+
+[b]The Methods:[/b]
+[i]The Embrace (Varkyr)[/i] — Victim is drained to near-death, then fed vampire blood. Death occurs, followed by resurrection as a vampire. The entire process takes three nights.
+
+[i]The Bite (Lupine)[/i] — Victim is bitten by a werewolf during transformed state. Lunar energy transfers through saliva, establishing a new conduit. Transformation completes over the next full moon.
+
+[i]The Hybrid Process (Forsaken)[/i] — Both Embrace and Bite are administered simultaneously while channeling both blood and lunar energy. Survival rate: historically near zero without expert guidance.
+
+*choice
+    *if (learned_embrace_details)
+        #The Embrace — Varkyr Transformation
+            *goto embrace_detailed
+    *if (learned_bite_details)
+        #The Bite — Lupine Transformation
+            *goto bite_detailed
+    *if (learned_hybrid_details)
+        #The Hybrid Process — Forsaken Creation
+            *goto hybrid_detailed
+    #Return to mythology
+        *goto mythology_overview
+
+*label transformation_full
+
+*gosub transformation_complete_text
+
+*choice
+    #Continue reading
+        *goto embrace_detailed
+
+*label embrace_detailed
+
+[b]THE EMBRACE — BECOMING VARKYR[/b]
+
+[i]Instructional text from the Crimson Spire's initiates' archive[/i]
+
+The Embrace is not infection. It is not a curse passed through contact. It is a deliberate act of creation, requiring conscious choice from the vampire performing it.
+
+[b]The Process:[/b]
+
+[i]Night One — The Drain[/i]
+The victim must be drained of nearly all blood. Not fully—a small amount must remain to maintain biological function. The state is technically death-adjacent; the heart continues beating, but barely.
+
+During this state, the victim experiences visions. Some see their lives passing before them. Others encounter what they describe as "the darkness between heartbeats"—a void that feels aware and hungry.
+
+[i]Night Two — The Gift[/i]
+The transforming vampire feeds their blood to the drained victim. This blood contains more than hemoglobin; it carries vampiric essence, the modified physiology that defines the species.
+
+Over the course of the night, this blood integrates with the victim's remaining biology. Organs begin to change. The heart slows further. The eyes develop sensitivity to light.
+
+[i]Night Three — The Rising[/i]
+The victim dies. True death—no heartbeat, no breathing, no brain activity. For anywhere from seconds to hours, they are genuinely dead.
+
+Then they wake.
+
+The new vampire rises with the Thirst already burning. Their first feeding will define their relationship with blood forever; ideally, a prepared vessel is waiting. The alternative—an uncontrolled first feeding—typically results in multiple deaths and a traumatized newborn.
+
+[b]What Can Go Wrong:[/b]
+- Incomplete draining: Victim dies but doesn't turn
+- Insufficient vampire blood: Victim turns but is unstable, prone to frenzy
+- Spiritual rejection: Some souls refuse the transformation, resulting in true death
+- The Void's interference: Rarely, something else occupies the body before the vampire rises
+
+The last outcome is why all Embraces occur in controlled environments, with multiple witnesses ready to destroy anything unexpected that rises.
+
+*choice
+    *if (learned_bite_details)
+        #The Bite — Lupine Transformation
+            *goto bite_detailed
+    *if (learned_hybrid_details)
+        #The Hybrid Process — Forsaken Creation
+            *goto hybrid_detailed
+    #Return to mythology
+        *goto mythology_overview
+
+*label bite_detailed
+
+[b]THE BITE — BECOMING LUPINE[/b]
+
+[i]Pack teachings passed from Alpha to initiates[/i]
+
+Unlike the Embrace, the Bite is not reversible. A vampire can technically refuse to complete the Embrace, abandoning a drained victim to die mortal. A werewolf who has bitten a human has already begun a process that cannot be stopped.
+
+[b]The Process:[/b]
+
+[i]The Wounding[/i]
+The bite must draw blood and must come from a transformed Lupine. Human-form bites don't carry sufficient lunar energy. The wound itself is secondary; what matters is the saliva that enters the bloodstream.
+
+Werewolf saliva contains concentrated lunar essence—energy drawn from the moon and stored in transformed glands. This essence immediately begins seeking a home in the victim's body.
+
+[i]The Incubation[/i]
+Over the following weeks, the lunar essence establishes itself. The victim experiences:
+- Heightened senses (especially smell and hearing)
+- Increased aggression and emotional volatility
+- Dreams of running, hunting, the moon calling
+- Physical changes: increased body hair, subtle facial restructuring
+
+There is no reversal at this stage. The essence has already modified the victim's fundamental nature.
+
+[i]The First Change[/i]
+At the next full moon, the victim transforms involuntarily. This first change is invariably traumatic—the body shifts without warning or control, and the victim's consciousness is overwhelmed by new instincts.
+
+Most new Lupines spend their first transformation in a rage state, attacking anything nearby. This is why responsible packs always monitor those they've bitten, isolating them during the first full moon.
+
+[b]The First Kill:[/b]
+Lupine tradition holds that a werewolf must kill during their first transformation to fully stabilize. This can be prey animals—deer, wolves, bears—but it must be a kill made in wolf or war form.
+
+Without this kill, the transformation remains unstable. The Lupine becomes what packs call "moon-sick": constantly shifting at inappropriate times, unable to fully control their form, eventually losing coherence entirely.
+
+Some modern packs have abandoned this tradition as barbaric. Their retention rates are notably lower than traditional packs.
+
+*choice
+    *if (learned_hybrid_details)
+        #The Hybrid Process — Forsaken Creation
+            *goto hybrid_detailed
+    #Return to mythology
+        *goto mythology_overview
+
+*label hybrid_detailed
+
+[b]THE HYBRID PROCESS — BECOMING FORSAKEN[/b]
+
+[i]Restricted documentation from the Forsaken Enclave[/i]
+
+Hybrid creation combines the Embrace and the Bite—two processes that are, by their nature, hostile to each other. Blood magic and lunar magic don't merely coexist; they actively compete for dominance within a shared host.
+
+[b]Why It Usually Fails:[/b]
+When vampire blood and werewolf essence enter the same body, they fight. The blood tries to establish dominance, rewriting the body according to Varkyr templates. The essence tries to do the same according to Lupine templates.
+
+In most cases, the body simply fails. Organs caught between two incompatible rewriting processes shut down. The subject dies within hours, neither vampire nor werewolf.
+
+In other cases, one side wins. The subject becomes a vampire with trace lunar corruption, or a werewolf with blood magic contamination. These "partial hybrids" are unstable—prone to frenzy, short-lived, and often insane.
+
+True hybridization requires both processes to complete simultaneously and in balance. This is extraordinarily difficult to achieve.
+
+[b]Caius's Method:[/b]
+Caius the Unbound developed techniques that dramatically improve hybrid survival rates. The details are closely guarded, but known elements include:
+
+- Precise timing: The Embrace and Bite must occur within seconds of each other
+- Energy balancing: External blood and lunar energy is channeled during the transformation to ensure neither dominates
+- Mental preparation: The subject must be psychologically prepared to hold two predatory natures in a single consciousness
+- Stabilization rituals: Post-transformation rites that help the new hybrid establish internal equilibrium
+
+Even with Caius's guidance, hybrid creation remains dangerous. Survival rates are approximately 70%—far better than the historical near-zero, but still potentially fatal.
+
+[b]The Result:[/b]
+Successful hybrids gain advantages from both lineages:
+- Blood processing capability (reduced need for feeding, but still required)
+- Transformation capability (limited; hybrids can shift but not as easily as pure Lupines)
+- Partial sunlight resistance (discomfort rather than destruction)
+- Partial silver resistance (burns rather than lethality)
+- Extended healing (combines Varkyr regeneration with Lupine recovery)
+
+They also inherit some weaknesses:
+- Neither faction fully trusts them
+- Internal balance requires constant maintenance
+- Emotional stability is harder to achieve
+- Neither blood nor lunar magic works at full potential
+
+The Forsaken consider these tradeoffs worthwhile. Others disagree.
+
+*choice
+    #Return to mythology
+        *goto mythology_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment SOULS AND IMMORTALITY
+*comment ═══════════════════════════════════════════════════════════
+
+*label soul_main
+
+[b]SOULS AND IMMORTALITY[/b]
+[i]What Survives, What Is Lost, What Becomes Other[/i]
+
+The question of whether supernatural beings possess souls is older than any faction, older than the war, older than recorded history. The answer remains uncertain—but what we know about immortality offers troubling clues.
+
+*if (learned_soul_full)
+    *goto soul_full
+*else
+    *goto soul_basic
+
+*label soul_basic
+
+[b]The Mortal Framework:[/b]
+Human religions typically describe souls as immortal essence—the part of a person that survives death and continues to some afterlife. Whether this afterlife is reward, punishment, or reincarnation varies by tradition, but the framework is consistent: death separates soul from body, and the soul goes elsewhere.
+
+[b]The Supernatural Complication:[/b]
+Vampires and werewolves don't fit this framework. They die—the Embrace requires literal death; the Bite fundamentally transforms what was alive—but they don't stay dead. Something persists.
+
+Is that something a soul? Or is it merely magical animation, the equivalent of a very sophisticated puppet?
+
+The factions have different answers:
+
+[i]Varkyr Orthodoxy[/i] — Vampires retain their souls, but these souls are transformed along with their bodies. The soul becomes blood-dependent, feeding on life force just as the body feeds on blood. Death results in soul destruction rather than soul departure.
+
+[i]Lupine Tradition[/i] — Werewolves' souls join with Luna's greater spirit while retaining individual identity. Death releases the soul back to the moon, where it runs with the ancestors in eternal hunt.
+
+[i]Forsaken Pragmatism[/i] — The concept of "soul" is human mythology. What persists after transformation is consciousness, which is a function of magical energy rather than metaphysical essence. The question of "having a soul" is meaningless.
+
+[i]Human Theology[/i] — Supernatural beings are soulless abominations animated by dark power. Their original souls departed at death, replaced by something that merely mimics the original personality.
+
+*choice
+    *if (learned_immortality_mechanics)
+        #The mechanics of immortality
+            *goto immortality_mechanics
+    *if (learned_final_death)
+        #What happens at true death
+            *goto final_death_entry
+    #Return to mythology
+        *goto mythology_overview
+
+*label soul_full
+
+*gosub soul_complete_text
+
+*choice
+    #Continue reading
+        *goto immortality_mechanics
+
+*label immortality_mechanics
+
+[b]WHY THEY DON'T AGE[/b]
+
+[i]Analysis from the University Row Research Archives[/i]
+
+Immortality—or more accurately, agelessness—works differently for each supernatural type. Understanding these mechanisms has been a focus of arcane research for centuries.
+
+[b]Varkyr Immortality:[/b]
+Vampires don't age because they continuously repair cellular damage through blood energy. Every moment, microscopic deterioration occurs—the natural process of entropy that kills all living things. Vampires use processed blood to reverse this damage faster than it accumulates.
+
+This is why starvation weakens vampires so dramatically. Without blood, damage accumulates. Extended starvation doesn't merely make them hungry; it ages them, sometimes visibly. Vampires who've gone decades without feeding have emerged looking centuries older than when they entered torpor.
+
+It's also why older vampires need less blood. They've optimized their repair processes over centuries, reducing waste and increasing efficiency.
+
+[b]Lupine Immortality:[/b]
+Werewolves age, but slowly. The lunar essence within them acts as a regenerative force, repairing damage and maintaining cellular integrity—but not perfectly.
+
+A werewolf might live five hundred years, perhaps a thousand if particularly powerful. But they will eventually die of old age. The lunar connection sustains them beyond mortal limits but doesn't provide true immortality.
+
+The Origin Wolf was different—his connection to Luna was direct enough to provide complete agelessness. No Lupine since has achieved this level of attunement.
+
+[b]Forsaken Immortality:[/b]
+Hybrids occupy a middle ground. They have blood-processing capability that helps prevent aging, combined with lunar regeneration that provides a backup system. In theory, this should make them more immortal than either parent species.
+
+In practice, no Forsaken has lived long enough to test true immortality. Caius is the oldest at approximately 1,500 years, and he shows no signs of aging. But whether this will continue indefinitely remains unknown.
+
+*choice
+    *if (learned_final_death)
+        #What happens at true death
+            *goto final_death_entry
+    #Return to mythology
+        *goto mythology_overview
+
+*label final_death_entry
+
+[b]THE FINAL DEATH[/b]
+
+[i]Speculation on what comes after for supernatural beings[/i]
+
+When a mortal dies, their soul (presumably) departs for whatever afterlife awaits. When a supernatural being truly dies—destroyed beyond regeneration—what happens?
+
+[b]Varkyr Final Death:[/b]
+Complete destruction of a vampire requires eliminating all blood. Decapitation, staking through the heart, and burning are traditional methods; they work because they prevent blood from reaching vital structures.
+
+When a vampire dies, witnesses report a brief moment of... something. A presence departing. Whether this is the soul leaving for an afterlife, the magical animation dissipating, or simply imagination shaped by expectation, no one can confirm.
+
+The Progenitor's Genesis Rebirth ability suggests that vampire "death" may not be as final as assumed. If consciousness can persist in a single drop of blood, waiting for regeneration, then perhaps nothing truly departs at all—perhaps vampires simply enter a state of extreme dormancy that only complete blood destruction can end.
+
+[b]Lupine Final Death:[/b]
+Werewolves can die from overwhelming physical trauma, silver poisoning, or extreme old age. Silver is particularly effective because it disrupts the lunar connection, severing the regenerative link.
+
+Lupine tradition holds that their dead join the ancestors—running with the Origin Wolf in Luna's eternal hunting grounds. Those who've been present at Lupine deaths sometimes report hearing distant howls, as though a pack were welcoming a new member.
+
+[b]Forsaken Final Death:[/b]
+Hybrid death is poorly understood because so few Forsaken have died and been observed. The combination of Varkyr and Lupine traits may create something new at death—or may simply result in oblivion, two incomplete afterlife claims canceling each other out.
+
+Caius has never spoken about what he believes awaits him.
+
+*choice
+    #Return to mythology
+        *goto mythology_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE VEILSTONE
+*comment ═══════════════════════════════════════════════════════════
+
+*label veilstone_main
+
+[b]THE VEILSTONE — ARTIFACT OF BALANCE[/b]
+[i]The Shattered Nexus, The Four Shards, The Key to Everything[/i]
+
+The Veilstone was the most powerful magical artifact ever created in the mortal world. Its destruction birthed the Ecliptic Amulet—and changed the supernatural landscape forever.
+
+*if (learned_veilstone_full)
+    *goto veilstone_full
+*else
+    *goto veilstone_basic
+
+*label veilstone_basic
+
+[b]Origins:[/b]
+The Veilstone was created during the Era of the Pact, at the dawn of cooperation between Varkyrs and Lupines. Its purpose was to anchor and regulate the Mirror Lake ritual—the annual ceremony that maintained both the Veil and the peace between factions.
+
+[b]Construction:[/b]
+Creating the Veilstone required sacrifice from both sides:
+
+- Progenitor's blood: willingly given, infused into the crystal's core
+- Origin Wolf's essence: bound to the crystal through lunar ritual
+- Mirror Lake's waters: the crystal was formed at the lake's deepest point, absorbing ambient magical resonance
+- Unknown third component: references in ancient texts suggest something else was added, something from "beyond the veil itself"
+
+The result was a crystalline structure approximately three feet tall, shifting between deep crimson and silver-white depending on the viewer's nature. Varkyrs saw it as red; Lupines saw it as silver; humans reportedly couldn't see it at all.
+
+[b]Function:[/b]
+The Veilstone served as a magical regulator. During the Mirror Lake ritual, both factions would channel energy into it—blood magic from the Varkyrs, lunar magic from the Lupines. The stone balanced these energies, using them to reinforce the Veil and prevent either form of magic from overwhelming the world.
+
+Without regulation, blood magic would eventually poison reality, creating zones where life force drained from living things spontaneously. Lunar magic would create zones where transformation occurred randomly and uncontrollably. The Veilstone prevented both outcomes.
+
+*choice
+    *if (learned_veilstone_destruction)
+        #The Shattering
+            *goto veilstone_destruction
+    *if (learned_ecliptic_shards)
+        #The Ecliptic Amulet shards
+            *goto ecliptic_shards
+    #Return to mythology
+        *goto mythology_overview
+
+*label veilstone_full
+
+*gosub veilstone_complete_text
+
+*choice
+    #Continue reading
+        *goto veilstone_destruction
+
+*label veilstone_destruction
+
+[b]THE SHATTERING[/b]
+
+[i]Reconstruction of events from multiple sources[/i]
+
+When the Crimson Eclipse corrupted the final Mirror Lake ritual, they didn't merely disrupt a ceremony. They overloaded a magical artifact containing energies accumulated over five centuries.
+
+The Veilstone was designed to regulate power, not resist attack. When Eclipse agents forced lunar energy to flow exclusively toward Varkyr recipients, the internal balance failed. Blood and moon essences that had coexisted in careful equilibrium suddenly fought for dominance.
+
+[b]The Moment of Failure:[/b]
+Witnesses describe a sound—not an explosion but a scream, as though the stone itself were in agony. Light poured from cracks in the crystal, alternating crimson and silver in patterns that made no sense.
+
+Then it shattered.
+
+The magical backlash killed forty-seven Varkyrs and thirty-one Lupines instantly. It tore a hole in the Veil that took centuries to repair. It created Mirror Lake's permanently bloodred waters. And it transformed the Veilstone's fragments into something new.
+
+[b]The Transformation:[/b]
+When the stone shattered, it should have released its stored energies in a single catastrophic burst. Instead, something strange happened: the fragments retained their power, but that power had... specialized.
+
+Each shard attuned to one of the four major powers present at the ritual:
+- One absorbed concentrated blood magic, aligned with Varkyrs
+- One absorbed concentrated lunar magic, aligned with Lupines
+- One absorbed the hybrid resonance, aligned with the newly-emerging Forsaken
+- One absorbed the human witness's desperate desire for protection, aligned with mortals
+
+These became the four shards of the Ecliptic Amulet.
+
+*choice
+    *if (learned_ecliptic_shards)
+        #The Ecliptic Amulet shards
+            *goto ecliptic_shards
+    #Return to mythology
+        *goto mythology_overview
+
+*label ecliptic_shards
+
+[b]THE FOUR SHARDS[/b]
+
+[i]Current locations and capabilities[/i]
+
+Each shard of the Ecliptic Amulet possesses unique properties, shaped by the energy it absorbed during the Shattering.
+
+[b]The Varkyr Shard:[/b]
+- Location: Crimson Spire, guarded by the Matriarch
+- Appearance: Deep red crystal, approximately fist-sized, constantly weeping a blood-like substance
+- Properties: Amplifies blood magic within its presence; extends shadow manipulation range; reportedly allows limited communication with the Progenitor's residual essence
+- Danger: Proximity increases Thirst; long-term exposure has driven vampires to feeding frenzy
+
+[b]The Lupine Shard:[/b]
+- Location: Whispering Pines, guarded by the Alpha's council
+- Appearance: Silver-white crystal, glowing brightest during full moons
+- Properties: Stabilizes transformation; allows shifting regardless of lunar phase; strengthens pack bonds over long distances
+- Danger: Extended contact reportedly induces permanent partial transformation; the crystal "wants" to be held
+
+[b]The Forsaken Shard:[/b]
+- Location: Undercroft, controlled by Caius the Unbound
+- Appearance: Swirling pattern of red and silver, never settling into either color
+- Properties: Stabilizes hybrid biology; crucial for safe Forsaken creation; negates both sunlight and silver vulnerabilities while held
+- Danger: Unknown; Caius has never allowed extended study
+
+[b]The Human Shard:[/b]
+- Location: Crown of Veilfall, held by the monarchy
+- Appearance: Clear crystal with internal light, showing no supernatural coloration
+- Properties: Nullifies supernatural powers in its immediate vicinity; protects the holder from mental influence; reveals supernatural beings attempting to pass as human
+- Danger: None to humans; devastating to supernatural beings who contact it directly
+
+[b]Reunification:[/b]
+The shards resist being brought together. When two shards enter proximity, both become unstable—generating heat, light, and magical discharge. Bringing all four together would require extraordinary preparation and containment.
+
+What would happen if they were successfully reunified? The Veilstone would reform—but in what configuration? With balance restored? Or with the Shattering's chaos encoded into its structure?
+
+No one knows. No one has been willing to find out.
+
+*choice
+    #Return to mythology
+        *goto mythology_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment ECOLOGY OF THE NIGHT
+*comment ═══════════════════════════════════════════════════════════
+
+*label ecology_main
+
+[b]THE ECOLOGY OF THE NIGHT[/b]
+[i]How Supernatural Society Functions[/i]
+
+The supernatural world is not merely a collection of powerful beings. It is an ecosystem, with predators, prey, resources, and territories. Understanding this ecology is essential to survival.
+
+*if (learned_ecology_full)
+    *goto ecology_full
+*else
+    *goto ecology_basic
+
+*label ecology_basic
+
+[b]The Food Chain:[/b]
+At the base of supernatural ecology are humans. They provide blood for Varkyrs, transformation victims for Lupines, and raw population for all factions to draw from. Without humans, the supernatural world would starve.
+
+Above humans are the "lesser supernaturals"—beings with magical properties but limited intelligence or organization. Ghouls, revenants, feral werewolves, minor spirits. These creatures exist in the margins, scavenging what the greater powers leave behind.
+
+The greater supernatural factions—Varkyrs, Lupines, Forsaken—occupy the top of the food chain. They compete for territory, resources, and influence while maintaining the secrecy necessary for all of them to survive.
+
+[b]The Resource Base:[/b]
+Beyond blood and transformation victims, supernatural beings compete for:
+
+[i]Territory[/i] — Land that provides feeding grounds, ritual sites, and defensible positions. The best territories are urban centers (high human population, easy feeding) and magical nexuses (Mirror Lake, other thin-Veil locations).
+
+[i]Influence[/i] — Control over human institutions provides cover and resources. Varkyrs favor financial and political institutions; Lupines favor wilderness management and security; the Forsaken take what they can get.
+
+[i]Knowledge[/i] — Magical techniques, historical secrets, and strategic intelligence are all valuable. The faction that controls information controls the narrative.
+
+[b]The Balance:[/b]
+For fifteen centuries, a rough equilibrium has held. No faction is strong enough to eliminate the others; all depend on human secrecy for survival; the Ecliptic Amulet shards provide deterrence against aggression.
+
+This balance is fragile. Every faction knows that the right combination of circumstances could shatter it entirely.
+
+*choice
+    *if (learned_human_role)
+        #Humanity's role in supernatural ecology
+            *goto human_role
+    *if (learned_territory_rules)
+        #Territorial arrangements
+            *goto territory_rules
+    #Return to mythology
+        *goto mythology_overview
+
+*label ecology_full
+
+*gosub ecology_complete_text
+
+*choice
+    #Continue reading
+        *goto human_role
+
+*label human_role
+
+[b]HUMANITY — THE ESSENTIAL PREY[/b]
+
+[i]A pragmatic assessment[/i]
+
+The supernatural factions cannot survive without humans. This is the foundational truth of their ecology, and it shapes everything.
+
+Varkyrs require human blood. Animal blood provides sustenance but not power; feeding exclusively on animals results in gradual weakening. Most vampires require at least occasional human feeding to maintain their abilities.
+
+Lupines require human population for transformation. While born werewolves exist, most pack growth comes from turning humans. Without new members, packs shrink and die out.
+
+The Forsaken require both—blood for their Varkyr nature, and humans willing to undergo hybrid transformation for population growth.
+
+[b]The Veil Protocol:[/b]
+This dependency is why all factions maintain secrecy. If humans became generally aware of supernatural existence, the likely result would be:
+
+1. Mass panic and violent reaction
+2. Development of industrialized anti-supernatural weapons
+3. Hunting campaigns that eliminate supernatural feeding grounds
+4. Eventually, human success through sheer numbers and technological innovation
+
+Humans outnumber all supernatural beings combined by approximately 100,000 to 1. The supernatural have individual power; humans have collective power. In an open war, humans would eventually win—but only after losses that would devastate civilization.
+
+No faction wants this outcome. The Veil Protocol exists to prevent it.
+
+[b]The Human Factions:[/b]
+Some humans are aware of the supernatural and have organized responses:
+
+[i]The Silver Legion[/i] — Hunters, descended from Helena the Pure's resistance. They monitor, contain, and when necessary eliminate supernatural threats.
+
+[i]The Crown[/i] — Veilfall's human government, aware of supernatural existence and engaged in careful negotiation with all factions.
+
+[i]The Assassin Guild[/i] — Officially neutral; in practice, available for hire by anyone who pays.
+
+[i]The Church[/i] — Maintains exorcists, blessed weapons, and sacred wards. Their actual theological stance on supernatural beings varies by denomination.
+
+These groups are tolerated because they help maintain the Veil. Rogue vampires who feed publicly, feral werewolves who attack civilians, Forsaken who expose themselves—all threaten secrecy. Human hunters help clean up these problems.
+
+*choice
+    *if (learned_territory_rules)
+        #Territorial arrangements
+            *goto territory_rules
+    #Return to mythology
+        *goto mythology_overview
+
+*label territory_rules
+
+[b]TERRITORY AND TREATY[/b]
+
+[i]From the Veilfall Accord, as maintained since 1 AW[/i]
+
+The supernatural factions have divided Veilfall and its surrounding territories through centuries of negotiation, conflict, and compromise. Current boundaries are:
+
+[b]Varkyr Territories:[/b]
+- The Gilded Quarter (primary residential and feeding zone)
+- The Crimson Spire and surrounding blocks
+- Night clubs, upscale restaurants, and entertainment venues throughout the city
+- Underground financial networks
+
+Varkyrs operate openly within their territories after dark. Daytime presence is minimal due to sunlight vulnerability.
+
+[b]Lupine Territories:[/b]
+- Whispering Pines Forest (exclusive control)
+- The Warren (shared influence with Forsaken)
+- Wilderness areas surrounding Veilfall
+- Security companies and mercenary networks
+
+Lupines move freely throughout their territories but avoid heavy urban concentration. Pack presence in the city is limited to liaison functions.
+
+[b]Forsaken Territories:[/b]
+- The Undercroft (exclusive control)
+- The Warren (shared influence with Lupines)
+- Various underground networks and tunnel systems
+
+Forsaken territory is deliberately limited. Their small population cannot maintain larger claims.
+
+[b]Neutral Zones:[/b]
+- University Row (academic territory, all factions observe neutrality)
+- Cathedral Heights (Church influence, Silver Legion presence)
+- Harborfront (commercial territory, governed by monetary rather than factional concerns)
+- Mirror Lake (sacred ground, no faction claims sovereignty)
+
+[b]Enforcement:[/b]
+Territorial violations are handled through the Night Council—Veilfall's shadow government, where representatives from all factions negotiate disputes. Serious violations can result in:
+
+- Financial penalties (paid in blood, favors, or actual currency)
+- Territorial concessions
+- Demands for specific individuals' execution
+- In extreme cases, sanctioned warfare limited to specific areas and timeframes
+
+The system is imperfect. Violations occur regularly. But for fifteen centuries, it has prevented another Millennium War.
+
+*comment Appendix stubs for full-text versions
+*choice
+    #Return to mythology
+        *goto mythology_overview
+    #View appendix references
+        *goto mythology_appendices
+
+*label mythology_appendices
+*gosub progenitor_origin_text
+*gosub origin_wolf_creation_text
+*gosub veil_complete_text
+*gosub blood_magic_complete_text
+*gosub lunar_complete_text
+*gosub transformation_complete_text
+*gosub soul_complete_text
+*gosub veilstone_complete_text
+*gosub ecology_complete_text
+*goto mythology_overview
+
+*comment ═══════════════════════════════════════════════════════════
+*comment GOSUB TEXT BLOCKS (for full versions)
+*comment ═══════════════════════════════════════════════════════════
+
+*label progenitor_origin_text
+*return
+
+*label origin_wolf_creation_text
+*return
+
+*label veil_complete_text
+*return
+
+*label blood_magic_complete_text
+*return
+
+*label lunar_complete_text
+*return
+
+*label transformation_complete_text
+*return
+
+*label soul_complete_text
+*return
+
+*label veilstone_complete_text
+*return
+
+*label ecology_complete_text
+*return
+
+*comment ═══════════════════════════════════════════════════════════
+*comment RETURN / NAVIGATION
+*comment ═══════════════════════════════════════════════════════════
+
+*label mythology_return
+*return

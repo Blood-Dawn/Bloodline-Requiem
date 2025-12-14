@@ -1,0 +1,261 @@
+*comment Act 1: Unveiling Shadows
+*comment Chapter 1
+
+*label introduction
+*set act 1
+*set chapter 1
+
+
+Now, centuries later, you find yourself in the heart of Veilfall, a skilled assassin taking requests from the elusive Assassin Guild. Your reputation for getting the job done, no matter the complexity, precedes you. Today, a new assignment lands on your table, a choice that could unveil the deep-seated mysteries of Veilfall, or thrust you into the heart of the ancient conflict brewing afresh.
+
+
+The parchment reads:
+"Three tasks lay before you, choose wisely for each holds a key to the unfolding destiny of Veilfall.
+
+1. Investigate the enigmatic Forsaken, their motives unknown, their allegiance a mystery.
+
+2. Confront a pack of Lupines, their bitterness rooted in betrayal, their plans veiled in secrecy.
+
+3. Eliminate a rogue Varkyr, whose bloodlust threatens the uneasy truce with the humans of Veilfall."
+
+*choice
+    #Investigate the enigmatic Forsaken.
+        *set alignment "forsaken"
+        *goto forsaken_route
+    #Confront a pack of Lupines.
+        *set alignment "lupine"
+        *goto lupine_route
+    #Eliminate a rogue Varkyr.
+        *set alignment "varkyrs"
+        *goto varkyrs_route
+
+*comment TODO: Forsaken extraction
+*label forsaken_route
+In the shadows of the city, you search for the mysterious Forsaken. In the distance, you see a poster with an encrypted message.
+
+*choice
+    #Decipher message
+        With your experience researching this faction, you decipher the message, and it reads, [i] come to the underground tunnel at 123 street to join.[/i]
+        *goto tunnel_entrance
+*label tunnel_entrance
+You navigate through the twisted alleys of Veilfall until you reach the underground tunnel at 123 street. The eerie silence as you descend into the darkness sends a chill down your spine. The Forsaken's world is one veiled in shadows and mystery, an underground society that thrives in the hidden corners of Veilfall. You tread cautiously, aware that danger lurks with every step in this forsaken realm.
+
+As you delve deeper into the tunnel, the distant echo of a chant grows louder. The air thickens with the ancient aura of rites long forbidden. The tunnel opens up into a vast, dimly lit cavern, where a congregation of the Forsaken is in the midst of a ritual. At the heart of the ritual, an artifact radiates with an eerie glow, its power resonating with the very core of the veil separating the realms.
+
+*choice
+    #Approach the congregation cautiously.
+        *goto approach_congregation
+    #Observe from a distance to gather more information.
+        *goto observe_from_distance
+    #Retreat and report back to the Assassin Guild.
+        *goto report_back
+
+*label approach_congregation
+*line_break
+
+You approach the congregation, possibly leading to an interaction with the Forsaken, gathering more information or establishing alliances.
+*choice
+    #Attempt to communicate with the Forsaken.
+        You step forward, your presence drawing the attention of the Forsaken. Their leader, a figure cloaked in shadows, regards you with a mixture of curiosity and suspicion.
+        *set AssassinGuild_relation +5
+        *goto forsaken_leader_response
+    #Observe the ritual without interference.
+        You remain silent, watching as the Forsaken perform their ritual, the artifact's glow intensifying with each chant. The air hums with power, and you sense that this moment is pivotal for them.
+        *set AssassinGuild_relation +2
+        *goto forsaken_ritual_observation
+    #Disrupt the ritual to assert dominance.
+        With a swift motion, you disrupt the ritual, causing chaos among the Forsaken. They react with hostility, and a confrontation ensues.
+        *set AssassinGuild_relation -10
+        *goto forsaken_confrontation
+*label forsaken_leader_response
+The leader of the Forsaken steps forward, their eyes glinting with a mix of intrigue and wariness. "You tread dangerous ground, assassin," they say, their voice low and resonant. "But perhaps you seek knowledge, or an alliance? The veil between our worlds is thin, and the power we wield can either be a curse or a blessing."
+*choice
+    #Offer your services in exchange for information.
+        You propose a deal, offering your skills in exchange for insights into the Forsaken's plans and the artifact's significance.
+        *set AssassinGuild_relation +10
+        *goto forsaken_information_exchange
+    #Refuse to engage and prepare to leave.
+        You decline their offer, choosing to leave the cavern without further interaction. The leader nods, understanding your decision but warning you of the consequences of crossing paths with the Forsaken again.
+        *set AssassinGuild_relation -5
+        *goto forsaken_exit
+    #Challenge the leader to a duel.
+        You draw your weapon, challenging the leader to a duel. The Forsaken react with hostility, and a fierce battle ensues.
+        *set AssassinGuild_relation -15
+        *goto forsaken_duel
+*label forsaken_information_exchange
+*line_break
+The Forsaken leader nods, intrigued by your proposal. "Very well, assassin. We seek to reclaim what was lost in the Millennium War, to restore balance to Veilfall. The artifact you see before you is a key to that power, but it is also a burden. If you assist us, we can share its secrets with you."
+*choice
+    #Agree to assist the Forsaken.
+        You nod, accepting their terms. The leader gestures for you to join the ritual, and as you do, the artifact's glow intensifies, revealing glimpses of ancient knowledge and power.
+        *set AssassinGuild_relation +15
+        *goto forsaken_rise
+    #Decline and leave the cavern.
+        You shake your head, choosing to leave the cavern without further involvement. The leader watches you go, a hint of disappointment in their eyes.
+        *set AssassinGuild_relation -5
+        *goto forsaken_exit
+    #Attempt to steal the artifact.
+        With a swift motion, you reach for the artifact, but the Forsaken react quickly, surrounding you in a defensive stance.
+        *set AssassinGuild_relation -20
+        *goto forsaken_theft_attempt
+*label forsaken_rise
+*line_break
+The ritual concludes with a surge of energy, and the artifact's power resonates through you. The Forsaken leader nods approvingly. "You have chosen wisely, assassin. Together, we will reclaim Veilfall from the shadows of its past."
+*finish
+
+*label forsaken_exit
+*line_break
+
+You leave the cavern before blood is spilled. The Forsaken part to let you go, their whispers promising that your departure will not be forgotten.
+*finish
+
+*label forsaken_theft_attempt
+*line_break
+
+The Forsaken close in before you can seize the artifact. Realizing you're outmatched, you retreat into the tunnels, the sound of their pursuit fading as you disappear into the city.
+*finish
+
+*label forsaken_duel
+*line_break
+
+Steel rings against steel as you duel the Forsaken leader. The clash is fierce but decisive—you disarm them and force a grudging nod of respect before slipping away into the shadows.
+*finish
+*label forsaken_ritual_observation
+
+*label forsaken_confrontation
+*line_break
+
+Steel flashes and shadows erupt as the Forsaken turn on you. Outnumbered and pressed, you force a path through the cavern mouth, escaping with bruises and the lingering promise of retaliation.
+*finish
+
+*label observe_from_distance
+*line_break
+
+(not done) you observe the ritual and the Forsaken from a distance, gathering information which could be useful later on.
+*ending
+
+*label report_back
+The journey back to the Assassin Guild's hidden lair is a mixture of anticipation and reflection, as the night's events play back in your mind. The city, despite its dark undertones, begins to stir with the early murmurs of dawn as you navigate through the labyrinthine alleys that lead to the guild's secret entrance.
+
+As you step into the clandestine halls of the guild, the familiar blend of shadows and silence welcomes you. But this serenity is short-lived, as you're soon ushered into the presence of the Guild Master, a figure shrouded in enigma and feared for the ruthless efficiency in maintaining the guild's feared reputation.
+
+*choice
+    #Report everything in detail.
+        You recount the night's events with precision, leaving no stone unturned. The Guild Master listens intently, the shadows dancing across his concealed features as you narrate your findings and encounters.
+        *set AssassinGuild_relation +10
+        *goto guild_master_response
+    #Withhold some information for personal reasons.
+        You provide a curated version of the night's events, keeping certain details close to your chest. The Guild Master seems to sense the omission but waits patiently for you to finish.
+        *set AssassinGuild_relation -10
+        *goto guild_master_response
+    #Exaggerate your achievements.
+        With a flourish, you embellish your tale, painting your actions in a heroic light. The Guild Master remains impassive, but you notice a twitch of amusement in the eyes of some guild members present.
+        *set AssassinGuild_relation -5
+        *goto guild_master_response
+
+*label guild_master_response
+The Guild Master remains silent for a long moment after you finish speaking, the room echoing with the remnants of your tale. Finally, he speaks, his voice a calm yet stern ripple through the silence.
+
+"You have done well," he states, his words measured. "But remember, the shadows are both our cloak and our blade. We thrive in the unseen, and our actions echo through the veins of Veilfall. The balance between the factions is a delicate one, and our allegiance to none is our strength."
+
+He dismisses you with a gesture, and as you step out of the room, the weight of his words sinks in. The game of shadows is a complex one, and the stakes are as high as ever.
+
+*choice
+    #Reflect on the Guild Master's words.
+        The cryptic wisdom of the Guild Master resonates within you as you ponder the delicate balance of power in Veilfall and the guild's role in it.
+        *goto reflection
+    #Discuss the mission with fellow assassins.
+        You join a small gathering of your fellow assassins, exchanging stories and insights from the night's endeavors.
+        *goto assassin_discussion
+    #Prepare for the next assignment.
+        With the night's events archived in the annals of your mind, you shift your focus to the looming horizon, preparing for the tasks that lie ahead.
+        *goto next_assignment
+
+*label reflection
+*line_break
+
+(not done) *comment ... narrative for reflecting on the mission and the guild's role ...
+*ending
+
+*label assassin_discussion
+*line_break
+
+(not done) *comment ... narrative for discussing the mission with fellow assassins ...
+*ending
+
+*label next_assignment
+*line_break
+
+(not done) *comment ... narrative for preparing for the next assignment ...
+*ending
+
+*comment ═══════════════════════════════════════════════════════════
+*comment LUPINE CONTRACT ROUTE (Assassin path)
+*comment ═══════════════════════════════════════════════════════════
+
+*label lupine_route
+The forest edge smells of pine, iron, and tension. The Whispering Pines Pack has crossed into human farmland, and the Guild wants answers without igniting a war.
+
+*choice
+    #Approach openly and request parley.
+        You raise empty hands and announce yourself. The wolves circle but hold. Alpha Rurik emerges, measuring you with amber eyes.
+        *set will +5
+        *gosub_scene rank_progression gain_xp 25 "Opened parley with the pack"
+        *goto lupine_outcome
+    #Stalk the perimeter and scout their numbers.
+        You ghost along the treeline, counting silhouettes, sniffing campfire smoke, noting patrol routes.
+        *set stealth +5
+        *gosub_scene rank_progression gain_xp 25 "Scouted Whispering Pines positions"
+        *goto lupine_outcome
+    #Set traps with silver tripwires.
+        You rig shallow pits and silver wire snares where the pack must pass to reach the fields.
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 25 "Prepared silvered traps"
+        *goto lupine_outcome
+
+*label lupine_outcome
+Rurik's rumble carries through the pines. "Assassin. You hunt for coin. We hunt for survival. Tell your Guild this land is contested. Bring us the one stirring the factions, and the farmers remain unharmed."
+
+You leave with their warning—and leverage. The Guild will decide whether to honor a fragile truce or escalate.
+*finish
+
+*comment ═══════════════════════════════════════════════════════════
+*comment VARKYR CONTRACT ROUTE (Assassin path)
+*comment ═══════════════════════════════════════════════════════════
+
+*label varkyrs_route
+Gaslight pools in the Gilded Quarter, painting alleys in gold and shadow. Lord Vaelis hunts somewhere nearby, breaking the Veil with every body he drains.
+
+*choice
+    #Track his feeding pattern and strike.
+        You stake out the three alleys marked on your map, watching for mist and movement.
+        *set awareness +5
+        *gosub_scene rank_progression gain_xp 25 "Stalked Vaelis's hunting grounds"
+        *goto varkyr_confront
+    #Bait him with rumors of a courier carrying relic blood.
+        You leak whispers at taverns, then wait under a balcony with a blessed stake.
+        *set cunning +5
+        *gosub_scene rank_progression gain_xp 25 "Set bait for the rogue Varkyr"
+        *goto varkyr_confront
+    #Call in a Spire contact to lure him.
+        A discreet Spire agent agrees to draw Vaelis out in exchange for discretion.
+        *set varkyrs_relation +5
+        *gosub_scene rank_progression gain_xp 25 "Leveraged Spire contact"
+        *goto varkyr_confront
+
+*label varkyr_confront
+Vaelis emerges—eyes feral, manners long abandoned. The alley holds just enough space for a duel.
+
+*choice
+    #Stake him mid-charge.
+        You sidestep his lunge and drive the blessed stake through his heart. Ash scatters across cobblestone.
+        *set strength +5
+        *finish
+    #Offer him exile instead of death.
+        You argue the Veil is fragile; his death will spark more bloodshed. He sneers, then melts into mist—gone, but warned.
+        *set cunning +5
+        *finish
+    #Bind him for Spire pickup.
+        You use silverwire and holy seals. The Spire's hunters arrive, impressed and wary.
+        *set varkyrs_relation +10
+        *finish

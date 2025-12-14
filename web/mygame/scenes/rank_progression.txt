@@ -1,0 +1,620 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment RANK PROGRESSION SYSTEM
+*comment ═══════════════════════════════════════════════════════════
+*comment Handles rank-ups for all factions: Varkyr, Lupine, Forsaken, Mage
+*comment Call this after mission completion or major achievements
+*comment ═══════════════════════════════════════════════════════════
+
+*label check_progression
+*comment Main entry point - routes to appropriate faction check
+
+*if (alignment = "varkyrs")
+    *gosub varkyr_progression_check
+    *goto progression_end
+*elseif (alignment = "lupine")
+    *gosub lupine_progression_check
+    *goto progression_end
+*elseif (alignment = "forsaken")
+    *gosub forsaken_progression_check
+    *goto progression_end
+*elseif (alignment = "mage")
+    *gosub mage_progression_check
+    *goto progression_end
+*elseif (alignment = "human")
+    *gosub human_progression_check
+    *goto progression_end
+
+*label progression_end
+*return
+
+*comment ═══════════════════════════════════════════════════════════
+*comment VARKYR PROGRESSION
+*comment ═══════════════════════════════════════════════════════════
+
+*label varkyr_progression_check
+*comment Check if player has earned rank-up
+
+*temp rankup_earned false
+
+*comment Define XP/achievement thresholds per rank
+*comment You'll need to add *create varkyr_xp 0 to startup.txt
+
+*if (rank = "Commoner") and (varkyr_xp >= 100)
+    *set rankup_earned true
+    *set rank "Knight"
+    *goto varkyr_rankup_ceremony
+
+*if (rank = "Knight") and (varkyr_xp >= 250)
+    *set rankup_earned true
+    *choice
+        #Become Baron
+            *set rank "Baron"
+            *goto varkyr_rankup_ceremony
+        #Become Baroness
+            *set rank "Baroness"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Baron") and (varkyr_xp >= 500)) and (varkyrs_relation >= 60))
+    *set rankup_earned true
+    *choice
+        #Become Viscount
+            *set rank "Viscount"
+            *goto varkyr_rankup_ceremony
+        #Become Viscountess
+            *set rank "Viscountess"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Baroness") and (varkyr_xp >= 500)) and (varkyrs_relation >= 60))
+    *set rankup_earned true
+    *choice
+        #Become Viscount
+            *set rank "Viscount"
+            *goto varkyr_rankup_ceremony
+        #Become Viscountess
+            *set rank "Viscountess"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Viscount") and (varkyr_xp >= 1000)) and (varkyrs_relation >= 70))
+    *set rankup_earned true
+    *choice
+        #Become Count
+            *set rank "Count"
+            *goto varkyr_rankup_ceremony
+        #Become Countess
+            *set rank "Countess"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Viscountess") and (varkyr_xp >= 1000)) and (varkyrs_relation >= 70))
+    *set rankup_earned true
+    *choice
+        #Become Count
+            *set rank "Count"
+            *goto varkyr_rankup_ceremony
+        #Become Countess
+            *set rank "Countess"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Count") and (varkyr_xp >= 2000)) and ((varkyrs_relation >= 80) and (humans_turned >= 5)))
+    *set rankup_earned true
+    *choice
+        #Become Marquis
+            *set rank "Marquis"
+            *goto varkyr_rankup_ceremony
+        #Become Marchioness
+            *set rank "Marchioness"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Countess") and (varkyr_xp >= 2000)) and ((varkyrs_relation >= 80) and (humans_turned >= 5)))
+    *set rankup_earned true
+    *choice
+        #Become Marquis
+            *set rank "Marquis"
+            *goto varkyr_rankup_ceremony
+        #Become Marchioness
+            *set rank "Marchioness"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Marquis") and (varkyr_xp >= 4000)) and ((varkyrs_relation >= 90) and (artifact)))
+    *set rankup_earned true
+    *comment Requires possessing a shard of Ecliptic Amulet
+    *choice
+        #Become Duke
+            *set rank "Duke"
+            *goto varkyr_rankup_ceremony
+        #Become Duchess
+            *set rank "Duchess"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Marchioness") and (varkyr_xp >= 4000)) and ((varkyrs_relation >= 90) and (artifact)))
+    *set rankup_earned true
+    *comment Requires possessing a shard of Ecliptic Amulet
+    *choice
+        #Become Duke
+            *set rank "Duke"
+            *goto varkyr_rankup_ceremony
+        #Become Duchess
+            *set rank "Duchess"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Duke") and (varkyr_xp >= 8000)) and (Night_Council_relation >= 50))
+    *set rankup_earned true
+    *choice
+        #Become Archduke
+            *set rank "Archduke"
+            *goto varkyr_rankup_ceremony
+        #Become Archduchess
+            *set rank "Archduchess"
+            *goto varkyr_rankup_ceremony
+
+*if (((rank = "Duchess") and (varkyr_xp >= 8000)) and (Night_Council_relation >= 50))
+    *set rankup_earned true
+    *choice
+        #Become Archduke
+            *set rank "Archduke"
+            *goto varkyr_rankup_ceremony
+        #Become Archduchess
+            *set rank "Archduchess"
+            *goto varkyr_rankup_ceremony
+
+*if ((rank = "Archduke") and (varkyr_xp >= 15000))
+    *comment Special quest required for Imperial
+    *if (ecliptic_shards_controlled >= 2)
+        *set rankup_earned true
+        *set rank "Imperial"
+        *goto varkyr_rankup_ceremony
+
+*if ((rank = "Archduchess") and (varkyr_xp >= 15000))
+    *comment Special quest required for Imperial
+    *if (ecliptic_shards_controlled >= 2)
+        *set rankup_earned true
+        *set rank "Imperial"
+        *goto varkyr_rankup_ceremony
+
+*if (rank = "Imperial")
+    *comment Special endgame quest for Progenitor
+    *if (ecliptic_shards_controlled >= 4)
+        The impossible beckons. You stand on the threshold of apotheosis.
+        *choice
+            #Attempt the Progenitor Ritual
+                *goto progenitor_ascension
+            #Not yet ready
+                *return
+
+*comment No rank-up earned this time
+*return
+
+*label varkyr_rankup_ceremony
+*line_break
+
+The blood throne chamber falls silent as you approach the obsidian dais. Witnesses from every bloodline gather—some envious, others terrified—as the Matriarch herself descends from the shadows.
+
+Her voice echoes through eternity: "You have proven yourself worthy of [b]${rank}[/b]. Rise, and claim your birthright."
+
+The sanguine coronation begins. Blood magic surges through your veins, unlocking new depths of power. Your very essence transforms.
+
+*comment Call ability selection
+*gosub_scene varkyr_abilities varkyr_ability_select
+
+*line_break
+You are now [b]${rank}[/b] of the Crimson Spire. Lesser vampires bow as you pass. Your dominion grows.
+
+*set varkyrs_relation +10
+
+*return
+
+*comment ═══════════════════════════════════════════════════════════
+*comment LUPINE PROGRESSION
+*comment ═══════════════════════════════════════════════════════════
+
+*label lupine_progression_check
+*comment Check if player has earned pack rank-up
+
+*temp rankup_earned false
+
+*comment Lupines rank up through trials, not just XP
+*comment You'll need to add *create lupine_xp 0 to startup.txt
+
+*if ((((lupine_rank = "Turned Omega") or (lupine_rank = "Omega")) and (lupine_xp >= 50)))
+    *set rankup_earned true
+    *set lupine_rank "Zeta Scout"
+    *goto lupine_rankup_trial
+
+*if ((lupine_rank = "Zeta Scout") and (lupine_xp >= 100))
+    *set rankup_earned true
+    *choice
+        #Become Epsilon Forager
+            *set lupine_rank "Epsilon Forager"
+            *goto lupine_rankup_trial
+        #Become Epsilon Artisan
+            *set lupine_rank "Epsilon Artisan"
+            *goto lupine_rankup_trial
+
+*if ((((lupine_rank = "Epsilon Forager") or (lupine_rank = "Epsilon Artisan")) and (lupine_xp >= 200)))
+    *set rankup_earned true
+    *choice
+        #Become Gamma Healer
+            *set lupine_rank "Gamma Healer"
+            *goto lupine_rankup_trial
+        #Become Gamma Warder
+            *set lupine_rank "Gamma Warder"
+            *goto lupine_rankup_trial
+
+*if ((((lupine_rank = "Gamma Healer") or (lupine_rank = "Gamma Warder")) and (lupine_xp >= 400)) and (lupine_relation >= 60))
+    *set rankup_earned true
+    *choice
+        #Become Delta Emissary
+            *set lupine_rank "Delta Emissary"
+            *goto lupine_rankup_trial
+        #Become Delta Sentinel
+            *set lupine_rank "Delta Sentinel"
+            *goto lupine_rankup_trial
+
+*if ((((lupine_rank = "Delta Emissary") or (lupine_rank = "Delta Sentinel")) and (lupine_xp >= 800)) and (lupine_relation >= 70))
+    *set rankup_earned true
+    *choice
+        #Become Beta Guardian
+            *set lupine_rank "Beta Guardian"
+            *goto lupine_rankup_trial
+        #Become Beta Councilor
+            *set lupine_rank "Beta Councilor"
+            *goto lupine_rankup_trial
+
+*if ((((lupine_rank = "Beta Guardian") or (lupine_rank = "Beta Councilor")) and (lupine_xp >= 1500)))
+    *comment Must challenge current alpha or be nominated
+    *if ((lupine_relation >= 80) and (control >= 70))
+        *set rankup_earned true
+        *set lupine_rank "Alpha Commandant"
+        *goto lupine_alpha_challenge
+
+*if ((lupine_rank = "Alpha Commandant") and (lupine_xp >= 3000))
+    *comment Must unite multiple packs
+    *if (packs_united >= 3)
+        *set rankup_earned true
+        *set lupine_rank "Alpha Prime"
+        *goto lupine_rankup_trial
+
+*if (lupine_rank = "Alpha Prime")
+    *comment Crisis-only rank; elected by all alphas
+    *if (millennium_war_2 = true)
+        The packs howl for a Sovereign. Will you answer?
+        *choice
+            #Accept the Alpha Sovereign mantle
+                *set lupine_rank "Alpha Sovereign"
+                *goto lupine_sovereign_coronation
+            #Decline; the time is not right
+                *return
+
+*comment No rank-up earned
+*return
+
+*label lupine_rankup_trial
+*line_break
+
+The full moon rises over Whispering Pines. The pack encircles you, their eyes reflecting lunar fire. The alpha steps forward, his massive form casting long shadows across the sacred ground.
+
+"You seek to rise to [b]${lupine_rank}[/b]," he growls. "Prove yourself."
+
+*choice
+    #Undergo the Trial of Strength
+        You face the pack's strongest warrior in ritual combat. Claws flash, teeth snap, and blood stains the earth. When it's over, you stand victorious—bruised but unbroken.
+        *set strength +5
+        *goto lupine_trial_complete
+
+    #Undergo the Trial of Wisdom
+        The pack's eldest presents riddles of the moon, questions of balance, and tests of judgment. You navigate each with careful thought, demonstrating the wisdom befitting your new rank.
+        *set cunning +5
+        *goto lupine_trial_complete
+
+    #Undergo the Trial of the Hunt
+        You lead a hunting party to track and bring down dangerous prey. Your coordination, strategy, and primal instincts guide the pack to a successful kill. The feast that follows honors your achievement.
+        *set agility +5
+        *goto lupine_trial_complete
+
+*label lupine_trial_complete
+The alpha howls your new rank to the moon. The pack responds, a chorus that shakes the forest. New power floods your being.
+
+*comment Call ability selection
+*gosub_scene lupine_abilities_complete lupine_ability_select
+
+*line_break
+You are now [b]${lupine_rank}[/b]. The pack acknowledges your strength. The moon blesses your path.
+
+*set lupine_relation +10
+
+*return
+
+*label lupine_alpha_challenge
+*line_break
+
+To become Alpha, you must challenge the current pack leader. Rurik, the black-furred titan, stands before you in the sacred circle.
+
+"So you believe yourself worthy," he says, respect in his eyes. "Then show me."
+
+*comment This would be a major combat encounter
+*comment For now, simplified:
+
+*choice
+    #Fight with honor and strength
+        The duel is legendary. For hours you clash, neither giving ground. Finally, Rurik yields—not from defeat, but from recognition of your worthiness.
+        *set met_Rurik true
+        *set Rurik_relation +20
+        *goto alpha_ascension
+
+    #Fight with cunning and tactics
+        You use the environment, feints, and misdirection. Rurik is stronger, but you are smarter. He concedes when you gain an unbeatable position.
+        *set met_Rurik true
+        *set Rurik_relation +15
+        *goto alpha_ascension
+
+*label alpha_ascension
+Rurik bows his head. "You are Alpha now. Lead the pack well."
+
+The wolves howl your name. You are [b]Alpha Commandant[/b].
+
+*gosub_scene lupine_abilities_complete lupine_ability_select
+
+*set lupine_relation +20
+*return
+
+*label lupine_sovereign_coronation
+*comment Special ceremony for Alpha Sovereign (endgame rank)
+*line_break
+
+At the Howling Peaks, every pack in the region gathers. Hundreds of Lupines watch as you ascend the stone throne, bathed in moonlight.
+
+The Origin Wolf's spirit stirs. For a moment, you hear his howl across time.
+
+You are [b]Alpha Sovereign[/b]—supreme leader of all Lupines.
+
+*gosub_scene lupine_abilities_complete lupine_ability_select
+
+*set lupine_relation +50
+*return
+
+*comment ═══════════════════════════════════════════════════════════
+*comment FORSAKEN PROGRESSION
+*comment ═══════════════════════════════════════════════════════════
+
+*label forsaken_progression_check
+*comment Forsaken rank up through hybrid stability + Caius's approval
+
+*temp rankup_earned false
+
+*if ((forsaken_rank = "") or (forsaken_rank = "Initiate"))
+    *if ((hybrid_stability >= 40) and (forsaken_relation >= 50))
+        *set rankup_earned true
+        *set forsaken_rank "Adept"
+        *goto forsaken_rankup_ritual
+    *goto forsaken_progression_end
+
+*elseif (((forsaken_rank = "Adept") and (hybrid_stability >= 60)) and (forsaken_relation >= 60))
+    *set rankup_earned true
+    *set forsaken_rank "Sentinel"
+    *goto forsaken_rankup_ritual
+
+*elseif (((forsaken_rank = "Sentinel") and (hybrid_stability >= 80)) and (forsaken_relation >= 70))
+    *set rankup_earned true
+    *set forsaken_rank "Warden"
+    *goto forsaken_rankup_ritual
+
+*elseif ((forsaken_rank = "Warden") and (hybrid_stability >= 95))
+    *comment Must have Caius's personal recognition
+    *if ((met_Caius = true) and (forsaken_relation >= 85))
+        *set rankup_earned true
+        *choice
+            #Become Eclipse Lord
+                *set forsaken_rank "Eclipse Lord"
+                *goto forsaken_eclipse_ascension
+            #Become Eclipse Lady
+                *set forsaken_rank "Eclipse Lady"
+                *goto forsaken_eclipse_ascension
+
+*label forsaken_progression_end
+
+*return
+
+*label forsaken_rankup_ritual
+*line_break
+
+In the depths of the Forsaken Underground, Caius stands before you. His heterochromatic eyes—one crimson, one amber—study your hybrid essence.
+
+"The blood and moon within you have found balance," he says. "You are ready for [b]${forsaken_rank}[/b]."
+
+He places his hands on your temples. Power—neither wholly vampiric nor lupine, but something [i]other[/i]—floods through you.
+
+*comment Call ability selection
+*gosub_scene forsaken_abilities forsaken_ability_select
+
+*line_break
+You are now [b]${forsaken_rank}[/b]. The Forsaken recognize your strength. You are the future.
+
+*set forsaken_relation +10
+
+*return
+
+*label forsaken_eclipse_ascension
+*line_break
+
+Caius himself conducts the Eclipse Ritual. Under a rare lunar eclipse, blood and moonlight merge within you. The transformation is agonizing—and glorious.
+
+When it's done, you stand in your War Form: an avatar of hybrid perfection.
+
+"You are [b]${forsaken_rank}[/b]," Caius declares. "Among the Forsaken, only I stand higher. Walk with pride."
+
+*gosub_scene forsaken_abilities forsaken_ability_select
+
+*set forsaken_relation +20
+*set war_form true
+
+*return
+
+*comment ═══════════════════════════════════════════════════════════
+*comment MAGE PROGRESSION
+*comment ═══════════════════════════════════════════════════════════
+
+*label mage_progression_check
+*comment Arcane rank-ups tied to study, fieldwork, and guild trust
+
+*temp rankup_earned false
+
+*if (((mage_rank = "") or (mage_rank = "Apprentice")) and (mage_xp >= 120))
+    *set rankup_earned true
+    *set mage_rank "Journeymage"
+    *set rank mage_rank
+    *goto mage_rankup_ritual
+
+*elseif ((mage_rank = "Journeymage") and (mage_xp >= 300))
+    *set rankup_earned true
+    *choice
+        #Specialize as Battlemage
+            *set mage_rank "Battlemage"
+            *set mage_specialty "battlemage"
+            *set rank mage_rank
+            *goto mage_rankup_ritual
+        #Specialize as Spellwright
+            *set mage_rank "Spellwright"
+            *set mage_specialty "spellwright"
+            *set rank mage_rank
+            *goto mage_rankup_ritual
+
+*elseif ((((mage_rank = "Battlemage") and (mage_xp >= 700)) and (arcanum_relation >= 55)) and (ward_stability >= 55))
+    *set rankup_earned true
+    *set mage_rank "Arcanist"
+    *set rank mage_rank
+    *goto mage_rankup_ritual
+
+*elseif ((((mage_rank = "Spellwright") and (mage_xp >= 700)) and (arcanum_relation >= 55)) and (ward_stability >= 55))
+    *set rankup_earned true
+    *set mage_rank "Arcanist"
+    *set rank mage_rank
+    *goto mage_rankup_ritual
+
+*elseif ((((mage_rank = "Arcanist") and (mage_xp >= 1300)) and (arcanum_relation >= 80)) and (ward_stability >= 70))
+    *set rankup_earned true
+    *set mage_rank "Archmage"
+    *set rank mage_rank
+    *goto mage_rankup_ritual
+
+*return
+
+*label mage_rankup_ritual
+*line_break
+
+The Veilguard Arcanum assembles beneath the mirrored dome of their hall. Sigils ignite along the floor as Archmage Selene and the Circle channel stabilizing wards. Arcane force thrums in your bones, testing whether you can hold it—or be consumed by it.
+
+Power settles. You stand taller, senses sharpened, threads of the Veil visible like strands of silver light.
+
+*comment Call spell selection
+*gosub_scene mage_abilities mage_ability_select
+
+*line_break
+[b]Rank Achieved:[/b] ${mage_rank}
+
+*set arcanum_relation +10
+*set ward_stability +5
+
+*if (mage_rank = "Archmage")
+    *set mana +10
+    The dome's mirrored ceiling reflects a second moon above you—a sign of mastery recognized by every mage present.
+
+*return
+
+*comment ═══════════════════════════════════════════════════════════
+*comment HUMAN PROGRESSION
+*comment ═══════════════════════════════════════════════════════════
+
+*label human_progression_check
+*comment Humans don't rank up the same way; they gain skills/positions
+
+*comment This could track:
+*comment - Assassin Guild rank (Initiate → Master Assassin)
+*comment - Noble titles (if noble origin)
+*comment - Hunter specializations
+*comment - Military rank (if Legion path)
+
+*comment TODO: Implement human-specific progression
+
+*return
+
+*comment ═══════════════════════════════════════════════════════════
+*comment XP GAIN FUNCTIONS
+*comment ═══════════════════════════════════════════════════════════
+
+*label gain_xp
+*params xp_amount reason
+
+*if (alignment = "varkyrs")
+    *set varkyr_xp + xp_amount
+    *if (xp_amount >= 50)
+        [i]+${xp_amount} Varkyr XP (${reason})[/i]
+    *goto gain_xp_end
+
+*if (alignment = "lupine")
+    *set lupine_xp + xp_amount
+    *if (xp_amount >= 50)
+        [i]+${xp_amount} Lupine XP (${reason})[/i]
+    *goto gain_xp_end
+
+*if (alignment = "forsaken")
+    *set forsaken_xp + xp_amount
+    *if (xp_amount >= 50)
+        [i]+${xp_amount} Forsaken XP (${reason})[/i]
+    *goto gain_xp_end
+
+*if (alignment = "mage")
+    *set mage_xp + xp_amount
+    *if (xp_amount >= 50)
+        [i]+${xp_amount} Mage XP (${reason})[/i]
+    *goto gain_xp_end
+
+*comment Default handling for humans or undefined alignment
+*if (alignment = "human")
+    *if (xp_amount >= 50)
+        [i]+${xp_amount} Experience (${reason})[/i]
+    *goto gain_xp_end
+
+*comment Fallback catch-all so we never fall into a stray *else
+*if (xp_amount >= 50)
+    [i]+${xp_amount} Experience (${reason})[/i]
+
+*label gain_xp_end
+*return
+
+*comment ═══════════════════════════════════════════════════════════
+*comment USAGE EXAMPLE IN YOUR SCENES
+*comment ═══════════════════════════════════════════════════════════
+*comment
+*comment After completing a mission:
+*comment
+*comment *gosub_scene rank_progression gain_xp 100 "Mission Completed"
+*comment *gosub_scene rank_progression check_progression
+*comment
+*comment This will:
+*comment 1. Add XP to appropriate faction counter
+*comment 2. Check if player qualifies for rank-up
+*comment 3. Trigger ceremony and ability selection if earned
+*comment ═══════════════════════════════════════════════════════════
+
+*label progenitor_ascension
+*comment SPECIAL ENDGAME SEQUENCE
+*line_break
+
+You stand at Mirror Lake, holding all four shards of the Ecliptic Amulet. The moon hangs full and blood-red overhead. This is the moment.
+
+With a gesture, you merge the shards. Reality [i]screams[/i]. Power beyond comprehension floods your being. You are dying—and being reborn.
+
+When the light fades, you are no longer merely vampire.
+
+You are the [b]Progenitor Reborn[/b].
+
+*set rank "Progenitor"
+*set genesis_rebirth true
+*set celestial_dominion true
+*set primordial_sanguine_surge true
+*set cosmic_damnation true
+
+*gosub_scene varkyr_abilities varkyr_ability_select
+
+All of Veilfall trembles. A new age begins.
+
+*return

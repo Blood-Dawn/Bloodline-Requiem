@@ -1,0 +1,60 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment MAGE ORIGIN - Veilguard Arcanum Apprentice
+*comment ═══════════════════════════════════════════════════════════
+
+*label apprenticeship_call
+
+*set act 1
+*set chapter 1
+*set alignment "mage"
+*set mage_rank "Apprentice"
+*set rank "Apprentice"
+*set strength 45
+*set agility 55
+*set cunning 70
+*set will 75
+*set arcanum_relation 55
+*set ward_stability +5
+*set mage_burnout 5
+
+*comment Establish starting context
+The Veilguard Arcanum does not believe in quiet initiations. When the Veil shudders, every mage answers—Apprentice or Archmage.
+
+Tonight, the mirrored dome of the observatory glows with sigils you helped etch only yesterday. They flare crimson, warning of a breach near Mirror Lake. Bells ring through Veilfall's streets; the city's mundane citizens think it a storm alarm. Only you and the other mages know reality itself is straining.
+
+Archmage Selene's voice echoes through the hall: "Circle positions! Apprentices, this is your trial by fire. Hold the grid or watch the city tear."
+
+Your pulse syncs with the wardlines. Mana thrums beneath your skin, begging to be shaped.
+
+*choice
+    #Reinforce the outer wards—keep the city intact first.
+        You sprint along the dome's rim, hands tracing sigils, pouring mana into weakened glyphs. Sweat beads; the lattice steadies beneath your touch.
+
+        *set ward_stability +10
+        *set will +5
+        *gosub_scene rank_progression gain_xp 40 "Stabilized observatory wards"
+        *goto respond_call
+
+    #Arm up and join the battlemages heading to the breach.
+        You grab a silver-inlaid spellblade and slot runic cartridges along your belt. The fastest way to stop the wards from screaming is to silence whatever triggered them.
+
+        *set strength +10
+        *set agility +5
+        *set mage_burnout +5
+        *gosub_scene rank_progression gain_xp 40 "Volunteered for field response"
+        *goto respond_call
+
+    #Study the anomaly readings before acting—information first.
+        You flip through mirrored charts and crystal data feeds. The resonance looks wrong—like someone is pulling at the Veil from both sides.
+
+        *set cunning +10
+        *set arcanum_relation +5
+        *gosub_scene rank_progression gain_xp 40 "Decoded anomaly patterns"
+        *goto respond_call
+
+*label respond_call
+
+The Circle finishes their incantation. A portal of controlled light opens—your corridor to Mirror Lake. Apprentices fall in beside seasoned battlemages. No written exams; only action.
+
+*page_break
+*goto_scene hub_city entry

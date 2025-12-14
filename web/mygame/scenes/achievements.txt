@@ -1,0 +1,14 @@
+*comment Achievements reference
+*comment These achievements are declared in startup.txt
+*comment Use *achieve <id> to award them when conditions are met.
+
+*label index
+[b]Achievements Overview[/b]
+
+- forsaken_ngplus: Unlock by completing the campaign (set in COMPLETION_BANNER).
+- assassin_initiate: Call *achieve when the player completes their first Guild contract.
+- crimson_initiate: Award after the Crimson Spire initiation finishes.
+- moon_trial: Award when the Moon-Born Trial succeeds.
+- veil_apprentice: Award on successful response to the observatory alarm.
+
+*finish

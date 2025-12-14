@@ -1,0 +1,256 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment ASSASSIN ORIGIN - Agent of the Guild
+*comment ═══════════════════════════════════════════════════════════
+
+*label assassin_start
+
+*comment Set initial stats for assassin
+*set act 1
+*set chapter 1
+*set alignment "human"
+*set strength 65
+*set agility 75
+*set cunning 80
+*set will 60
+*set AssassinGuild_relation 50
+
+*comment Years of training in the Guild
+The Assassin Guild found you young—orphaned, hungry, desperate. They saw potential where others saw a street rat. They gave you purpose where others offered only pity.
+
+Now, years later, you are a weapon honed to perfection. Silent. Efficient. Neutral.
+
+In Veilfall's endless shadow war between Varkyrs, Lupines, and Forsaken, you are the equalizer. The blade that serves all factions equally—for the right price.
+
+Your reputation precedes you: the contracts you take, you complete. The targets you hunt don't escape. The secrets you learn stay buried.
+
+Tonight, a new assignment waits.
+
+*line_break
+*page_break
+
+*comment ═══════════════════════════════════════════════════════════
+*comment THE GUILD HALL
+*comment ═══════════════════════════════════════════════════════════
+
+*label guild_hall
+
+The Guild's hidden lair lies beneath an unassuming tannery in the Warren—Veilfall's poorest quarter. Down here, in chambers carved from ancient stone, the city's most dangerous individuals gather in uneasy truce.
+
+You navigate the familiar corridors, passing fellow assassins who offer curt nods or studied indifference. In the Guild, trust is currency rarely spent.
+
+The contract board dominates the central hall—a massive slate covered in coded messages. Three new assignments glow with fresh chalk, each bearing the Guild Master's personal seal.
+
+[i]Priority contracts. High reward. Higher risk.[/i]
+
+You approach, studying the cryptic notations.
+
+*choice
+    #Read the first contract (Forsaken Investigation)
+        [b]Contract Alpha:[/b] Investigate unrest in the Forsaken Underground. Client: Anonymous. Payment: 500 gold + favor owed. Risk: Moderate. Notes: Forsaken rituals detected at 123 Street tunnels. Observe. Report. Do not engage.
+
+        The Forsaken—hybrids hated by both Varkyrs and Lupines. Dangerous, unpredictable, and led by the enigmatic Caius the Unbound. This contract reeks of politics.
+
+        *set cunning +5
+        *goto contract_selection
+
+    #Read the second contract (Lupine Confrontation)
+        [b]Contract Beta:[/b] Confront Lupine pack encroaching on human territory. Client: Merchant Guild. Payment: 750 gold. Risk: High. Notes: Whispering Pines Pack reported near farmsteads. Determine intent. Negotiate or eliminate as needed.
+
+        Lupines—werewolves bound to moon and pack. Powerful, honorable to their own, brutal to outsiders. The full moon is three nights away. Timing matters.
+
+        *set will +5
+        *goto contract_selection
+
+    #Read the third contract (Varkyr Elimination)
+        [b]Contract Gamma:[/b] Eliminate rogue Varkyr breaking the Veil Protocol. Client: Crimson Spire. Payment: 1,000 gold + Varkyr favor. Risk: Extreme. Notes: Lord Vaelis confirmed feeding openly. Threatens exposure. Termination authorized.
+
+        A Varkyr—vampire aristocrat—gone rogue. When the Crimson Spire itself calls for one of their own to die, the situation is dire. Or it's a trap.
+
+        *set strength +5
+        *goto contract_selection
+
+*label contract_selection
+
+The Guild Master emerges from the shadows—a figure you've never seen unmasked. His voice carries the weight of decades spent in darkness.
+
+"Three contracts. Three factions. Three paths into the heart of Veilfall's true power structure." He pauses. "Choose wisely. This is not merely an assignment. This is an [i]education[/i]."
+
+You've studied all three contracts. Each represents a different faction, a different danger, a different reward.
+
+*choice
+    #Accept Contract Alpha - Investigate the Forsaken
+        "The Forsaken," you say. "I'll infiltrate their rituals."
+
+        The Guild Master nods. "Caius the Unbound is no fool. His hybrids are watching for spies. Tread carefully."
+
+        *set alignment "forsaken"
+        *set cunning +10
+        *gosub_scene rank_progression gain_xp 25 "Accepted Forsaken Contract"
+        *goto forsaken_briefing
+
+    #Accept Contract Beta - Confront the Lupines
+        "The Lupines," you decide. "I'll determine their intent."
+
+        The Guild Master's eyes glint. "The wolves respect strength and honor. Show weakness, and they'll tear you apart. Show duplicity, and they'll do worse."
+
+        *set alignment "lupine"
+        *set will +10
+        *gosub_scene rank_progression gain_xp 25 "Accepted Lupine Contract"
+        *goto lupine_briefing
+
+    #Accept Contract Gamma - Eliminate the Rogue Varkyr
+        "The Varkyr," you state. "Lord Vaelis dies tonight."
+
+        The Guild Master almost smiles. "Ambitious. Vampires are ancient, cunning, and nearly impossible to kill. But if you succeed, the Crimson Spire's favor is worth more than gold."
+
+        *set alignment "varkyrs"
+        *set strength +10
+        *gosub_scene rank_progression gain_xp 25 "Accepted Varkyr Contract"
+        *goto varkyr_briefing
+
+*comment ═══════════════════════════════════════════════════════════
+*comment FORSAKEN BRIEFING
+*comment ═══════════════════════════════════════════════════════════
+
+*label forsaken_briefing
+
+The Guild Master spreads a map across the table—Veilfall's undercity, marked with red chalk.
+
+"The Forsaken operate from three known locations: the Underground beneath 123 Street, the Refuge in the old catacombs, and a wilderness enclave we haven't pinpointed. Start at 123 Street. Observe the ritual. [i]Do not be seen.[/i]"
+
+He hands you a vial of dark liquid. "Shadow oil. Masks your scent from hybrid senses. Use it sparingly."
+
+*set stealth +10
+
+You pocket the vial and prepare to move.
+
+*choice
+    #"What am I looking for specifically?"
+        "Information," the Guild Master replies. "Caius is planning something. Find out what. The client paying for this contract has deep pockets and deeper fears."
+
+        *set cunning +5
+        *goto forsaken_departure
+
+    #"Who's the anonymous client?"
+        The Guild Master's silence is answer enough. You know better than to push.
+
+        "Some questions," he finally says, "are more dangerous than the contracts themselves."
+
+        *set awareness +5
+        *goto forsaken_departure
+
+    #Depart immediately without questions
+        You've learned everything you need. Questions waste time.
+
+        *set agility +5
+        *goto forsaken_departure
+
+*label forsaken_departure
+
+Night has fallen by the time you reach the Warren's edge. The descent to 123 Street begins.
+
+*comment Route to Forsaken investigation scene
+*page_break
+*goto_scene act1_assassin forsaken_route
+
+*comment ═══════════════════════════════════════════════════════════
+*comment LUPINE BRIEFING
+*comment ═══════════════════════════════════════════════════════════
+
+*label lupine_briefing
+
+The Guild Master produces a silver-edged dagger and sets it before you.
+
+"Silver. The only substance that truly harms Lupines. But use it as a last resort. The Whispering Pines Pack is led by Alpha Rurik—a black-furred titan with more honor than most nobles and more fury than a wildfire. If you draw blood first, you won't leave those woods alive."
+
+He taps the map. "The farmsteads are here, at the forest's edge. The pack's main territory is deeper in. Approach openly. Announce yourself. If they grant you parley, you may survive."
+
+*set strength +5
+*set will +5
+
+You take the silver dagger.
+
+*choice
+    #"What if they refuse parley?"
+        "Then you learn why we call them apex predators," the Guild Master says flatly. "Run. Fast."
+
+        *set agility +10
+        *goto lupine_departure
+
+    #"Why are they near human lands?"
+        "That," the Guild Master says, "is what you're being paid to discover. Perhaps they're hunting. Perhaps they're scouting. Perhaps something drove them from deeper territories."
+
+        *set cunning +5
+        *goto lupine_departure
+
+    #Depart without further questions
+        You've faced worse. Probably.
+
+        *set strength +5
+        *goto lupine_departure
+
+*label lupine_departure
+
+The Whispering Pines wait. You set out toward the forest's edge, silver dagger cold against your ribs.
+
+*comment Route to Lupine investigation scene
+*page_break
+*goto_scene act1_assassin lupine_route
+
+*comment ═══════════════════════════════════════════════════════════
+*comment VARKYR BRIEFING
+*comment ═══════════════════════════════════════════════════════════
+
+*label varkyr_briefing
+
+The Guild Master's expression turns grave.
+
+"Lord Vaelis is—or was—a respected member of the Crimson Spire. Viscount rank. Over 300 years old. Powerful enough to turn to mist, fast enough to dodge crossbow bolts, cunning enough to have survived the Millennium War."
+
+He produces a wooden stake, its tip blackened and inscribed with runes. "Blessed wood. Stake through the heart while he's corporeal. Decapitation works but requires getting close. Sunlight is ideal but you're working at night."
+
+You take the stake. It feels inadequate.
+
+"Why did he go rogue?" you ask.
+
+"Bloodlust," the Guild Master replies. "He's been feeding openly—draining victims in the noble quarter. The Crimson Spire views this as an existential threat. If humans discover vampires are real and hunting them, the Veil shatters. War follows."
+
+*set strength +10
+
+*choice
+    #"Where will I find him?"
+        "He haunts the Gilded Quarter at night. The Spire provided his usual hunting grounds." The Guild Master hands you a second map. "Three marked locations. He'll be at one of them."
+
+        *set cunning +5
+        *goto varkyr_departure
+
+    #"What's my extraction plan if this goes wrong?"
+        "There isn't one," the Guild Master says bluntly. "You either kill him or he kills you. Those are the only outcomes the Spire will accept."
+
+        No pressure, then.
+
+        *set will +10
+        *goto varkyr_departure
+
+    #Take the stake and leave immediately
+        You're wasting moonlight. Vaelis is out there, feeding.
+
+        *set agility +5
+        *goto varkyr_departure
+
+*label varkyr_departure
+
+The Gilded Quarter's gaslit streets await. Somewhere in those shadows, an ancient predator hunts.
+
+Tonight, you hunt him.
+
+*comment Route to Varkyr elimination scene
+*page_break
+*goto_scene act1_assassin varkyrs_route
+
+*comment ═══════════════════════════════════════════════════════════
+*comment NOTE: This file sets initial assassin stats and routes to
+*comment the appropriate Act 1 faction investigation based on choice
+*comment XP is granted for accepting the contract (25 XP)
+*comment Additional stat bonuses based on player choices
+*comment ═══════════════════════════════════════════════════════════

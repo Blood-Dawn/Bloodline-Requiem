@@ -1,0 +1,159 @@
+*comment ═══════════════════════════════════════════════════════════
+*comment ORIGIN SELECTION - Choose Your Path
+*comment ═══════════════════════════════════════════════════════════
+
+*label origin_select
+
+The shadows of Veilfall stretch long across a world balanced on the edge of a knife. Varkyrs, Lupines, Forsaken, and Humans—all vying for power, survival, and the fragments of an ancient artifact that could reshape reality itself.
+
+But every legend begins with a choice. Every bloodline has an origin. Every shadow was once cast by light.
+
+[b]Who are you?[/b]
+
+*line_break
+
+*goto choose_gender
+
+*label choose_gender
+
+*if (gender != "unspecified")
+    *goto origin_menu
+
+Before the shadows claim your path, choose how you identify. This will also set whether titles use masculine or feminine forms when they apply.
+
+*choice
+    #Male
+        *set gender "male"
+        *set gender_title_style "masculine"
+        *goto origin_menu
+    #Female
+        *set gender "female"
+        *set gender_title_style "feminine"
+        *goto origin_menu
+    #Other (enter your own)
+        *goto gender_other_input
+
+*label gender_other_input
+
+State your gender in your own words.
+*input_text gender_custom
+*set gender gender_custom
+
+Choose which set of titles you prefer when gendered ranks appear.
+*choice
+    #Use masculine titles (Baron, Duke)
+        *set gender_title_style "masculine"
+        *goto origin_menu
+    #Use feminine titles (Baroness, Duchess)
+        *set gender_title_style "feminine"
+        *goto origin_menu
+
+*label origin_menu
+
+*choice
+    #Human Assassin - Agent of the Guild [b](Recommended for first playthrough)[/b]
+        *set alignment "human"
+        *set rank ""
+        *set age 28
+
+        You are a blade in the dark, a whisper before the kill. The Assassin Guild trained you to be invisible, efficient, and utterly neutral. You serve all factions equally—for the right price.
+
+        In this city of shadows, you are the shadow that even shadows fear.
+
+        *goto_scene origin_assassin assassin_start
+
+    #Varkyr Initiate - Fledgling of the Crimson Spire
+        *set alignment "varkyrs"
+        *set rank "Commoner"
+        *set age 0
+        *set Turned true
+
+        The Embrace claimed you only nights ago. Your mortal life ended in crimson ecstasy, and now you stand at the threshold of eternity. The Crimson Spire looms before you—a testing ground where fledglings either ascend or become sustenance for their betters.
+
+        The blood sings in your veins. Will you master it, or drown in it?
+
+        *goto_scene origin_varkyr crimson_spire_initiation
+
+    #Lupine Omega - Newest Member of the Pack
+        *set alignment "lupine"
+        *set lupine_rank "Omega"
+        *set age 25
+        *set Turned true
+
+        Three nights ago, the alpha's bite tore through your mortality. The fever nearly killed you, but you survived—and now the moon calls to you with a voice that shakes your bones.
+
+        Tonight is the Moon-Born Trial. Prove yourself to the Whispering Pines Pack, or die trying.
+
+        *goto_scene origin_lupine pack_trial_start
+
+    #Forsaken Recruit - Child of Blood and Moon
+        *set alignment "forsaken"
+        *set forsaken_rank "Initiate"
+        *set forsaken_type ""
+        *set age 30
+
+        You were dying when Caius found you—victim of a Varkyr attack, infected by Lupine venom, caught between two magics that should have killed each other... and you.
+
+        Instead, they merged. Now you are Forsaken—hated by both bloodlines, hunted by all. But Caius offers something rare: a chance to survive. To thrive. To become something neither Varkyr nor Lupine could ever be.
+
+        The hybrid path is agony. It is also power.
+
+        *goto_scene origin_forsaken caius_ritual
+
+    #Human Noble - Heir to a Tarnished Throne
+        *set alignment "human"
+        *set rank "Minor Noble"
+        *set age 24
+
+        You were born into House Ravencrest, third in line for a title you never wanted. While your siblings schemed for succession, you studied the hidden truths—the Varkyrs in the noble quarter, the Lupines in the forests, the things that go bump in Veilfall's endless night.
+
+        Tonight, your father is dead. Drained. And the game has found you whether you wanted it or not.
+
+        *goto_scene origin_noble murder_investigation
+
+    #Human Commoner - Survivor of the Undercity
+        *set alignment "human"
+        *set rank ""
+        *set age 22
+
+        The Warren is a place where hope goes to die. You've clawed survival from these slums your entire life—dodging press gangs, Guild recruiters, and things with too many teeth.
+
+        But last night, you saw something you shouldn't have. A ritual. A murder. A secret worth killing for.
+
+        Now they're hunting you. And you have nowhere left to run but [i]forward[/i].
+
+        *goto_scene origin_commoner undercity_chase
+
+    #Monster Hunter - Slayer of the Supernatural [b](Advanced)[/b]
+        *set alignment "human"
+        *set rank "Hunter Initiate"
+        *set age 32
+
+        You've killed seven Varkyrs, twelve Lupines, and three things you still can't name. Your weapons are blessed silver and cold iron. Your armor is faith and fury. Your cause is simple: humanity must [i]survive[/i].
+
+        The Order of the Silver Dawn trained you well. Too well. Because now you know the truth: the monsters aren't the real enemy.
+
+        The real enemy is coming. And you're the only one who sees it.
+
+        *goto_scene origin_hunter order_briefing
+
+    #Arcane Apprentice - Veilguard Arcanum
+        *set alignment "mage"
+        *set mage_rank "Apprentice"
+        *set rank "Apprentice"
+        *set age 26
+        *set latent_magic true
+        *set mana 70
+        *set ward_stability 55
+
+        The Veil whispered to you before the Arcanum ever knocked. Now, your spark is no longer secret. As an apprentice, you weave wards to keep the city intact and chase anomalies before they turn into rifts.
+
+        Tonight, the wards are screaming. The Circle is calling every mage to the observatory. Your trial will not be a written exam—it will be surviving whatever is clawing at the Veil.
+
+        *goto_scene origin_mage apprenticeship_call
+
+*comment ═══════════════════════════════════════════════════════════
+*comment NOTE: This file is called from startup.txt
+*comment Each origin sets appropriate initial stats and routes to
+*comment its dedicated origin file, which then routes to Act 1
+*comment ═══════════════════════════════════════════════════════════

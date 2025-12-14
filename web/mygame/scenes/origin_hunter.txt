@@ -1,0 +1,222 @@
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment HUNTER ORIGIN - Order of the Silver Dawn
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label order_briefing
+
+*comment Set initial Hunter stats (advanced origin)
+*set act 1
+*set chapter 1
+*set alignment "human"
+*set rank "Hunter Initiate"
+*set age 32
+*set strength 75
+*set agility 70
+*set cunning 70
+*set will 80
+*set human_relation +15
+
+The Order of the Silver Dawn trains in silence beneath Cathedral Heights. Blessed steel lines the walls. Hunter sigils glow faintly-blue for silver, red for fire, black for the forbidden arts.
+
+At the head of the hall stands Nadia Winters, your mentor. Scar across her cheek, eyes sharp as her throwing knives. "The factions move. Someone seeks the Ecliptic Amulet. We pick a throat to cut before the war begins."
+
+Three dossiers slam onto the table.
+
+*set met_Nadia true
+
+*choice
+    #Hunt the Varkyr threat in the Crimson Spire
+        Nadia slides you a silver stake. "Viscount Vaelis feeds openly. Bring me his ashes."
+
+        *set varkyrs_relation -10
+        *gosub_scene rank_progression gain_xp 75 "Accepted Varkyr hunt contract"
+        *goto hunt_varkyr
+
+    #Track the Whispering Pines Lupines
+        "Alpha Rurik gathers warriors near Mirror Lake," Nadia says. "If he's after the Amulet, we cut him down."
+
+        *set lupine_relation -10
+        *gosub_scene rank_progression gain_xp 75 "Accepted Lupine hunt contract"
+        *goto hunt_lupine
+
+    #Infiltrate the Forsaken underground
+        Nadia's expression hardens. "Caius experiments on both bloodlines. If he stabilizes hybrids, humanity loses the last edge we have."
+
+        *set forsaken_relation -10
+        *gosub_scene rank_progression gain_xp 75 "Accepted Forsaken infiltration"
+        *goto hunt_forsaken
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment VARKYR HUNT - Crimson Spire
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label hunt_varkyr
+
+You infiltrate the Crimson Spire under cover of a masquerade gala. Candlelight paints marble in blood hues. Varkyr nobles glide through the halls, their whispers colder than the wine.
+
+Isabella Crimson intercepts you before you reach Vaelis's wing. "Hunter in silk," she muses. "Do you seek to die, or to bargain?"
+
+*set met_Isabella true
+
+*choice
+    #Complete the contract and stake Vaelis
+        You bluff past courtiers, corner Vaelis, and drive silver through his heart. Ash scatters across a priceless rug.
+
+        *set varkyrs_relation -15
+        *gosub_scene rank_progression gain_xp 125 "Assassinated Viscount Vaelis"
+        *goto hunter_departure_human
+
+    #Accept Isabella's offer to join the Spire hunt
+        Isabella leans close. "Vaelis was a test. The real threat seeks the Amulet. Serve the Spire, and you will hunt far more dangerous prey."
+
+        *set alignment "varkyrs"
+        *set rank "Commoner"
+        *set Turned true
+        *set blood_satiation 75
+        *set bloodlust +15
+        *set varkyrs_relation +20
+        *gosub_scene rank_progression gain_xp 150 "Defected to the Crimson Spire"
+        *goto hunter_departure_varkyr
+
+    #Expose the Spire's bargain to the Forsaken instead
+        You slip away from Isabella and descend into the tunnels, carrying proof of Spire assassinations to Caius.
+
+        Caius listens, intrigued. "A hunter with a conscience. Interesting."
+
+        *set alignment "forsaken"
+        *set forsaken_rank "Initiate"
+        *set Turned true
+        *set hybrid_stability 55
+        *set control 60
+        *set forsaken_relation +25
+        *gosub_scene rank_progression gain_xp 150 "Allied with the Forsaken against the Spire"
+        *goto hunter_departure_forsaken
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment LUPINE HUNT - Whispering Pines
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label hunt_lupine
+
+Moonlight filters through the Whispering Pines. Wolf howls echo. You track claw marks to a campfire where Alpha Rurik waits, arms crossed.
+
+"Hunter," he says. "You can try to take my head... or you can listen."
+
+*set met_Rurik true
+
+*choice
+    #Attack first, ask questions never
+        Silver knives flash. Rurik howls. The fight is brutal, but you drive him back long enough to escape with proof of his presence.
+
+        *set lupine_relation -20
+        *gosub_scene rank_progression gain_xp 150 "Assaulted the Whispering Pines alpha"
+        *goto hunter_departure_human
+
+    #Respect the alpha and negotiate
+        Rurik explains the Lupines seek the Amulet to control their curse, not start a war. "Run with us, hunter. Earn the moon's favor."
+
+        He offers the bite. You accept.
+
+        *set alignment "lupine"
+        *set lupine_rank "Omega"
+        *set Turned true
+        *set rage 35
+        *set control 65
+        *set lupine_relation +25
+        *gosub_scene rank_progression gain_xp 175 "Joined the pack to hunt a larger threat"
+        *goto hunter_departure_lupine
+
+    #Broker a truce and carry intel back to humanity
+        You propose a pact: the Order and the pack share intel on whoever seeks all shards. Rurik agrees-if you keep hunters off his territory.
+
+        *set human_relation +10
+        *set lupine_relation +10
+        *gosub_scene rank_progression gain_xp 150 "Forged a truce with the Whispering Pines"
+        *goto hunter_departure_human
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment FORSAKEN HUNT - Underground Truth
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label hunt_forsaken
+
+You descend into the Undercroft. Hybrid eyes follow. Caius stands at the altar of an abandoned cathedral, arms wide. "Hunter. Come to kill me, or to learn why your Order fears us?"
+
+*set met_Caius true
+
+*choice
+    #Plant silver charges and call in the Order
+        While Caius speaks, you rig the pillars with silverfire. The blast will cripple the Enclave-and maybe start a war.
+
+        *set forsaken_relation -25
+        *gosub_scene rank_progression gain_xp 175 "Sabotaged the Forsaken Enclave"
+        *goto hunter_departure_human
+
+    #Accept Caius's offer to become more than human
+        Caius offers his wrist. "Hunt as predator, not prey."
+
+        You drink. Moon and blood collide inside you.
+
+        *set alignment "forsaken"
+        *set forsaken_rank "Initiate"
+        *set Turned true
+        *set hybrid_stability 60
+        *set control 65
+        *set forsaken_relation +25
+        *gosub_scene rank_progression gain_xp 200 "Embraced hybrid power within the Enclave"
+        *goto hunter_departure_forsaken
+
+    #Feign allegiance to Caius but deliver intel to the Crimson Spire
+        You nod as if convinced, memorizing the tunnels. Later, a Spire courier pays richly for your map-and offers you the Embrace as thanks.
+
+        *set alignment "varkyrs"
+        *set rank "Commoner"
+        *set Turned true
+        *set blood_satiation 70
+        *set varkyrs_relation +20
+        *gosub_scene rank_progression gain_xp 175 "Sold Forsaken intel to the Spire"
+        *goto hunter_departure_varkyr
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment DEPARTURES TO ACT 1
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label hunter_departure_human
+
+You remain human-but not naive. The factions maneuver around the Ecliptic Amulet, and the Order needs someone who has seen their faces up close. Nadia prepares a briefing. Your war continues.
+
+*page_break
+*goto_scene hub_city entry
+
+*label hunter_departure_varkyr
+
+The Spire's halls open before you. Power, politics, and predation await. You traded sunrise for eternity-and a chance to shape how the Crimson Court uses the Amulet.
+
+*page_break
+*goto_scene hub_city entry
+
+*label hunter_departure_lupine
+
+The pack accepts you as kin, if barely. The Whispering Pines will test your resolve-and your ability to balance Order training with the pull of the moon.
+
+*page_break
+*goto_scene hub_city entry
+
+*label hunter_departure_forsaken
+
+Hybrid power hums in your veins. Among the Forsaken, you will decide whether to weaponize the Amulet, protect humanity, or burn every faction that ever hunted you.
+
+*page_break
+*if (ng_plus_unlocked)
+    *goto_scene act1_forsaken_ngplus forsaken_infiltration
+*else
+    New Game Plus content is locked. Finish a full campaign to unlock the Forsaken NG+ route.
+    *goto_scene hub_city entry
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment NOTES:
+*comment - Sets advanced Hunter stats and Order framing
+*comment - Branches across Varkyr, Lupine, Forsaken hunts with moral pivots
+*comment - Allows allegiance shift to all four factions before Act 1
+*comment - Awards 150-200 XP across choices
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ

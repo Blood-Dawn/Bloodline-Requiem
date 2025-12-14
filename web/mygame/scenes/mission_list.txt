@@ -1,0 +1,47 @@
+*label list
+*page_break
+*comment ---------- INTRO ----------
+The mission board is filled with various requests, each one a potential adventure waiting to be undertaken. You scan the list, noting the different tasks available. Some are straightforward, while others hint at deeper mysteries or dangers lurking in the shadows of Veilfall.
+
+*if (mission_board_requests)
+  You see several missions posted, each with its own unique challenges and rewards. The air is thick with the promise of adventure, and you feel a sense of excitement at the possibilities that lie ahead.
+*if (not(mission_board_requests))
+  You glance at the mission board, but it seems eerily empty. Perhaps the recent events have caused a lull in requests, or maybe the factions are keeping their needs more secretive for now. You feel a sense of anticipation, wondering when new missions will appear.
+*line_break
+*comment ---------- MISSION LIST ----------
+*if (mission_board_requests)
+  *if (mission_board_request)
+    ${mission_board_request_text}
+  *if (not(mission_board_request))
+    No missions available at the moment. Check back later.
+    *line_break
+*if (not(mission_board_requests))
+  No missions available at the moment. Check back later.
+  *line_break
+*comment ---------- MISSION OPTIONS ----------
+*choice
+  #Accept a mission
+    You decide to take on a mission that catches your interest. The thrill of adventure calls to you, and you feel ready to face whatever challenges lie ahead.
+    *goto accept_mission
+  #Post a new mission request
+    You consider posting your own request on the board, seeking assistance for a personal task or quest.
+    *goto post_mission_request
+  #Leave the mission board
+    You step away from the board for now, perhaps to gather more information or prepare for a mission later.
+    *finish
+  #Check back later
+    You decide to wait and see if new missions will be posted soon. The board may fill up again with requests as the city’s needs change.
+    *finish
+  #Return to previous scene
+    You feel that you need more time to prepare or gather information before taking on a mission. Perhaps returning will help you decide your next steps.
+    *goto_scene mission_board
+*comment ---------- END OF MISSION LIST ----------
+*label accept_mission
+*comment ---------- ACCEPT MISSION PLACEHOLDER ----------
+You prepare to accept a mission. (This is a placeholder. Add mission logic here.)
+*finish
+*label post_mission_request
+*comment ---------- POST MISSION REQUEST PLACEHOLDER ----------
+You consider posting a new mission request. (This is a placeholder. Add request logic here.)
+*finish
+*comment ---------- END OF MISSION BOARD ----------

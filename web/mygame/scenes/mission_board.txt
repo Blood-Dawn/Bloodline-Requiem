@@ -1,0 +1,46 @@
+*label start
+// *scene_start mission_board
+*page_break
+*comment ---------- INTRO ----------
+The mission board stands at the heart of Veilfall, a place where adventurers and mercenaries alike gather to seek their fortunes. Requests from various factions and individuals cover its surface, each one a call to action in this city of intrigue and danger.
+*if (mission_board_requests)
+  You scan the board, noting the variety of tasks available. Some are simple fetch quests, while others promise greater rewards for dealing with threats both mundane and supernatural. The air buzzes with the excitement of potential adventure.
+
+*if (not(mission_board_requests))
+  You approach the mission board, but it seems eerily empty. Perhaps the recent events have caused a lull in requests, or maybe the factions are keeping their needs more secretive for now. You feel a sense of anticipation, wondering when new missions will appear.
+
+*if (alignment = "human")
+  *line_break
+  *comment ---------- HUMAN ALIGNMENT ----------
+  You are a human, navigating the complexities of Veilfall's politics and power struggles. The High Inquisitor's aide has informed you that the mission board is your gateway to serving the city and its people. You can choose to accept missions that align with your values or those that promise greater rewards.
+
+*if (alignment != "human")
+  *line_break
+  *comment ---------- Vampire ALIGNMENTS ----------
+  You are a vampire, navigating the shadows of Veilfall. The mission board offers you a chance to prove your worth to the factions of the city. Whether you seek to gain power, influence, or simply survive, each request is an opportunity to further your own goals.
+  *line_break
+  *comment ---------- VARKYR ALIGNMENTS ----------
+  You are a varkyr, a creature of the night with your own agenda. The mission board serves as a tool for you to navigate the complex web of alliances and rivalries in Veilfall. Each request is a chance to prove your strength and cunning, whether to gain favor with the Matriarch or to further your own ambitions.
+  *line_break
+  *comment ---------- LUPINE ALIGNMENTS ----------
+  You are a lupine, bound by the laws of the pack yet driven by your own desires. The mission board is a place where you can find tasks that align with your instincts and goals. Whether you seek to protect your territory, gain favor with the pack leaders, or simply prove your worth, each request is a step toward achieving your objectives.
+  *line_break
+  *comment ---------- FORSAKEN ALIGNMENTS ----------
+  You are a forsaken, navigating the complexities of Veilfall with your own agenda. The mission board offers you a chance to prove your worth to the factions of the city. Whether you seek to gain power, influence, or simply survive, each request is an opportunity to further your own goals.
+  *line_break
+*comment ---------- MISSION BOARD OPTIONS ----------
+*choice
+  *if (mission_board_requests)
+    #View available missions
+      You scan the board for missions that catch your eye. Each one offers a unique challenge and potential rewards.
+      *goto_scene mission_list
+  #Post a new mission request
+    You consider posting your own request on the board, seeking assistance for a personal task or quest.
+    *goto_scene post_mission_request
+  #Wait for new postings
+    You decide to check back later when new requests appear.
+    *finish
+  #Leave the mission board
+    You step away from the board, filing away what you saw for later.
+    *finish
+*comment ---------- NO MISSIONS AVAILABLE ----------

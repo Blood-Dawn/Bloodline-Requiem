@@ -1,0 +1,36 @@
+The city of Veilfall bustles around you, yet unseen tensions lurk beneath its cobbled streets. Merchants peddle wares by lamplight while whispers of supernatural intrigue echo through winding alleys. This crossroads between factions serves as the perfect hub for your next moves.
+
+*label entry
+*if (alignment = "lupine")
+    The pack has sent an envoy from Whispering Pines, their arrival heralded by distant howls. The emissary speaks of uneasy truces and offers you guidance through their territory should you choose to visit.
+    *choice
+        #Follow the envoy into the forest outskirts.
+            With the envoy leading, you head toward the moonlit woods.
+            *finish
+        #Decline for now and explore the city further.
+            The bustling streets still hold secrets worth uncovering.
+            *finish
+*elseif (alignment = "varkyrs")
+    From the towering Crimson Spire comes a pale messenger, bidding you audience with the Matriarch. Rumors hint that she seeks to test your loyalty in the nights ahead.
+    *choice
+        #Accept the invitation to the Spire.
+            You follow the envoy toward the shadowed citadel, eager to prove yourself.
+            *finish
+        #Politely refuse, keeping your options open.
+            You remain in the city to gather your thoughts—and allies.
+            *finish
+*elseif (alignment = "human")
+    High-Inquisitor's aide greets you, offering access to the mission_board.
+    *goto_scene mission_board start
+*elseif (alignment = "mage")
+    An Arcanum courier intercepts you before you can vanish into the crowd. "Archmage Selene wants a report," she says, thrusting a sealed scroll into your hands. The observatory's sigils pulse faintly in the distance.
+    *choice
+        #Head back to the observatory to debrief.
+            You weave through the streets toward the warded dome, already drafting your report in your mind.
+            *finish
+        #Use the lull to explore the city for arcane anomalies.
+            The city's hum hides minor disturbances—perfect for testing new spells quietly.
+            *finish
+*else
+    You wander the streets uncertain of your allegiance, feeling the pull of warring powers yet committing to none.
+    *finish

@@ -1,0 +1,258 @@
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment NOBLE ORIGIN - Heir to a Tarnished Throne
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label murder_investigation
+
+*comment Set initial Noble stats
+*set act 1
+*set chapter 1
+*set alignment "human"
+*set rank "Minor Noble"
+*set age 24
+*set strength 50
+*set agility 50
+*set cunning 75
+*set will 70
+*set human_relation +10
+
+Night drapes the Ravencrest estate in velvet shadow. Servants whisper of screams, of blood pooling beneath your father's study door. House guards refuse to enter until you arrive. The air smells of iron and incense-a Varkyr calling card.
+
+Your father's seal-a raven clutching a crescent moon-glints on the study door. The crest of House Ravencrest now rests on [i]your[/i] shoulders whether you asked for it or not.
+
+*choice
+    #Enter the study alone
+        You dismiss the guards. Power means walking into danger first.
+
+        *set cunning +5
+        *set awareness +5
+        *gosub_scene rank_progression gain_xp 50 "Investigated the murder personally"
+        *goto study_discovery
+
+    #Summon the authorities
+        You order the captain of the watch to fetch Cathedral investigators and seal the room. Appearances matter as much as truth.
+
+        *set will +5
+        *set human_relation +5
+        *gosub_scene rank_progression gain_xp 50 "Escalated to official inquiry"
+        *goto official_response
+
+    #Slip away through the servants' passages
+        Something about this reeks of trap. You trust the hidden tunnels more than the main hall.
+
+        *set agility +5
+        *set stealth +5
+        *gosub_scene rank_progression gain_xp 50 "Evaded the trap"
+        *goto exile_escape
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment STUDY DISCOVERY - Varkyr Intrigue
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label study_discovery
+
+The study door creaks. Your father's body lies slumped over his desk, skin pale, twin punctures at his throat. Papers are scattered around a shattered decanter-the scent of spiced blood heavy in the air.
+
+A single black rose rests atop the ledger. Beside it, a signet ring engraved with a stylized spire: the mark of the Crimson Spire's Viscountess Isabella Crimson. A calculated message.
+
+Footsteps whisper behind you. Isabella herself steps from the shadows, crimson eyes gleaming. "My condolences, ${rank}. Your father's debts have... matured."
+
+*set met_Isabella true
+*set Isabella_relation +10
+
+*choice
+    #"You murdered him. Why?"
+        "He traded secrets to the Lupines and the Church," Isabella says. "Breaking the Veil. I removed a liability-and offer you protection in exchange."
+
+        *set will +5
+        *goto spire_offer
+
+    #"House Ravencrest bends knee to no vampire."
+        Isabella smiles, sharp. "Then bend to extinction? The Night Council already circles. Choose quickly."
+
+        *set will +10
+        *goto spire_offer
+
+    #"We negotiate. House Ravencrest still has value."
+        "Clever," she purrs. "Perhaps you'll survive longer than your sire."
+
+        *set cunning +5
+        *goto spire_offer
+
+*label spire_offer
+
+Isabella's proposal is simple: accept the Embrace and secure your house under Spire protection-or refuse and risk annihilation from enemies you cannot see. The Ecliptic Amulet's human shard is in play; nobles without supernatural backing will be pawns at best.
+
+*choice
+    #Accept the Embrace to claim power
+        Cold fangs pierce your wrist. Fire floods your veins, burning away mortality.
+
+        *set alignment "varkyrs"
+        *set rank "Commoner"
+        *set Turned true
+        *set blood_satiation 80
+        *set bloodlust +15
+        *set varkyrs_relation +20
+        *gosub_scene rank_progression gain_xp 100 "Accepted Varkyr Embrace to save House Ravencrest"
+
+        Isabella wipes your lips. "Rise, ${rank}. You belong to the night now. Serve the Spire, and your House will flourish."
+        *goto noble_departure_varkyr
+
+    #Refuse and gather human allies instead
+        You press a bloodied signet into your palm. "House Ravencrest stands with humanity. I will expose whoever orchestrated this."
+
+        *set alignment "human"
+        *set human_relation +15
+        *set Isabella_relation -10
+        *gosub_scene rank_progression gain_xp 100 "Chose human allegiance against the Spire"
+        *goto noble_departure_human
+
+    #Secretly reach out to the Lupines for protection
+        You pocket the signet and send a coded raven to Rurik Blackfang-a favor your father never dared claim.
+
+        *set alignment "lupine"
+        *set lupine_rank "Omega"
+        *set Turned true
+        *set rage 35
+        *set control 60
+        *set moon_phase "Full"
+        *set lupine_relation +20
+        *set met_Rurik true
+        *gosub_scene rank_progression gain_xp 100 "Called in an ancient pact with the Lupines"
+        *goto noble_departure_lupine
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment OFFICIAL RESPONSE - Cathedral & Legion
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label official_response
+
+Cathedral investigators arrive with Inquisitor Vale himself at their head. Silver sigils burn on the doorway as priests sanctify the room.
+
+Vale examines the punctures. "Vampiric. Clean. Political." His gaze sharpens. "House Ravencrest needs allies if you plan to survive the Night Council's attention."
+
+*set met_Adrian true
+*set Adrian_relation +5
+
+Adrian Blackwell, your father's merchant ally, slips you a sealed ledger. "Your father backed a bid to secure the human shard of the Ecliptic Amulet. The Crown wants it hidden. The Spire wants it shattered. Choose wisely."
+
+*choice
+    #Join the Silver Legion to protect humanity
+        Vale clasps your forearm. "Good. We need nobles who understand politics and blood."
+
+        *set alignment "human"
+        *set legion_rank "Recruit"
+        *set human_relation +20
+        *gosub_scene rank_progression gain_xp 125 "Swore service to the Silver Legion"
+        *goto noble_departure_human
+
+    #Trade favor with the Spire for House safety
+        You offer Vale proof of Spire involvement-but keep copies. Isabella is summoned. Terms are negotiated in whispers.
+
+        *set alignment "varkyrs"
+        *set rank "Commoner"
+        *set Turned true
+        *set varkyrs_relation +15
+        *set human_relation -10
+        *gosub_scene rank_progression gain_xp 125 "Bargained House safety with the Crimson Spire"
+        *goto noble_departure_varkyr
+
+    #Invoke the old Lupine oath of protection
+        You cite the ancient pact between Ravencrest hunters and the Whispering Pines. Vale scowls but cannot deny the legality.
+
+        Rurik answers the call personally, looming and scarred. "Your bloodline kept its word once. Will you keep it again?"
+
+        *set alignment "lupine"
+        *set lupine_rank "Omega"
+        *set Turned true
+        *set rage 40
+        *set control 55
+        *set lupine_relation +25
+        *set met_Rurik true
+        *gosub_scene rank_progression gain_xp 125 "Claimed Lupine protection through ancient oath"
+        *goto noble_departure_lupine
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment EXILE ROUTE - Shadows of the Warren
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label exile_escape
+
+You slip into Veilfall's undercity-the Warren. Smoke, refuse, and desperate eyes greet you. Without House guards, you are prey.
+
+Lucan Graves of the Assassin Guild corners you in an alley, knives glinting. "A noble in the gutter? Either you're bait... or leverage."
+
+From a nearby rooftop, a shadow detaches-Isabella's watcher. Across the street, a black-furred wolf tracks you in silence. Everyone wants a piece.
+
+*set met_Lucan true
+*set Lucan_relation +5
+
+*choice
+    #Pay the Guild for safe passage and revenge
+        You slide Lucan your last signet and ledger pages. "Get me to whoever ordered my father's death-and I'll owe you."
+
+        *set alignment "human"
+        *set AssassinGuild_relation +15
+        *set cunning +10
+        *gosub_scene rank_progression gain_xp 100 "Bought the Guild's blades for vengeance"
+        *goto noble_departure_human
+
+    #Offer yourself to the Spire to stop the hunt
+        You step into the watcher’s shadow. "Tell Isabella I accept. Just call off the hounds."
+
+        *set alignment "varkyrs"
+        *set rank "Commoner"
+        *set Turned true
+        *set varkyrs_relation +15
+        *set bloodlust +10
+        *gosub_scene rank_progression gain_xp 100 "Surrendered to the Crimson Spire to survive"
+        *goto noble_departure_varkyr
+
+    #Trust the wolf and swear to the pack
+        The wolf shifts-Rurik, scarred and stern. "Run with us or die here."
+
+        You bare your wrist. His bite is agony-and liberation.
+
+        *set alignment "lupine"
+        *set lupine_rank "Omega"
+        *set Turned true
+        *set rage 45
+        *set control 50
+        *set lupine_relation +20
+        *set met_Rurik true
+        *gosub_scene rank_progression gain_xp 100 "Chose the pack over the court"
+        *goto noble_departure_lupine
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment DEPARTURES TO ACT 1
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+*label noble_departure_human
+
+House Ravencrest will not die in darkness. Whether through Legion rank or Guild knives, you'll drag the truth into the light-and seize the human shard of the Ecliptic Amulet before anyone else.
+
+*page_break
+*goto_scene hub_city entry
+
+*label noble_departure_varkyr
+
+The Crimson Spire claims your blood and House. Eternity yawns before you-a ladder of ranks to climb, secrets to harvest, and debts to collect.
+
+*page_break
+*goto_scene hub_city entry
+
+*label noble_departure_lupine
+
+The Whispering Pines pack howls as you cross their border. Blood feud or moon-sworn alliance-your choice binds your House's fate to the wild.
+
+*page_break
+*goto_scene hub_city entry
+
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+*comment NOTES:
+*comment - Sets starting stats for Noble origin
+*comment - Introduces Isabella, Adrian, Lucan, and Rurik hooks
+*comment - Player can align with Human, Varkyr, or Lupine routes
+*comment - Awards 100-125 XP through choices
+*comment - Routes to Act 1 with faction-appropriate label
+*comment อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
